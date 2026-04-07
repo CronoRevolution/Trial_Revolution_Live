@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0a0b0f">
+<title>Trial Revolution — Live</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,600;0,700;0,800;0,900;1,700&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ── Reset & tokens ─────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg:        #0a0b0f;
+  --bg2:       #111318;
+  --bg3:       #181b22;
+  --border:    rgba(255,255,255,.07);
+  --text:      #e8eaf0;
+  --muted:     #5a6070;
+  --subtle:    #8a90a0;
+  --accent:    #e8292a;
+  --accent2:   #ff4a4b;
+  --green:     #22c55e;
+  --yellow:    #eab308;
+  --r: 14px;
+  --r-sm: 8px;
+  font-size: 15px;
+}
+html, body { height: 100%; background: var(--bg); color: var(--text); font-family: 'Barlow', sans-serif; }
+body { overflow-x: hidden; }
+
+/* ── Category color map ─────────────────────────────────────────────────── */
+.c-TR1  { --cc: #DC2626; --ct: #fff; }
+.c-TR2  { --cc: #2563A8; --ct: #fff; }
+.c-TR3  { --cc: #16A34A; --ct: #fff; }
+.c-TR4  { --cc: #EAB308; --ct: #0f172a; }
+.c-TR5  { --cc: #D97706; --ct: #fff; }
+.c-TR5A { --cc: #64748B; --ct: #fff; }
+
+/* ── Layout ─────────────────────────────────────────────────────────────── */
+#app { min-height: 100vh; display: flex; flex-direction: column; }
+
+/* ── Top bar ─────────────────────────────────────────────────────────────── */
+.topbar {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(10,11,15,.92); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: env(safe-area-inset-top) 0 0;
+}
+.topbar-inner {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 16px;
+  min-height: 52px;
+}
+.btn-back {
+  display: none; align-items: center; justify-content: center;
+  width: 34px; height: 34px; border-radius: 50%;
+  background: var(--bg3); border: 1px solid var(--border);
+  color: var(--text); cursor: pointer; font-size: 16px;
+  flex-shrink: 0; transition: background .15s;
+}
+.btn-back:hover { background: var(--bg2); }
+.btn-back.visible { display: flex; }
+.topbar-title {
+  flex: 1; min-width: 0;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 17px; font-weight: 800; letter-spacing: .5px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.topbar-sub {
+  font-size: 11px; color: var(--muted); letter-spacing: 1px;
+  text-transform: uppercase; line-height: 1;
+}
+.status-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--muted); flex-shrink: 0;
+  transition: background .3s;
+}
+.status-dot.live { background: var(--accent); box-shadow: 0 0 8px var(--accent); animation: pulse 2s infinite; }
+.status-dot.ok   { background: var(--green); }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+.refresh-info {
+  font-size: 10px; color: var(--muted); letter-spacing: .5px;
+  white-space: nowrap;
+}
+
+/* ── Views ───────────────────────────────────────────────────────────────── */
+.view { display: none; flex: 1; padding: 16px; max-width: 640px; margin: 0 auto; width: 100%; }
+.view.active { display: block; }
+
+/* ── Hero (portada) ──────────────────────────────────────────────────────── */
+.hero {
+  text-align: center; padding: 28px 0 20px;
+  border-bottom: 1px solid var(--border); margin-bottom: 20px;
+}
+.hero-logo {
+  width: 90px; height: 90px; object-fit: contain; margin-bottom: 14px;
+  filter: drop-shadow(0 0 20px rgba(232,41,42,.35));
+}
+.hero-logo-placeholder {
+  width: 90px; height: 90px; margin: 0 auto 14px;
+  background: linear-gradient(135deg, #e8292a22, #e8292a08);
+  border: 1px solid rgba(232,41,42,.2); border-radius: 18px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px; font-weight: 800; letter-spacing: 2px; color: var(--accent);
+}
+.hero-race {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 26px; font-weight: 900; letter-spacing: 1px;
+  line-height: 1.15; margin-bottom: 6px;
+}
+.hero-sub { font-size: 12px; color: var(--muted); letter-spacing: 1.5px; text-transform: uppercase; }
+.status-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 12px; padding: 5px 12px; border-radius: 20px;
+  font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+}
+.status-badge.live { background: rgba(232,41,42,.12); color: var(--accent); border: 1px solid rgba(232,41,42,.3); }
+.status-badge.done { background: rgba(34,197,94,.1); color: var(--green); border: 1px solid rgba(34,197,94,.25); }
+.status-badge.wait { background: rgba(90,96,112,.12); color: var(--subtle); border: 1px solid var(--border); }
+
+/* ── Category cards ──────────────────────────────────────────────────────── */
+.section-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 10px;
+}
+.cat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.cat-card {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--r); padding: 16px 14px;
+  cursor: pointer; transition: transform .15s, box-shadow .15s, border-color .15s;
+  display: flex; align-items: center; gap: 12px;
+  -webkit-tap-highlight-color: transparent;
+}
+.cat-card:active { transform: scale(.97); }
+.cat-card:hover  { border-color: var(--cc, #444); box-shadow: 0 0 16px rgba(0,0,0,.4); }
+.cat-pill {
+  min-width: 52px; height: 52px; border-radius: 10px;
+  background: var(--cc, #333); color: var(--ct, #fff);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 15px; font-weight: 900; letter-spacing: 1px;
+  flex-shrink: 0;
+}
+.cat-info { min-width: 0; }
+.cat-count {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 28px; font-weight: 900; line-height: 1; color: var(--text);
+}
+.cat-lbl { font-size: 11px; color: var(--muted); margin-top: 1px; }
+
+/* ── Classification table ───────────────────────────────────────────────── */
+.cat-header {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 14px; padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.cat-badge {
+  padding: 6px 14px; border-radius: 8px;
+  background: var(--cc, #333); color: var(--ct, #fff);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 18px; font-weight: 900; letter-spacing: 1px;
+}
+.cat-header-info { flex: 1; min-width: 0; }
+.cat-header-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 18px; font-weight: 800;
+}
+.cat-header-count { font-size: 12px; color: var(--muted); }
+
+.ranking-list { display: flex; flex-direction: column; gap: 6px; }
+.pilot-row {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--r-sm); padding: 12px 14px;
+  display: flex; align-items: center; gap: 12px;
+  cursor: pointer; transition: border-color .15s, transform .1s;
+  -webkit-tap-highlight-color: transparent;
+}
+.pilot-row:active { transform: scale(.99); }
+.pilot-row:hover  { border-color: rgba(255,255,255,.14); }
+.pilot-row.dnf    { opacity: .55; }
+.pilot-row.dsq    { opacity: .45; }
+
+.pos-badge {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 22px; font-weight: 900;
+  width: 32px; text-align: center; flex-shrink: 0;
+  color: var(--muted);
+}
+.pos-badge.p1 { color: #fbbf24; }
+.pos-badge.p2 { color: #94a3b8; }
+.pos-badge.p3 { color: #b45309; }
+.pos-badge.dnf-lbl, .pos-badge.dsq-lbl {
+  font-size: 11px; color: var(--accent); letter-spacing: .5px;
+}
+
+.pilot-main { flex: 1; min-width: 0; }
+.pilot-dorsal {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px; color: var(--muted); letter-spacing: 1px;
+}
+.pilot-name {
+  font-size: 14px; font-weight: 600;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.pilot-club { font-size: 11px; color: var(--muted); margin-top: 1px; }
+
+.pilot-stats { text-align: right; flex-shrink: 0; }
+.pts-big {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 22px; font-weight: 700; line-height: 1; color: var(--text);
+}
+.pts-label { font-size: 10px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; }
+.laps-chip {
+  display: inline-flex; align-items: center; gap: 3px;
+  font-size: 10px; color: var(--subtle); margin-top: 3px;
+  padding: 2px 6px; border-radius: 20px; background: var(--bg3);
+}
+
+/* ── Pilot detail ────────────────────────────────────────────────────────── */
+.pilot-detail-header {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--r); padding: 16px; margin-bottom: 16px;
+}
+.pilot-detail-dorsal {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 2px;
+}
+.pilot-detail-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 26px; font-weight: 900; letter-spacing: .5px; line-height: 1.1;
+}
+.pilot-detail-meta { display: flex; gap: 14px; margin-top: 8px; flex-wrap: wrap; }
+.meta-chip {
+  font-size: 11px; color: var(--subtle);
+  display: flex; align-items: center; gap: 4px;
+}
+.stat-row {
+  display: grid; grid-template-columns: repeat(5, 1fr);
+  gap: 8px; margin-bottom: 16px;
+}
+.stat-box {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--r-sm); padding: 10px 8px; text-align: center;
+}
+.stat-box .val {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 20px; font-weight: 700; line-height: 1; color: var(--text);
+}
+.stat-box .lbl { font-size: 9px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; margin-top: 3px; }
+.stat-box.highlight .val { color: var(--accent); }
+
+/* ── Scores grid ─────────────────────────────────────────────────────────── */
+.scores-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 10px;
+}
+.scores-table {
+  width: 100%; border-collapse: collapse;
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--r); overflow: hidden;
+  font-size: 13px;
+}
+.scores-table th {
+  padding: 8px 6px; background: var(--bg3);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--muted); text-align: center;
+}
+.scores-table td {
+  padding: 9px 6px; text-align: center;
+  font-family: 'JetBrains Mono', monospace; font-size: 14px;
+  border-top: 1px solid var(--border);
+}
+.scores-table tr td:first-child {
+  font-family: 'Barlow Condensed', sans-serif; font-size: 11px;
+  font-weight: 700; letter-spacing: 1px; color: var(--muted);
+  background: var(--bg3);
+}
+.score-0 { color: var(--green); font-weight: 700; }
+.score-5 { color: var(--accent); font-weight: 700; }
+.score-sum {
+  font-weight: 700; color: var(--text);
+  background: rgba(255,255,255,.03);
+}
+.scores-table tr.total-row td {
+  background: var(--bg3); font-weight: 700; color: var(--text);
+  font-size: 15px;
+}
+.scores-table tr.total-row td:first-child { color: var(--text); }
+.empty-lap td { color: var(--muted); opacity: .3; }
+
+/* ── Empty / loading states ─────────────────────────────────────────────── */
+.loading-screen {
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; padding: 60px 20px; gap: 14px;
+}
+.spinner {
+  width: 36px; height: 36px; border: 3px solid var(--border);
+  border-top-color: var(--accent); border-radius: 50%;
+  animation: spin .8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.empty-msg { color: var(--muted); font-size: 14px; text-align: center; }
+
+/* ── Error card ──────────────────────────────────────────────────────────── */
+.error-card {
+  background: rgba(232,41,42,.06); border: 1px solid rgba(232,41,42,.2);
+  border-radius: var(--r); padding: 20px; text-align: center;
+  margin-top: 30px;
+}
+.error-card .ico { font-size: 32px; margin-bottom: 10px; }
+.error-card .ttl { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+.error-card .msg { font-size: 12px; color: var(--muted); }
+
+/* ── Update ticker ───────────────────────────────────────────────────────── */
+#updateTicker {
+  text-align: center; padding: 8px;
+  font-size: 10px; color: var(--muted); letter-spacing: 1px;
+  border-top: 1px solid var(--border); margin-top: 24px;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 380px) {
+  .cat-grid { grid-template-columns: 1fr; }
+  .stat-row { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 600px) {
+  .view { padding: 24px 20px; }
+  .cat-grid { grid-template-columns: repeat(3, 1fr); }
+}
+</style>
+</head>
+<body>
+<div id="app">
+
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <button class="btn-back" id="btnBack" onclick="goBack()">←</button>
+      <div style="flex:1;min-width:0">
+        <div class="topbar-title" id="topbarTitle">Trial Revolution</div>
+        <div class="topbar-sub" id="topbarSub">Campeonato de Trial de Castilla y León 2026</div>
+      </div>
+      <div class="status-dot" id="statusDot"></div>
+      <div class="refresh-info" id="refreshInfo"></div>
+    </div>
+  </div>
+
+  <!-- ── VIEW: PORTADA ──────────────────────────────────────────────────── -->
+  <div class="view active" id="viewHome">
+    <div id="homeContent">
+      <div class="loading-screen">
+        <div class="spinner"></div>
+        <div class="empty-msg">Cargando clasificación…</div>
+      </div>
+    </div>
+    <div id="updateTicker"></div>
+  </div>
+
+  <!-- ── VIEW: CATEGORÍA ───────────────────────────────────────────────── -->
+  <div class="view" id="viewCat">
+    <div class="cat-header" id="catHeader"></div>
+    <div class="ranking-list" id="rankingList"></div>
+  </div>
+
+  <!-- ── VIEW: PILOTO ──────────────────────────────────────────────────── -->
+  <div class="view" id="viewPilot">
+    <div id="pilotContent"></div>
+  </div>
+
+</div>
+
+<script>
+// ── Config ────────────────────────────────────────────────────────────────
+const DATA_URL = './data.json';
+const REFRESH_MS = 30000;
+
+// ── State ─────────────────────────────────────────────────────────────────
+let _data = null;
+let _currentCat = null;
+let _currentPilotIdx = null;
+let _lastFetch = null;
+let _refreshTimer = null;
+
+const CAT_COLORS = {
+  TR1:'#DC2626', TR2:'#2563A8', TR3:'#16A34A',
+  TR4:'#EAB308', TR5:'#D97706', TR5A:'#64748B'
+};
+const CAT_TEXT = {
+  TR1:'#fff', TR2:'#fff', TR3:'#fff',
+  TR4:'#0f172a', TR5:'#fff', TR5A:'#fff'
+};
+const CAT_ORDER = ['TR1','TR2','TR3','TR4','TR5','TR5A'];
+
+// ── Fetch & refresh ───────────────────────────────────────────────────────
+async function fetchData() {
+  try {
+    const r = await fetch(DATA_URL + '?t=' + Date.now());
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    _data = await r.json();
+    _lastFetch = Date.now();
+    setStatus('ok');
+    renderCurrentView();
+    updateTicker();
+  } catch(e) {
+    setStatus('err');
+    if (!_data) renderError(e.message);
+    updateTicker();
+  }
+}
+
+function startRefresh() {
+  clearInterval(_refreshTimer);
+  _refreshTimer = setInterval(fetchData, REFRESH_MS);
+}
+
+function setStatus(s) {
+  const d = document.getElementById('statusDot');
+  d.className = 'status-dot' + (s === 'ok' ? (' ' + (_data?.raceStarted && !_data?.raceFinished ? 'live' : 'ok')) : '');
+}
+
+function updateTicker() {
+  const el = document.getElementById('refreshInfo');
+  const tk = document.getElementById('updateTicker');
+  if (!_lastFetch) { el.textContent = ''; return; }
+  const secs = Math.round((Date.now() - _lastFetch) / 1000);
+  const txt = secs < 5 ? 'Ahora' : 'hace ' + secs + 's';
+  el.textContent = txt;
+  if (tk) {
+    const ts = _data?.publishedAt ? new Date(_data.publishedAt).toLocaleTimeString('es-ES', {hour:'2-digit',minute:'2-digit',second:'2-digit'}) : '—';
+    tk.textContent = 'Última publicación: ' + ts + ' · Actualización automática cada 30 s';
+  }
+}
+
+setInterval(updateTicker, 5000);
+
+// ── Navigation — Hash routing (funciona en todos los móviles) ────────────
+// El hash define la vista actual: '' → home | 'cat-TR1' → categoría | 'piloto-3' → piloto
+
+function getHash() {
+  return window.location.hash.replace('#', '');
+}
+
+function setHash(h) {
+  window.location.hash = h;
+}
+
+function showView(id) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0, 0);
+  const hash = getHash();
+  const isHome = !hash || hash === '';
+  document.getElementById('btnBack').className =
+    'btn-back' + (isHome ? '' : ' visible');
+}
+
+function navHome() {
+  _currentCat = null;
+  _currentPilotIdx = null;
+  setHash('');
+  // hashchange se encarga del render
+}
+
+function navCat(cat) {
+  _currentCat = cat;
+  _currentPilotIdx = null;
+  setHash('cat-' + cat);
+  // hashchange se encarga del render
+}
+
+function navPilot(pilotIdx) {
+  _currentPilotIdx = pilotIdx;
+  setHash('piloto-' + _currentCat + '-' + pilotIdx);
+  // hashchange se encarga del render
+}
+
+function goBack() {
+  history.back();
+}
+
+// Toda la navegación pasa por aquí — incluido el botón atrás del móvil
+window.addEventListener('hashchange', function() {
+  routeFromHash();
+});
+
+function routeFromHash() {
+  const hash = getHash();
+
+  if (!hash || hash === '') {
+    // HOME
+    _currentCat = null;
+    _currentPilotIdx = null;
+    document.getElementById('topbarTitle').textContent = _data?.raceName || 'Trial Revolution';
+    document.getElementById('topbarSub').textContent = 'Campeonato de Trial de Castilla y León 2026';
+    showView('viewHome');
+    renderHome();
+
+  } else if (hash.startsWith('cat-')) {
+    // CATEGORÍA
+    const cat = hash.replace('cat-', '');
+    _currentCat = cat;
+    _currentPilotIdx = null;
+    document.getElementById('topbarTitle').textContent = cat + ' — Clasificación';
+    document.getElementById('topbarSub').textContent = _data?.raceName || 'Trial Revolution';
+    showView('viewCat');
+    renderCat();
+
+  } else if (hash.startsWith('piloto-')) {
+    // PILOTO: formato piloto-CAT-idx
+    const parts = hash.replace('piloto-', '').split('-');
+    const idx = parseInt(parts[parts.length - 1]);
+    const cat = parts.slice(0, parts.length - 1).join('-');
+    _currentCat = cat;
+    _currentPilotIdx = isNaN(idx) ? null : idx;
+    const p = _data?.pilots?.[_currentPilotIdx];
+    document.getElementById('topbarTitle').textContent = p ? fmtName(p.name) : 'Piloto';
+    document.getElementById('topbarSub').textContent = cat + (p ? ' · Nº ' + (p.dorsal||'—') : '');
+    showView('viewPilot');
+    renderPilot();
+  }
+}
+
+function renderCurrentView() {
+  routeFromHash();
+}
+
+// ── Render: Home ─────────────────────────────────────────────────────────
+function renderHome() {
+  if (!_data) return;
+  const d = _data;
+  const cats = (d.categories || CAT_ORDER).filter(c => d.pilots?.some(p => p.cat === c));
+  const statusLabel = d.raceFinished ? 'Finalizada' : d.raceStarted ? 'En curso' : 'Pendiente';
+  const statusClass = d.raceFinished ? 'done' : d.raceStarted ? 'live' : 'wait';
+
+  let cards = '';
+  cats.forEach(cat => {
+    const n = (d.pilots||[]).filter(p => p.cat === cat).length;
+    const cc = CAT_COLORS[cat]||'#555';
+    const ct = CAT_TEXT[cat]||'#fff';
+    cards += `<div class="cat-card c-${cat}" onclick="navCat('${cat}')">
+      <div class="cat-pill" style="background:${cc};color:${ct}">${cat}</div>
+      <div class="cat-info">
+        <div class="cat-count">${n}</div>
+        <div class="cat-lbl">piloto${n!==1?'s':''}</div>
+      </div>
+    </div>`;
+  });
+
+  document.getElementById('topbarTitle').textContent = d.raceName || 'Trial Revolution';
+
+  document.getElementById('homeContent').innerHTML = `
+    <div class="hero">
+      <div class="hero-logo-placeholder">TR</div>
+      <div class="hero-race">${escHtml(d.raceName||'Trial Revolution')}</div>
+      <div class="hero-sub">Campeonato de Trial · Castilla y León 2026</div>
+      <div><span class="status-badge ${statusClass}">
+        ${statusClass==='live'?'⚡ ':statusClass==='done'?'✓ ':'⏳ '}${statusLabel}
+      </span></div>
+    </div>
+    <div class="section-label">Categorías</div>
+    <div class="cat-grid">${cards}</div>
+  `;
+}
+
+function renderError(msg) {
+  document.getElementById('homeContent').innerHTML = `
+    <div class="error-card">
+      <div class="ico">📡</div>
+      <div class="ttl">Sin datos disponibles</div>
+      <div class="msg">No se pudo cargar la clasificación.<br>${escHtml(msg||'')}</div>
+    </div>`;
+}
+
+// ── Render: Category ─────────────────────────────────────────────────────
+function renderCat() {
+  if (!_data || !_currentCat) return;
+  const cat = _currentCat;
+  const cc = CAT_COLORS[cat]||'#555';
+  const ct = CAT_TEXT[cat]||'#fff';
+
+  const catPilots = (_data.pilots||[])
+    .filter(p => p.cat === cat)
+    .sort((a,b) => {
+      if (a.dsq && !b.dsq) return 1; if (!a.dsq && b.dsq) return -1;
+      if (a.dnf && !b.dnf) return 1; if (!a.dnf && b.dnf) return -1;
+      if ((b.lapsCompleted||0) !== (a.lapsCompleted||0)) return (b.lapsCompleted||0)-(a.lapsCompleted||0);
+      const pa = a.totalPoints??9999, pb = b.totalPoints??9999;
+      if (pa!==pb) return pa-pb;
+      return (b.n0s||0)-(a.n0s||0);
+    });
+
+  document.getElementById('catHeader').innerHTML = `
+    <div class="cat-badge" style="background:${cc};color:${ct}">${cat}</div>
+    <div class="cat-header-info">
+      <div class="cat-header-name">${escHtml(_data.raceName||'')}</div>
+      <div class="cat-header-count">${catPilots.length} pilotos</div>
+    </div>`;
+
+  let items = '';
+  catPilots.forEach((p, i) => {
+    const isDNF = p.dnf || p.dsq;
+    const posLabel = p.dsq ? 'DSQ' : p.dnf ? 'DNF' : (i+1);
+    const posClass = i===0&&!isDNF?'p1':i===1&&!isDNF?'p2':i===2&&!isDNF?'p3':isDNF?'dnf-lbl':'';
+    const ptsStr = (p.totalPoints!=null&&!isDNF) ? p.totalPoints : '—';
+    const laps = p.lapsCompleted||0;
+    const timeStr = p.totalTime||'';
+
+    const globalIdx = _data.pilots.findIndex(x => x.dorsal===p.dorsal && x.cat===p.cat);
+
+    items += `<div class="pilot-row${p.dnf?' dnf':''}${p.dsq?' dsq':''}" onclick="navPilot(${globalIdx})">
+      <div class="pos-badge ${posClass}">${posLabel}</div>
+      <div class="pilot-main">
+        <div class="pilot-dorsal">Nº ${p.dorsal||'—'}</div>
+        <div class="pilot-name">${escHtml(fmtName(p.name))}</div>
+        <div class="pilot-club">${escHtml(p.club||'')}</div>
+      </div>
+      <div class="pilot-stats">
+        <div class="pts-big">${ptsStr}</div>
+        <div class="pts-label">puntos</div>
+        <div class="laps-chip">
+          ${laps} vuelta${laps!==1?'s':''}${timeStr?' · '+timeStr:''}
+        </div>
+      </div>
+    </div>`;
+  });
+
+  document.getElementById('rankingList').innerHTML = items ||
+    '<div class="empty-msg" style="padding:30px 0">Sin pilotos en esta categoría</div>';
+}
+
+// ── Render: Pilot ─────────────────────────────────────────────────────────
+function renderPilot() {
+  if (!_data || _currentPilotIdx === null) return;
+  const p = _data.pilots[_currentPilotIdx];
+  if (!p) return;
+
+  const cat = p.cat;
+  const cc = CAT_COLORS[cat]||'#555';
+  const ct = CAT_TEXT[cat]||'#fff';
+  const numZones = _data.cfg?.numZones || 7;
+
+  document.getElementById('topbarTitle').textContent = fmtName(p.name);
+  document.getElementById('topbarSub').textContent = cat + ' · Nº ' + (p.dorsal||'—');
+
+  const statusStr = p.dsq ? '⛔ DSQ' : p.dnf ? '🚩 DNF' : p.finishTime ? '✓ Finalizado' : '⏱ En carrera';
+
+  const statsHtml = `
+    <div class="stat-row">
+      <div class="stat-box highlight">
+        <div class="val">${p.totalPoints!=null?p.totalPoints:'—'}</div>
+        <div class="lbl">Total pts</div>
+      </div>
+      <div class="stat-box">
+        <div class="val" style="color:var(--green)">${p.n0s||0}</div>
+        <div class="lbl">Ceros</div>
+      </div>
+      <div class="stat-box">
+        <div class="val" style="color:var(--accent)">${p.n5s||0}</div>
+        <div class="lbl">Cincos</div>
+      </div>
+      <div class="stat-box">
+        <div class="val">${p.lapsCompleted||0}</div>
+        <div class="lbl">Vueltas</div>
+      </div>
+      <div class="stat-box">
+        <div class="val" style="font-size:13px;color:var(--subtle)">${p.totalTime||'—'}</div>
+        <div class="lbl">Crono</div>
+      </div>
+    </div>`;
+
+  const scores = p.scores || [[], [], []];
+  const lapLabels = ['1ª Vuelta', '2ª Vuelta', '3ª Vuelta'];
+  const lapPts = [p.lap1Points, p.lap2Points, p.lap3Points];
+  const lapTimes = [p.lap1Time, p.lap2Time, p.lap3Time];
+
+  let zoneHeaders = '<th>Vuelta</th>';
+  for (let z=1; z<=numZones; z++) zoneHeaders += `<th>Z${z}</th>`;
+  zoneHeaders += '<th>Σ</th>';
+
+  let scoreRows = '';
+  for (let lap=0; lap<3; lap++) {
+    const zones = scores[lap] || [];
+    const hasData = zones.length > 0;
+    const rowClass = !hasData ? ' class="empty-lap"' : '';
+    const ltStr = lapTimes[lap] || '';
+    const ptStr = hasData ? (lapPts[lap]!=null ? lapPts[lap] : '—') : '—';
+
+    let cells = `<td>${lapLabels[lap]}${ltStr?'<br><span style="font-size:9px;color:var(--muted)">'+ltStr+'</span>':''}</td>`;
+    for (let z=0; z<numZones; z++) {
+      const sc = zones[z];
+      const scClass = sc===0?' class="score-0"':sc===5?' class="score-5"':'';
+      cells += `<td${scClass}>${hasData?(sc!=null?sc:'—'):'·'}</td>`;
+    }
+    cells += `<td class="score-sum">${ptStr}</td>`;
+    scoreRows += `<tr${rowClass}>${cells}</tr>`;
+  }
+
+  let totalCells = '<td>TOTAL</td>';
+  for (let z=0; z<numZones; z++) {
+    let zTotal = 0;
+    for (let lap=0; lap<3; lap++) zTotal += (scores[lap]||[])[z] || 0;
+    totalCells += `<td>${zTotal||''}</td>`;
+  }
+  totalCells += `<td>${p.totalPoints!=null?p.totalPoints:'—'}</td>`;
+  scoreRows += `<tr class="total-row">${totalCells}</tr>`;
+
+  document.getElementById('pilotContent').innerHTML = `
+    <div class="pilot-detail-header">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px">
+        <div>
+          <div class="pilot-detail-dorsal">Nº ${p.dorsal||'—'}</div>
+          <div class="pilot-detail-name">${escHtml(fmtName(p.name))}</div>
+        </div>
+        <div style="background:${cc};color:${ct};padding:4px 10px;border-radius:6px;
+          font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:800;
+          letter-spacing:1px;flex-shrink:0">${cat}</div>
+      </div>
+      <div class="pilot-detail-meta">
+        ${p.club?`<span class="meta-chip">🏠 ${escHtml(p.club)}</span>`:''}
+        ${p.brand?`<span class="meta-chip">🏍 ${escHtml(p.brand)}</span>`:''}
+        <span class="meta-chip" style="color:${p.dsq?'var(--accent)':p.dnf?'var(--accent)':p.totalTime?'var(--green)':'var(--subtle)'}">${statusStr}</span>
+      </div>
+    </div>
+    ${statsHtml}
+    <div class="scores-label">Puntuación por zona</div>
+    <div style="overflow-x:auto">
+      <table class="scores-table">
+        <thead><tr>${zoneHeaders}</tr></thead>
+        <tbody>${scoreRows}</tbody>
+      </table>
+    </div>
+    ${p.dsq&&p.dsqReason?`<div style="margin-top:12px;padding:10px 14px;background:rgba(232,41,42,.08);border:1px solid rgba(232,41,42,.2);border-radius:8px;font-size:12px;color:var(--subtle)">⛔ DSQ: ${escHtml(p.dsqReason)}</div>`:''}
+  `;
+}
+
+// ── Helpers ───────────────────────────────────────────────────────────────
+function escHtml(s) {
+  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function fmtName(n) {
+  if (!n) return '—';
+  const parts = n.split(',');
+  if (parts.length === 2) return (parts[1].trim() + ' ' + parts[0].trim());
+  return n;
+}
+
+// ── Init ─────────────────────────────────────────────────────────────────
+fetchData().then(() => {
+  // Tras cargar datos, enrutar según el hash actual (permite deep links)
+  routeFromHash();
+});
+startRefresh();
+</script>
+</body>
+</html>
