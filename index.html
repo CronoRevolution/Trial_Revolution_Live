@@ -3,335 +3,654 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<meta name="theme-color" content="#1a1f35">
-<title>Trial Revolution — Clasificación en Directo</title>
+<meta name="theme-color" id="themeColor" content="#1a1f35">
+<title>Trial Revolution — Clasificación</title>
 <style>
+/* ─── VARIABLES ─────────────────────────────────────────── */
 :root {
-  --bg:#f0f2f5; --surface:#fff; --surface2:#e8ecf2; --border:#d1d9e6;
-  --text:#0a0f1e; --muted:#4a5568; --header-bg:#1a1f35; --header-text:#fff;
-  --accent:#c47c00; --success:#15803d; --danger:#b91c1c;
-  --tr1:#b91c1c; --tr2:#1d4ed8; --tr3:#15803d; --tr4:#a16207; --tr5:#c2410c; --tr5a:#374151;
-  --gold:#92400e; --shadow:rgba(0,0,0,.1);
-  --badge-bg:#f1f5f9; --badge-border:#cbd5e1;
+  --bg:#f0f2f5;--surface:#fff;--surface2:#e8ecf2;--border:#d1d9e6;
+  --text:#0a0f1e;--muted:#64748b;--hbg:#1a1f35;
+  --accent:#c47c00;--accentL:#f59e0b;
+  --ok:#15803d;--danger:#b91c1c;--warn:#a16207;
+  --tr1:#b91c1c;--tr2:#1d4ed8;--tr3:#15803d;--tr4:#a16207;--tr5:#c2410c;--tr5a:#374151;
+  --sh:rgba(0,0,0,.08);
+  --sc0:#15803d;--sc1:#1d4ed8;--sc2:#a16207;--sc3:#b91c1c;--sc5:#7e22ce;
 }
-[data-theme="dark"] {
-  --bg:#0a0c14; --surface:#111828; --surface2:#1a2236; --border:#252d42;
-  --text:#e2e8f0; --muted:#64748b; --header-bg:#080b14; --header-text:#f1f5f9;
-  --accent:#f59e0b; --success:#22c55e; --danger:#ef4444;
-  --shadow:rgba(0,0,0,.4);
-  --badge-bg:#1e2a3a; --badge-border:#2d3f56;
+[data-theme=dark]{
+  --bg:#080b12;--surface:#111826;--surface2:#1a2236;--border:#232d42;
+  --text:#e2e8f0;--muted:#64748b;--hbg:#060810;
+  --accent:#f59e0b;--accentL:#fbbf24;
+  --ok:#22c55e;--danger:#ef4444;
+  --sh:rgba(0,0,0,.4);
 }
 
-*{box-sizing:border-box;margin:0;padding:0;}
-html,body{min-height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);transition:background .25s,color .25s;}
+/* ─── RESET & BASE ──────────────────────────────────────── */
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  background:var(--bg);color:var(--text);transition:background .2s,color .2s;}
 
-/* ── HEADER ── */
-header{background:var(--header-bg);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;top:0;z-index:50;box-shadow:0 2px 12px var(--shadow);}
-.h-logo{font-weight:900;font-size:18px;letter-spacing:1px;color:#f59e0b;line-height:1;}
-.h-logo small{display:block;font-size:10px;font-weight:400;color:#94a3b8;letter-spacing:2px;text-transform:uppercase;margin-top:2px;}
-.h-right{display:flex;align-items:center;gap:10px;}
-.live-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(185,28,28,.2);border:1px solid rgba(185,28,28,.5);border-radius:20px;padding:4px 10px;font-size:10px;font-weight:700;letter-spacing:1.5px;color:#fca5a5;text-transform:uppercase;}
-.live-dot{width:7px;height:7px;border-radius:50%;background:#ef4444;animation:blink 1s step-end infinite;}
-.waiting-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(100,116,139,.15);border:1px solid rgba(100,116,139,.3);border-radius:20px;padding:4px 10px;font-size:10px;font-weight:700;letter-spacing:1.5px;color:#94a3b8;text-transform:uppercase;}
+/* ─── HEADER ────────────────────────────────────────────── */
+.hdr{background:var(--hbg);padding:10px 14px;display:flex;align-items:center;
+  gap:10px;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px var(--sh);}
+.hdr-back{background:rgba(255,255,255,.1);border:none;border-radius:8px;
+  padding:6px 10px;color:#e2e8f0;font-size:16px;cursor:pointer;display:none;}
+.hdr-title{flex:1;font-weight:800;font-size:16px;color:#f59e0b;line-height:1.2;}
+.hdr-title small{display:block;font-size:9px;font-weight:400;color:#94a3b8;
+  letter-spacing:2px;text-transform:uppercase;margin-top:2px;}
+.hdr-right{display:flex;align-items:center;gap:8px;flex-shrink:0;}
+.ibtn{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);
+  border-radius:8px;padding:5px 9px;color:#e2e8f0;font-size:14px;cursor:pointer;}
+.badge-live{display:inline-flex;align-items:center;gap:5px;
+  background:rgba(185,28,28,.2);border:1px solid rgba(185,28,28,.5);
+  border-radius:20px;padding:3px 9px;font-size:9px;font-weight:800;
+  letter-spacing:1.5px;color:#fca5a5;text-transform:uppercase;}
+.badge-pre{display:inline-flex;align-items:center;gap:5px;
+  background:rgba(100,116,139,.15);border:1px solid rgba(100,116,139,.3);
+  border-radius:20px;padding:3px 9px;font-size:9px;font-weight:700;
+  letter-spacing:1.5px;color:#94a3b8;text-transform:uppercase;}
+.ldot{width:6px;height:6px;border-radius:50%;background:#ef4444;
+  animation:blink 1s step-end infinite;}
 @keyframes blink{50%{opacity:0;}}
-.clock{font-family:'SF Mono',Menlo,'Courier New',monospace;font-size:16px;font-weight:700;color:#f59e0b;letter-spacing:1px;}
-.btn-icon{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:6px 10px;color:#e2e8f0;font-size:15px;cursor:pointer;transition:background .15s;}
-.btn-icon:hover{background:rgba(255,255,255,.16);}
+.clk{font-family:monospace;font-size:14px;font-weight:700;color:#f59e0b;}
 
-/* ── TICKER ── */
-.ticker{background:var(--header-bg);border-bottom:2px solid var(--accent);height:26px;display:flex;align-items:center;overflow:hidden;font-size:11px;font-weight:700;letter-spacing:.5px;}
-.ticker-label{background:var(--accent);color:#000;padding:0 12px;height:100%;display:flex;align-items:center;font-size:12px;font-weight:800;letter-spacing:2px;flex-shrink:0;}
-.ticker-inner{white-space:nowrap;animation:scroll 45s linear infinite;padding-left:24px;color:#94a3b8;}
-@keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+/* ─── TICKER ────────────────────────────────────────────── */
+.ticker{background:var(--hbg);border-bottom:2px solid var(--accent);height:24px;
+  display:none;align-items:center;overflow:hidden;}
+.ticker-lbl{background:var(--accent);color:#000;padding:0 10px;height:100%;
+  display:flex;align-items:center;font-size:10px;font-weight:800;
+  letter-spacing:2px;flex-shrink:0;}
+.ticker-txt{white-space:nowrap;animation:tick 50s linear infinite;
+  padding-left:20px;font-size:10px;color:#94a3b8;font-weight:700;}
+@keyframes tick{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
-/* ── LAST UPDATE ── */
-.last-update{font-size:10px;color:var(--muted);text-align:center;padding:4px 0;letter-spacing:.5px;}
+/* ─── VIEWS ─────────────────────────────────────────────── */
+.view{display:none;} .view.active{display:block;}
 
-/* ── CATEGORY SECTIONS ── */
-.cats{padding:8px 12px 24px;display:flex;flex-direction:column;gap:12px;}
-.cat-card{background:var(--surface);border-radius:12px;overflow:hidden;box-shadow:0 2px 8px var(--shadow);}
-.cat-header{display:flex;align-items:center;justify-content:space-between;padding:8px 14px;border-left:5px solid transparent;}
-.cat-name{font-weight:900;font-size:16px;letter-spacing:2px;}
-.cat-meta{font-size:11px;color:var(--muted);text-align:right;line-height:1.4;}
-.cat-leader{font-weight:700;font-size:12px;color:var(--text);}
+/* ─── WAITING ────────────────────────────────────────────── */
+#vWait{display:flex;flex-direction:column;align-items:center;
+  justify-content:center;min-height:70vh;gap:16px;padding:40px 20px;text-align:center;}
+.w-logo{font-weight:900;font-size:52px;letter-spacing:5px;color:#f59e0b;line-height:1;}
+.w-sub{font-size:12px;color:var(--muted);letter-spacing:3px;text-transform:uppercase;}
+.dots{display:flex;gap:8px;margin-top:6px;}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--muted);
+  animation:dp 1.2s ease-in-out infinite;}
+.dot:nth-child(2){animation-delay:.2s;}.dot:nth-child(3){animation-delay:.4s;}
+@keyframes dp{0%,80%,100%{opacity:.3;}40%{opacity:1;}}
 
-/* ── TABLE ── */
-table{width:100%;border-collapse:collapse;font-size:13px;}
-thead tr{background:var(--surface2);border-bottom:2px solid var(--border);}
-th{padding:6px 8px;font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:center;}
-th.left{text-align:left;}
-td{padding:8px 8px;border-bottom:1px solid var(--border);vertical-align:middle;}
-td.left{text-align:left;}
-tbody tr:last-child td{border-bottom:none;}
-tbody tr:hover{background:var(--surface2);}
+/* ─── HOME VIEW ──────────────────────────────────────────── */
+.home-hero{background:var(--hbg);padding:24px 16px 20px;text-align:center;}
+.home-race{font-size:22px;font-weight:900;color:#f59e0b;letter-spacing:1px;line-height:1.2;}
+.home-sub{font-size:11px;color:#94a3b8;margin-top:4px;letter-spacing:1px;}
+.home-date{font-size:13px;color:#cbd5e1;margin-top:8px;font-weight:600;}
+.home-stats{display:flex;justify-content:center;gap:20px;margin-top:14px;}
+.home-stat{text-align:center;}
+.home-stat .v{font-size:28px;font-weight:900;color:#f59e0b;}
+.home-stat .l{font-size:9px;color:#94a3b8;text-transform:uppercase;letter-spacing:1.5px;}
 
-/* ── ROW ELEMENTS ── */
-.pos{font-weight:900;font-size:15px;text-align:center;}
-.pos-1{color:#92400e;} .pos-2{color:#4b5563;} .pos-3{color:#7c2d12;}
-.p-name{font-weight:700;font-size:14px;color:var(--text);}
-.p-sub{font-size:10px;color:var(--muted);margin-top:1px;}
-.sv{font-family:'SF Mono',Menlo,'Courier New',monospace;font-size:14px;font-weight:800;text-align:center;display:block;}
-.sv-0{color:#15803d;} .sv-1{color:#1d4ed8;} .sv-2{color:#a16207;} .sv-3{color:#b91c1c;} .sv-5{color:#7e22ce;} .sv-pen{color:#b91c1c;}
-.total{font-family:'SF Mono',Menlo,'Courier New',monospace;font-size:16px;font-weight:900;color:var(--text);text-align:center;display:block;}
+.cat-grid{padding:12px;display:flex;flex-direction:column;gap:10px;}
+.cat-tile{background:var(--surface);border-radius:14px;box-shadow:0 2px 8px var(--sh);
+  display:flex;align-items:center;gap:0;overflow:hidden;cursor:pointer;
+  transition:transform .1s,box-shadow .1s;border:2px solid transparent;}
+.cat-tile:active{transform:scale(.98);}
+.cat-tile-bar{width:6px;align-self:stretch;flex-shrink:0;}
+.cat-tile-body{flex:1;padding:14px 14px;}
+.cat-tile-name{font-size:22px;font-weight:900;letter-spacing:3px;line-height:1;}
+.cat-tile-meta{font-size:12px;color:var(--muted);margin-top:3px;}
+.cat-tile-leader{font-size:13px;font-weight:700;color:var(--text);margin-top:2px;}
+.cat-tile-right{padding:0 16px;text-align:center;flex-shrink:0;}
+.cat-tile-count{font-size:32px;font-weight:900;line-height:1;}
+.cat-tile-clbl{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;}
+.cat-tile-arrow{font-size:18px;color:var(--muted);padding-right:14px;flex-shrink:0;}
 
-.badge{display:inline-block;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:800;letter-spacing:.5px;border:1.5px solid;white-space:nowrap;}
-.b-v1{background:var(--badge-bg);color:#1d4ed8;border-color:#93c5fd;}
-.b-v2{background:var(--badge-bg);color:#a16207;border-color:#fcd34d;}
-.b-v3{background:var(--badge-bg);color:#7e22ce;border-color:#d8b4fe;}
-.b-fin{background:#dcfce7;color:#15803d;border-color:#86efac;}
-.b-dnf{background:#fee2e2;color:#b91c1c;border-color:#fca5a5;}
-.b-dq{background:#ffedd5;color:#c2410c;border-color:#fdba74;}
+.upd-bar{text-align:center;font-size:10px;color:var(--muted);
+  padding:6px 0 2px;letter-spacing:.5px;}
 
-/* ── WAITING SCREEN ── */
-#waiting{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;gap:16px;text-align:center;padding:40px 20px;}
-.w-logo{font-weight:900;font-size:52px;letter-spacing:4px;color:#f59e0b;line-height:1;}
-.w-sub{font-size:13px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;}
-.w-dot-row{display:flex;gap:8px;margin-top:4px;}
-.w-dot{width:8px;height:8px;border-radius:50%;background:var(--muted);animation:dotpulse 1.2s ease-in-out infinite;}
-.w-dot:nth-child(2){animation-delay:.2s;} .w-dot:nth-child(3){animation-delay:.4s;}
-@keyframes dotpulse{0%,80%,100%{opacity:.3;}40%{opacity:1;}}
+/* ─── CAT VIEW ───────────────────────────────────────────── */
+.cat-header-strip{padding:12px 14px 10px;border-bottom:3px solid transparent;}
+.cat-header-name{font-size:28px;font-weight:900;letter-spacing:4px;}
+.cat-header-meta{font-size:12px;color:var(--muted);margin-top:2px;}
 
-/* ── CATEGORY COLORS ── */
-.hdr-TR1{border-color:var(--tr1)!important;} .hdr-TR2{border-color:var(--tr2)!important;}
-.hdr-TR3{border-color:var(--tr3)!important;} .hdr-TR4{border-color:var(--tr4)!important;}
-.hdr-TR5{border-color:var(--tr5)!important;} .hdr-TR5A{border-color:var(--tr5a)!important;}
-.txt-TR1{color:var(--tr1);} .txt-TR2{color:var(--tr2);} .txt-TR3{color:var(--tr3);}
-.txt-TR4{color:var(--tr4);} .txt-TR5{color:var(--tr5);} .txt-TR5A{color:var(--tr5a);}
+.pilot-list{display:flex;flex-direction:column;gap:0;}
+.pilot-row{background:var(--surface);border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:10px;padding:10px 14px;cursor:pointer;
+  transition:background .1s;}
+.pilot-row:active{background:var(--surface2);}
+.pilot-row:last-child{border-bottom:none;}
+.pr-pos{font-size:20px;font-weight:900;width:32px;text-align:center;flex-shrink:0;}
+.pr-dorsal{font-size:18px;font-weight:900;width:32px;text-align:center;
+  flex-shrink:0;color:var(--accent);}
+.pr-info{flex:1;min-width:0;}
+.pr-name{font-size:14px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.pr-sub{font-size:11px;color:var(--muted);margin-top:1px;}
+.pr-right{text-align:right;flex-shrink:0;}
+.pr-pts{font-size:18px;font-weight:900;font-family:monospace;}
+.pr-lbl{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;}
+.pr-badge{display:inline-block;padding:2px 8px;border-radius:5px;
+  font-size:10px;font-weight:800;letter-spacing:.5px;border:1.5px solid;}
+.b-v1{background:rgba(29,78,216,.1);color:#1d4ed8;border-color:#93c5fd;}
+.b-v2{background:rgba(161,98,7,.1);color:#a16207;border-color:#fcd34d;}
+.b-v3{background:rgba(126,34,206,.1);color:#7e22ce;border-color:#d8b4fe;}
+.b-fin{background:rgba(21,128,61,.1);color:#15803d;border-color:#86efac;}
+.b-r{background:rgba(185,28,28,.1);color:#b91c1c;border-color:#fca5a5;}
+.b-dq{background:rgba(194,65,12,.1);color:#c2410c;border-color:#fdba74;}
 
-/* ── STATS BAR ── */
-.stats-bar{display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:1px;background:var(--border);margin:0 12px 12px;border-radius:10px;overflow:hidden;}
-.stat-item{background:var(--surface);padding:8px 4px;text-align:center;}
-.stat-val{font-family:'SF Mono',Menlo,monospace;font-size:22px;font-weight:900;}
-.stat-lbl{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-top:1px;}
+/* ─── PILOT DETAIL VIEW ──────────────────────────────────── */
+.pd-hero{background:var(--hbg);padding:14px 16px;}
+.pd-name{font-size:18px;font-weight:900;color:#f1f5f9;line-height:1.2;}
+.pd-meta{font-size:11px;color:#94a3b8;margin-top:3px;}
+.pd-total-row{display:flex;gap:10px;margin-top:12px;}
+.pd-chip{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);
+  border-radius:10px;padding:8px 14px;text-align:center;flex:1;}
+.pd-chip .v{font-size:22px;font-weight:900;font-family:monospace;color:#f59e0b;}
+.pd-chip .l{font-size:9px;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;margin-top:2px;}
 
-/* ── FOOTER ── */
-footer{text-align:center;padding:20px 16px;font-size:10px;color:var(--muted);letter-spacing:1px;border-top:1px solid var(--border);margin-top:8px;}
+.pd-section{padding:12px 14px 0;}
+.pd-section-title{font-size:11px;font-weight:800;letter-spacing:2px;
+  text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
 
-@media(max-width:480px){
-  th,td{padding:6px 4px;}
-  .p-name{font-size:13px;}
-  .sv{font-size:13px;}
-  .total{font-size:15px;}
-}
+.lap-card{background:var(--surface);border-radius:12px;
+  box-shadow:0 1px 6px var(--sh);margin-bottom:10px;overflow:hidden;}
+.lap-head{display:flex;align-items:center;justify-content:space-between;
+  padding:8px 14px;background:var(--surface2);border-bottom:1px solid var(--border);}
+.lap-title{font-weight:800;font-size:13px;letter-spacing:1px;}
+.lap-pts{font-family:monospace;font-size:16px;font-weight:900;color:var(--accent);}
+
+.zones-grid{display:grid;grid-template-columns:repeat(7,1fr);
+  gap:6px;padding:10px 12px;}
+.zone-cell{text-align:center;}
+.zone-lbl{font-size:9px;color:var(--muted);margin-bottom:3px;
+  text-transform:uppercase;letter-spacing:.5px;}
+.zone-val{font-size:18px;font-weight:900;font-family:monospace;
+  width:36px;height:36px;border-radius:8px;display:inline-flex;
+  align-items:center;justify-content:center;border:1.5px solid;}
+.z0{color:var(--sc0);background:rgba(21,128,61,.1);border-color:rgba(21,128,61,.3);}
+.z1{color:var(--sc1);background:rgba(29,78,216,.1);border-color:rgba(29,78,216,.3);}
+.z2{color:var(--sc2);background:rgba(161,98,7,.1);border-color:rgba(161,98,7,.3);}
+.z3{color:var(--sc3);background:rgba(185,28,28,.1);border-color:rgba(185,28,28,.3);}
+.z5{color:var(--sc5);background:rgba(126,34,206,.1);border-color:rgba(126,34,206,.3);}
+.zn{color:var(--muted);background:var(--surface2);border-color:var(--border);}
+
+.lap-times{display:grid;grid-template-columns:1fr 1fr;
+  gap:6px;padding:0 12px 10px;}
+.time-chip{background:var(--surface2);border-radius:8px;padding:8px 10px;}
+.time-chip .tl{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;}
+.time-chip .tv{font-size:14px;font-weight:800;font-family:monospace;margin-top:2px;}
+.time-chip .tv.ok{color:var(--ok);}
+.time-chip .tv.warn{color:var(--danger);}
+
+.pen-list{padding:0 12px 10px;display:flex;flex-direction:column;gap:6px;}
+.pen-item{background:rgba(185,28,28,.08);border:1px solid rgba(185,28,28,.2);
+  border-radius:8px;padding:8px 12px;display:flex;align-items:center;gap:10px;}
+.pen-pts{font-size:16px;font-weight:900;font-family:monospace;color:var(--danger);flex-shrink:0;}
+.pen-reason{font-size:12px;color:var(--text);flex:1;}
+.pen-time{font-size:10px;color:var(--muted);}
+
+.score-bar{display:flex;gap:6px;flex-wrap:wrap;padding:0 12px 12px;}
+.sc-chip{display:flex;align-items:center;gap:5px;padding:4px 10px;
+  border-radius:8px;font-size:12px;font-weight:800;font-family:monospace;}
+
+/* ─── UTILS ──────────────────────────────────────────────── */
+footer{text-align:center;padding:20px 16px;font-size:10px;
+  color:var(--muted);letter-spacing:.5px;border-top:1px solid var(--border);margin-top:8px;}
 </style>
 </head>
 <body>
 
-<header>
-  <div class="h-logo">Trial Revolution <small>Campeonato de Trial · CyL 2026</small></div>
-  <div class="h-right">
-    <span id="statusBadge" class="waiting-badge">En espera</span>
-    <div class="clock" id="clock">--:--:--</div>
-    <button class="btn-icon" id="themeBtn" title="Cambiar tema" onclick="toggleTheme()">🌙</button>
+<!-- HEADER -->
+<header class="hdr" id="hdr">
+  <button class="hdr-back ibtn" id="btnBack" onclick="goBack()">← Atrás</button>
+  <div class="hdr-title" id="hdrTitle">Trial Revolution <small>Clasificación en directo</small></div>
+  <div class="hdr-right">
+    <span class="badge-pre" id="statusBadge">En espera</span>
+    <div class="clk" id="clk">--:--:--</div>
+    <button class="ibtn" onclick="toggleTheme()" id="themeBtn" title="Cambiar tema">🌙</button>
   </div>
 </header>
 
-<div class="ticker" id="tickerBar" style="display:none">
-  <div class="ticker-label">EN DIRECTO</div>
-  <div class="ticker-inner" id="tickerText"></div>
+<!-- TICKER -->
+<div class="ticker" id="ticker">
+  <div class="ticker-lbl">LIVE</div>
+  <div class="ticker-txt" id="tickerTxt"></div>
 </div>
 
-<div class="last-update" id="lastUpdate"></div>
-
-<div id="waiting">
+<!-- WAITING -->
+<div id="vWait">
   <div class="w-logo">Trial<br>Revolution</div>
   <div class="w-sub">Clasificación en directo</div>
-  <div class="w-dot-row"><div class="w-dot"></div><div class="w-dot"></div><div class="w-dot"></div></div>
-  <div style="font-size:12px;color:var(--muted);margin-top:8px">Actualizando cada 30 segundos…</div>
+  <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  <div style="font-size:11px;color:var(--muted);margin-top:4px">Actualizando cada 30 s…</div>
 </div>
 
-<div id="statsBar" class="stats-bar" style="display:none"></div>
-<div id="cats" class="cats" style="display:none"></div>
+<!-- VIEW: HOME -->
+<div class="view" id="vHome">
+  <div class="home-hero">
+    <div class="home-race" id="homeRace">Trial Revolution</div>
+    <div class="home-sub">Campeonato de Trial de Castilla y León 2026</div>
+    <div class="home-date" id="homeDate"></div>
+    <div class="home-stats">
+      <div class="home-stat"><div class="v" id="homeTotalPilots">—</div><div class="l">Pilotos</div></div>
+      <div class="home-stat"><div class="v" id="homeTotalCats">—</div><div class="l">Categorías</div></div>
+      <div class="home-stat"><div class="v" id="homeFinished">—</div><div class="l">Finalizados</div></div>
+    </div>
+  </div>
+  <div class="upd-bar" id="homeUpd"></div>
+  <div class="cat-grid" id="catGrid"></div>
+  <footer>Trial Revolution · CyL 2026 · Actualización automática cada 30 s</footer>
+</div>
 
-<footer id="footer" style="display:none">
-  Trial Revolution · Campeonato de Trial de Castilla y León 2026 · Generado automáticamente
-</footer>
+<!-- VIEW: CATEGORY -->
+<div class="view" id="vCat">
+  <div class="cat-header-strip" id="catStrip">
+    <div class="cat-header-name" id="catName"></div>
+    <div class="cat-header-meta" id="catMeta"></div>
+  </div>
+  <div class="pilot-list" id="pilotList"></div>
+  <div style="height:20px"></div>
+</div>
+
+<!-- VIEW: PILOT DETAIL -->
+<div class="view" id="vPilot">
+  <div class="pd-hero" id="pdHero">
+    <div class="pd-name" id="pdName"></div>
+    <div class="pd-meta" id="pdMeta"></div>
+    <div class="pd-total-row" id="pdTotals"></div>
+  </div>
+  <div id="pdBody"></div>
+  <div style="height:20px"></div>
+</div>
 
 <script>
-const CAT_ORDER = ['TR1','TR2','TR3','TR4','TR5','TR5A'];
-const DATA_URL  = 'data.json';
-const POLL_MS   = 30000;
+// ── DATA & STATE ──────────────────────────────────────────────
+const CAT_ORDER  = ['TR1','TR2','TR3','TR4','TR5','TR5A'];
+const CAT_COLORS = {TR1:'#b91c1c',TR2:'#1d4ed8',TR3:'#15803d',TR4:'#a16207',TR5:'#c2410c',TR5A:'#374151'};
+const DATA_URL   = 'data.json';
+const POLL_MS    = 30000;
 
-// ── Theme ─────────────────────────────────────────────────────
+let _data    = null;   // full data object
+let _view    = 'wait'; // 'wait' | 'home' | 'cat' | 'pilot'
+let _selCat  = null;
+let _selPilot= null;
+
+// ── THEME ─────────────────────────────────────────────────────
 const _saved = localStorage.getItem('tr_theme');
-const _pref  = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+const _pref  = window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
 let   theme  = _saved || _pref;
 function applyTheme(t) {
   document.documentElement.setAttribute('data-theme', t);
-  document.getElementById('themeBtn').textContent = t === 'dark' ? '☀️' : '🌙';
+  document.getElementById('themeBtn').textContent = t==='dark'?'☀️':'🌙';
+  document.getElementById('themeColor').content = t==='dark'?'#060810':'#1a1f35';
   localStorage.setItem('tr_theme', t);
 }
-function toggleTheme() { theme = theme === 'dark' ? 'light' : 'dark'; applyTheme(theme); }
+function toggleTheme() { theme = theme==='dark'?'light':'dark'; applyTheme(theme); }
 applyTheme(theme);
 
-// ── Clock ─────────────────────────────────────────────────────
-function pad(n){ return n.toString().padStart(2,'0'); }
-setInterval(() => {
-  const n = new Date();
-  document.getElementById('clock').textContent = pad(n.getHours())+':'+pad(n.getMinutes())+':'+pad(n.getSeconds());
-}, 500);
+// ── CLOCK ─────────────────────────────────────────────────────
+function pad(n){return n.toString().padStart(2,'0');}
+setInterval(()=>{
+  const n=new Date();
+  document.getElementById('clk').textContent=pad(n.getHours())+':'+pad(n.getMinutes())+':'+pad(n.getSeconds());
+},500);
 
-// ── Helpers ───────────────────────────────────────────────────
-const CAT_COLORS = {TR1:'#b91c1c',TR2:'#1d4ed8',TR3:'#15803d',TR4:'#a16207',TR5:'#c2410c',TR5A:'#374151'};
-
+// ── HELPERS ───────────────────────────────────────────────────
 function shortName(name) {
-  const p = name.split(',');
-  return p.length < 2 ? name : p[1].trim().split(' ')[0] + ' ' + p[0].trim();
+  const p=name.split(',');
+  return p.length<2?name:p[1].trim().split(' ')[0]+' '+p[0].trim();
 }
-function lapBadge(p) {
-  if (p.dsq || p.dnf === 'DQ') return '<span class="badge b-dq">DQ</span>';
-  if (p.dnf)   return '<span class="badge b-dnf">R</span>';
-  if (p.finishTime !== null) return '<span class="badge b-fin">✓ FIN</span>';
-  const hasV3  = p.scores[2] && p.scores[2].some(v=>v!==null);
-  const lap1   = p.lap1Time !== null;
-  const hasV2  = p.scores[1] && p.scores[1].some(v=>v!==null);
-  if (hasV3 || (lap1 && hasV2)) return '<span class="badge b-v3">V3</span>';
-  if (lap1 || (p.scores[0] && p.scores[0].some(v=>v!==null))) return '<span class="badge b-v2">V2</span>';
-  return '<span class="badge b-v1">V1</span>';
+function cnt(p,val){let n=0;for(let l=0;l<3;l++)for(let z=0;z<7;z++)if(p.scores[l]&&p.scores[l][z]===val)n++;return n;}
+function lapPts(p,l){
+  const s=p.scores[l];if(!s||s.every(v=>v===null))return null;
+  return s.reduce((a,v)=>a+(v===null?0:v),0);
 }
-function cnt(p, val) {
-  let n=0;
-  for(let l=0;l<3;l++) for(let z=0;z<7;z++) if(p.scores[l]&&p.scores[l][z]===val) n++;
-  return n;
-}
-function getTotal(p) {
+function getTotal(p){
   let t=0,any=false;
-  for(let l=0;l<3;l++){
-    const s=p.scores[l]; if(!s) continue;
-    const lp=s.every(v=>v===null)?null:s.reduce((a,v)=>a+(v===null?0:v),0);
-    if(lp!==null){t+=lp;any=true;}
-  }
-  if(!any) return null;
+  for(let l=0;l<3;l++){const lp=lapPts(p,l);if(lp!==null){t+=lp;any=true;}}
+  if(!any)return null;
   const extra=(p.extraPenalties||[]).reduce((s,ep)=>s+(ep.pts||0),0);
   return t+(p.lap1Penalty||0)+(p.finishPenalty||0)+extra;
 }
-function sortPilots(arr) {
+function fmtMs(ms){
+  if(ms===null||ms===undefined)return '—';
+  const s=Math.floor(ms/1000);
+  const h=Math.floor(s/3600),m=Math.floor((s%3600)/60),ss=s%60;
+  return h>0?pad(h)+':'+pad(m)+':'+pad(ss):pad(m)+':'+pad(ss);
+}
+function msToHHMM(ms,startHHMM){
+  // ms elapsed from race start; startHHMM = "HH:MM"
+  if(ms===null||!startHHMM)return null;
+  const[sh,sm]=startHHMM.split(':').map(Number);
+  const startMs=(sh*3600+sm*60)*1000;
+  const totalMs=startMs+ms;
+  const h=Math.floor(totalMs/3600000)%24;
+  const mi=Math.floor((totalMs%3600000)/60000);
+  const sc=Math.floor((totalMs%60000)/1000);
+  return pad(h)+':'+pad(mi)+':'+pad(sc);
+}
+function addMins(hhmm,mins){
+  if(!hhmm)return null;
+  const[h,m]=hhmm.split(':').map(Number);
+  const t=h*60+m+mins;
+  return pad(Math.floor(t/60)%24)+':'+pad(t%60);
+}
+function lapBadge(p){
+  if(p.dsq)return '<span class="pr-badge b-dq">DQ</span>';
+  if(p.dnf)return '<span class="pr-badge b-r">R</span>';
+  if(p.finishTime!==null)return '<span class="pr-badge b-fin">✓ FIN</span>';
+  const l=lapPts(p,2),l2=lapPts(p,1),l1=lapPts(p,0);
+  if(l!==null)return '<span class="pr-badge b-v3">V3</span>';
+  if(l2!==null||p.lap1Time!==null)return '<span class="pr-badge b-v2">V2</span>';
+  return '<span class="pr-badge b-v1">V1</span>';
+}
+function zoneClass(v){
+  if(v===null||v===undefined)return 'zn';
+  if(v===0)return 'z0';if(v===1)return 'z1';if(v===2)return 'z2';
+  if(v===3)return 'z3';if(v===5)return 'z5';return 'zn';
+}
+function sortPilots(arr){
   return arr.slice().sort((a,b)=>{
-    if((a.dnf||a.dsq)&&!(b.dnf||b.dsq)) return 1;
-    if(!(a.dnf||a.dsq)&&(b.dnf||b.dsq)) return -1;
-    const pa=getTotal(a)??9999, pb=getTotal(b)??9999;
-    if(pa!==pb) return pa-pb;
-    if(cnt(b,0)!==cnt(a,0)) return cnt(b,0)-cnt(a,0);
+    if((a.dnf||a.dsq)&&!(b.dnf||b.dsq))return 1;
+    if(!(a.dnf||a.dsq)&&(b.dnf||b.dsq))return-1;
+    const pa=getTotal(a)??9999,pb=getTotal(b)??9999;
+    if(pa!==pb)return pa-pb;
+    if(cnt(b,0)!==cnt(a,0))return cnt(b,0)-cnt(a,0);
     return cnt(b,1)-cnt(a,1);
   });
 }
+function posLabel(p,i){
+  if(p.dsq)return'<span style="color:#c2410c;font-size:14px">DQ</span>';
+  if(p.dnf)return'<span style="color:var(--danger);font-size:14px">R</span>';
+  const cl=i===0?'style="color:#92400e"':i===1?'style="color:#6b7280"':i===2?'style="color:#7c2d12"':'';
+  return`<span ${cl}>${i+1}º</span>`;
+}
 
-// ── Render ─────────────────────────────────────────────────────
-function render(data) {
-  const pilots   = data.pilots || [];
-  const numZones = data.cfg?.numZones || 7;
+// ── NAVIGATION ────────────────────────────────────────────────
+function showView(v){
+  document.querySelectorAll('.view').forEach(el=>el.classList.remove('active'));
+  document.getElementById('vWait').style.display='none';
+  ['vHome','vCat','vPilot'].forEach(id=>document.getElementById(id).style.display='');
 
-  // Badge
-  const badge = document.getElementById('statusBadge');
-  if (data.raceStarted) {
-    badge.className = 'live-badge';
-    badge.innerHTML = '<div class="live-dot"></div>En directo';
-  } else {
-    badge.className = 'waiting-badge';
-    badge.textContent = 'Previa';
+  const backBtn=document.getElementById('btnBack');
+  if(v==='home'){
+    document.getElementById('vHome').classList.add('active');
+    backBtn.style.display='none';
+    document.getElementById('hdrTitle').innerHTML='Trial Revolution <small>Clasificación en directo</small>';
+  } else if(v==='cat'){
+    document.getElementById('vCat').classList.add('active');
+    backBtn.style.display='';
+    const col=CAT_COLORS[_selCat]||'#888';
+    document.getElementById('hdrTitle').innerHTML=
+      `<span style="color:${col};font-size:20px;letter-spacing:3px">${_selCat}</span>`;
+  } else if(v==='pilot'){
+    document.getElementById('vPilot').classList.add('active');
+    backBtn.style.display='';
+    document.getElementById('hdrTitle').innerHTML=
+      `<span style="font-size:13px">${shortName(_selPilot.name)}</span>`;
   }
+  _view=v;
+  window.scrollTo(0,0);
+}
+function goBack(){
+  if(_view==='pilot') showView('cat');
+  else showView('home');
+}
 
-  // Last update
-  const now = new Date();
-  document.getElementById('lastUpdate').textContent =
-    'Actualizado: ' + pad(now.getHours())+':'+pad(now.getMinutes())+':'+pad(now.getSeconds());
+// ── RENDER HOME ───────────────────────────────────────────────
+function renderHome(){
+  const d=_data;
+  const pilots=d.pilots||[];
+  document.getElementById('homeRace').textContent=d.raceName||'Trial Revolution';
+  document.getElementById('homeTotalPilots').textContent=pilots.length;
+  const activeCats=CAT_ORDER.filter(c=>pilots.some(p=>p.cat===c));
+  document.getElementById('homeTotalCats').textContent=activeCats.length;
+  const fin=pilots.filter(p=>p.finishTime!==null&&!p.dnf&&!p.dsq).length;
+  document.getElementById('homeFinished').textContent=fin;
 
-  // Stats bar
-  const activeCats = CAT_ORDER.filter(c => pilots.some(p=>p.cat===c));
-  const statsEl = document.getElementById('statsBar');
-  statsEl.style.display = '';
-  const finCount = pilots.filter(p=>p.finishTime!==null&&!p.dnf&&!p.dsq).length;
-  const rCount   = pilots.filter(p=>p.dnf).length;
-  statsEl.innerHTML =
-    activeCats.map(c=>{const n=pilots.filter(p=>p.cat===c).length;return`<div class="stat-item"><div class="stat-val" style="color:${CAT_COLORS[c]}">${n}</div><div class="stat-lbl">${c}</div></div>`;}).join('')
-    + `<div class="stat-item"><div class="stat-val">${pilots.length}</div><div class="stat-lbl">Total</div></div>`
-    + `<div class="stat-item"><div class="stat-val" style="color:var(--success)">${finCount}</div><div class="stat-lbl">Fin.</div></div>`
-    + (rCount?`<div class="stat-item"><div class="stat-val" style="color:var(--danger)">${rCount}</div><div class="stat-lbl">Ret.</div></div>`:'');
+  // Date from data
+  const dateStr = d.raceDate
+    ? new Date(d.raceDate+'T12:00:00').toLocaleDateString('es-ES',{weekday:'long',day:'numeric',month:'long',year:'numeric'})
+    : '';
+  document.getElementById('homeDate').textContent=dateStr;
 
-  // Category panels
-  const catsEl = document.getElementById('cats');
-  catsEl.style.display = '';
-  catsEl.innerHTML = '';
+  // Update time
+  const now=new Date();
+  document.getElementById('homeUpd').textContent=
+    'Actualizado: '+pad(now.getHours())+':'+pad(now.getMinutes())+':'+pad(now.getSeconds());
 
-  activeCats.forEach(cat => {
-    const sorted = sortPilots(pilots.filter(p=>p.cat===cat));
-    const leader = sorted.find(p=>!p.dnf&&!p.dsq);
-    const col    = CAT_COLORS[cat] || '#888';
-
-    const rows = sorted.map((p,i)=>{
-      const pos   = p.dsq ? 'DQ' : p.dnf ? 'R' : (i+1)+'º';
-      const pCls  = p.dsq?'':'pos-'+(i+1<=3?i+1:'n');
-      const tp    = getTotal(p);
-      const timePen  = (p.lap1Penalty||0)+(p.finishPenalty||0);
-      const extraPen = (p.extraPenalties||[]).reduce((s,ep)=>s+(ep.pts||0),0);
-      return `<tr>
-        <td><div class="pos ${pCls}" style="${p.dsq?'color:#c2410c':''}">${pos}</div></td>
-        <td class="left">
-          <div class="p-name">${shortName(p.name)}</div>
-          <div class="p-sub">#${p.dorsal}${p.club?' · '+p.club:''}</div>
-        </td>
-        <td><span class="sv sv-0">${cnt(p,0)}</span></td>
-        <td><span class="sv sv-1">${cnt(p,1)}</span></td>
-        <td><span class="sv sv-3">${cnt(p,3)}</span></td>
-        <td><span class="sv sv-5">${cnt(p,5)}</span></td>
-        <td>${timePen+extraPen>0?`<span class="sv sv-pen">+${timePen+extraPen}</span>`:'<span style="color:var(--muted)">—</span>'}</td>
-        <td>${tp!==null?`<span class="total">${tp}</span>`:'<span style="color:var(--muted)">—</span>'}</td>
-        <td>${lapBadge(p)}</td>
-      </tr>`;
-    }).join('');
-
-    const el = document.createElement('div');
-    el.className = 'cat-card';
-    el.innerHTML = `
-      <div class="cat-header hdr-${cat}" style="border-left-color:${col}">
-        <div class="cat-name txt-${cat}">${cat}</div>
-        <div class="cat-meta">
-          ${leader?`<div class="cat-leader">${shortName(leader.name)}</div><div>Líder: <b>${getTotal(leader)??'—'}</b> pts · ${sorted.length} pilotos</div>`:`${sorted.length} pilotos`}
-        </div>
-      </div>
-      <table>
-        <thead><tr>
-          <th style="width:32px">Pos</th>
-          <th class="left">Piloto</th>
-          <th style="color:var(--success)">0s</th>
-          <th style="color:#1d4ed8">1s</th>
-          <th style="color:var(--danger)">3s</th>
-          <th style="color:#7e22ce">5s</th>
-          <th style="color:var(--danger)">+Pen</th>
-          <th>Total</th>
-          <th>Vuelta</th>
-        </tr></thead>
-        <tbody>${rows}</tbody>
-      </table>`;
-    catsEl.appendChild(el);
-  });
+  // Status badge
+  const sb=document.getElementById('statusBadge');
+  if(d.raceStarted){
+    sb.className='badge-live';
+    sb.innerHTML='<div class="ldot"></div>En directo';
+    document.getElementById('ticker').style.display='flex';
+  } else {
+    sb.className='badge-pre';
+    sb.textContent='Previa';
+    document.getElementById('ticker').style.display='none';
+  }
 
   // Ticker
-  if (data.raceStarted) {
-    document.getElementById('tickerBar').style.display = '';
-    const parts = activeCats.map(cat=>{
-      const best = sortPilots(pilots.filter(p=>p.cat===cat&&!p.dnf&&!p.dsq));
-      if (!best.length) return null;
-      const l  = best[0], tp = getTotal(l);
-      return `${cat}: ${shortName(l.name)} — ${tp!==null?tp+' pts':'—'} · ${lapBadge(l).replace(/<[^>]+>/g,'')}`;
+  if(d.raceStarted){
+    const parts=activeCats.map(cat=>{
+      const sorted=sortPilots(pilots.filter(p=>p.cat===cat));
+      const l=sorted[0];if(!l)return null;
+      const tp=getTotal(l);
+      return cat+': '+shortName(l.name)+' — '+(tp!==null?tp+' pts':'—');
     }).filter(Boolean).join('   ·   ');
-    const t = parts + '   ·   ' + parts + '   ·   ';
-    document.getElementById('tickerText').textContent = t;
+    const t=parts+'   ·   '+parts+'   ·   ';
+    document.getElementById('tickerTxt').textContent=t;
   }
 
-  document.getElementById('waiting').style.display = 'none';
-  document.getElementById('footer').style.display   = '';
+  // Category tiles
+  const grid=document.getElementById('catGrid');
+  grid.innerHTML='';
+  activeCats.forEach(cat=>{
+    const col=CAT_COLORS[cat]||'#888';
+    const catPilots=sortPilots(pilots.filter(p=>p.cat===cat));
+    const leader=catPilots.find(p=>!p.dnf&&!p.dsq);
+    const leaderLine=leader
+      ?`<div class="cat-tile-leader">${shortName(leader.name)} · ${getTotal(leader)??'—'} pts</div>`
+      :'<div class="cat-tile-leader" style="color:var(--muted)">Sin resultados aún</div>';
+    const rCount=catPilots.filter(p=>p.dnf).length;
+    const fCount=catPilots.filter(p=>p.finishTime!==null&&!p.dnf).length;
+    const meta=`${fCount} finalizados · ${rCount} retirados`;
+
+    const tile=document.createElement('div');
+    tile.className='cat-tile';
+    tile.style.borderColor=col+'33';
+    tile.innerHTML=
+      `<div class="cat-tile-bar" style="background:${col}"></div>`+
+      `<div class="cat-tile-body">`+
+        `<div class="cat-tile-name" style="color:${col}">${cat}</div>`+
+        `${leaderLine}`+
+        `<div class="cat-tile-meta">${meta}</div>`+
+      `</div>`+
+      `<div class="cat-tile-right" style="color:${col}">`+
+        `<div class="cat-tile-count">${catPilots.length}</div>`+
+        `<div class="cat-tile-clbl">pilotos</div>`+
+      `</div>`+
+      `<div class="cat-tile-arrow">›</div>`;
+    tile.addEventListener('click',()=>{_selCat=cat;renderCat();showView('cat');});
+    grid.appendChild(tile);
+  });
 }
 
-// ── Fetch ─────────────────────────────────────────────────────
-async function fetchData() {
-  try {
-    const res  = await fetch(DATA_URL + '?t=' + Date.now());
-    if (!res.ok) return;
-    const data = await res.json();
-    if (data && data.pilots) render(data);
-  } catch(e) { /* red not available */ }
+// ── RENDER CATEGORY ───────────────────────────────────────────
+function renderCat(){
+  const pilots=(_data.pilots||[]).filter(p=>p.cat===_selCat);
+  const sorted=sortPilots(pilots);
+  const col=CAT_COLORS[_selCat]||'#888';
+
+  const strip=document.getElementById('catStrip');
+  strip.style.borderBottomColor=col;
+  strip.style.background=`${col}14`;
+  document.getElementById('catName').style.color=col;
+  document.getElementById('catName').textContent=_selCat;
+  document.getElementById('catMeta').textContent=
+    sorted.length+' pilotos · '+sorted.filter(p=>!p.dnf&&!p.dsq).length+' en competición';
+
+  const list=document.getElementById('pilotList');
+  list.innerHTML='';
+  sorted.forEach((p,i)=>{
+    const tp=getTotal(p);
+    const row=document.createElement('div');
+    row.className='pilot-row';
+    row.innerHTML=
+      `<div class="pr-pos">${posLabel(p,i)}</div>`+
+      `<div class="pr-dorsal">${p.dorsal}</div>`+
+      `<div class="pr-info">`+
+        `<div class="pr-name">${shortName(p.name)}</div>`+
+        `<div class="pr-sub">${p.club||'Sin club'}</div>`+
+      `</div>`+
+      `<div class="pr-right">`+
+        `<div class="pr-pts" style="color:${p.dnf||p.dsq?'var(--muted)':col}">${tp!==null?tp:'—'}</div>`+
+        `<div class="pr-lbl">puntos</div>`+
+        `<div style="margin-top:4px">${lapBadge(p)}</div>`+
+      `</div>`;
+    row.addEventListener('click',()=>{_selPilot=p;renderPilot();showView('pilot');});
+    list.appendChild(row);
+  });
 }
+
+// ── RENDER PILOT DETAIL ───────────────────────────────────────
+function renderPilot(){
+  const p=_selPilot;
+  const col=CAT_COLORS[p.cat]||'#888';
+  const cfg=_data.cfg||{};
+  const numZones=cfg.numZones||7;
+  const lap1MaxMins=cfg.lap1MaxMins||150;
+  const raceDurMins=Math.round((cfg.raceDurationHrs||5)*60);
+
+  document.getElementById('pdName').textContent=p.name;
+  document.getElementById('pdMeta').textContent=
+    '#'+p.dorsal+' · '+p.cat+(p.club?' · '+p.club:'')+' · '+( p.brand||'');
+
+  // Total chips
+  const tp=getTotal(p);
+  const timePen=(p.lap1Penalty||0)+(p.finishPenalty||0);
+  const extraPen=(p.extraPenalties||[]).reduce((s,ep)=>s+(ep.pts||0),0);
+  const zonePts=[0,1,2].map(l=>lapPts(p,l)??0).reduce((a,b)=>a+b,0);
+  document.getElementById('pdTotals').innerHTML=
+    `<div class="pd-chip"><div class="v">${tp!==null?tp:'—'}</div><div class="l">Total</div></div>`+
+    `<div class="pd-chip"><div class="v" style="color:#94a3b8">${zonePts}</div><div class="l">Zonas</div></div>`+
+    `<div class="pd-chip"><div class="v" style="color:#ef4444">${timePen+extraPen>0?'+'+( timePen+extraPen):'0'}</div><div class="l">Penal.</div></div>`+
+    (p.finishTime!==null?`<div class="pd-chip"><div class="v" style="font-size:14px">${fmtMs(p.finishTime-(p.startTime||0))}</div><div class="l">Tiempo</div></div>`:'');
+
+  // Score counts
+  const body=document.getElementById('pdBody');
+  const scBar=[[0,'var(--sc0)'],[1,'var(--sc1)'],[2,'var(--sc2)'],[3,'var(--sc3)'],[5,'var(--sc5)']]
+    .map(([v,c])=>`<div class="sc-chip" style="background:${c}22;color:${c};border:1px solid ${c}44">
+      <span style="font-size:14px;font-weight:900">${v}</span>
+      <span>×${cnt(p,v)}</span></div>`).join('');
+
+  // Scheduled times
+  const sched=p.schedStart||null;
+  const ch1Tope=sched?addMins(sched,lap1MaxMins):null;
+  const chfTope=sched?addMins(sched,raceDurMins):null;
+
+  // Lap times display
+  const lapTimes=[
+    {label:'1ª Vuelta',msAt:p.lap1Time,tope:ch1Tope,pen:p.lap1Penalty||0},
+    {label:'2ª Vuelta (inf.)',msAt:p.lap2Time,tope:null,pen:0},
+    {label:'3ª Vuelta / CHF',msAt:p.finishTime,tope:chfTope,pen:p.finishPenalty||0},
+  ];
+
+  const lapsHtml=[0,1,2].map(li=>{
+    const lp=lapPts(p,li);
+    const zones=p.scores[li]||[];
+    const lt=lapTimes[li];
+
+    const zonesHtml=Array.from({length:numZones},(_,z)=>{
+      const v=zones[z];
+      const cls=zoneClass(v);
+      return `<div class="zone-cell">
+        <div class="zone-lbl">Z${z+1}</div>
+        <div class="zone-val ${cls}">${v!==null&&v!==undefined?v:'—'}</div>
+      </div>`;
+    }).join('');
+
+    // Arrival time
+    const arrHHMMSS = lt.msAt!==null ? msToHHMM(lt.msAt, sched) : null;
+    const isLate = lt.pen>0;
+    const timesHtml=`
+      <div class="time-chip">
+        <div class="tl">Salida programada</div>
+        <div class="tv">${sched||'—'}</div>
+      </div>
+      <div class="time-chip">
+        <div class="tl">Llegada real</div>
+        <div class="tv ${isLate?'warn':'ok'}">${arrHHMMSS||'—'}</div>
+      </div>
+      ${lt.tope?`<div class="time-chip">
+        <div class="tl">Hora tope</div>
+        <div class="tv">${lt.tope}</div>
+      </div>`:''}
+      ${lt.pen>0?`<div class="time-chip">
+        <div class="tl">Penalización tiempo</div>
+        <div class="tv warn">+${lt.pen} pts</div>
+      </div>`:''}`;
+
+    return `<div class="lap-card">
+      <div class="lap-head">
+        <div class="lap-title">${lt.label}</div>
+        <div class="lap-pts">${lp!==null?lp+' pts':'—'}</div>
+      </div>
+      <div class="zones-grid">${zonesHtml}</div>
+      <div class="lap-times">${timesHtml}</div>
+    </div>`;
+  }).join('');
+
+  // Extra penalties
+  const extras=p.extraPenalties||[];
+  const extrasHtml=extras.length?
+    `<div class="pd-section">
+      <div class="pd-section-title">Penalizaciones adicionales</div>
+      <div class="pen-list">${extras.map(ep=>
+        `<div class="pen-item">
+          <div class="pen-pts">+${ep.pts}</div>
+          <div class="pen-reason">${ep.reason||'Sin motivo'}</div>
+          <div class="pen-time">${ep.ts||''}</div>
+        </div>`).join('')}
+      </div>
+    </div>`:'';
+
+  // DSQ/DNF notice
+  const statusHtml=p.dsq?
+    `<div style="margin:12px 14px;background:rgba(194,65,12,.1);border:1px solid rgba(194,65,12,.4);border-radius:10px;padding:10px 14px">
+      <div style="font-weight:800;color:#c2410c;font-size:13px;margin-bottom:4px">⛔ DESCALIFICADO</div>
+      <div style="font-size:12px;color:var(--text)">${p.dsqReason||'Sin motivo registrado'}</div>
+    </div>`:
+    p.dnf?`<div style="margin:12px 14px;background:rgba(185,28,28,.08);border:1px solid rgba(185,28,28,.3);border-radius:10px;padding:10px 14px">
+      <div style="font-weight:800;color:var(--danger);font-size:13px">🚩 RETIRADO</div>
+    </div>`:'';
+
+  body.innerHTML=
+    statusHtml+
+    `<div class="pd-section"><div class="pd-section-title">Puntuaciones por zona</div></div>`+
+    `<div style="padding:0 12px 4px"><div class="score-bar">${scBar}</div></div>`+
+    lapsHtml+
+    extrasHtml;
+}
+
+// ── FETCH & POLL ─────────────────────────────────────────────
+async function fetchData(){
+  try{
+    const res=await fetch(DATA_URL+'?t='+Date.now());
+    if(!res.ok)return;
+    const d=await res.json();
+    if(!d||!d.pilots)return;
+    _data=d;
+    // Refresh current view silently, or go to home
+    if(_view==='wait'){showView('home');renderHome();}
+    else if(_view==='home'){renderHome();}
+    else if(_view==='cat'){
+      // Update selected pilot data from new fetch
+      if(_selPilot){
+        _selPilot=(_data.pilots||[]).find(p=>p.dorsal===_selPilot.dorsal&&p.cat===_selPilot.cat)||_selPilot;
+      }
+    }
+  }catch(e){}
+}
+
+document.getElementById('vWait').style.display='flex';
 fetchData();
 setInterval(fetchData, POLL_MS);
 </script>
