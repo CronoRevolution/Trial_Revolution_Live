@@ -2,758 +2,338 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#0a0b0f">
-<title>Trial Revolution — Live</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,600;0,700;0,800;0,900;1,700&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="theme-color" content="#1a1f35">
+<title>Trial Revolution — Clasificación en Directo</title>
 <style>
-/* ── Reset & tokens ─────────────────────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --bg:        #0a0b0f;
-  --bg2:       #111318;
-  --bg3:       #181b22;
-  --border:    rgba(255,255,255,.07);
-  --text:      #e8eaf0;
-  --muted:     #5a6070;
-  --subtle:    #8a90a0;
-  --accent:    #e8292a;
-  --accent2:   #ff4a4b;
-  --green:     #22c55e;
-  --yellow:    #eab308;
-  --r: 14px;
-  --r-sm: 8px;
-  font-size: 15px;
+  --bg:#f0f2f5; --surface:#fff; --surface2:#e8ecf2; --border:#d1d9e6;
+  --text:#0a0f1e; --muted:#4a5568; --header-bg:#1a1f35; --header-text:#fff;
+  --accent:#c47c00; --success:#15803d; --danger:#b91c1c;
+  --tr1:#b91c1c; --tr2:#1d4ed8; --tr3:#15803d; --tr4:#a16207; --tr5:#c2410c; --tr5a:#374151;
+  --gold:#92400e; --shadow:rgba(0,0,0,.1);
+  --badge-bg:#f1f5f9; --badge-border:#cbd5e1;
 }
-html, body { height: 100%; background: var(--bg); color: var(--text); font-family: 'Barlow', sans-serif; }
-body { overflow-x: hidden; }
-
-/* ── Category color map ─────────────────────────────────────────────────── */
-.c-TR1  { --cc: #DC2626; --ct: #fff; }
-.c-TR2  { --cc: #2563A8; --ct: #fff; }
-.c-TR3  { --cc: #16A34A; --ct: #fff; }
-.c-TR4  { --cc: #EAB308; --ct: #0f172a; }
-.c-TR5  { --cc: #D97706; --ct: #fff; }
-.c-TR5A { --cc: #64748B; --ct: #fff; }
-
-/* ── Layout ─────────────────────────────────────────────────────────────── */
-#app { min-height: 100vh; display: flex; flex-direction: column; }
-
-/* ── Top bar ─────────────────────────────────────────────────────────────── */
-.topbar {
-  position: sticky; top: 0; z-index: 100;
-  background: rgba(10,11,15,.92); backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  padding: env(safe-area-inset-top) 0 0;
-}
-.topbar-inner {
-  display: flex; align-items: center; gap: 10px;
-  padding: 10px 16px;
-  min-height: 52px;
-}
-.btn-back {
-  display: none; align-items: center; justify-content: center;
-  width: 34px; height: 34px; border-radius: 50%;
-  background: var(--bg3); border: 1px solid var(--border);
-  color: var(--text); cursor: pointer; font-size: 16px;
-  flex-shrink: 0; transition: background .15s;
-}
-.btn-back:hover { background: var(--bg2); }
-.btn-back.visible { display: flex; }
-.topbar-title {
-  flex: 1; min-width: 0;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 17px; font-weight: 800; letter-spacing: .5px;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-}
-.topbar-sub {
-  font-size: 11px; color: var(--muted); letter-spacing: 1px;
-  text-transform: uppercase; line-height: 1;
-}
-.status-dot {
-  width: 8px; height: 8px; border-radius: 50%;
-  background: var(--muted); flex-shrink: 0;
-  transition: background .3s;
-}
-.status-dot.live { background: var(--accent); box-shadow: 0 0 8px var(--accent); animation: pulse 2s infinite; }
-.status-dot.ok   { background: var(--green); }
-@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
-.refresh-info {
-  font-size: 10px; color: var(--muted); letter-spacing: .5px;
-  white-space: nowrap;
+[data-theme="dark"] {
+  --bg:#0a0c14; --surface:#111828; --surface2:#1a2236; --border:#252d42;
+  --text:#e2e8f0; --muted:#64748b; --header-bg:#080b14; --header-text:#f1f5f9;
+  --accent:#f59e0b; --success:#22c55e; --danger:#ef4444;
+  --shadow:rgba(0,0,0,.4);
+  --badge-bg:#1e2a3a; --badge-border:#2d3f56;
 }
 
-/* ── Views ───────────────────────────────────────────────────────────────── */
-.view { display: none; flex: 1; padding: 16px; max-width: 640px; margin: 0 auto; width: 100%; }
-.view.active { display: block; }
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{min-height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);transition:background .25s,color .25s;}
 
-/* ── Hero (portada) ──────────────────────────────────────────────────────── */
-.hero {
-  text-align: center; padding: 28px 0 20px;
-  border-bottom: 1px solid var(--border); margin-bottom: 20px;
-}
-.hero-logo {
-  width: 90px; height: 90px; object-fit: contain; margin-bottom: 14px;
-  filter: drop-shadow(0 0 20px rgba(232,41,42,.35));
-}
-.hero-logo-placeholder {
-  width: 90px; height: 90px; margin: 0 auto 14px;
-  background: linear-gradient(135deg, #e8292a22, #e8292a08);
-  border: 1px solid rgba(232,41,42,.2); border-radius: 18px;
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 11px; font-weight: 800; letter-spacing: 2px; color: var(--accent);
-}
-.hero-race {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 26px; font-weight: 900; letter-spacing: 1px;
-  line-height: 1.15; margin-bottom: 6px;
-}
-.hero-sub { font-size: 12px; color: var(--muted); letter-spacing: 1.5px; text-transform: uppercase; }
-.status-badge {
-  display: inline-flex; align-items: center; gap: 6px;
-  margin-top: 12px; padding: 5px 12px; border-radius: 20px;
-  font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
-}
-.status-badge.live { background: rgba(232,41,42,.12); color: var(--accent); border: 1px solid rgba(232,41,42,.3); }
-.status-badge.done { background: rgba(34,197,94,.1); color: var(--green); border: 1px solid rgba(34,197,94,.25); }
-.status-badge.wait { background: rgba(90,96,112,.12); color: var(--subtle); border: 1px solid var(--border); }
+/* ── HEADER ── */
+header{background:var(--header-bg);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;top:0;z-index:50;box-shadow:0 2px 12px var(--shadow);}
+.h-logo{font-weight:900;font-size:18px;letter-spacing:1px;color:#f59e0b;line-height:1;}
+.h-logo small{display:block;font-size:10px;font-weight:400;color:#94a3b8;letter-spacing:2px;text-transform:uppercase;margin-top:2px;}
+.h-right{display:flex;align-items:center;gap:10px;}
+.live-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(185,28,28,.2);border:1px solid rgba(185,28,28,.5);border-radius:20px;padding:4px 10px;font-size:10px;font-weight:700;letter-spacing:1.5px;color:#fca5a5;text-transform:uppercase;}
+.live-dot{width:7px;height:7px;border-radius:50%;background:#ef4444;animation:blink 1s step-end infinite;}
+.waiting-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(100,116,139,.15);border:1px solid rgba(100,116,139,.3);border-radius:20px;padding:4px 10px;font-size:10px;font-weight:700;letter-spacing:1.5px;color:#94a3b8;text-transform:uppercase;}
+@keyframes blink{50%{opacity:0;}}
+.clock{font-family:'SF Mono',Menlo,'Courier New',monospace;font-size:16px;font-weight:700;color:#f59e0b;letter-spacing:1px;}
+.btn-icon{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:6px 10px;color:#e2e8f0;font-size:15px;cursor:pointer;transition:background .15s;}
+.btn-icon:hover{background:rgba(255,255,255,.16);}
 
-/* ── Category cards ──────────────────────────────────────────────────────── */
-.section-label {
-  font-size: 10px; font-weight: 700; letter-spacing: 2px;
-  text-transform: uppercase; color: var(--muted); margin-bottom: 10px;
-}
-.cat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.cat-card {
-  background: var(--bg2); border: 1px solid var(--border);
-  border-radius: var(--r); padding: 16px 14px;
-  cursor: pointer; transition: transform .15s, box-shadow .15s, border-color .15s;
-  display: flex; align-items: center; gap: 12px;
-  -webkit-tap-highlight-color: transparent;
-}
-.cat-card:active { transform: scale(.97); }
-.cat-card:hover  { border-color: var(--cc, #444); box-shadow: 0 0 16px rgba(0,0,0,.4); }
-.cat-pill {
-  min-width: 52px; height: 52px; border-radius: 10px;
-  background: var(--cc, #333); color: var(--ct, #fff);
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 15px; font-weight: 900; letter-spacing: 1px;
-  flex-shrink: 0;
-}
-.cat-info { min-width: 0; }
-.cat-count {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 28px; font-weight: 900; line-height: 1; color: var(--text);
-}
-.cat-lbl { font-size: 11px; color: var(--muted); margin-top: 1px; }
+/* ── TICKER ── */
+.ticker{background:var(--header-bg);border-bottom:2px solid var(--accent);height:26px;display:flex;align-items:center;overflow:hidden;font-size:11px;font-weight:700;letter-spacing:.5px;}
+.ticker-label{background:var(--accent);color:#000;padding:0 12px;height:100%;display:flex;align-items:center;font-size:12px;font-weight:800;letter-spacing:2px;flex-shrink:0;}
+.ticker-inner{white-space:nowrap;animation:scroll 45s linear infinite;padding-left:24px;color:#94a3b8;}
+@keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
-/* ── Classification table ───────────────────────────────────────────────── */
-.cat-header {
-  display: flex; align-items: center; gap: 10px;
-  margin-bottom: 14px; padding-bottom: 12px;
-  border-bottom: 1px solid var(--border);
-}
-.cat-badge {
-  padding: 6px 14px; border-radius: 8px;
-  background: var(--cc, #333); color: var(--ct, #fff);
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 18px; font-weight: 900; letter-spacing: 1px;
-}
-.cat-header-info { flex: 1; min-width: 0; }
-.cat-header-name {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 18px; font-weight: 800;
-}
-.cat-header-count { font-size: 12px; color: var(--muted); }
+/* ── LAST UPDATE ── */
+.last-update{font-size:10px;color:var(--muted);text-align:center;padding:4px 0;letter-spacing:.5px;}
 
-.ranking-list { display: flex; flex-direction: column; gap: 6px; }
-.pilot-row {
-  background: var(--bg2); border: 1px solid var(--border);
-  border-radius: var(--r-sm); padding: 12px 14px;
-  display: flex; align-items: center; gap: 12px;
-  cursor: pointer; transition: border-color .15s, transform .1s;
-  -webkit-tap-highlight-color: transparent;
-}
-.pilot-row:active { transform: scale(.99); }
-.pilot-row:hover  { border-color: rgba(255,255,255,.14); }
-.pilot-row.dnf    { opacity: .55; }
-.pilot-row.dsq    { opacity: .45; }
+/* ── CATEGORY SECTIONS ── */
+.cats{padding:8px 12px 24px;display:flex;flex-direction:column;gap:12px;}
+.cat-card{background:var(--surface);border-radius:12px;overflow:hidden;box-shadow:0 2px 8px var(--shadow);}
+.cat-header{display:flex;align-items:center;justify-content:space-between;padding:8px 14px;border-left:5px solid transparent;}
+.cat-name{font-weight:900;font-size:16px;letter-spacing:2px;}
+.cat-meta{font-size:11px;color:var(--muted);text-align:right;line-height:1.4;}
+.cat-leader{font-weight:700;font-size:12px;color:var(--text);}
 
-.pos-badge {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 22px; font-weight: 900;
-  width: 32px; text-align: center; flex-shrink: 0;
-  color: var(--muted);
-}
-.pos-badge.p1 { color: #fbbf24; }
-.pos-badge.p2 { color: #94a3b8; }
-.pos-badge.p3 { color: #b45309; }
-.pos-badge.dnf-lbl, .pos-badge.dsq-lbl {
-  font-size: 11px; color: var(--accent); letter-spacing: .5px;
-}
+/* ── TABLE ── */
+table{width:100%;border-collapse:collapse;font-size:13px;}
+thead tr{background:var(--surface2);border-bottom:2px solid var(--border);}
+th{padding:6px 8px;font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:center;}
+th.left{text-align:left;}
+td{padding:8px 8px;border-bottom:1px solid var(--border);vertical-align:middle;}
+td.left{text-align:left;}
+tbody tr:last-child td{border-bottom:none;}
+tbody tr:hover{background:var(--surface2);}
 
-.pilot-main { flex: 1; min-width: 0; }
-.pilot-dorsal {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 11px; color: var(--muted); letter-spacing: 1px;
-}
-.pilot-name {
-  font-size: 14px; font-weight: 600;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-}
-.pilot-club { font-size: 11px; color: var(--muted); margin-top: 1px; }
+/* ── ROW ELEMENTS ── */
+.pos{font-weight:900;font-size:15px;text-align:center;}
+.pos-1{color:#92400e;} .pos-2{color:#4b5563;} .pos-3{color:#7c2d12;}
+.p-name{font-weight:700;font-size:14px;color:var(--text);}
+.p-sub{font-size:10px;color:var(--muted);margin-top:1px;}
+.sv{font-family:'SF Mono',Menlo,'Courier New',monospace;font-size:14px;font-weight:800;text-align:center;display:block;}
+.sv-0{color:#15803d;} .sv-1{color:#1d4ed8;} .sv-2{color:#a16207;} .sv-3{color:#b91c1c;} .sv-5{color:#7e22ce;} .sv-pen{color:#b91c1c;}
+.total{font-family:'SF Mono',Menlo,'Courier New',monospace;font-size:16px;font-weight:900;color:var(--text);text-align:center;display:block;}
 
-.pilot-stats { text-align: right; flex-shrink: 0; }
-.pts-big {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 22px; font-weight: 700; line-height: 1; color: var(--text);
-}
-.pts-label { font-size: 10px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; }
-.laps-chip {
-  display: inline-flex; align-items: center; gap: 3px;
-  font-size: 10px; color: var(--subtle); margin-top: 3px;
-  padding: 2px 6px; border-radius: 20px; background: var(--bg3);
-}
+.badge{display:inline-block;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:800;letter-spacing:.5px;border:1.5px solid;white-space:nowrap;}
+.b-v1{background:var(--badge-bg);color:#1d4ed8;border-color:#93c5fd;}
+.b-v2{background:var(--badge-bg);color:#a16207;border-color:#fcd34d;}
+.b-v3{background:var(--badge-bg);color:#7e22ce;border-color:#d8b4fe;}
+.b-fin{background:#dcfce7;color:#15803d;border-color:#86efac;}
+.b-dnf{background:#fee2e2;color:#b91c1c;border-color:#fca5a5;}
+.b-dq{background:#ffedd5;color:#c2410c;border-color:#fdba74;}
 
-/* ── Pilot detail ────────────────────────────────────────────────────────── */
-.pilot-detail-header {
-  background: var(--bg2); border: 1px solid var(--border);
-  border-radius: var(--r); padding: 16px; margin-bottom: 16px;
-}
-.pilot-detail-dorsal {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 11px; font-weight: 700; letter-spacing: 2px;
-  text-transform: uppercase; color: var(--muted); margin-bottom: 2px;
-}
-.pilot-detail-name {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 26px; font-weight: 900; letter-spacing: .5px; line-height: 1.1;
-}
-.pilot-detail-meta { display: flex; gap: 14px; margin-top: 8px; flex-wrap: wrap; }
-.meta-chip {
-  font-size: 11px; color: var(--subtle);
-  display: flex; align-items: center; gap: 4px;
-}
-.stat-row {
-  display: grid; grid-template-columns: repeat(5, 1fr);
-  gap: 8px; margin-bottom: 16px;
-}
-.stat-box {
-  background: var(--bg2); border: 1px solid var(--border);
-  border-radius: var(--r-sm); padding: 10px 8px; text-align: center;
-}
-.stat-box .val {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 20px; font-weight: 700; line-height: 1; color: var(--text);
-}
-.stat-box .lbl { font-size: 9px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; margin-top: 3px; }
-.stat-box.highlight .val { color: var(--accent); }
+/* ── WAITING SCREEN ── */
+#waiting{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;gap:16px;text-align:center;padding:40px 20px;}
+.w-logo{font-weight:900;font-size:52px;letter-spacing:4px;color:#f59e0b;line-height:1;}
+.w-sub{font-size:13px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;}
+.w-dot-row{display:flex;gap:8px;margin-top:4px;}
+.w-dot{width:8px;height:8px;border-radius:50%;background:var(--muted);animation:dotpulse 1.2s ease-in-out infinite;}
+.w-dot:nth-child(2){animation-delay:.2s;} .w-dot:nth-child(3){animation-delay:.4s;}
+@keyframes dotpulse{0%,80%,100%{opacity:.3;}40%{opacity:1;}}
 
-/* ── Scores grid ─────────────────────────────────────────────────────────── */
-.scores-label {
-  font-size: 10px; font-weight: 700; letter-spacing: 2px;
-  text-transform: uppercase; color: var(--muted); margin-bottom: 10px;
-}
-.scores-table {
-  width: 100%; border-collapse: collapse;
-  background: var(--bg2); border: 1px solid var(--border);
-  border-radius: var(--r); overflow: hidden;
-  font-size: 13px;
-}
-.scores-table th {
-  padding: 8px 6px; background: var(--bg3);
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
-  text-transform: uppercase; color: var(--muted); text-align: center;
-}
-.scores-table td {
-  padding: 9px 6px; text-align: center;
-  font-family: 'JetBrains Mono', monospace; font-size: 14px;
-  border-top: 1px solid var(--border);
-}
-.scores-table tr td:first-child {
-  font-family: 'Barlow Condensed', sans-serif; font-size: 11px;
-  font-weight: 700; letter-spacing: 1px; color: var(--muted);
-  background: var(--bg3);
-}
-.score-0 { color: var(--green); font-weight: 700; }
-.score-5 { color: var(--accent); font-weight: 700; }
-.score-sum {
-  font-weight: 700; color: var(--text);
-  background: rgba(255,255,255,.03);
-}
-.scores-table tr.total-row td {
-  background: var(--bg3); font-weight: 700; color: var(--text);
-  font-size: 15px;
-}
-.scores-table tr.total-row td:first-child { color: var(--text); }
-.empty-lap td { color: var(--muted); opacity: .3; }
+/* ── CATEGORY COLORS ── */
+.hdr-TR1{border-color:var(--tr1)!important;} .hdr-TR2{border-color:var(--tr2)!important;}
+.hdr-TR3{border-color:var(--tr3)!important;} .hdr-TR4{border-color:var(--tr4)!important;}
+.hdr-TR5{border-color:var(--tr5)!important;} .hdr-TR5A{border-color:var(--tr5a)!important;}
+.txt-TR1{color:var(--tr1);} .txt-TR2{color:var(--tr2);} .txt-TR3{color:var(--tr3);}
+.txt-TR4{color:var(--tr4);} .txt-TR5{color:var(--tr5);} .txt-TR5A{color:var(--tr5a);}
 
-/* ── Empty / loading states ─────────────────────────────────────────────── */
-.loading-screen {
-  display: flex; flex-direction: column; align-items: center;
-  justify-content: center; padding: 60px 20px; gap: 14px;
-}
-.spinner {
-  width: 36px; height: 36px; border: 3px solid var(--border);
-  border-top-color: var(--accent); border-radius: 50%;
-  animation: spin .8s linear infinite;
-}
-@keyframes spin { to { transform: rotate(360deg); } }
-.empty-msg { color: var(--muted); font-size: 14px; text-align: center; }
+/* ── STATS BAR ── */
+.stats-bar{display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:1px;background:var(--border);margin:0 12px 12px;border-radius:10px;overflow:hidden;}
+.stat-item{background:var(--surface);padding:8px 4px;text-align:center;}
+.stat-val{font-family:'SF Mono',Menlo,monospace;font-size:22px;font-weight:900;}
+.stat-lbl{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-top:1px;}
 
-/* ── Error card ──────────────────────────────────────────────────────────── */
-.error-card {
-  background: rgba(232,41,42,.06); border: 1px solid rgba(232,41,42,.2);
-  border-radius: var(--r); padding: 20px; text-align: center;
-  margin-top: 30px;
-}
-.error-card .ico { font-size: 32px; margin-bottom: 10px; }
-.error-card .ttl { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
-.error-card .msg { font-size: 12px; color: var(--muted); }
+/* ── FOOTER ── */
+footer{text-align:center;padding:20px 16px;font-size:10px;color:var(--muted);letter-spacing:1px;border-top:1px solid var(--border);margin-top:8px;}
 
-/* ── Update ticker ───────────────────────────────────────────────────────── */
-#updateTicker {
-  text-align: center; padding: 8px;
-  font-size: 10px; color: var(--muted); letter-spacing: 1px;
-  border-top: 1px solid var(--border); margin-top: 24px;
-}
-
-/* ── Responsive ──────────────────────────────────────────────────────────── */
-@media (max-width: 380px) {
-  .cat-grid { grid-template-columns: 1fr; }
-  .stat-row { grid-template-columns: repeat(3, 1fr); }
-}
-@media (min-width: 600px) {
-  .view { padding: 24px 20px; }
-  .cat-grid { grid-template-columns: repeat(3, 1fr); }
+@media(max-width:480px){
+  th,td{padding:6px 4px;}
+  .p-name{font-size:13px;}
+  .sv{font-size:13px;}
+  .total{font-size:15px;}
 }
 </style>
 </head>
 <body>
-<div id="app">
 
-  <!-- Top bar -->
-  <div class="topbar">
-    <div class="topbar-inner">
-      <button class="btn-back" id="btnBack" onclick="goBack()">←</button>
-      <div style="flex:1;min-width:0">
-        <div class="topbar-title" id="topbarTitle">Trial Revolution</div>
-        <div class="topbar-sub" id="topbarSub">Campeonato de Trial de Castilla y León 2026</div>
-      </div>
-      <div class="status-dot" id="statusDot"></div>
-      <div class="refresh-info" id="refreshInfo"></div>
-    </div>
+<header>
+  <div class="h-logo">Trial Revolution <small>Campeonato de Trial · CyL 2026</small></div>
+  <div class="h-right">
+    <span id="statusBadge" class="waiting-badge">En espera</span>
+    <div class="clock" id="clock">--:--:--</div>
+    <button class="btn-icon" id="themeBtn" title="Cambiar tema" onclick="toggleTheme()">🌙</button>
   </div>
+</header>
 
-  <!-- ── VIEW: PORTADA ──────────────────────────────────────────────────── -->
-  <div class="view active" id="viewHome">
-    <div id="homeContent">
-      <div class="loading-screen">
-        <div class="spinner"></div>
-        <div class="empty-msg">Cargando clasificación…</div>
-      </div>
-    </div>
-    <div id="updateTicker"></div>
-  </div>
-
-  <!-- ── VIEW: CATEGORÍA ───────────────────────────────────────────────── -->
-  <div class="view" id="viewCat">
-    <div class="cat-header" id="catHeader"></div>
-    <div class="ranking-list" id="rankingList"></div>
-  </div>
-
-  <!-- ── VIEW: PILOTO ──────────────────────────────────────────────────── -->
-  <div class="view" id="viewPilot">
-    <div id="pilotContent"></div>
-  </div>
-
+<div class="ticker" id="tickerBar" style="display:none">
+  <div class="ticker-label">EN DIRECTO</div>
+  <div class="ticker-inner" id="tickerText"></div>
 </div>
 
+<div class="last-update" id="lastUpdate"></div>
+
+<div id="waiting">
+  <div class="w-logo">Trial<br>Revolution</div>
+  <div class="w-sub">Clasificación en directo</div>
+  <div class="w-dot-row"><div class="w-dot"></div><div class="w-dot"></div><div class="w-dot"></div></div>
+  <div style="font-size:12px;color:var(--muted);margin-top:8px">Actualizando cada 30 segundos…</div>
+</div>
+
+<div id="statsBar" class="stats-bar" style="display:none"></div>
+<div id="cats" class="cats" style="display:none"></div>
+
+<footer id="footer" style="display:none">
+  Trial Revolution · Campeonato de Trial de Castilla y León 2026 · Generado automáticamente
+</footer>
+
 <script>
-// ── Config ────────────────────────────────────────────────────────────────
-const DATA_URL = './data.json';
-const REFRESH_MS = 30000;
-
-// ── State ─────────────────────────────────────────────────────────────────
-let _data = null;
-let _currentCat = null;
-let _currentPilotIdx = null;
-let _lastFetch = null;
-let _refreshTimer = null;
-
-const CAT_COLORS = {
-  TR1:'#DC2626', TR2:'#2563A8', TR3:'#16A34A',
-  TR4:'#EAB308', TR5:'#D97706', TR5A:'#64748B'
-};
-const CAT_TEXT = {
-  TR1:'#fff', TR2:'#fff', TR3:'#fff',
-  TR4:'#0f172a', TR5:'#fff', TR5A:'#fff'
-};
 const CAT_ORDER = ['TR1','TR2','TR3','TR4','TR5','TR5A'];
+const DATA_URL  = 'data.json';
+const POLL_MS   = 30000;
 
-// ── Fetch & refresh ───────────────────────────────────────────────────────
-async function fetchData() {
-  try {
-    const r = await fetch(DATA_URL + '?t=' + Date.now());
-    if (!r.ok) throw new Error('HTTP ' + r.status);
-    _data = await r.json();
-    _lastFetch = Date.now();
-    setStatus('ok');
-    renderCurrentView();
-    updateTicker();
-  } catch(e) {
-    setStatus('err');
-    if (!_data) renderError(e.message);
-    updateTicker();
-  }
+// ── Theme ─────────────────────────────────────────────────────
+const _saved = localStorage.getItem('tr_theme');
+const _pref  = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+let   theme  = _saved || _pref;
+function applyTheme(t) {
+  document.documentElement.setAttribute('data-theme', t);
+  document.getElementById('themeBtn').textContent = t === 'dark' ? '☀️' : '🌙';
+  localStorage.setItem('tr_theme', t);
 }
+function toggleTheme() { theme = theme === 'dark' ? 'light' : 'dark'; applyTheme(theme); }
+applyTheme(theme);
 
-function startRefresh() {
-  clearInterval(_refreshTimer);
-  _refreshTimer = setInterval(fetchData, REFRESH_MS);
+// ── Clock ─────────────────────────────────────────────────────
+function pad(n){ return n.toString().padStart(2,'0'); }
+setInterval(() => {
+  const n = new Date();
+  document.getElementById('clock').textContent = pad(n.getHours())+':'+pad(n.getMinutes())+':'+pad(n.getSeconds());
+}, 500);
+
+// ── Helpers ───────────────────────────────────────────────────
+const CAT_COLORS = {TR1:'#b91c1c',TR2:'#1d4ed8',TR3:'#15803d',TR4:'#a16207',TR5:'#c2410c',TR5A:'#374151'};
+
+function shortName(name) {
+  const p = name.split(',');
+  return p.length < 2 ? name : p[1].trim().split(' ')[0] + ' ' + p[0].trim();
 }
-
-function setStatus(s) {
-  const d = document.getElementById('statusDot');
-  d.className = 'status-dot' + (s === 'ok' ? (' ' + (_data?.raceStarted && !_data?.raceFinished ? 'live' : 'ok')) : '');
+function lapBadge(p) {
+  if (p.dsq || p.dnf === 'DQ') return '<span class="badge b-dq">DQ</span>';
+  if (p.dnf)   return '<span class="badge b-dnf">R</span>';
+  if (p.finishTime !== null) return '<span class="badge b-fin">✓ FIN</span>';
+  const hasV3  = p.scores[2] && p.scores[2].some(v=>v!==null);
+  const lap1   = p.lap1Time !== null;
+  const hasV2  = p.scores[1] && p.scores[1].some(v=>v!==null);
+  if (hasV3 || (lap1 && hasV2)) return '<span class="badge b-v3">V3</span>';
+  if (lap1 || (p.scores[0] && p.scores[0].some(v=>v!==null))) return '<span class="badge b-v2">V2</span>';
+  return '<span class="badge b-v1">V1</span>';
 }
-
-function updateTicker() {
-  const el = document.getElementById('refreshInfo');
-  const tk = document.getElementById('updateTicker');
-  if (!_lastFetch) { el.textContent = ''; return; }
-  const secs = Math.round((Date.now() - _lastFetch) / 1000);
-  const txt = secs < 5 ? 'Ahora' : 'hace ' + secs + 's';
-  el.textContent = txt;
-  if (tk) {
-    const ts = _data?.publishedAt ? new Date(_data.publishedAt).toLocaleTimeString('es-ES', {hour:'2-digit',minute:'2-digit',second:'2-digit'}) : '—';
-    tk.textContent = 'Última publicación: ' + ts + ' · Actualización automática cada 30 s';
-  }
-}
-
-setInterval(updateTicker, 5000);
-
-// ── Navigation — Hash routing (funciona en todos los móviles) ────────────
-// El hash define la vista actual: '' → home | 'cat-TR1' → categoría | 'piloto-3' → piloto
-
-function getHash() {
-  return window.location.hash.replace('#', '');
-}
-
-function setHash(h) {
-  window.location.hash = h;
-}
-
-function showView(id) {
-  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  window.scrollTo(0, 0);
-  const hash = getHash();
-  const isHome = !hash || hash === '';
-  document.getElementById('btnBack').className =
-    'btn-back' + (isHome ? '' : ' visible');
-}
-
-function navHome() {
-  _currentCat = null;
-  _currentPilotIdx = null;
-  setHash('');
-  // hashchange se encarga del render
-}
-
-function navCat(cat) {
-  _currentCat = cat;
-  _currentPilotIdx = null;
-  setHash('cat-' + cat);
-  // hashchange se encarga del render
-}
-
-function navPilot(pilotIdx) {
-  _currentPilotIdx = pilotIdx;
-  setHash('piloto-' + _currentCat + '-' + pilotIdx);
-  // hashchange se encarga del render
-}
-
-function goBack() {
-  history.back();
-}
-
-// Toda la navegación pasa por aquí — incluido el botón atrás del móvil
-window.addEventListener('hashchange', function() {
-  routeFromHash();
-});
-
-function routeFromHash() {
-  const hash = getHash();
-
-  if (!hash || hash === '') {
-    // HOME
-    _currentCat = null;
-    _currentPilotIdx = null;
-    document.getElementById('topbarTitle').textContent = _data?.raceName || 'Trial Revolution';
-    document.getElementById('topbarSub').textContent = 'Campeonato de Trial de Castilla y León 2026';
-    showView('viewHome');
-    renderHome();
-
-  } else if (hash.startsWith('cat-')) {
-    // CATEGORÍA
-    const cat = hash.replace('cat-', '');
-    _currentCat = cat;
-    _currentPilotIdx = null;
-    document.getElementById('topbarTitle').textContent = cat + ' — Clasificación';
-    document.getElementById('topbarSub').textContent = _data?.raceName || 'Trial Revolution';
-    showView('viewCat');
-    renderCat();
-
-  } else if (hash.startsWith('piloto-')) {
-    // PILOTO: formato piloto-CAT-idx
-    const parts = hash.replace('piloto-', '').split('-');
-    const idx = parseInt(parts[parts.length - 1]);
-    const cat = parts.slice(0, parts.length - 1).join('-');
-    _currentCat = cat;
-    _currentPilotIdx = isNaN(idx) ? null : idx;
-    const p = _data?.pilots?.[_currentPilotIdx];
-    document.getElementById('topbarTitle').textContent = p ? fmtName(p.name) : 'Piloto';
-    document.getElementById('topbarSub').textContent = cat + (p ? ' · Nº ' + (p.dorsal||'—') : '');
-    showView('viewPilot');
-    renderPilot();
-  }
-}
-
-function renderCurrentView() {
-  routeFromHash();
-}
-
-// ── Render: Home ─────────────────────────────────────────────────────────
-function renderHome() {
-  if (!_data) return;
-  const d = _data;
-  const cats = (d.categories || CAT_ORDER).filter(c => d.pilots?.some(p => p.cat === c));
-  const statusLabel = d.raceFinished ? 'Finalizada' : d.raceStarted ? 'En curso' : 'Pendiente';
-  const statusClass = d.raceFinished ? 'done' : d.raceStarted ? 'live' : 'wait';
-
-  let cards = '';
-  cats.forEach(cat => {
-    const n = (d.pilots||[]).filter(p => p.cat === cat).length;
-    const cc = CAT_COLORS[cat]||'#555';
-    const ct = CAT_TEXT[cat]||'#fff';
-    cards += `<div class="cat-card c-${cat}" onclick="navCat('${cat}')">
-      <div class="cat-pill" style="background:${cc};color:${ct}">${cat}</div>
-      <div class="cat-info">
-        <div class="cat-count">${n}</div>
-        <div class="cat-lbl">piloto${n!==1?'s':''}</div>
-      </div>
-    </div>`;
-  });
-
-  document.getElementById('topbarTitle').textContent = d.raceName || 'Trial Revolution';
-
-  document.getElementById('homeContent').innerHTML = `
-    <div class="hero">
-      <div class="hero-logo-placeholder">TR</div>
-      <div class="hero-race">${escHtml(d.raceName||'Trial Revolution')}</div>
-      <div class="hero-sub">Campeonato de Trial · Castilla y León 2026</div>
-      <div><span class="status-badge ${statusClass}">
-        ${statusClass==='live'?'⚡ ':statusClass==='done'?'✓ ':'⏳ '}${statusLabel}
-      </span></div>
-    </div>
-    <div class="section-label">Categorías</div>
-    <div class="cat-grid">${cards}</div>
-  `;
-}
-
-function renderError(msg) {
-  document.getElementById('homeContent').innerHTML = `
-    <div class="error-card">
-      <div class="ico">📡</div>
-      <div class="ttl">Sin datos disponibles</div>
-      <div class="msg">No se pudo cargar la clasificación.<br>${escHtml(msg||'')}</div>
-    </div>`;
-}
-
-// ── Render: Category ─────────────────────────────────────────────────────
-function renderCat() {
-  if (!_data || !_currentCat) return;
-  const cat = _currentCat;
-  const cc = CAT_COLORS[cat]||'#555';
-  const ct = CAT_TEXT[cat]||'#fff';
-
-  const catPilots = (_data.pilots||[])
-    .filter(p => p.cat === cat)
-    .sort((a,b) => {
-      if (a.dsq && !b.dsq) return 1; if (!a.dsq && b.dsq) return -1;
-      if (a.dnf && !b.dnf) return 1; if (!a.dnf && b.dnf) return -1;
-      if ((b.lapsCompleted||0) !== (a.lapsCompleted||0)) return (b.lapsCompleted||0)-(a.lapsCompleted||0);
-      const pa = a.totalPoints??9999, pb = b.totalPoints??9999;
-      if (pa!==pb) return pa-pb;
-      return (b.n0s||0)-(a.n0s||0);
-    });
-
-  document.getElementById('catHeader').innerHTML = `
-    <div class="cat-badge" style="background:${cc};color:${ct}">${cat}</div>
-    <div class="cat-header-info">
-      <div class="cat-header-name">${escHtml(_data.raceName||'')}</div>
-      <div class="cat-header-count">${catPilots.length} pilotos</div>
-    </div>`;
-
-  let items = '';
-  catPilots.forEach((p, i) => {
-    const isDNF = p.dnf || p.dsq;
-    const posLabel = p.dsq ? 'DSQ' : p.dnf ? 'DNF' : (i+1);
-    const posClass = i===0&&!isDNF?'p1':i===1&&!isDNF?'p2':i===2&&!isDNF?'p3':isDNF?'dnf-lbl':'';
-    const ptsStr = (p.totalPoints!=null&&!isDNF) ? p.totalPoints : '—';
-    const laps = p.lapsCompleted||0;
-    const timeStr = p.totalTime||'';
-
-    const globalIdx = _data.pilots.findIndex(x => x.dorsal===p.dorsal && x.cat===p.cat);
-
-    items += `<div class="pilot-row${p.dnf?' dnf':''}${p.dsq?' dsq':''}" onclick="navPilot(${globalIdx})">
-      <div class="pos-badge ${posClass}">${posLabel}</div>
-      <div class="pilot-main">
-        <div class="pilot-dorsal">Nº ${p.dorsal||'—'}</div>
-        <div class="pilot-name">${escHtml(fmtName(p.name))}</div>
-        <div class="pilot-club">${escHtml(p.club||'')}</div>
-      </div>
-      <div class="pilot-stats">
-        <div class="pts-big">${ptsStr}</div>
-        <div class="pts-label">puntos</div>
-        <div class="laps-chip">
-          ${laps} vuelta${laps!==1?'s':''}${timeStr?' · '+timeStr:''}
-        </div>
-      </div>
-    </div>`;
-  });
-
-  document.getElementById('rankingList').innerHTML = items ||
-    '<div class="empty-msg" style="padding:30px 0">Sin pilotos en esta categoría</div>';
-}
-
-// ── Render: Pilot ─────────────────────────────────────────────────────────
-function renderPilot() {
-  if (!_data || _currentPilotIdx === null) return;
-  const p = _data.pilots[_currentPilotIdx];
-  if (!p) return;
-
-  const cat = p.cat;
-  const cc = CAT_COLORS[cat]||'#555';
-  const ct = CAT_TEXT[cat]||'#fff';
-  const numZones = _data.cfg?.numZones || 7;
-
-  document.getElementById('topbarTitle').textContent = fmtName(p.name);
-  document.getElementById('topbarSub').textContent = cat + ' · Nº ' + (p.dorsal||'—');
-
-  const statusStr = p.dsq ? '⛔ DSQ' : p.dnf ? '🚩 DNF' : p.finishTime ? '✓ Finalizado' : '⏱ En carrera';
-
-  const statsHtml = `
-    <div class="stat-row">
-      <div class="stat-box highlight">
-        <div class="val">${p.totalPoints!=null?p.totalPoints:'—'}</div>
-        <div class="lbl">Total pts</div>
-      </div>
-      <div class="stat-box">
-        <div class="val" style="color:var(--green)">${p.n0s||0}</div>
-        <div class="lbl">Ceros</div>
-      </div>
-      <div class="stat-box">
-        <div class="val" style="color:var(--accent)">${p.n5s||0}</div>
-        <div class="lbl">Cincos</div>
-      </div>
-      <div class="stat-box">
-        <div class="val">${p.lapsCompleted||0}</div>
-        <div class="lbl">Vueltas</div>
-      </div>
-      <div class="stat-box">
-        <div class="val" style="font-size:13px;color:var(--subtle)">${p.totalTime||'—'}</div>
-        <div class="lbl">Crono</div>
-      </div>
-    </div>`;
-
-  const scores = p.scores || [[], [], []];
-  const lapLabels = ['1ª Vuelta', '2ª Vuelta', '3ª Vuelta'];
-  const lapPts = [p.lap1Points, p.lap2Points, p.lap3Points];
-  const lapTimes = [p.lap1Time, p.lap2Time, p.lap3Time];
-
-  let zoneHeaders = '<th>Vuelta</th>';
-  for (let z=1; z<=numZones; z++) zoneHeaders += `<th>Z${z}</th>`;
-  zoneHeaders += '<th>Σ</th>';
-
-  let scoreRows = '';
-  for (let lap=0; lap<3; lap++) {
-    const zones = scores[lap] || [];
-    const hasData = zones.length > 0;
-    const rowClass = !hasData ? ' class="empty-lap"' : '';
-    const ltStr = lapTimes[lap] || '';
-    const ptStr = hasData ? (lapPts[lap]!=null ? lapPts[lap] : '—') : '—';
-
-    let cells = `<td>${lapLabels[lap]}${ltStr?'<br><span style="font-size:9px;color:var(--muted)">'+ltStr+'</span>':''}</td>`;
-    for (let z=0; z<numZones; z++) {
-      const sc = zones[z];
-      const scClass = sc===0?' class="score-0"':sc===5?' class="score-5"':'';
-      cells += `<td${scClass}>${hasData?(sc!=null?sc:'—'):'·'}</td>`;
-    }
-    cells += `<td class="score-sum">${ptStr}</td>`;
-    scoreRows += `<tr${rowClass}>${cells}</tr>`;
-  }
-
-  let totalCells = '<td>TOTAL</td>';
-  for (let z=0; z<numZones; z++) {
-    let zTotal = 0;
-    for (let lap=0; lap<3; lap++) zTotal += (scores[lap]||[])[z] || 0;
-    totalCells += `<td>${zTotal||''}</td>`;
-  }
-  totalCells += `<td>${p.totalPoints!=null?p.totalPoints:'—'}</td>`;
-  scoreRows += `<tr class="total-row">${totalCells}</tr>`;
-
-  document.getElementById('pilotContent').innerHTML = `
-    <div class="pilot-detail-header">
-      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px">
-        <div>
-          <div class="pilot-detail-dorsal">Nº ${p.dorsal||'—'}</div>
-          <div class="pilot-detail-name">${escHtml(fmtName(p.name))}</div>
-        </div>
-        <div style="background:${cc};color:${ct};padding:4px 10px;border-radius:6px;
-          font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:800;
-          letter-spacing:1px;flex-shrink:0">${cat}</div>
-      </div>
-      <div class="pilot-detail-meta">
-        ${p.club?`<span class="meta-chip">🏠 ${escHtml(p.club)}</span>`:''}
-        ${p.brand?`<span class="meta-chip">🏍 ${escHtml(p.brand)}</span>`:''}
-        <span class="meta-chip" style="color:${p.dsq?'var(--accent)':p.dnf?'var(--accent)':p.totalTime?'var(--green)':'var(--subtle)'}">${statusStr}</span>
-      </div>
-    </div>
-    ${statsHtml}
-    <div class="scores-label">Puntuación por zona</div>
-    <div style="overflow-x:auto">
-      <table class="scores-table">
-        <thead><tr>${zoneHeaders}</tr></thead>
-        <tbody>${scoreRows}</tbody>
-      </table>
-    </div>
-    ${p.dsq&&p.dsqReason?`<div style="margin-top:12px;padding:10px 14px;background:rgba(232,41,42,.08);border:1px solid rgba(232,41,42,.2);border-radius:8px;font-size:12px;color:var(--subtle)">⛔ DSQ: ${escHtml(p.dsqReason)}</div>`:''}
-  `;
-}
-
-// ── Helpers ───────────────────────────────────────────────────────────────
-function escHtml(s) {
-  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
-function fmtName(n) {
-  if (!n) return '—';
-  const parts = n.split(',');
-  if (parts.length === 2) return (parts[1].trim() + ' ' + parts[0].trim());
+function cnt(p, val) {
+  let n=0;
+  for(let l=0;l<3;l++) for(let z=0;z<7;z++) if(p.scores[l]&&p.scores[l][z]===val) n++;
   return n;
 }
+function getTotal(p) {
+  let t=0,any=false;
+  for(let l=0;l<3;l++){
+    const s=p.scores[l]; if(!s) continue;
+    const lp=s.every(v=>v===null)?null:s.reduce((a,v)=>a+(v===null?0:v),0);
+    if(lp!==null){t+=lp;any=true;}
+  }
+  if(!any) return null;
+  const extra=(p.extraPenalties||[]).reduce((s,ep)=>s+(ep.pts||0),0);
+  return t+(p.lap1Penalty||0)+(p.finishPenalty||0)+extra;
+}
+function sortPilots(arr) {
+  return arr.slice().sort((a,b)=>{
+    if((a.dnf||a.dsq)&&!(b.dnf||b.dsq)) return 1;
+    if(!(a.dnf||a.dsq)&&(b.dnf||b.dsq)) return -1;
+    const pa=getTotal(a)??9999, pb=getTotal(b)??9999;
+    if(pa!==pb) return pa-pb;
+    if(cnt(b,0)!==cnt(a,0)) return cnt(b,0)-cnt(a,0);
+    return cnt(b,1)-cnt(a,1);
+  });
+}
 
-// ── Init ─────────────────────────────────────────────────────────────────
-fetchData().then(() => {
-  // Tras cargar datos, enrutar según el hash actual (permite deep links)
-  routeFromHash();
-});
-startRefresh();
+// ── Render ─────────────────────────────────────────────────────
+function render(data) {
+  const pilots   = data.pilots || [];
+  const numZones = data.cfg?.numZones || 7;
+
+  // Badge
+  const badge = document.getElementById('statusBadge');
+  if (data.raceStarted) {
+    badge.className = 'live-badge';
+    badge.innerHTML = '<div class="live-dot"></div>En directo';
+  } else {
+    badge.className = 'waiting-badge';
+    badge.textContent = 'Previa';
+  }
+
+  // Last update
+  const now = new Date();
+  document.getElementById('lastUpdate').textContent =
+    'Actualizado: ' + pad(now.getHours())+':'+pad(now.getMinutes())+':'+pad(now.getSeconds());
+
+  // Stats bar
+  const activeCats = CAT_ORDER.filter(c => pilots.some(p=>p.cat===c));
+  const statsEl = document.getElementById('statsBar');
+  statsEl.style.display = '';
+  const finCount = pilots.filter(p=>p.finishTime!==null&&!p.dnf&&!p.dsq).length;
+  const rCount   = pilots.filter(p=>p.dnf).length;
+  statsEl.innerHTML =
+    activeCats.map(c=>{const n=pilots.filter(p=>p.cat===c).length;return`<div class="stat-item"><div class="stat-val" style="color:${CAT_COLORS[c]}">${n}</div><div class="stat-lbl">${c}</div></div>`;}).join('')
+    + `<div class="stat-item"><div class="stat-val">${pilots.length}</div><div class="stat-lbl">Total</div></div>`
+    + `<div class="stat-item"><div class="stat-val" style="color:var(--success)">${finCount}</div><div class="stat-lbl">Fin.</div></div>`
+    + (rCount?`<div class="stat-item"><div class="stat-val" style="color:var(--danger)">${rCount}</div><div class="stat-lbl">Ret.</div></div>`:'');
+
+  // Category panels
+  const catsEl = document.getElementById('cats');
+  catsEl.style.display = '';
+  catsEl.innerHTML = '';
+
+  activeCats.forEach(cat => {
+    const sorted = sortPilots(pilots.filter(p=>p.cat===cat));
+    const leader = sorted.find(p=>!p.dnf&&!p.dsq);
+    const col    = CAT_COLORS[cat] || '#888';
+
+    const rows = sorted.map((p,i)=>{
+      const pos   = p.dsq ? 'DQ' : p.dnf ? 'R' : (i+1)+'º';
+      const pCls  = p.dsq?'':'pos-'+(i+1<=3?i+1:'n');
+      const tp    = getTotal(p);
+      const timePen  = (p.lap1Penalty||0)+(p.finishPenalty||0);
+      const extraPen = (p.extraPenalties||[]).reduce((s,ep)=>s+(ep.pts||0),0);
+      return `<tr>
+        <td><div class="pos ${pCls}" style="${p.dsq?'color:#c2410c':''}">${pos}</div></td>
+        <td class="left">
+          <div class="p-name">${shortName(p.name)}</div>
+          <div class="p-sub">#${p.dorsal}${p.club?' · '+p.club:''}</div>
+        </td>
+        <td><span class="sv sv-0">${cnt(p,0)}</span></td>
+        <td><span class="sv sv-1">${cnt(p,1)}</span></td>
+        <td><span class="sv sv-3">${cnt(p,3)}</span></td>
+        <td><span class="sv sv-5">${cnt(p,5)}</span></td>
+        <td>${timePen+extraPen>0?`<span class="sv sv-pen">+${timePen+extraPen}</span>`:'<span style="color:var(--muted)">—</span>'}</td>
+        <td>${tp!==null?`<span class="total">${tp}</span>`:'<span style="color:var(--muted)">—</span>'}</td>
+        <td>${lapBadge(p)}</td>
+      </tr>`;
+    }).join('');
+
+    const el = document.createElement('div');
+    el.className = 'cat-card';
+    el.innerHTML = `
+      <div class="cat-header hdr-${cat}" style="border-left-color:${col}">
+        <div class="cat-name txt-${cat}">${cat}</div>
+        <div class="cat-meta">
+          ${leader?`<div class="cat-leader">${shortName(leader.name)}</div><div>Líder: <b>${getTotal(leader)??'—'}</b> pts · ${sorted.length} pilotos</div>`:`${sorted.length} pilotos`}
+        </div>
+      </div>
+      <table>
+        <thead><tr>
+          <th style="width:32px">Pos</th>
+          <th class="left">Piloto</th>
+          <th style="color:var(--success)">0s</th>
+          <th style="color:#1d4ed8">1s</th>
+          <th style="color:var(--danger)">3s</th>
+          <th style="color:#7e22ce">5s</th>
+          <th style="color:var(--danger)">+Pen</th>
+          <th>Total</th>
+          <th>Vuelta</th>
+        </tr></thead>
+        <tbody>${rows}</tbody>
+      </table>`;
+    catsEl.appendChild(el);
+  });
+
+  // Ticker
+  if (data.raceStarted) {
+    document.getElementById('tickerBar').style.display = '';
+    const parts = activeCats.map(cat=>{
+      const best = sortPilots(pilots.filter(p=>p.cat===cat&&!p.dnf&&!p.dsq));
+      if (!best.length) return null;
+      const l  = best[0], tp = getTotal(l);
+      return `${cat}: ${shortName(l.name)} — ${tp!==null?tp+' pts':'—'} · ${lapBadge(l).replace(/<[^>]+>/g,'')}`;
+    }).filter(Boolean).join('   ·   ');
+    const t = parts + '   ·   ' + parts + '   ·   ';
+    document.getElementById('tickerText').textContent = t;
+  }
+
+  document.getElementById('waiting').style.display = 'none';
+  document.getElementById('footer').style.display   = '';
+}
+
+// ── Fetch ─────────────────────────────────────────────────────
+async function fetchData() {
+  try {
+    const res  = await fetch(DATA_URL + '?t=' + Date.now());
+    if (!res.ok) return;
+    const data = await res.json();
+    if (data && data.pilots) render(data);
+  } catch(e) { /* red not available */ }
+}
+fetchData();
+setInterval(fetchData, POLL_MS);
 </script>
 </body>
 </html>
