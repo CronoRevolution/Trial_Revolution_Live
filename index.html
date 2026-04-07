@@ -508,7 +508,7 @@ function renderPilot(){
 
     const isLate=pen>0;
     const timesHtml=
-      `<div class="tchip"><div class="tl">Salida programada</div><div class="tv">${sch||'—'}</div></div>`+
+      `${li===0?'<div class="tchip"><div class="tl">Salida programada</div><div class="tv">'+(sch||'—')+'</div></div>':''}`+
       (arr?`<div class="tchip"><div class="tl">Llegada real</div><div class="tv ${isLate?'twn':'tok'}">${arr}</div></div>`:'<div class="tchip"><div class="tl">Llegada real</div><div class="tv">—</div></div>')+
       (tope?`<div class="tchip"><div class="tl">Hora tope</div><div class="tv">${tope}</div></div>`:'')+
       (dur?`<div class="tchip"><div class="tl">Tiempo vuelta</div><div class="tv">${dur}</div></div>`:'')+
