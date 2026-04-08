@@ -175,7 +175,7 @@ footer{text-align:center;padding:20px 16px 30px;font-size:10px;color:var(--mu);
 <body>
 
 <header class="hdr" id="hdr">
-  <button class="hbk ibtn" id="btnBack" onclick="goBack()">← Atrás</button>
+  <button class="hbk ibtn" id="btnBack" onclick="goBack()">‹</button><button class="hbk ibtn" id="btnHome" onclick="goHome()" style="display:none">⌂</button>
   <div class="htitle" id="hTitle">Trial Revolution <small>Clasificación en directo</small></div>
   <div class="hright">
     <span class="bpre" id="sBadge">En espera</span>
@@ -320,20 +320,21 @@ function navigate(view, pushState=true) {
   });
 
   const backBtn=document.getElementById('btnBack');
+  const homeBtn=document.getElementById('btnHome');
   if(view==='home'){
     document.getElementById('vHome').classList.add('active');
-    backBtn.style.display='none';
+    backBtn.style.display='none'; if(homeBtn) homeBtn.style.display='none';
     document.getElementById('hTitle').innerHTML='Trial Revolution <small>Clasificación en directo</small>';
     if(pushState && _histOk) try { history.pushState({view:'home'},'','#home'); } catch(e) {}
   } else if(view==='cat'){
     document.getElementById('vCat').classList.add('active');
-    backBtn.style.display='';
+    backBtn.style.display=''; if(homeBtn) homeBtn.style.display='';
     const col=CAT_COLORS[_selCat]||'#888';
     document.getElementById('hTitle').innerHTML=`<span style="color:${col};font-size:20px;letter-spacing:3px">${_selCat}</span>`;
     if(pushState && _histOk) try { history.pushState({view:'cat',cat:_selCat},'','#cat-'+_selCat); } catch(e) {}
   } else if(view==='pilot'){
     document.getElementById('vPilot').classList.add('active');
-    backBtn.style.display='';
+    backBtn.style.display=''; if(homeBtn) homeBtn.style.display='';
     document.getElementById('hTitle').innerHTML=
       `<span style="font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${shortName(_selPilot.name)}</span>`;
     if(pushState && _histOk) try { history.pushState({view:'pilot',cat:_selCat,dorsal:_selPilot.dorsal},'','#pilot-'+_selPilot.dorsal); } catch(e) {}
@@ -343,6 +344,9 @@ function navigate(view, pushState=true) {
 
 function goBack(){
   history.back();
+}
+function goHome(){
+  renderHome(); navigate('home');
 }
 
 // Handle browser back/forward
@@ -407,8 +411,7 @@ function renderHome(){
       `<div class="ctbar" style="background:${col}"></div>`+
       `<div class="ctbody">`+
         `<div class="ctname" style="color:${col}">${cat}</div>`+
-        `<div class="ctldr">${ldr?shortName(ldr.name)+' · '+(getTotal(ldr)??'—')+' pts':'Sin resultados aún'}</div>`+
-        `<div class="ctmeta">${fCount} finalizados · ${rCount} retirados</div>`+
+        `<div class="ctmeta">${fCount} finalizados${rCount?' · '+rCount+' retirados':''}</div>`+
       `</div>`+
       `<div class="ctcount" style="color:${col}"><div class="ctnum">${cp.length}</div><div class="ctclbl">pilotos</div></div>`+
       `<div class="ctarrow">›</div>`;
@@ -508,7 +511,7 @@ function renderPilot(){
 
     const isLate=pen>0;
     const timesHtml=
-      `${li===0?'<div class="tchip"><div class="tl">Salida programada</div><div class="tv">'+(sch||'—')+'</div></div>':''}`+
+
       (arr?`<div class="tchip"><div class="tl">Llegada real</div><div class="tv ${isLate?'twn':'tok'}">${arr}</div></div>`:'<div class="tchip"><div class="tl">Llegada real</div><div class="tv">—</div></div>')+
       (tope?`<div class="tchip"><div class="tl">Hora tope</div><div class="tv">${tope}</div></div>`:'')+
       (dur?`<div class="tchip"><div class="tl">Tiempo vuelta</div><div class="tv">${dur}</div></div>`:'')+
@@ -531,8 +534,16 @@ function renderPilot(){
     `<div style="margin:12px 14px;background:rgba(194,65,12,.1);border:1px solid rgba(194,65,12,.4);border-radius:10px;padding:10px 14px"><div style="font-weight:800;color:#c2410c;font-size:13px;margin-bottom:4px">⛔ DESCALIFICADO</div><div style="font-size:12px">${p.dsqReason||'Sin motivo'}</div></div>`:
     p.dnf?`<div style="margin:12px 14px;background:rgba(185,28,28,.08);border:1px solid rgba(185,28,28,.3);border-radius:10px;padding:10px 14px"><div style="font-weight:800;color:var(--dg);font-size:13px">🚩 RETIRADO</div></div>`:'';
 
+  const schedHtml = sch
+    ? `<div style="display:flex;align-items:center;gap:10px;margin:10px 14px;background:var(--sf2);border:1px solid var(--bd);border-radius:10px;padding:10px 14px">`+
+      `<div style="font-size:20px">🏁</div>`+
+      `<div><div style="font-size:9px;color:var(--mu);text-transform:uppercase;letter-spacing:.5px">Hora de salida programada</div>`+
+      `<div style="font-size:20px;font-weight:900;font-family:monospace;color:var(--ac)">${sch}</div></div></div>`
+    : '';
+
   document.getElementById('pdBody').innerHTML=
     statusHtml+
+    schedHtml+
     `<div class="pdsec"><div class="pdstitle">Distribución de puntuaciones</div></div>`+
     `<div class="scbar">${scBar}</div>`+
     lapsHtml+extrasHtml;
