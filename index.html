@@ -336,7 +336,7 @@ function navigate(view, pushState=true) {
     document.getElementById('vPilot').classList.add('active');
     backBtn.style.display=''; if(homeBtn) homeBtn.style.display='';
     document.getElementById('hTitle').innerHTML=
-      `<span style="font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${shortName(_selPilot.name)}</span>`;
+      `<span style="font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${_selPilot.name}</span>`;
     if(pushState && _histOk) try { history.pushState({view:'pilot',cat:_selCat,dorsal:_selPilot.dorsal},'','#pilot-'+_selPilot.dorsal); } catch(e) {}
   }
   window.scrollTo(0,0);
@@ -453,7 +453,7 @@ function renderCat(){
     row.innerHTML=
       `<div class="ppos">${pos}</div>`+
       `<div class="pdors">${p.dorsal}</div>`+
-      `<div class="pinfo"><div class="pname">${shortName(p.name)}</div>`+
+      `<div class="pinfo"><div class="pname">${p.name}</div>`+
         `<div class="psub">${p.club||'Sin club'}</div></div>`+
       `<div class="pright">`+
         `<div class="ppts" style="color:${p.dnf||p.dsq?'var(--mu)':col}">${tp!==null?tp:'—'}</div>`+
