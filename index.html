@@ -290,16 +290,28 @@ function zoneClass(v){
 function lapBadge(p){
   if(p.dsq)return '<span class="pbdg bdq">DQ</span>';
   if(p.dnf)return '<span class="pbdg br">R</span>';
-  if(p.totalTime)return '<span class="pbdg bfin">✓ FIN</span>';
-  const l2=lapPts(p,1),l3=lapPts(p,2);
-  if(l3!==null)return '<span class="pbdg bv3">V3</span>';
-  if(l2!==null||p.lap1Time)return '<span class="pbdg bv2">V2</span>';
+  if(p.finishTime!=null||p.totalTime)return '<span class="pbdg bfin">✓ FIN</span>';
+  if(p.lap1Time!=null){
+    const hasV2=p.scores&&p.scores[1]&&p.scores[1].some(v=>v!==null);
+    return hasV2?'<span class="pbdg bv3">V3</span>':'<span class="pbdg bv2">V2</span>';
+  }
   return '<span class="pbdg bv1">V1</span>';
+}
+function lapRankM(p){
+  if(p.dsq)return-2; if(p.dnf)return-1;
+  if(p.finishTime!=null||p.totalTime)return 4;
+  if(p.lap1Time!=null){
+    const hasV2=p.scores&&p.scores[1]&&p.scores[1].some(v=>v!==null);
+    return hasV2?3:2;
+  }
+  return 1;
 }
 function sortPilots(arr){
   return arr.slice().sort((a,b)=>{
-    if((a.dnf||a.dsq)&&!(b.dnf||b.dsq))return 1;
-    if(!(a.dnf||a.dsq)&&(b.dnf||b.dsq))return-1;
+    if(a.dsq&&!b.dsq)return 1; if(!a.dsq&&b.dsq)return-1;
+    if(a.dnf&&!b.dnf)return 1; if(!a.dnf&&b.dnf)return-1;
+    const ra=lapRankM(a),rb=lapRankM(b);
+    if(ra!==rb)return rb-ra;
     const pa=getTotal(a)??9999,pb=getTotal(b)??9999;
     if(pa!==pb)return pa-pb;
     if(cnt(b,0)!==cnt(a,0))return cnt(b,0)-cnt(a,0);
