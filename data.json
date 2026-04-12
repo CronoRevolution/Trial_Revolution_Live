@@ -2,7 +2,7 @@
   "raceName": "Trial de Pobladura 2026",
   "organizer": "CD Pobladura R",
   "raceDate": "2026-04-12",
-  "publishedAt": "2026-04-12T12:25:19.811Z",
+  "publishedAt": "2026-04-12T12:25:49.897Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -956,13 +956,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 126,
+      "name": "MENENDEZ DIEZ, DAVID",
+      "cat": "TR3",
+      "club": "Asociación Motociclista de Asturias",
+      "brand": "SIN MARCA",
+      "schedStart": "10:14",
+      "rank": 3,
+      "scores": [
+        [
+          2,
+          3,
+          5,
+          3,
+          0,
+          3,
+          1
+        ],
+        [
+          1,
+          2,
+          3,
+          3,
+          3,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          5,
+          2,
+          3,
+          5,
+          0
+        ]
+      ],
+      "lap1Points": 17,
+      "lap2Points": 15,
+      "lap3Points": 15,
+      "lap1Time": "01:31:24",
+      "lap2Time": "01:22:09",
+      "lap3Time": "01:17:11",
+      "arrV1": "11:45:24",
+      "arrV2": "13:07:09",
+      "arrCHF": "14:24:44",
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 47,
+      "lapsCompleted": 3,
+      "totalTime": "04:10:44",
+      "n0s": 5,
+      "n1s": 2,
+      "n2s": 3,
+      "n3s": 8,
+      "n5s": 3,
+      "finishTime": 51884000,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 116,
       "name": "TORRE FERNANDEZ, PABLO",
       "cat": "TR3",
       "club": "CD Moto Nava",
       "brand": "ELECTRIC-MOTION",
       "schedStart": "10:15",
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           3,
@@ -1024,7 +1086,7 @@
       "club": "MC Vallisoletano",
       "brand": "BETA",
       "schedStart": "10:20",
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           3,
@@ -1086,7 +1148,7 @@
       "club": "CD Pobladura R",
       "brand": "GASGAS",
       "schedStart": "10:17",
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           0,
@@ -1148,7 +1210,7 @@
       "club": "CD Moto Bierzo",
       "brand": "TRRS",
       "schedStart": "10:10",
-      "rank": 6,
+      "rank": 7,
       "scores": [
         [
           1,
@@ -1210,7 +1272,7 @@
       "club": "CD Moto Bierzo",
       "brand": "BETA",
       "schedStart": "10:19",
-      "rank": 7,
+      "rank": 8,
       "scores": [
         [
           0,
@@ -1259,68 +1321,6 @@
       "n1s": 2,
       "n2s": 4,
       "n3s": 1,
-      "n5s": 1,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 126,
-      "name": "MENENDEZ DIEZ, DAVID",
-      "cat": "TR3",
-      "club": "Asociación Motociclista de Asturias",
-      "brand": "SIN MARCA",
-      "schedStart": "10:14",
-      "rank": 8,
-      "scores": [
-        [
-          2,
-          3,
-          5,
-          3,
-          0,
-          3,
-          1
-        ],
-        [
-          1,
-          2,
-          3,
-          3,
-          3,
-          3,
-          0
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 17,
-      "lap2Points": 15,
-      "lap3Points": null,
-      "lap1Time": "01:31:24",
-      "lap2Time": "01:22:09",
-      "lap3Time": null,
-      "arrV1": "11:45:24",
-      "arrV2": "13:07:09",
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 32,
-      "lapsCompleted": 2,
-      "totalTime": "",
-      "n0s": 2,
-      "n1s": 2,
-      "n2s": 2,
-      "n3s": 7,
       "n5s": 1,
       "finishTime": null,
       "dnf": false,
