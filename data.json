@@ -2,7 +2,7 @@
   "raceName": "Trial de Pobladura 2026",
   "organizer": "CD Pobladura R",
   "raceDate": "2026-04-12",
-  "publishedAt": "2026-04-12T12:54:12.121Z",
+  "publishedAt": "2026-04-12T12:54:42.139Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -330,13 +330,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 185,
+      "name": "IGLESIAS CORDERO, SAUL",
+      "cat": "TR2",
+      "club": "Moto Club Cuenca Minera",
+      "brand": "BETA",
+      "schedStart": "10:25",
+      "rank": 3,
+      "scores": [
+        [
+          0,
+          0,
+          0,
+          2,
+          3,
+          3,
+          5
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          5,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          3,
+          3,
+          5
+        ]
+      ],
+      "lap1Points": 13,
+      "lap2Points": 8,
+      "lap3Points": 13,
+      "lap1Time": "01:58:46",
+      "lap2Time": "01:24:37",
+      "lap3Time": "01:04:04",
+      "arrV1": "12:23:46",
+      "arrV2": "13:47:37",
+      "arrCHF": "14:52:27",
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 34,
+      "lapsCompleted": 3,
+      "totalTime": "04:27:27",
+      "n0s": 11,
+      "n1s": 0,
+      "n2s": 2,
+      "n3s": 5,
+      "n5s": 3,
+      "finishTime": 53547000,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 175,
       "name": "FERNANDEZ PRIETO, JAVIER",
       "cat": "TR2",
       "club": "CD Moto Nava",
       "brand": "BETA",
       "schedStart": "10:23",
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           0,
@@ -398,7 +460,7 @@
       "club": "CD Pobladura R",
       "brand": "GASGAS",
       "schedStart": "10:21",
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           5,
@@ -460,7 +522,7 @@
       "club": "Club Motomontañismo Arteixo",
       "brand": "SHERCO",
       "schedStart": "10:21",
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           3,
@@ -522,7 +584,7 @@
       "club": "CD Pobladura R",
       "brand": "GASGAS",
       "schedStart": "10:22",
-      "rank": 6,
+      "rank": 7,
       "scores": [
         [
           3,
@@ -573,68 +635,6 @@
       "n3s": 6,
       "n5s": 1,
       "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 185,
-      "name": "IGLESIAS CORDERO, SAUL",
-      "cat": "TR2",
-      "club": "Moto Club Cuenca Minera",
-      "brand": "BETA",
-      "schedStart": "10:25",
-      "rank": 7,
-      "scores": [
-        [
-          0,
-          0,
-          0,
-          2,
-          3,
-          3,
-          5
-        ],
-        [
-          0,
-          0,
-          0,
-          0,
-          5,
-          3,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          2,
-          3,
-          3,
-          null
-        ]
-      ],
-      "lap1Points": 13,
-      "lap2Points": 8,
-      "lap3Points": 8,
-      "lap1Time": "01:58:46",
-      "lap2Time": "01:24:37",
-      "lap3Time": "01:04:04",
-      "arrV1": "12:23:46",
-      "arrV2": "13:47:37",
-      "arrCHF": "14:52:27",
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 29,
-      "lapsCompleted": 3,
-      "totalTime": "04:27:27",
-      "n0s": 11,
-      "n1s": 0,
-      "n2s": 2,
-      "n3s": 5,
-      "n5s": 2,
-      "finishTime": 53547000,
       "dnf": false,
       "dsq": false,
       "dsqReason": ""
