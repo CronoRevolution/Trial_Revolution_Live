@@ -2,7 +2,7 @@
   "raceName": "Trial de Pobladura 2026",
   "organizer": "CD Pobladura R",
   "raceDate": "2026-04-12",
-  "publishedAt": "2026-04-12T12:53:12.328Z",
+  "publishedAt": "2026-04-12T12:53:42.348Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -392,13 +392,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 177,
+      "name": "OVIEDO RODRIGUEZ, UNAI",
+      "cat": "TR2",
+      "club": "CD Pobladura R",
+      "brand": "GASGAS",
+      "schedStart": "10:21",
+      "rank": 4,
+      "scores": [
+        [
+          5,
+          1,
+          0,
+          0,
+          3,
+          5,
+          3
+        ],
+        [
+          2,
+          0,
+          0,
+          1,
+          3,
+          3,
+          5
+        ],
+        [
+          5,
+          0,
+          0,
+          1,
+          5,
+          5,
+          2
+        ]
+      ],
+      "lap1Points": 17,
+      "lap2Points": 14,
+      "lap3Points": 18,
+      "lap1Time": "02:21:22",
+      "lap2Time": "01:10:23",
+      "lap3Time": "00:59:12",
+      "arrV1": "12:42:22",
+      "arrV2": "13:52:23",
+      "arrCHF": "14:51:57",
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 49,
+      "lapsCompleted": 3,
+      "totalTime": "04:30:57",
+      "n0s": 6,
+      "n1s": 3,
+      "n2s": 2,
+      "n3s": 4,
+      "n5s": 6,
+      "finishTime": 53517000,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 180,
       "name": "MOSQUERA BARJA, MATIAS",
       "cat": "TR2",
       "club": "Club Motomontañismo Arteixo",
       "brand": "SHERCO",
       "schedStart": "10:21",
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           3,
@@ -460,7 +522,7 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "BETA",
       "schedStart": "10:25",
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           0,
@@ -522,7 +584,7 @@
       "club": "CD Pobladura R",
       "brand": "GASGAS",
       "schedStart": "10:22",
-      "rank": 6,
+      "rank": 7,
       "scores": [
         [
           3,
@@ -573,68 +635,6 @@
       "n3s": 6,
       "n5s": 1,
       "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 177,
-      "name": "OVIEDO RODRIGUEZ, UNAI",
-      "cat": "TR2",
-      "club": "CD Pobladura R",
-      "brand": "GASGAS",
-      "schedStart": "10:21",
-      "rank": 7,
-      "scores": [
-        [
-          5,
-          1,
-          0,
-          0,
-          3,
-          5,
-          3
-        ],
-        [
-          2,
-          0,
-          0,
-          1,
-          3,
-          3,
-          5
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 17,
-      "lap2Points": 14,
-      "lap3Points": null,
-      "lap1Time": "02:21:22",
-      "lap2Time": "01:10:23",
-      "lap3Time": "00:59:12",
-      "arrV1": "12:42:22",
-      "arrV2": "13:52:23",
-      "arrCHF": "14:51:57",
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 31,
-      "lapsCompleted": 2,
-      "totalTime": "04:30:57",
-      "n0s": 4,
-      "n1s": 2,
-      "n2s": 1,
-      "n3s": 4,
-      "n5s": 3,
-      "finishTime": 53517000,
       "dnf": false,
       "dsq": false,
       "dsqReason": ""
