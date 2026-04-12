@@ -2,7 +2,7 @@
   "raceName": "Trial de Pobladura 2026",
   "organizer": "CD Pobladura R",
   "raceDate": "2026-04-12",
-  "publishedAt": "2026-04-12T12:08:19.866Z",
+  "publishedAt": "2026-04-12T12:13:50.288Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -82,13 +82,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 212,
+      "name": "RODRIGUEZ REYERO, LUCAS",
+      "cat": "TR1",
+      "club": "CD Moto Nava",
+      "brand": "ELECTRIC-MOTION",
+      "schedStart": "10:26",
+      "rank": 2,
+      "scores": [
+        [
+          2,
+          1,
+          0,
+          1,
+          3,
+          3,
+          3
+        ],
+        [
+          1,
+          5,
+          1,
+          1,
+          5,
+          5,
+          3
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 13,
+      "lap2Points": 21,
+      "lap3Points": null,
+      "lap1Time": "02:27:37",
+      "lap2Time": "01:17:53",
+      "lap3Time": null,
+      "arrV1": "12:53:37",
+      "arrV2": "14:10:53",
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 34,
+      "lapsCompleted": 2,
+      "totalTime": "",
+      "n0s": 1,
+      "n1s": 5,
+      "n2s": 1,
+      "n3s": 4,
+      "n5s": 3,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 211,
       "name": "GONZALEZ JUAN, SERGIO",
       "cat": "TR1",
       "club": "CD Moto Bierzo",
       "brand": "SHERCO",
       "schedStart": "10:27",
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           1,
@@ -138,68 +200,6 @@
       "n2s": 1,
       "n3s": 1,
       "n5s": 6,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 212,
-      "name": "RODRIGUEZ REYERO, LUCAS",
-      "cat": "TR1",
-      "club": "CD Moto Nava",
-      "brand": "ELECTRIC-MOTION",
-      "schedStart": "10:26",
-      "rank": 3,
-      "scores": [
-        [
-          2,
-          1,
-          0,
-          1,
-          3,
-          3,
-          3
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 13,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": "02:27:37",
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": "12:53:37",
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 13,
-      "lapsCompleted": 1,
-      "totalTime": "",
-      "n0s": 1,
-      "n1s": 2,
-      "n2s": 1,
-      "n3s": 3,
-      "n5s": 0,
       "finishTime": null,
       "dnf": false,
       "dsq": false,
@@ -832,13 +832,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 111,
+      "name": "BARREDO RODRIGUEZ, SAUL",
+      "cat": "TR3",
+      "club": "CD Pobladura R",
+      "brand": "GASGAS",
+      "schedStart": "10:17",
+      "rank": 1,
+      "scores": [
+        [
+          0,
+          0,
+          0,
+          0,
+          3,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          3,
+          0
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 6,
+      "lap2Points": 4,
+      "lap3Points": null,
+      "lap1Time": "02:29:23",
+      "lap2Time": "01:26:19",
+      "lap3Time": null,
+      "arrV1": "12:46:23",
+      "arrV2": "14:12:19",
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 10,
+      "lapsCompleted": 2,
+      "totalTime": "",
+      "n0s": 10,
+      "n1s": 1,
+      "n2s": 0,
+      "n3s": 3,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 114,
       "name": "GOMEZ SANCHEZ, MAIKEL",
       "cat": "TR3",
       "club": "CD Moto Bierzo",
       "brand": "TRRS",
       "schedStart": "10:10",
-      "rank": 1,
+      "rank": 2,
       "scores": [
         [
           1,
@@ -900,7 +962,7 @@
       "club": "Asociación Motociclista de Asturias",
       "brand": "MONTESA",
       "schedStart": "10:14",
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           1,
@@ -962,7 +1024,7 @@
       "club": "CD Moto Bierzo",
       "brand": "BETA",
       "schedStart": "10:19",
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           0,
@@ -1024,7 +1086,7 @@
       "club": "CD Moto Nava",
       "brand": "ELECTRIC-MOTION",
       "schedStart": "10:16",
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           2,
@@ -1086,7 +1148,7 @@
       "club": "Asociación Motociclista de Asturias",
       "brand": "SIN MARCA",
       "schedStart": "10:14",
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           2,
@@ -1148,7 +1210,7 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "TRRS",
       "schedStart": "10:17",
-      "rank": 6,
+      "rank": 7,
       "scores": [
         [
           3,
@@ -1210,7 +1272,7 @@
       "club": "MC Vallisoletano",
       "brand": "BETA",
       "schedStart": "10:20",
-      "rank": 7,
+      "rank": 8,
       "scores": [
         [
           3,
@@ -1272,7 +1334,7 @@
       "club": "CD Moto Nava",
       "brand": "ELECTRIC-MOTION",
       "schedStart": "10:15",
-      "rank": 8,
+      "rank": 9,
       "scores": [
         [
           3,
@@ -1334,7 +1396,7 @@
       "club": "CD Moto Nava",
       "brand": "TRS",
       "schedStart": "10:16",
-      "rank": 9,
+      "rank": 10,
       "scores": [
         [
           1,
@@ -1403,7 +1465,7 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "TRRS",
       "schedStart": "10:15",
-      "rank": 10,
+      "rank": 11,
       "scores": [
         [
           5,
@@ -1465,7 +1527,7 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "TRRS",
       "schedStart": "10:18",
-      "rank": 11,
+      "rank": 12,
       "scores": [
         [
           5,
@@ -1527,7 +1589,7 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "TRRS",
       "schedStart": "10:18",
-      "rank": 12,
+      "rank": 13,
       "scores": [
         [
           5,
@@ -1584,68 +1646,6 @@
       "n2s": 3,
       "n3s": 6,
       "n5s": 3,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 111,
-      "name": "BARREDO RODRIGUEZ, SAUL",
-      "cat": "TR3",
-      "club": "CD Pobladura R",
-      "brand": "GASGAS",
-      "schedStart": "10:17",
-      "rank": 13,
-      "scores": [
-        [
-          0,
-          0,
-          0,
-          0,
-          3,
-          3,
-          0
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 6,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": "02:29:23",
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": "12:46:23",
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 6,
-      "lapsCompleted": 1,
-      "totalTime": "",
-      "n0s": 5,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 2,
-      "n5s": 0,
       "finishTime": null,
       "dnf": false,
       "dsq": false,
@@ -1776,13 +1776,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 76,
+      "name": "GARCIA EGEA, PABLO",
+      "cat": "TR4",
+      "club": "Moto Club Cuenca Minera",
+      "brand": "GASGAS",
+      "schedStart": "10:13",
+      "rank": 3,
+      "scores": [
+        [
+          1,
+          1,
+          1,
+          2,
+          5,
+          1,
+          3
+        ],
+        [
+          1,
+          0,
+          5,
+          2,
+          2,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          0,
+          2
+        ]
+      ],
+      "lap1Points": 14,
+      "lap2Points": 13,
+      "lap3Points": 6,
+      "lap1Time": "01:17:51",
+      "lap2Time": "01:22:00",
+      "lap3Time": "01:15:14",
+      "arrV1": "11:30:51",
+      "arrV2": "12:52:00",
+      "arrCHF": "14:08:05",
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 33,
+      "lapsCompleted": 3,
+      "totalTime": "03:55:05",
+      "n0s": 5,
+      "n1s": 7,
+      "n2s": 5,
+      "n3s": 2,
+      "n5s": 2,
+      "finishTime": 50885000,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 78,
       "name": "CASADO FERNANDEZ, NOE",
       "cat": "TR4",
       "club": "Moto Club Cuenca Minera",
       "brand": "GASGAS",
       "schedStart": "10:07",
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           0,
@@ -1844,7 +1906,7 @@
       "club": "Moto Club Villaviciosa",
       "brand": "GASGAS",
       "schedStart": "10:12",
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           1,
@@ -1906,7 +1968,7 @@
       "club": "Club Motomontañismo Arteixo",
       "brand": "VERTIGO",
       "schedStart": "10:27",
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           0,
@@ -1968,7 +2030,7 @@
       "club": "CD Moto Bierzo",
       "brand": "SHERCO",
       "schedStart": "10:10",
-      "rank": 6,
+      "rank": 7,
       "scores": [
         [
           0,
@@ -2030,7 +2092,7 @@
       "club": "CD Moto Bierzo",
       "brand": "SIN MARCA",
       "schedStart": "10:12",
-      "rank": 7,
+      "rank": 8,
       "scores": [
         [
           0,
@@ -2092,7 +2154,7 @@
       "club": "Club Motomontañismo Arteixo",
       "brand": "",
       "schedStart": "10:28",
-      "rank": 8,
+      "rank": 9,
       "scores": [
         [
           0,
@@ -2154,7 +2216,7 @@
       "club": "CD Pobladura R",
       "brand": "SIN MARCA",
       "schedStart": "10:13",
-      "rank": 9,
+      "rank": 10,
       "scores": [
         [
           0,
@@ -2216,7 +2278,7 @@
       "club": "CD Moto Bierzo",
       "brand": "GASGAS",
       "schedStart": "10:06",
-      "rank": 10,
+      "rank": 11,
       "scores": [
         [
           0,
@@ -2278,7 +2340,7 @@
       "club": "CD Pobladura R",
       "brand": "BETA",
       "schedStart": "10:07",
-      "rank": 11,
+      "rank": 12,
       "scores": [
         [
           1,
@@ -2340,7 +2402,7 @@
       "club": "CD Portillo",
       "brand": "VERTIGO",
       "schedStart": "10:09",
-      "rank": 12,
+      "rank": 13,
       "scores": [
         [
           0,
@@ -2391,68 +2453,6 @@
       "n3s": 4,
       "n5s": 3,
       "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 76,
-      "name": "GARCIA EGEA, PABLO",
-      "cat": "TR4",
-      "club": "Moto Club Cuenca Minera",
-      "brand": "GASGAS",
-      "schedStart": "10:13",
-      "rank": 13,
-      "scores": [
-        [
-          1,
-          1,
-          1,
-          2,
-          5,
-          1,
-          3
-        ],
-        [
-          1,
-          0,
-          5,
-          2,
-          2,
-          3,
-          0
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 14,
-      "lap2Points": 13,
-      "lap3Points": null,
-      "lap1Time": "01:17:51",
-      "lap2Time": "01:22:00",
-      "lap3Time": "01:15:14",
-      "arrV1": "11:30:51",
-      "arrV2": "12:52:00",
-      "arrCHF": "14:08:05",
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 27,
-      "lapsCompleted": 2,
-      "totalTime": "03:55:05",
-      "n0s": 2,
-      "n1s": 5,
-      "n2s": 3,
-      "n3s": 2,
-      "n5s": 2,
-      "finishTime": 50885000,
       "dnf": false,
       "dsq": false,
       "dsqReason": ""
