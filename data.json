@@ -2,7 +2,7 @@
   "raceName": "Trial de Pobladura 2026",
   "organizer": "CD Pobladura R",
   "raceDate": "2026-04-12",
-  "publishedAt": "2026-04-12T09:30:35.685Z",
+  "publishedAt": "2026-04-12T09:31:05.736Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -1776,13 +1776,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 73,
+      "name": "ALVAREZ TURRADO, JOSE RAMON",
+      "cat": "TR4",
+      "club": "Moto Club Villaviciosa",
+      "brand": "GASGAS",
+      "schedStart": "10:12",
+      "rank": 3,
+      "scores": [
+        [
+          1,
+          3,
+          1,
+          3,
+          0,
+          3,
+          3
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 14,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "01:17:50",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "11:29:50",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 14,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 1,
+      "n1s": 2,
+      "n2s": 0,
+      "n3s": 4,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 66,
       "name": "RUBIO HERNANDEZ, BRUNO",
       "cat": "TR4",
       "club": "CD Moto Nava",
       "brand": "BETA",
       "schedStart": "10:08",
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           null,
@@ -1850,7 +1912,7 @@
       "club": "Club Motomontañismo Arteixo",
       "brand": "SHERCO",
       "schedStart": "10:05",
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           null,
@@ -1912,7 +1974,7 @@
       "club": "CD Pobladura R",
       "brand": "SIN MARCA",
       "schedStart": "10:05",
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           null,
@@ -1974,7 +2036,7 @@
       "club": "CD Moto Bierzo",
       "brand": "TRRS",
       "schedStart": "10:06",
-      "rank": 6,
+      "rank": 7,
       "scores": [
         [
           null,
@@ -2036,7 +2098,7 @@
       "club": "CD Moto Bierzo",
       "brand": "GASGAS",
       "schedStart": "10:06",
-      "rank": 7,
+      "rank": 8,
       "scores": [
         [
           null,
@@ -2098,7 +2160,7 @@
       "club": "CD Pobladura R",
       "brand": "BETA",
       "schedStart": "10:07",
-      "rank": 8,
+      "rank": 9,
       "scores": [
         [
           null,
@@ -2160,7 +2222,7 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "GASGAS",
       "schedStart": "10:07",
-      "rank": 9,
+      "rank": 10,
       "scores": [
         [
           null,
@@ -2222,7 +2284,7 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "SIN MARCA",
       "schedStart": "10:08",
-      "rank": 10,
+      "rank": 11,
       "scores": [
         [
           null,
@@ -2284,7 +2346,7 @@
       "club": "CD Portillo",
       "brand": "VERTIGO",
       "schedStart": "10:09",
-      "rank": 11,
+      "rank": 12,
       "scores": [
         [
           null,
@@ -2346,7 +2408,7 @@
       "club": "Asociación Motociclista de Asturias",
       "brand": "MONTESA",
       "schedStart": "10:09",
-      "rank": 12,
+      "rank": 13,
       "scores": [
         [
           null,
@@ -2408,7 +2470,7 @@
       "club": "CD Moto Bierzo",
       "brand": "SHERCO",
       "schedStart": "10:10",
-      "rank": 13,
+      "rank": 14,
       "scores": [
         [
           null,
@@ -2470,68 +2532,6 @@
       "club": "",
       "brand": "SIN MARCA",
       "schedStart": "10:11",
-      "rank": 14,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": null,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 73,
-      "name": "ALVAREZ TURRADO, JOSE RAMON",
-      "cat": "TR4",
-      "club": "Moto Club Villaviciosa",
-      "brand": "GASGAS",
-      "schedStart": "10:12",
       "rank": 15,
       "scores": [
         [
