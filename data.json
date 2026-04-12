@@ -2,7 +2,7 @@
   "raceName": "Trial de Pobladura 2026",
   "organizer": "CD Pobladura R",
   "raceDate": "2026-04-12",
-  "publishedAt": "2026-04-12T09:14:35.742Z",
+  "publishedAt": "2026-04-12T09:15:05.685Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -1652,13 +1652,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 65,
+      "name": "FERNANDEZ PEREZ, ANDRES",
+      "cat": "TR4",
+      "club": "CD Pobladura R",
+      "brand": "SIN MARCA",
+      "schedStart": "10:11",
+      "rank": 1,
+      "scores": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": null,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "01:02:59",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "11:13:59",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": null,
+      "lapsCompleted": 0,
+      "totalTime": "",
+      "n0s": 0,
+      "n1s": 0,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 66,
       "name": "RUBIO HERNANDEZ, BRUNO",
       "cat": "TR4",
       "club": "CD Moto Nava",
       "brand": "BETA",
       "schedStart": "10:08",
-      "rank": 1,
+      "rank": 2,
       "scores": [
         [
           null,
@@ -1726,7 +1788,7 @@
       "club": "Club Motomontañismo Arteixo",
       "brand": "SIN MARCA",
       "schedStart": "10:04",
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           null,
@@ -1788,7 +1850,7 @@
       "club": "Club Motomontañismo Arteixo",
       "brand": "SHERCO",
       "schedStart": "10:05",
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           null,
@@ -1850,7 +1912,7 @@
       "club": "CD Pobladura R",
       "brand": "SIN MARCA",
       "schedStart": "10:05",
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           null,
@@ -1912,7 +1974,7 @@
       "club": "CD Moto Bierzo",
       "brand": "TRRS",
       "schedStart": "10:06",
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           null,
@@ -1974,7 +2036,7 @@
       "club": "CD Moto Bierzo",
       "brand": "GASGAS",
       "schedStart": "10:06",
-      "rank": 6,
+      "rank": 7,
       "scores": [
         [
           null,
@@ -2036,7 +2098,7 @@
       "club": "CD Pobladura R",
       "brand": "BETA",
       "schedStart": "10:07",
-      "rank": 7,
+      "rank": 8,
       "scores": [
         [
           null,
@@ -2098,7 +2160,7 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "GASGAS",
       "schedStart": "10:07",
-      "rank": 8,
+      "rank": 9,
       "scores": [
         [
           null,
@@ -2160,7 +2222,7 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "SIN MARCA",
       "schedStart": "10:08",
-      "rank": 9,
+      "rank": 10,
       "scores": [
         [
           null,
@@ -2222,7 +2284,7 @@
       "club": "CD Portillo",
       "brand": "VERTIGO",
       "schedStart": "10:09",
-      "rank": 10,
+      "rank": 11,
       "scores": [
         [
           null,
@@ -2284,68 +2346,6 @@
       "club": "Asociación Motociclista de Asturias",
       "brand": "MONTESA",
       "schedStart": "10:09",
-      "rank": 11,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": null,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 65,
-      "name": "FERNANDEZ PEREZ, ANDRES",
-      "cat": "TR4",
-      "club": "CD Pobladura R",
-      "brand": "SIN MARCA",
-      "schedStart": "10:11",
       "rank": 12,
       "scores": [
         [
