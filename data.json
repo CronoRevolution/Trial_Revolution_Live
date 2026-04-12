@@ -2,7 +2,7 @@
   "raceName": "Trial de Pobladura 2026",
   "organizer": "CD Pobladura R",
   "raceDate": "2026-04-12",
-  "publishedAt": "2026-04-12T10:04:35.677Z",
+  "publishedAt": "2026-04-12T10:05:05.924Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -956,13 +956,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 114,
+      "name": "GOMEZ SANCHEZ, MAIKEL",
+      "cat": "TR3",
+      "club": "CD Moto Bierzo",
+      "brand": "TRRS",
+      "schedStart": "10:10",
+      "rank": 3,
+      "scores": [
+        [
+          1,
+          5,
+          0,
+          3,
+          2,
+          1,
+          0
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 12,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "01:53:14",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "12:03:14",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 12,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 2,
+      "n1s": 2,
+      "n2s": 1,
+      "n3s": 1,
+      "n5s": 1,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 123,
       "name": "DIEZ DE TEJADA ALONSO, LUIS",
       "cat": "TR3",
       "club": "Moto Club Cuenca Minera",
       "brand": "TRRS",
       "schedStart": "10:17",
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           3,
@@ -1024,7 +1086,7 @@
       "club": "Asociación Motociclista de Asturias",
       "brand": "SIN MARCA",
       "schedStart": "10:14",
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           2,
@@ -1086,7 +1148,7 @@
       "club": "CD Moto Nava",
       "brand": "TRS",
       "schedStart": "10:16",
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           1,
@@ -1155,7 +1217,7 @@
       "club": "CD Moto Nava",
       "brand": "ELECTRIC-MOTION",
       "schedStart": "10:15",
-      "rank": 6,
+      "rank": 7,
       "scores": [
         [
           3,
@@ -1217,7 +1279,7 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "TRRS",
       "schedStart": "10:18",
-      "rank": 7,
+      "rank": 8,
       "scores": [
         [
           null,
@@ -1267,68 +1329,6 @@
         }
       ],
       "totalPoints": 1,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 114,
-      "name": "GOMEZ SANCHEZ, MAIKEL",
-      "cat": "TR3",
-      "club": "CD Moto Bierzo",
-      "brand": "TRRS",
-      "schedStart": "10:10",
-      "rank": 8,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": null,
       "lapsCompleted": 0,
       "totalTime": "",
       "n0s": 0,
