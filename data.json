@@ -2,8 +2,8 @@
   "raceName": "Trial de Pobladura 2026",
   "organizer": "CD Pobladura R",
   "raceDate": "2026-04-12",
-  "publishedAt": "2026-04-11T17:41:41.643Z",
-  "raceStarted": true,
+  "publishedAt": "2026-04-12T06:48:20.413Z",
+  "raceStarted": false,
   "raceFinished": false,
   "cfg": {
     "numZones": 7,
@@ -831,7 +831,7 @@
       "cat": "TR3",
       "club": "Asociación Motociclista de Asturias",
       "brand": "SIN MARCA",
-      "schedStart": "10:13",
+      "schedStart": "10:14",
       "rank": 1,
       "scores": [
         [
@@ -893,7 +893,7 @@
       "cat": "TR3",
       "club": "CD Moto Bierzo",
       "brand": "TRRS",
-      "schedStart": "10:14",
+      "schedStart": "10:10",
       "rank": 2,
       "scores": [
         [
@@ -2443,7 +2443,7 @@
       "cat": "TR4",
       "club": "CD Pobladura R",
       "brand": "SIN MARCA",
-      "schedStart": "10:10",
+      "schedStart": "10:11",
       "rank": 12,
       "scores": [
         [
@@ -2629,7 +2629,7 @@
       "cat": "TR4",
       "club": "Moto Club Villaviciosa",
       "brand": "GASGAS",
-      "schedStart": "10:11",
+      "schedStart": "10:12",
       "rank": 15,
       "scores": [
         [
@@ -2753,7 +2753,7 @@
       "cat": "TR4",
       "club": "Moto Club Cuenca Minera",
       "brand": "GASGAS",
-      "schedStart": "10:12",
+      "schedStart": "10:13",
       "rank": 17,
       "scores": [
         [
@@ -3182,7 +3182,7 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 80,
+      "dorsal": 8,
       "name": "CASADO CUENDIAS, DAVID",
       "cat": "TR5",
       "club": "Moto Club Cuenca Minera",
