@@ -2,7 +2,7 @@
   "raceName": "Trial de Pobladura 2026",
   "organizer": "CD Pobladura R",
   "raceDate": "2026-04-12",
-  "publishedAt": "2026-04-12T07:30:12.087Z",
+  "publishedAt": "2026-04-12T07:30:42.078Z",
   "raceStarted": false,
   "raceFinished": false,
   "cfg": {
@@ -3251,6 +3251,68 @@
       "brand": "",
       "schedStart": "10:28",
       "rank": 7,
+      "scores": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": null,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": null,
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": null,
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": null,
+      "lapsCompleted": 0,
+      "totalTime": "",
+      "n0s": 0,
+      "n1s": 0,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
+      "dorsal": 10,
+      "name": "SAL GONZALEZ, MARCO",
+      "cat": "TR5",
+      "club": "CD Pobladura R",
+      "brand": "",
+      "schedStart": "10:29",
+      "rank": 8,
       "scores": [
         [
           null,
