@@ -2,7 +2,7 @@
   "raceName": "Trial de Pobladura 2026",
   "organizer": "CD Pobladura R",
   "raceDate": "2026-04-12",
-  "publishedAt": "2026-04-12T09:30:05.644Z",
+  "publishedAt": "2026-04-12T09:30:35.685Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -2960,13 +2960,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 5,
+      "name": "PEREZ SANCHEZ, MARIN",
+      "cat": "TR5",
+      "club": "CD Pobladura R",
+      "brand": "BETA",
+      "schedStart": "10:03",
+      "rank": 2,
+      "scores": [
+        [
+          0,
+          0,
+          5,
+          5,
+          0,
+          5,
+          0
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 15,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "01:23:35",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "11:26:35",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 15,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 4,
+      "n1s": 0,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 3,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 2,
       "name": "GUERRERO CARBALLO, CARMEN",
       "cat": "TR5",
       "club": "CD Moto Bierzo",
       "brand": "SIN MARCA",
       "schedStart": "10:02",
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           1,
@@ -3034,7 +3096,7 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "TRRS",
       "schedStart": "10:04",
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           5,
@@ -3096,7 +3158,7 @@
       "club": "CD Pobladura R",
       "brand": "OSET BIKE",
       "schedStart": "10:03",
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           5,
@@ -3158,68 +3220,6 @@
       "club": "CD Moto Bierzo",
       "brand": "SIN MARCA",
       "schedStart": "10:01",
-      "rank": 5,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": null,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 5,
-      "name": "PEREZ SANCHEZ, MARIN",
-      "cat": "TR5",
-      "club": "CD Pobladura R",
-      "brand": "BETA",
-      "schedStart": "10:03",
       "rank": 6,
       "scores": [
         [
