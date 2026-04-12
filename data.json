@@ -2,7 +2,7 @@
   "raceName": "Trial de Pobladura 2026",
   "organizer": "CD Pobladura R",
   "raceDate": "2026-04-12",
-  "publishedAt": "2026-04-12T07:08:58.115Z",
+  "publishedAt": "2026-04-12T07:21:12.647Z",
   "raceStarted": false,
   "raceFinished": false,
   "cfg": {
@@ -702,7 +702,7 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 183,
+      "dorsal": 185,
       "name": "IGLESIAS CORDERO, SAUL",
       "cat": "TR2",
       "club": "Moto Club Cuenca Minera",
@@ -1384,7 +1384,7 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 120,
+      "dorsal": 127,
       "name": "GARCIA GARCIA, PABLO",
       "cat": "TR3",
       "club": "Moto Club Cuenca Minera",
@@ -1508,75 +1508,13 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 122,
-      "name": "SANDIN SENDON, AITOR",
-      "cat": "TR3",
-      "club": "Club Motomontañismo Arteixo",
-      "brand": "VERTIGO",
-      "schedStart": "10:19",
-      "rank": 12,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": null,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
       "dorsal": 115,
       "name": "MACIAS PARAMO, SAMUEL",
       "cat": "TR3",
       "club": "CD Moto Bierzo",
       "brand": "BETA",
       "schedStart": "10:19",
-      "rank": 13,
+      "rank": 12,
       "scores": [
         [
           null,
@@ -1638,7 +1576,7 @@
       "club": "",
       "brand": "TRRS",
       "schedStart": "10:20",
-      "rank": 14,
+      "rank": 13,
       "scores": [
         [
           null,
@@ -1700,7 +1638,7 @@
       "club": "MC Vallisoletano",
       "brand": "BETA",
       "schedStart": "10:20",
-      "rank": 15,
+      "rank": 14,
       "scores": [
         [
           null,
@@ -2817,6 +2755,68 @@
       "brand": "SIN MARCA",
       "schedStart": "10:13",
       "rank": 18,
+      "scores": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": null,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": null,
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": null,
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": null,
+      "lapsCompleted": 0,
+      "totalTime": "",
+      "n0s": 0,
+      "n1s": 0,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
+      "dorsal": 80,
+      "name": "SANDIN SENDON, AITOR",
+      "cat": "TR4",
+      "club": "Club Motomontañismo Arteixo",
+      "brand": "VERTIGO",
+      "schedStart": "10:27",
+      "rank": 19,
       "scores": [
         [
           null,
