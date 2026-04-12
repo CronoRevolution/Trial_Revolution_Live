@@ -2,7 +2,7 @@
   "raceName": "Trial de Pobladura 2026",
   "organizer": "CD Pobladura R",
   "raceDate": "2026-04-12",
-  "publishedAt": "2026-04-12T12:14:20.472Z",
+  "publishedAt": "2026-04-12T12:14:49.759Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -1652,13 +1652,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 69,
+      "name": "FERNANDEZ LOPEZ, JORGE",
+      "cat": "TR4",
+      "club": "CD Moto Bierzo",
+      "brand": "SIN MARCA",
+      "schedStart": "10:12",
+      "rank": 1,
+      "scores": [
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          5,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ]
+      ],
+      "lap1Points": 6,
+      "lap2Points": 8,
+      "lap3Points": 1,
+      "lap1Time": "01:21:43",
+      "lap2Time": "01:24:08",
+      "lap3Time": "01:15:00",
+      "arrV1": "11:33:43",
+      "arrV2": "12:57:08",
+      "arrCHF": "14:12:51",
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 15,
+      "lapsCompleted": 3,
+      "totalTime": "04:00:51",
+      "n0s": 13,
+      "n1s": 5,
+      "n2s": 1,
+      "n3s": 1,
+      "n5s": 1,
+      "finishTime": 51171000,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 65,
       "name": "FERNANDEZ PEREZ, ANDRES",
       "cat": "TR4",
       "club": "CD Pobladura R",
       "brand": "SIN MARCA",
       "schedStart": "10:11",
-      "rank": 1,
+      "rank": 2,
       "scores": [
         [
           0,
@@ -1720,7 +1782,7 @@
       "club": "Club Motomontañismo Arteixo",
       "brand": "SIN MARCA",
       "schedStart": "10:04",
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           0,
@@ -1782,7 +1844,7 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "GASGAS",
       "schedStart": "10:13",
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           1,
@@ -1844,7 +1906,7 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "GASGAS",
       "schedStart": "10:07",
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           0,
@@ -1906,7 +1968,7 @@
       "club": "Moto Club Villaviciosa",
       "brand": "GASGAS",
       "schedStart": "10:12",
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           1,
@@ -1968,7 +2030,7 @@
       "club": "Club Motomontañismo Arteixo",
       "brand": "VERTIGO",
       "schedStart": "10:27",
-      "rank": 6,
+      "rank": 7,
       "scores": [
         [
           0,
@@ -2030,7 +2092,7 @@
       "club": "CD Moto Bierzo",
       "brand": "SHERCO",
       "schedStart": "10:10",
-      "rank": 7,
+      "rank": 8,
       "scores": [
         [
           0,
@@ -2092,7 +2154,7 @@
       "club": "Club Motomontañismo Arteixo",
       "brand": "",
       "schedStart": "10:28",
-      "rank": 8,
+      "rank": 9,
       "scores": [
         [
           0,
@@ -2143,68 +2205,6 @@
       "n3s": 1,
       "n5s": 0,
       "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 69,
-      "name": "FERNANDEZ LOPEZ, JORGE",
-      "cat": "TR4",
-      "club": "CD Moto Bierzo",
-      "brand": "SIN MARCA",
-      "schedStart": "10:12",
-      "rank": 9,
-      "scores": [
-        [
-          0,
-          0,
-          1,
-          1,
-          1,
-          3,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          2,
-          5,
-          0,
-          1
-        ],
-        [
-          0,
-          0,
-          0,
-          1,
-          0,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 6,
-      "lap2Points": 8,
-      "lap3Points": 1,
-      "lap1Time": "01:21:43",
-      "lap2Time": "01:24:08",
-      "lap3Time": "01:15:00",
-      "arrV1": "11:33:43",
-      "arrV2": "12:57:08",
-      "arrCHF": "14:12:51",
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 15,
-      "lapsCompleted": 3,
-      "totalTime": "04:00:51",
-      "n0s": 11,
-      "n1s": 5,
-      "n2s": 1,
-      "n3s": 1,
-      "n5s": 1,
-      "finishTime": 51171000,
       "dnf": false,
       "dsq": false,
       "dsqReason": ""
