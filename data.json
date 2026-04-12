@@ -2,7 +2,7 @@
   "raceName": "Trial de Pobladura 2026",
   "organizer": "CD Pobladura R",
   "raceDate": "2026-04-12",
-  "publishedAt": "2026-04-12T12:23:49.698Z",
+  "publishedAt": "2026-04-12T12:24:19.749Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -894,13 +894,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 113,
+      "name": "GARCIA RUIZ, ROBERTO",
+      "cat": "TR3",
+      "club": "CD Moto Nava",
+      "brand": "ELECTRIC-MOTION",
+      "schedStart": "10:16",
+      "rank": 2,
+      "scores": [
+        [
+          2,
+          1,
+          0,
+          3,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          3,
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          1,
+          0,
+          3,
+          2,
+          1,
+          0
+        ]
+      ],
+      "lap1Points": 9,
+      "lap2Points": 10,
+      "lap3Points": 9,
+      "lap1Time": "01:42:08",
+      "lap2Time": "01:14:12",
+      "lap3Time": "01:10:56",
+      "arrV1": "11:58:08",
+      "arrV2": "13:12:12",
+      "arrCHF": "14:23:16",
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 28,
+      "lapsCompleted": 3,
+      "totalTime": "04:07:16",
+      "n0s": 6,
+      "n1s": 5,
+      "n2s": 7,
+      "n3s": 3,
+      "n5s": 0,
+      "finishTime": 51796000,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 112,
       "name": "BUSTILLO FERNANDEZ, LUIS JOSE",
       "cat": "TR3",
       "club": "MC Vallisoletano",
       "brand": "BETA",
       "schedStart": "10:20",
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           3,
@@ -962,7 +1024,7 @@
       "club": "CD Pobladura R",
       "brand": "GASGAS",
       "schedStart": "10:17",
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           0,
@@ -1024,7 +1086,7 @@
       "club": "CD Moto Bierzo",
       "brand": "TRRS",
       "schedStart": "10:10",
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           1,
@@ -1086,7 +1148,7 @@
       "club": "CD Moto Bierzo",
       "brand": "BETA",
       "schedStart": "10:19",
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           0,
@@ -1137,68 +1199,6 @@
       "n3s": 1,
       "n5s": 1,
       "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 113,
-      "name": "GARCIA RUIZ, ROBERTO",
-      "cat": "TR3",
-      "club": "CD Moto Nava",
-      "brand": "ELECTRIC-MOTION",
-      "schedStart": "10:16",
-      "rank": 6,
-      "scores": [
-        [
-          2,
-          1,
-          0,
-          3,
-          2,
-          1,
-          0
-        ],
-        [
-          0,
-          2,
-          1,
-          3,
-          2,
-          2,
-          0
-        ],
-        [
-          2,
-          1,
-          0,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 9,
-      "lap2Points": 10,
-      "lap3Points": 3,
-      "lap1Time": "01:42:08",
-      "lap2Time": "01:14:12",
-      "lap3Time": "01:10:56",
-      "arrV1": "11:58:08",
-      "arrV2": "13:12:12",
-      "arrCHF": "14:23:16",
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 22,
-      "lapsCompleted": 3,
-      "totalTime": "04:07:16",
-      "n0s": 5,
-      "n1s": 4,
-      "n2s": 6,
-      "n3s": 2,
-      "n5s": 0,
-      "finishTime": 51796000,
       "dnf": false,
       "dsq": false,
       "dsqReason": ""
@@ -1328,75 +1328,13 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 116,
-      "name": "TORRE FERNANDEZ, PABLO",
-      "cat": "TR3",
-      "club": "CD Moto Nava",
-      "brand": "ELECTRIC-MOTION",
-      "schedStart": "10:15",
-      "rank": 9,
-      "scores": [
-        [
-          3,
-          3,
-          2,
-          3,
-          5,
-          3,
-          2
-        ],
-        [
-          3,
-          3,
-          0,
-          3,
-          3,
-          3,
-          0
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 21,
-      "lap2Points": 15,
-      "lap3Points": null,
-      "lap1Time": "01:39:44",
-      "lap2Time": "01:15:01",
-      "lap3Time": null,
-      "arrV1": "11:54:44",
-      "arrV2": "13:09:01",
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 36,
-      "lapsCompleted": 2,
-      "totalTime": "",
-      "n0s": 2,
-      "n1s": 0,
-      "n2s": 2,
-      "n3s": 9,
-      "n5s": 1,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
       "dorsal": 118,
       "name": "MALLO RAMOS, ISMAEL",
       "cat": "TR3",
       "club": "CD Moto Nava",
       "brand": "TRS",
       "schedStart": "10:16",
-      "rank": 10,
+      "rank": 9,
       "scores": [
         [
           1,
@@ -1465,7 +1403,7 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "TRRS",
       "schedStart": "10:15",
-      "rank": 11,
+      "rank": 10,
       "scores": [
         [
           5,
@@ -1527,7 +1465,7 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "TRRS",
       "schedStart": "10:18",
-      "rank": 12,
+      "rank": 11,
       "scores": [
         [
           5,
@@ -1578,6 +1516,68 @@
       "n3s": 10,
       "n5s": 1,
       "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
+      "dorsal": 116,
+      "name": "TORRE FERNANDEZ, PABLO",
+      "cat": "TR3",
+      "club": "CD Moto Nava",
+      "brand": "ELECTRIC-MOTION",
+      "schedStart": "10:15",
+      "rank": 12,
+      "scores": [
+        [
+          3,
+          3,
+          2,
+          3,
+          5,
+          3,
+          2
+        ],
+        [
+          3,
+          3,
+          0,
+          3,
+          3,
+          3,
+          0
+        ],
+        [
+          3,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 21,
+      "lap2Points": 15,
+      "lap3Points": 4,
+      "lap1Time": "01:39:44",
+      "lap2Time": "01:15:01",
+      "lap3Time": "01:13:39",
+      "arrV1": "11:54:44",
+      "arrV2": "13:09:01",
+      "arrCHF": "14:23:24",
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 40,
+      "lapsCompleted": 3,
+      "totalTime": "04:08:24",
+      "n0s": 2,
+      "n1s": 1,
+      "n2s": 2,
+      "n3s": 10,
+      "n5s": 1,
+      "finishTime": 51804000,
       "dnf": false,
       "dsq": false,
       "dsqReason": ""
