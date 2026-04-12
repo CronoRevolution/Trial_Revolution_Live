@@ -2,7 +2,7 @@
   "raceName": "Trial de Pobladura 2026",
   "organizer": "CD Pobladura R",
   "raceDate": "2026-04-12",
-  "publishedAt": "2026-04-12T13:03:42.108Z",
+  "publishedAt": "2026-04-12T13:04:12.130Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -702,13 +702,81 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 174,
+      "name": "PASTOR NOGUEIRA, ENRIQUE",
+      "cat": "TR2",
+      "club": "MC Vallisoletano",
+      "brand": "TRRS",
+      "schedStart": "10:23",
+      "rank": 9,
+      "scores": [
+        [
+          2,
+          5,
+          0,
+          2,
+          3,
+          3,
+          5
+        ],
+        [
+          2,
+          5,
+          3,
+          5,
+          3,
+          3,
+          3
+        ],
+        [
+          1,
+          2,
+          0,
+          3,
+          3,
+          3,
+          1
+        ]
+      ],
+      "lap1Points": 20,
+      "lap2Points": 24,
+      "lap3Points": 13,
+      "lap1Time": "02:22:15",
+      "lap2Time": "01:14:20",
+      "lap3Time": "01:03:50",
+      "arrV1": "12:45:15",
+      "arrV2": "13:59:20",
+      "arrCHF": "15:03:25",
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [
+        {
+          "pts": 15,
+          "reason": "15 MIN. VERIFICACION TECNICA",
+          "ts": "10:34:51"
+        }
+      ],
+      "totalPoints": 72,
+      "lapsCompleted": 3,
+      "totalTime": "04:40:25",
+      "n0s": 2,
+      "n1s": 2,
+      "n2s": 4,
+      "n3s": 9,
+      "n5s": 4,
+      "finishTime": 54205000,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 180,
       "name": "MOSQUERA BARJA, MATIAS",
       "cat": "TR2",
       "club": "Club Motomontañismo Arteixo",
       "brand": "SHERCO",
       "schedStart": "10:21",
-      "rank": 9,
+      "rank": 10,
       "scores": [
         [
           3,
@@ -759,74 +827,6 @@
       "n3s": 6,
       "n5s": 11,
       "finishTime": 52805000,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 174,
-      "name": "PASTOR NOGUEIRA, ENRIQUE",
-      "cat": "TR2",
-      "club": "MC Vallisoletano",
-      "brand": "TRRS",
-      "schedStart": "10:23",
-      "rank": 10,
-      "scores": [
-        [
-          2,
-          5,
-          0,
-          2,
-          3,
-          3,
-          5
-        ],
-        [
-          2,
-          5,
-          3,
-          5,
-          3,
-          3,
-          3
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 20,
-      "lap2Points": 24,
-      "lap3Points": null,
-      "lap1Time": "02:22:15",
-      "lap2Time": "01:14:20",
-      "lap3Time": null,
-      "arrV1": "12:45:15",
-      "arrV2": "13:59:20",
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [
-        {
-          "pts": 15,
-          "reason": "15 MIN. VERIFICACION TECNICA",
-          "ts": "10:34:51"
-        }
-      ],
-      "totalPoints": 59,
-      "lapsCompleted": 2,
-      "totalTime": "",
-      "n0s": 1,
-      "n1s": 0,
-      "n2s": 3,
-      "n3s": 6,
-      "n5s": 4,
-      "finishTime": null,
       "dnf": false,
       "dsq": false,
       "dsqReason": ""
