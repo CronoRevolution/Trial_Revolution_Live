@@ -2,7 +2,7 @@
   "raceName": "Trial de Pobladura 2026",
   "organizer": "CD Pobladura R",
   "raceDate": "2026-04-12",
-  "publishedAt": "2026-04-12T09:09:35.595Z",
+  "publishedAt": "2026-04-12T09:10:05.937Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -3409,13 +3409,13 @@
       "rank": 1,
       "scores": [
         [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0
         ],
         [
           null,
@@ -3436,7 +3436,7 @@
           null
         ]
       ],
-      "lap1Points": null,
+      "lap1Points": 2,
       "lap2Points": null,
       "lap3Points": null,
       "lap1Time": "01:08:49",
@@ -3448,11 +3448,11 @@
       "lap1Penalty": 0,
       "finishPenalty": 0,
       "extraPenalties": [],
-      "totalPoints": null,
-      "lapsCompleted": 0,
+      "totalPoints": 2,
+      "lapsCompleted": 1,
       "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
+      "n0s": 5,
+      "n1s": 2,
       "n2s": 0,
       "n3s": 0,
       "n5s": 0,
