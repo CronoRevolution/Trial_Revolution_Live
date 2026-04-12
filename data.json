@@ -2,7 +2,7 @@
   "raceName": "Trial de Pobladura 2026",
   "organizer": "CD Pobladura R",
   "raceDate": "2026-04-12",
-  "publishedAt": "2026-04-12T12:42:42.191Z",
+  "publishedAt": "2026-04-12T12:43:12.250Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -2396,13 +2396,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 79,
+      "name": "MARQUES TAIMIL, KILIAN",
+      "cat": "TR4",
+      "club": "Club Motomontañismo Arteixo",
+      "brand": "SHERCO",
+      "schedStart": "10:05",
+      "rank": 13,
+      "scores": [
+        [
+          0,
+          0,
+          0,
+          5,
+          5,
+          5,
+          5
+        ],
+        [
+          5,
+          0,
+          5,
+          5,
+          3,
+          5,
+          1
+        ],
+        [
+          0,
+          0,
+          3,
+          5,
+          5,
+          5,
+          0
+        ]
+      ],
+      "lap1Points": 20,
+      "lap2Points": 24,
+      "lap3Points": 18,
+      "lap1Time": "02:27:58",
+      "lap2Time": "01:26:18",
+      "lap3Time": "00:42:44",
+      "arrV1": "12:32:58",
+      "arrV2": "13:58:18",
+      "arrCHF": "14:42:00",
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 62,
+      "lapsCompleted": 3,
+      "totalTime": "04:37:00",
+      "n0s": 7,
+      "n1s": 1,
+      "n2s": 0,
+      "n3s": 2,
+      "n5s": 11,
+      "finishTime": 52920000,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 66,
       "name": "RUBIO HERNANDEZ, BRUNO",
       "cat": "TR4",
       "club": "CD Moto Nava",
       "brand": "BETA",
       "schedStart": "10:08",
-      "rank": 13,
+      "rank": 14,
       "scores": [
         [
           5,
@@ -2470,7 +2532,7 @@
       "club": "CD Moto Bierzo",
       "brand": "SHERCO",
       "schedStart": "10:10",
-      "rank": 14,
+      "rank": 15,
       "scores": [
         [
           0,
@@ -2532,7 +2594,7 @@
       "club": "Asociación Motociclista de Asturias",
       "brand": "MONTESA",
       "schedStart": "10:09",
-      "rank": 15,
+      "rank": 16,
       "scores": [
         [
           1,
@@ -2583,68 +2645,6 @@
       "n3s": 5,
       "n5s": 4,
       "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 79,
-      "name": "MARQUES TAIMIL, KILIAN",
-      "cat": "TR4",
-      "club": "Club Motomontañismo Arteixo",
-      "brand": "SHERCO",
-      "schedStart": "10:05",
-      "rank": 16,
-      "scores": [
-        [
-          0,
-          0,
-          0,
-          5,
-          5,
-          5,
-          5
-        ],
-        [
-          5,
-          0,
-          5,
-          5,
-          3,
-          5,
-          1
-        ],
-        [
-          0,
-          0,
-          3,
-          5,
-          5,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 20,
-      "lap2Points": 24,
-      "lap3Points": 13,
-      "lap1Time": "02:27:58",
-      "lap2Time": "01:26:18",
-      "lap3Time": "00:42:44",
-      "arrV1": "12:32:58",
-      "arrV2": "13:58:18",
-      "arrCHF": "14:42:00",
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 57,
-      "lapsCompleted": 3,
-      "totalTime": "04:37:00",
-      "n0s": 6,
-      "n1s": 1,
-      "n2s": 0,
-      "n3s": 2,
-      "n5s": 10,
-      "finishTime": 52920000,
       "dnf": false,
       "dsq": false,
       "dsqReason": ""
