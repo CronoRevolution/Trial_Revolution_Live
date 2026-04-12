@@ -2,7 +2,7 @@
   "raceName": "Trial de Pobladura 2026",
   "organizer": "CD Pobladura R",
   "raceDate": "2026-04-12",
-  "publishedAt": "2026-04-12T11:51:17.090Z",
+  "publishedAt": "2026-04-12T11:51:46.780Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -2210,75 +2210,13 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 78,
-      "name": "CASADO FERNANDEZ, NOE",
-      "cat": "TR4",
-      "club": "Moto Club Cuenca Minera",
-      "brand": "GASGAS",
-      "schedStart": "10:07",
-      "rank": 10,
-      "scores": [
-        [
-          0,
-          0,
-          3,
-          3,
-          2,
-          3,
-          1
-        ],
-        [
-          5,
-          0,
-          0,
-          1,
-          3,
-          3,
-          1
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 12,
-      "lap2Points": 13,
-      "lap3Points": null,
-      "lap1Time": "01:35:08",
-      "lap2Time": "01:04:38",
-      "lap3Time": null,
-      "arrV1": "11:42:08",
-      "arrV2": "12:46:38",
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 25,
-      "lapsCompleted": 2,
-      "totalTime": "",
-      "n0s": 4,
-      "n1s": 3,
-      "n2s": 1,
-      "n3s": 5,
-      "n5s": 1,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
       "dorsal": 61,
       "name": "ARCE SANCHEZ, JOSE MARIA",
       "cat": "TR4",
       "club": "CD Pobladura R",
       "brand": "BETA",
       "schedStart": "10:07",
-      "rank": 11,
+      "rank": 10,
       "scores": [
         [
           1,
@@ -2340,7 +2278,7 @@
       "club": "CD Portillo",
       "brand": "VERTIGO",
       "schedStart": "10:09",
-      "rank": 12,
+      "rank": 11,
       "scores": [
         [
           0,
@@ -2402,7 +2340,7 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "GASGAS",
       "schedStart": "10:13",
-      "rank": 13,
+      "rank": 12,
       "scores": [
         [
           1,
@@ -2453,6 +2391,68 @@
       "n3s": 2,
       "n5s": 2,
       "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
+      "dorsal": 78,
+      "name": "CASADO FERNANDEZ, NOE",
+      "cat": "TR4",
+      "club": "Moto Club Cuenca Minera",
+      "brand": "GASGAS",
+      "schedStart": "10:07",
+      "rank": 13,
+      "scores": [
+        [
+          0,
+          0,
+          3,
+          3,
+          2,
+          3,
+          1
+        ],
+        [
+          5,
+          0,
+          0,
+          1,
+          3,
+          3,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          1,
+          1,
+          5,
+          null
+        ]
+      ],
+      "lap1Points": 12,
+      "lap2Points": 13,
+      "lap3Points": 8,
+      "lap1Time": "01:35:08",
+      "lap2Time": "01:04:38",
+      "lap3Time": "01:04:03",
+      "arrV1": "11:42:08",
+      "arrV2": "12:46:38",
+      "arrCHF": "13:50:49",
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 33,
+      "lapsCompleted": 3,
+      "totalTime": "03:43:49",
+      "n0s": 6,
+      "n1s": 6,
+      "n2s": 1,
+      "n3s": 5,
+      "n5s": 2,
+      "finishTime": 49849000,
       "dnf": false,
       "dsq": false,
       "dsqReason": ""
@@ -2774,13 +2774,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 8,
+      "name": "CASADO CUENDIAS, DAVID",
+      "cat": "TR5",
+      "club": "Moto Club Cuenca Minera",
+      "brand": "TRRS",
+      "schedStart": "10:04",
+      "rank": 2,
+      "scores": [
+        [
+          5,
+          5,
+          5,
+          5,
+          0,
+          5,
+          1
+        ],
+        [
+          3,
+          5,
+          3,
+          3,
+          0,
+          3,
+          3
+        ],
+        [
+          5,
+          5,
+          3,
+          3,
+          0,
+          1,
+          0
+        ]
+      ],
+      "lap1Points": 26,
+      "lap2Points": 20,
+      "lap3Points": 17,
+      "lap1Time": "01:11:21",
+      "lap2Time": "01:18:48",
+      "lap3Time": "01:16:40",
+      "arrV1": "11:15:21",
+      "arrV2": "12:33:48",
+      "arrCHF": "13:50:49",
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 63,
+      "lapsCompleted": 3,
+      "totalTime": "03:46:49",
+      "n0s": 4,
+      "n1s": 2,
+      "n2s": 0,
+      "n3s": 7,
+      "n5s": 8,
+      "finishTime": 49849000,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 7,
       "name": "CANEDO ENRIQUEZ, ANDREA",
       "cat": "TR5",
       "club": "CD Moto Bierzo",
       "brand": "SIN MARCA",
       "schedStart": "10:01",
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           0,
@@ -2842,7 +2904,7 @@
       "club": "CD Pobladura R",
       "brand": "BETA",
       "schedStart": "10:03",
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           0,
@@ -2904,7 +2966,7 @@
       "club": "CD Moto Bierzo",
       "brand": "SIN MARCA",
       "schedStart": "10:02",
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           1,
@@ -2966,7 +3028,7 @@
       "club": "CD Moto Bierzo",
       "brand": "SIN MARCA",
       "schedStart": "10:02",
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           1,
@@ -3034,7 +3096,7 @@
       "club": "CD Pobladura R",
       "brand": "",
       "schedStart": "10:28",
-      "rank": 6,
+      "rank": 7,
       "scores": [
         [
           5,
@@ -3084,68 +3146,6 @@
       "n2s": 1,
       "n3s": 1,
       "n5s": 8,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 8,
-      "name": "CASADO CUENDIAS, DAVID",
-      "cat": "TR5",
-      "club": "Moto Club Cuenca Minera",
-      "brand": "TRRS",
-      "schedStart": "10:04",
-      "rank": 7,
-      "scores": [
-        [
-          5,
-          5,
-          5,
-          5,
-          0,
-          5,
-          1
-        ],
-        [
-          3,
-          5,
-          3,
-          3,
-          0,
-          3,
-          3
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 26,
-      "lap2Points": 20,
-      "lap3Points": null,
-      "lap1Time": "01:11:21",
-      "lap2Time": "01:18:48",
-      "lap3Time": null,
-      "arrV1": "11:15:21",
-      "arrV2": "12:33:48",
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 46,
-      "lapsCompleted": 2,
-      "totalTime": "",
-      "n0s": 2,
-      "n1s": 1,
-      "n2s": 0,
-      "n3s": 5,
-      "n5s": 6,
       "finishTime": null,
       "dnf": false,
       "dsq": false,
