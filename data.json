@@ -2,7 +2,7 @@
   "raceName": "Trial de Pobladura 2026",
   "organizer": "CD Pobladura R",
   "raceDate": "2026-04-12",
-  "publishedAt": "2026-04-12T12:48:42.225Z",
+  "publishedAt": "2026-04-12T12:49:12.278Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -1714,13 +1714,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 64,
+      "name": "PLAZA FERNANDEZ, VICTOR",
+      "cat": "TR4",
+      "club": "CD Moto Bierzo",
+      "brand": "SHERCO",
+      "schedStart": "10:10",
+      "rank": 2,
+      "scores": [
+        [
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          3,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ]
+      ],
+      "lap1Points": 3,
+      "lap2Points": 5,
+      "lap3Points": 1,
+      "lap1Time": "01:54:03",
+      "lap2Time": "01:22:55",
+      "lap3Time": "01:21:07",
+      "arrV1": "12:04:03",
+      "arrV2": "13:26:55",
+      "arrCHF": "14:48:05",
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 9,
+      "lapsCompleted": 3,
+      "totalTime": "04:38:05",
+      "n0s": 15,
+      "n1s": 4,
+      "n2s": 1,
+      "n3s": 1,
+      "n5s": 0,
+      "finishTime": 53285000,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 69,
       "name": "FERNANDEZ LOPEZ, JORGE",
       "cat": "TR4",
       "club": "CD Moto Bierzo",
       "brand": "SIN MARCA",
       "schedStart": "10:12",
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           0,
@@ -1782,7 +1844,7 @@
       "club": "Club Motomontañismo Arteixo",
       "brand": "",
       "schedStart": "10:28",
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           0,
@@ -1844,7 +1906,7 @@
       "club": "CD Moto Bierzo",
       "brand": "GASGAS",
       "schedStart": "10:06",
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           0,
@@ -1906,7 +1968,7 @@
       "club": "CD Pobladura R",
       "brand": "SIN MARCA",
       "schedStart": "10:13",
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           0,
@@ -1968,7 +2030,7 @@
       "club": "CD Pobladura R",
       "brand": "SIN MARCA",
       "schedStart": "10:11",
-      "rank": 6,
+      "rank": 7,
       "scores": [
         [
           0,
@@ -2030,7 +2092,7 @@
       "club": "Club Motomontañismo Arteixo",
       "brand": "SIN MARCA",
       "schedStart": "10:04",
-      "rank": 7,
+      "rank": 8,
       "scores": [
         [
           0,
@@ -2092,7 +2154,7 @@
       "club": "CD Pobladura R",
       "brand": "BETA",
       "schedStart": "10:07",
-      "rank": 8,
+      "rank": 9,
       "scores": [
         [
           1,
@@ -2154,7 +2216,7 @@
       "club": "CD Portillo",
       "brand": "VERTIGO",
       "schedStart": "10:09",
-      "rank": 9,
+      "rank": 10,
       "scores": [
         [
           0,
@@ -2216,7 +2278,7 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "GASGAS",
       "schedStart": "10:13",
-      "rank": 10,
+      "rank": 11,
       "scores": [
         [
           1,
@@ -2278,7 +2340,7 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "GASGAS",
       "schedStart": "10:07",
-      "rank": 11,
+      "rank": 12,
       "scores": [
         [
           0,
@@ -2340,7 +2402,7 @@
       "club": "Moto Club Villaviciosa",
       "brand": "GASGAS",
       "schedStart": "10:12",
-      "rank": 12,
+      "rank": 13,
       "scores": [
         [
           1,
@@ -2402,7 +2464,7 @@
       "club": "Asociación Motociclista de Asturias",
       "brand": "MONTESA",
       "schedStart": "10:09",
-      "rank": 13,
+      "rank": 14,
       "scores": [
         [
           1,
@@ -2464,7 +2526,7 @@
       "club": "Club Motomontañismo Arteixo",
       "brand": "SHERCO",
       "schedStart": "10:05",
-      "rank": 14,
+      "rank": 15,
       "scores": [
         [
           0,
@@ -2526,7 +2588,7 @@
       "club": "CD Moto Nava",
       "brand": "BETA",
       "schedStart": "10:08",
-      "rank": 15,
+      "rank": 16,
       "scores": [
         [
           5,
@@ -2583,68 +2645,6 @@
       "n3s": 11,
       "n5s": 8,
       "finishTime": 52484000,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 64,
-      "name": "PLAZA FERNANDEZ, VICTOR",
-      "cat": "TR4",
-      "club": "CD Moto Bierzo",
-      "brand": "SHERCO",
-      "schedStart": "10:10",
-      "rank": 16,
-      "scores": [
-        [
-          0,
-          0,
-          0,
-          1,
-          1,
-          1,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0,
-          3,
-          2,
-          0
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 3,
-      "lap2Points": 5,
-      "lap3Points": null,
-      "lap1Time": "01:54:03",
-      "lap2Time": "01:22:55",
-      "lap3Time": null,
-      "arrV1": "12:04:03",
-      "arrV2": "13:26:55",
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 8,
-      "lapsCompleted": 2,
-      "totalTime": "",
-      "n0s": 9,
-      "n1s": 3,
-      "n2s": 1,
-      "n3s": 1,
-      "n5s": 0,
-      "finishTime": null,
       "dnf": false,
       "dsq": false,
       "dsqReason": ""
