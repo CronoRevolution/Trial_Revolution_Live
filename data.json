@@ -2,7 +2,7 @@
   "raceName": "Trial de Pobladura 2026",
   "organizer": "CD Pobladura R",
   "raceDate": "2026-04-12",
-  "publishedAt": "2026-04-12T10:09:05.616Z",
+  "publishedAt": "2026-04-12T10:09:35.646Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -1018,75 +1018,13 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 127,
-      "name": "GARCIA GARCIA, PABLO",
-      "cat": "TR3",
-      "club": "Moto Club Cuenca Minera",
-      "brand": "TRRS",
-      "schedStart": "10:18",
-      "rank": 4,
-      "scores": [
-        [
-          5,
-          3,
-          3,
-          3,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 14,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": "01:49:51",
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": "12:07:51",
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 14,
-      "lapsCompleted": 1,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 3,
-      "n5s": 1,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
       "dorsal": 123,
       "name": "DIEZ DE TEJADA ALONSO, LUIS",
       "cat": "TR3",
       "club": "Moto Club Cuenca Minera",
       "brand": "TRRS",
       "schedStart": "10:17",
-      "rank": 5,
+      "rank": 4,
       "scores": [
         [
           3,
@@ -1148,7 +1086,7 @@
       "club": "Asociación Motociclista de Asturias",
       "brand": "SIN MARCA",
       "schedStart": "10:14",
-      "rank": 6,
+      "rank": 5,
       "scores": [
         [
           2,
@@ -1210,7 +1148,7 @@
       "club": "CD Moto Nava",
       "brand": "TRS",
       "schedStart": "10:16",
-      "rank": 7,
+      "rank": 6,
       "scores": [
         [
           1,
@@ -1279,7 +1217,7 @@
       "club": "CD Moto Nava",
       "brand": "ELECTRIC-MOTION",
       "schedStart": "10:15",
-      "rank": 8,
+      "rank": 7,
       "scores": [
         [
           3,
@@ -1341,7 +1279,7 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "TRRS",
       "schedStart": "10:18",
-      "rank": 9,
+      "rank": 8,
       "scores": [
         [
           5,
@@ -1410,7 +1348,7 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "TRRS",
       "schedStart": "10:15",
-      "rank": 10,
+      "rank": 9,
       "scores": [
         [
           5,
@@ -1460,6 +1398,68 @@
       "n2s": 2,
       "n3s": 3,
       "n5s": 2,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
+      "dorsal": 127,
+      "name": "GARCIA GARCIA, PABLO",
+      "cat": "TR3",
+      "club": "Moto Club Cuenca Minera",
+      "brand": "TRRS",
+      "schedStart": "10:18",
+      "rank": 10,
+      "scores": [
+        [
+          5,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 23,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "01:49:51",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "12:07:51",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 23,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 0,
+      "n1s": 0,
+      "n2s": 0,
+      "n3s": 6,
+      "n5s": 1,
       "finishTime": null,
       "dnf": false,
       "dsq": false,
