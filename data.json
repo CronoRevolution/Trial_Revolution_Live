@@ -2,7 +2,7 @@
   "raceName": "Trial de Pobladura 2026",
   "organizer": "CD Pobladura R",
   "raceDate": "2026-04-12",
-  "publishedAt": "2026-04-12T10:35:05.944Z",
+  "publishedAt": "2026-04-12T10:35:35.766Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -2898,13 +2898,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 1,
+      "name": "CASTRO GONZALEZ, NOEL",
+      "cat": "TR5",
+      "club": "CD Moto Bierzo",
+      "brand": "SIN MARCA",
+      "schedStart": "10:02",
+      "rank": 1,
+      "scores": [
+        [
+          1,
+          3,
+          3,
+          3,
+          0,
+          3,
+          1
+        ],
+        [
+          2,
+          3,
+          3,
+          3,
+          0,
+          3,
+          0
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 14,
+      "lap2Points": 14,
+      "lap3Points": null,
+      "lap1Time": "01:13:49",
+      "lap2Time": "01:16:26",
+      "lap3Time": null,
+      "arrV1": "11:15:49",
+      "arrV2": "12:31:26",
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 28,
+      "lapsCompleted": 2,
+      "totalTime": "",
+      "n0s": 3,
+      "n1s": 2,
+      "n2s": 1,
+      "n3s": 8,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 2,
       "name": "GUERRERO CARBALLO, CARMEN",
       "cat": "TR5",
       "club": "CD Moto Bierzo",
       "brand": "SIN MARCA",
       "schedStart": "10:02",
-      "rank": 1,
+      "rank": 2,
       "scores": [
         [
           1,
@@ -2972,7 +3034,7 @@
       "club": "CD Pobladura R",
       "brand": "OSET BIKE",
       "schedStart": "10:03",
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           5,
@@ -3034,7 +3096,7 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "TRRS",
       "schedStart": "10:04",
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           5,
@@ -3096,7 +3158,7 @@
       "club": "CD Moto Bierzo",
       "brand": "SIN MARCA",
       "schedStart": "10:01",
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           0,
@@ -3146,68 +3208,6 @@
       "n2s": 0,
       "n3s": 2,
       "n5s": 1,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 1,
-      "name": "CASTRO GONZALEZ, NOEL",
-      "cat": "TR5",
-      "club": "CD Moto Bierzo",
-      "brand": "SIN MARCA",
-      "schedStart": "10:02",
-      "rank": 5,
-      "scores": [
-        [
-          1,
-          3,
-          3,
-          3,
-          0,
-          3,
-          1
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 14,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": "01:13:49",
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": "11:15:49",
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 14,
-      "lapsCompleted": 1,
-      "totalTime": "",
-      "n0s": 1,
-      "n1s": 2,
-      "n2s": 0,
-      "n3s": 4,
-      "n5s": 0,
       "finishTime": null,
       "dnf": false,
       "dsq": false,
