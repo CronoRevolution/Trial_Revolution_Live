@@ -2,7 +2,7 @@
   "raceName": "Trial de Pobladura 2026",
   "organizer": "CD Pobladura R",
   "raceDate": "2026-04-12",
-  "publishedAt": "2026-04-12T09:09:05.587Z",
+  "publishedAt": "2026-04-12T09:09:35.595Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -3400,11 +3400,11 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 39,
-      "name": "DIAZ QUIROGA, OSCAR",
+      "dorsal": 36,
+      "name": "FERNANDEZ BELLO, DOMINGO",
       "cat": "TR5A",
-      "club": "Club Motomontañismo Arteixo",
-      "brand": "SIN MARCA",
+      "club": "CD Moto Bierzo",
+      "brand": "VERTIGO",
       "schedStart": "10:00",
       "rank": 1,
       "scores": [
@@ -3439,10 +3439,10 @@
       "lap1Points": null,
       "lap2Points": null,
       "lap3Points": null,
-      "lap1Time": null,
+      "lap1Time": "01:08:49",
       "lap2Time": null,
       "lap3Time": null,
-      "arrV1": null,
+      "arrV1": "11:08:49",
       "arrV2": null,
       "arrCHF": null,
       "lap1Penalty": 0,
@@ -3462,11 +3462,11 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 36,
-      "name": "FERNANDEZ BELLO, DOMINGO",
+      "dorsal": 39,
+      "name": "DIAZ QUIROGA, OSCAR",
       "cat": "TR5A",
-      "club": "CD Moto Bierzo",
-      "brand": "VERTIGO",
+      "club": "Club Motomontañismo Arteixo",
+      "brand": "SIN MARCA",
       "schedStart": "10:00",
       "rank": 2,
       "scores": [
