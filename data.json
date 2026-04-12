@@ -2,7 +2,7 @@
   "raceName": "Trial de Pobladura 2026",
   "organizer": "CD Pobladura R",
   "raceDate": "2026-04-12",
-  "publishedAt": "2026-04-12T07:23:42.087Z",
+  "publishedAt": "2026-04-12T07:24:12.008Z",
   "raceStarted": false,
   "raceFinished": false,
   "cfg": {
@@ -1570,75 +1570,13 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 119,
-      "name": "CARRASCO MARTINEZ, MANUEL",
-      "cat": "TR3",
-      "club": "",
-      "brand": "TRRS",
-      "schedStart": "10:20",
-      "rank": 13,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": null,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
       "dorsal": 112,
       "name": "BUSTILLO FERNANDEZ, LUIS JOSE",
       "cat": "TR3",
       "club": "MC Vallisoletano",
       "brand": "BETA",
       "schedStart": "10:20",
-      "rank": 14,
+      "rank": 13,
       "scores": [
         [
           null,
