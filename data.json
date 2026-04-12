@@ -2,7 +2,7 @@
   "raceName": "Trial de Pobladura 2026",
   "organizer": "CD Pobladura R",
   "raceDate": "2026-04-12",
-  "publishedAt": "2026-04-12T12:03:19.821Z",
+  "publishedAt": "2026-04-12T12:03:49.896Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -578,13 +578,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 178,
+      "name": "BALBOA ALVAREZ, SAMUEL",
+      "cat": "TR2",
+      "club": "CD Pobladura R",
+      "brand": "BETA TRUEBA",
+      "schedStart": "10:22",
+      "rank": 7,
+      "scores": [
+        [
+          2,
+          0,
+          1,
+          2,
+          3,
+          5,
+          5
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          5,
+          5,
+          5
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 18,
+      "lap2Points": 16,
+      "lap3Points": null,
+      "lap1Time": "02:32:37",
+      "lap2Time": "01:08:21",
+      "lap3Time": null,
+      "arrV1": "12:54:37",
+      "arrV2": "14:02:21",
+      "arrCHF": null,
+      "lap1Penalty": 2,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 36,
+      "lapsCompleted": 2,
+      "totalTime": "",
+      "n0s": 4,
+      "n1s": 2,
+      "n2s": 2,
+      "n3s": 1,
+      "n5s": 5,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 180,
       "name": "MOSQUERA BARJA, MATIAS",
       "cat": "TR2",
       "club": "Club Motomontañismo Arteixo",
       "brand": "SHERCO",
       "schedStart": "10:21",
-      "rank": 7,
+      "rank": 8,
       "scores": [
         [
           3,
@@ -646,7 +708,7 @@
       "club": "MC Vallisoletano",
       "brand": "TRRS",
       "schedStart": "10:23",
-      "rank": 8,
+      "rank": 9,
       "scores": [
         [
           2,
@@ -714,7 +776,7 @@
       "club": "CD Pobladura R",
       "brand": "GASGAS",
       "schedStart": "10:22",
-      "rank": 9,
+      "rank": 10,
       "scores": [
         [
           3,
@@ -764,68 +826,6 @@
       "n2s": 0,
       "n3s": 3,
       "n5s": 1,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 178,
-      "name": "BALBOA ALVAREZ, SAMUEL",
-      "cat": "TR2",
-      "club": "CD Pobladura R",
-      "brand": "BETA TRUEBA",
-      "schedStart": "10:22",
-      "rank": 10,
-      "scores": [
-        [
-          2,
-          0,
-          1,
-          2,
-          3,
-          5,
-          5
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 18,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": "02:32:37",
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": "12:54:37",
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 2,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 20,
-      "lapsCompleted": 1,
-      "totalTime": "",
-      "n0s": 1,
-      "n1s": 1,
-      "n2s": 2,
-      "n3s": 1,
-      "n5s": 2,
       "finishTime": null,
       "dnf": false,
       "dsq": false,
