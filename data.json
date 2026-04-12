@@ -2,7 +2,7 @@
   "raceName": "Trial de Pobladura 2026",
   "organizer": "CD Pobladura R",
   "raceDate": "2026-04-12",
-  "publishedAt": "2026-04-12T11:41:46.836Z",
+  "publishedAt": "2026-04-12T11:42:16.958Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -2458,13 +2458,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 75,
+      "name": "ALONSO LOPEZ, JOSE MARIA",
+      "cat": "TR4",
+      "club": "Asociación Motociclista de Asturias",
+      "brand": "MONTESA",
+      "schedStart": "10:09",
+      "rank": 14,
+      "scores": [
+        [
+          1,
+          0,
+          5,
+          3,
+          3,
+          3,
+          5
+        ],
+        [
+          0,
+          0,
+          0,
+          3,
+          5,
+          3,
+          5
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 20,
+      "lap2Points": 16,
+      "lap3Points": null,
+      "lap1Time": "01:59:08",
+      "lap2Time": "01:32:37",
+      "lap3Time": null,
+      "arrV1": "12:08:08",
+      "arrV2": "13:40:37",
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 36,
+      "lapsCompleted": 2,
+      "totalTime": "",
+      "n0s": 4,
+      "n1s": 1,
+      "n2s": 0,
+      "n3s": 5,
+      "n5s": 4,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 66,
       "name": "RUBIO HERNANDEZ, BRUNO",
       "cat": "TR4",
       "club": "CD Moto Nava",
       "brand": "BETA",
       "schedStart": "10:08",
-      "rank": 14,
+      "rank": 15,
       "scores": [
         [
           5,
@@ -2532,7 +2594,7 @@
       "club": "Club Motomontañismo Arteixo",
       "brand": "SHERCO",
       "schedStart": "10:05",
-      "rank": 15,
+      "rank": 16,
       "scores": [
         [
           0,
@@ -2594,7 +2656,7 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "SIN MARCA",
       "schedStart": "10:08",
-      "rank": 16,
+      "rank": 17,
       "scores": [
         [
           0,
@@ -2648,68 +2710,6 @@
       "dnf": true,
       "dsq": false,
       "dsqReason": ""
-    },
-    {
-      "dorsal": 75,
-      "name": "ALONSO LOPEZ, JOSE MARIA",
-      "cat": "TR4",
-      "club": "Asociación Motociclista de Asturias",
-      "brand": "MONTESA",
-      "schedStart": "10:09",
-      "rank": 17,
-      "scores": [
-        [
-          1,
-          0,
-          5,
-          3,
-          3,
-          3,
-          5
-        ],
-        [
-          0,
-          0,
-          0,
-          3,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 20,
-      "lap2Points": 3,
-      "lap3Points": null,
-      "lap1Time": "01:59:08",
-      "lap2Time": "01:32:37",
-      "lap3Time": null,
-      "arrV1": "12:08:08",
-      "arrV2": "13:40:37",
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 23,
-      "lapsCompleted": 2,
-      "totalTime": "",
-      "n0s": 4,
-      "n1s": 1,
-      "n2s": 0,
-      "n3s": 4,
-      "n5s": 2,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": true,
-      "dsqReason": "DQ automático: llegada al Control V2 con 29 min de retraso (máx. 20 min)"
     },
     {
       "dorsal": 6,
