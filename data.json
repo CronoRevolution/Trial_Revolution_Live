@@ -2,7 +2,7 @@
   "raceName": "Trial de Pobladura 2026",
   "organizer": "CD Pobladura R",
   "raceDate": "2026-04-12",
-  "publishedAt": "2026-04-12T09:31:35.743Z",
+  "publishedAt": "2026-04-12T09:32:05.602Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -2898,13 +2898,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 7,
+      "name": "CANEDO ENRIQUEZ, ANDREA",
+      "cat": "TR5",
+      "club": "CD Moto Bierzo",
+      "brand": "SIN MARCA",
+      "schedStart": "10:01",
+      "rank": 1,
+      "scores": [
+        [
+          0,
+          1,
+          3,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 4,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "01:18:27",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "11:19:27",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 4,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 1,
+      "n1s": 1,
+      "n2s": 0,
+      "n3s": 1,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 1,
       "name": "CASTRO GONZALEZ, NOEL",
       "cat": "TR5",
       "club": "CD Moto Bierzo",
       "brand": "SIN MARCA",
       "schedStart": "10:02",
-      "rank": 1,
+      "rank": 2,
       "scores": [
         [
           1,
@@ -2966,7 +3028,7 @@
       "club": "CD Pobladura R",
       "brand": "BETA",
       "schedStart": "10:03",
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           0,
@@ -3028,7 +3090,7 @@
       "club": "CD Moto Bierzo",
       "brand": "SIN MARCA",
       "schedStart": "10:02",
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           1,
@@ -3096,7 +3158,7 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "TRRS",
       "schedStart": "10:04",
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           5,
@@ -3158,7 +3220,7 @@
       "club": "CD Pobladura R",
       "brand": "OSET BIKE",
       "schedStart": "10:03",
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           5,
@@ -3208,68 +3270,6 @@
       "n2s": 0,
       "n3s": 2,
       "n5s": 4,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 7,
-      "name": "CANEDO ENRIQUEZ, ANDREA",
-      "cat": "TR5",
-      "club": "CD Moto Bierzo",
-      "brand": "SIN MARCA",
-      "schedStart": "10:01",
-      "rank": 6,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": null,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
       "finishTime": null,
       "dnf": false,
       "dsq": false,
@@ -3533,13 +3533,13 @@
       "rank": 3,
       "scores": [
         [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
+          1,
+          5,
+          3,
+          3,
+          0,
+          0,
+          0
         ],
         [
           null,
@@ -3560,26 +3560,26 @@
           null
         ]
       ],
-      "lap1Points": null,
+      "lap1Points": 12,
       "lap2Points": null,
       "lap3Points": null,
-      "lap1Time": null,
+      "lap1Time": "01:18:02",
       "lap2Time": null,
       "lap3Time": null,
-      "arrV1": null,
+      "arrV1": "11:19:02",
       "arrV2": null,
       "arrCHF": null,
       "lap1Penalty": 0,
       "finishPenalty": 0,
       "extraPenalties": [],
-      "totalPoints": null,
-      "lapsCompleted": 0,
+      "totalPoints": 12,
+      "lapsCompleted": 1,
       "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
+      "n0s": 3,
+      "n1s": 1,
       "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
+      "n3s": 2,
+      "n5s": 1,
       "finishTime": null,
       "dnf": false,
       "dsq": false,
