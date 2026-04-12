@@ -2,7 +2,7 @@
   "raceName": "Trial de Pobladura 2026",
   "organizer": "CD Pobladura R",
   "raceDate": "2026-04-12",
-  "publishedAt": "2026-04-12T12:47:42.240Z",
+  "publishedAt": "2026-04-12T12:48:12.081Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -2396,13 +2396,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 75,
+      "name": "ALONSO LOPEZ, JOSE MARIA",
+      "cat": "TR4",
+      "club": "Asociación Motociclista de Asturias",
+      "brand": "MONTESA",
+      "schedStart": "10:09",
+      "rank": 13,
+      "scores": [
+        [
+          1,
+          0,
+          5,
+          3,
+          3,
+          3,
+          5
+        ],
+        [
+          0,
+          0,
+          0,
+          3,
+          5,
+          3,
+          5
+        ],
+        [
+          1,
+          1,
+          5,
+          5,
+          5,
+          3,
+          5
+        ]
+      ],
+      "lap1Points": 20,
+      "lap2Points": 16,
+      "lap3Points": 25,
+      "lap1Time": "01:59:08",
+      "lap2Time": "01:32:37",
+      "lap3Time": "01:05:34",
+      "arrV1": "12:08:08",
+      "arrV2": "13:40:37",
+      "arrCHF": "14:46:19",
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 61,
+      "lapsCompleted": 3,
+      "totalTime": "04:37:19",
+      "n0s": 4,
+      "n1s": 3,
+      "n2s": 0,
+      "n3s": 6,
+      "n5s": 8,
+      "finishTime": 53179000,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 79,
       "name": "MARQUES TAIMIL, KILIAN",
       "cat": "TR4",
       "club": "Club Motomontañismo Arteixo",
       "brand": "SHERCO",
       "schedStart": "10:05",
-      "rank": 13,
+      "rank": 14,
       "scores": [
         [
           0,
@@ -2464,7 +2526,7 @@
       "club": "CD Moto Nava",
       "brand": "BETA",
       "schedStart": "10:08",
-      "rank": 14,
+      "rank": 15,
       "scores": [
         [
           5,
@@ -2532,7 +2594,7 @@
       "club": "CD Moto Bierzo",
       "brand": "SHERCO",
       "schedStart": "10:10",
-      "rank": 15,
+      "rank": 16,
       "scores": [
         [
           0,
@@ -2582,68 +2644,6 @@
       "n2s": 1,
       "n3s": 1,
       "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 75,
-      "name": "ALONSO LOPEZ, JOSE MARIA",
-      "cat": "TR4",
-      "club": "Asociación Motociclista de Asturias",
-      "brand": "MONTESA",
-      "schedStart": "10:09",
-      "rank": 16,
-      "scores": [
-        [
-          1,
-          0,
-          5,
-          3,
-          3,
-          3,
-          5
-        ],
-        [
-          0,
-          0,
-          0,
-          3,
-          5,
-          3,
-          5
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 20,
-      "lap2Points": 16,
-      "lap3Points": null,
-      "lap1Time": "01:59:08",
-      "lap2Time": "01:32:37",
-      "lap3Time": null,
-      "arrV1": "12:08:08",
-      "arrV2": "13:40:37",
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 36,
-      "lapsCompleted": 2,
-      "totalTime": "",
-      "n0s": 4,
-      "n1s": 1,
-      "n2s": 0,
-      "n3s": 5,
-      "n5s": 4,
       "finishTime": null,
       "dnf": false,
       "dsq": false,
