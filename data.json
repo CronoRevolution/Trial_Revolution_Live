@@ -2,7 +2,7 @@
   "raceName": "Trial de Pobladura 2026",
   "organizer": "CD Pobladura R",
   "raceDate": "2026-04-12",
-  "publishedAt": "2026-04-12T10:29:35.683Z",
+  "publishedAt": "2026-04-12T10:30:05.607Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -206,13 +206,137 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 182,
+      "name": "GONZALEZ GARCIA, CESAR",
+      "cat": "TR2",
+      "club": "Moto Club Cuenca Minera",
+      "brand": "SIN MARCA",
+      "schedStart": "10:24",
+      "rank": 1,
+      "scores": [
+        [
+          1,
+          0,
+          1,
+          0,
+          2,
+          3,
+          2
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 9,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "02:05:20",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "12:29:20",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 9,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 2,
+      "n1s": 2,
+      "n2s": 2,
+      "n3s": 1,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
+      "dorsal": 184,
+      "name": "DEL BLANCO PEREZ, VICTOR",
+      "cat": "TR2",
+      "club": "Moto Club Cuenca Minera",
+      "brand": "BETA TRUEBA",
+      "schedStart": "10:25",
+      "rank": 2,
+      "scores": [
+        [
+          1,
+          0,
+          0,
+          0,
+          2,
+          5,
+          5
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 13,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "02:01:32",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "12:26:32",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 13,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 3,
+      "n1s": 1,
+      "n2s": 1,
+      "n3s": 0,
+      "n5s": 2,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 185,
       "name": "IGLESIAS CORDERO, SAUL",
       "cat": "TR2",
       "club": "Moto Club Cuenca Minera",
       "brand": "BETA",
       "schedStart": "10:25",
-      "rank": 1,
+      "rank": 3,
       "scores": [
         [
           0,
@@ -274,7 +398,7 @@
       "club": "Club Motomontañismo Arteixo",
       "brand": "SHERCO",
       "schedStart": "10:21",
-      "rank": 2,
+      "rank": 4,
       "scores": [
         [
           3,
@@ -336,7 +460,7 @@
       "club": "MC Vallisoletano",
       "brand": "TRRS",
       "schedStart": "10:23",
-      "rank": 3,
+      "rank": 5,
       "scores": [
         [
           null,
@@ -404,7 +528,7 @@
       "club": "CD Pobladura R",
       "brand": "GASGAS",
       "schedStart": "10:21",
-      "rank": 4,
+      "rank": 6,
       "scores": [
         [
           null,
@@ -466,7 +590,7 @@
       "club": "CD Pobladura R",
       "brand": "GASGAS",
       "schedStart": "10:22",
-      "rank": 5,
+      "rank": 7,
       "scores": [
         [
           null,
@@ -528,7 +652,7 @@
       "club": "CD Pobladura R",
       "brand": "BETA TRUEBA",
       "schedStart": "10:22",
-      "rank": 6,
+      "rank": 8,
       "scores": [
         [
           null,
@@ -590,7 +714,7 @@
       "club": "CD Moto Nava",
       "brand": "BETA",
       "schedStart": "10:23",
-      "rank": 7,
+      "rank": 9,
       "scores": [
         [
           null,
@@ -652,130 +776,6 @@
       "club": "Moto Club Villaviciosa",
       "brand": "GASGAS",
       "schedStart": "10:24",
-      "rank": 8,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": null,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 182,
-      "name": "GONZALEZ GARCIA, CESAR",
-      "cat": "TR2",
-      "club": "Moto Club Cuenca Minera",
-      "brand": "SIN MARCA",
-      "schedStart": "10:24",
-      "rank": 9,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": null,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 184,
-      "name": "DEL BLANCO PEREZ, VICTOR",
-      "cat": "TR2",
-      "club": "Moto Club Cuenca Minera",
-      "brand": "BETA TRUEBA",
-      "schedStart": "10:25",
       "rank": 10,
       "scores": [
         [
