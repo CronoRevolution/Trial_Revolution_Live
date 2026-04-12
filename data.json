@@ -2,7 +2,7 @@
   "raceName": "Trial de Pobladura 2026",
   "organizer": "CD Pobladura R",
   "raceDate": "2026-04-12",
-  "publishedAt": "2026-04-12T09:33:35.793Z",
+  "publishedAt": "2026-04-12T09:34:05.606Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -1652,75 +1652,13 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 68,
-      "name": "CARBALLO QUIROGA, DAVID",
-      "cat": "TR4",
-      "club": "CD Moto Bierzo",
-      "brand": "GASGAS",
-      "schedStart": "10:06",
-      "rank": 1,
-      "scores": [
-        [
-          0,
-          0,
-          2,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 2,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": "01:27:03",
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": "11:33:03",
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 2,
-      "lapsCompleted": 1,
-      "totalTime": "",
-      "n0s": 2,
-      "n1s": 0,
-      "n2s": 1,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
       "dorsal": 65,
       "name": "FERNANDEZ PEREZ, ANDRES",
       "cat": "TR4",
       "club": "CD Pobladura R",
       "brand": "SIN MARCA",
       "schedStart": "10:11",
-      "rank": 2,
+      "rank": 1,
       "scores": [
         [
           0,
@@ -1782,7 +1720,7 @@
       "club": "Club Motomontañismo Arteixo",
       "brand": "SIN MARCA",
       "schedStart": "10:04",
-      "rank": 3,
+      "rank": 2,
       "scores": [
         [
           0,
@@ -1844,7 +1782,7 @@
       "club": "Moto Club Villaviciosa",
       "brand": "GASGAS",
       "schedStart": "10:12",
-      "rank": 4,
+      "rank": 3,
       "scores": [
         [
           1,
@@ -1906,7 +1844,7 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "GASGAS",
       "schedStart": "10:13",
-      "rank": 5,
+      "rank": 4,
       "scores": [
         [
           1,
@@ -1956,6 +1894,68 @@
       "n2s": 1,
       "n3s": 1,
       "n5s": 1,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
+      "dorsal": 68,
+      "name": "CARBALLO QUIROGA, DAVID",
+      "cat": "TR4",
+      "club": "CD Moto Bierzo",
+      "brand": "GASGAS",
+      "schedStart": "10:06",
+      "rank": 5,
+      "scores": [
+        [
+          0,
+          0,
+          2,
+          5,
+          3,
+          5,
+          0
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 15,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "01:27:03",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "11:33:03",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 15,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 3,
+      "n1s": 0,
+      "n2s": 1,
+      "n3s": 1,
+      "n5s": 2,
       "finishTime": null,
       "dnf": false,
       "dsq": false,
