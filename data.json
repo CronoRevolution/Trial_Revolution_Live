@@ -2,7 +2,7 @@
   "raceName": "Trial de Pobladura 2026",
   "organizer": "CD Pobladura R",
   "raceDate": "2026-04-12",
-  "publishedAt": "2026-04-12T10:00:05.645Z",
+  "publishedAt": "2026-04-12T10:00:35.700Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -832,13 +832,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 113,
+      "name": "GARCIA RUIZ, ROBERTO",
+      "cat": "TR3",
+      "club": "CD Moto Nava",
+      "brand": "ELECTRIC-MOTION",
+      "schedStart": "10:16",
+      "rank": 1,
+      "scores": [
+        [
+          2,
+          1,
+          0,
+          3,
+          2,
+          1,
+          0
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 9,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "01:42:08",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "11:58:08",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 9,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 2,
+      "n1s": 2,
+      "n2s": 2,
+      "n3s": 1,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 124,
       "name": "GONZALEZ ALVAREZ, MARCOS",
       "cat": "TR3",
       "club": "Asociación Motociclista de Asturias",
       "brand": "MONTESA",
       "schedStart": "10:14",
-      "rank": 1,
+      "rank": 2,
       "scores": [
         [
           1,
@@ -900,7 +962,7 @@
       "club": "Asociación Motociclista de Asturias",
       "brand": "SIN MARCA",
       "schedStart": "10:14",
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           2,
@@ -962,7 +1024,7 @@
       "club": "CD Moto Nava",
       "brand": "TRS",
       "schedStart": "10:16",
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           1,
@@ -1031,7 +1093,7 @@
       "club": "CD Moto Nava",
       "brand": "ELECTRIC-MOTION",
       "schedStart": "10:15",
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           3,
@@ -1093,7 +1155,7 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "TRRS",
       "schedStart": "10:18",
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           null,
@@ -1162,7 +1224,7 @@
       "club": "CD Moto Bierzo",
       "brand": "TRRS",
       "schedStart": "10:10",
-      "rank": 6,
+      "rank": 7,
       "scores": [
         [
           null,
@@ -1224,68 +1286,6 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "TRRS",
       "schedStart": "10:15",
-      "rank": 7,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": null,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 113,
-      "name": "GARCIA RUIZ, ROBERTO",
-      "cat": "TR3",
-      "club": "CD Moto Nava",
-      "brand": "ELECTRIC-MOTION",
-      "schedStart": "10:16",
       "rank": 8,
       "scores": [
         [
@@ -1776,13 +1776,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 81,
+      "name": "CABALLERO LOPEZ, AARON",
+      "cat": "TR4",
+      "club": "Club Motomontañismo Arteixo",
+      "brand": "",
+      "schedStart": "10:28",
+      "rank": 3,
+      "scores": [
+        [
+          0,
+          0,
+          0,
+          1,
+          2,
+          2,
+          1
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 6,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "01:31:36",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "11:59:36",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 6,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 3,
+      "n1s": 2,
+      "n2s": 2,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 65,
       "name": "FERNANDEZ PEREZ, ANDRES",
       "cat": "TR4",
       "club": "CD Pobladura R",
       "brand": "SIN MARCA",
       "schedStart": "10:11",
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           0,
@@ -1844,7 +1906,7 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "GASGAS",
       "schedStart": "10:07",
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           0,
@@ -1906,7 +1968,7 @@
       "club": "CD Pobladura R",
       "brand": "SIN MARCA",
       "schedStart": "10:13",
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           0,
@@ -1968,7 +2030,7 @@
       "club": "Club Motomontañismo Arteixo",
       "brand": "SIN MARCA",
       "schedStart": "10:04",
-      "rank": 6,
+      "rank": 7,
       "scores": [
         [
           0,
@@ -2030,7 +2092,7 @@
       "club": "Moto Club Villaviciosa",
       "brand": "GASGAS",
       "schedStart": "10:12",
-      "rank": 7,
+      "rank": 8,
       "scores": [
         [
           1,
@@ -2092,7 +2154,7 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "GASGAS",
       "schedStart": "10:13",
-      "rank": 8,
+      "rank": 9,
       "scores": [
         [
           1,
@@ -2154,7 +2216,7 @@
       "club": "CD Moto Bierzo",
       "brand": "GASGAS",
       "schedStart": "10:06",
-      "rank": 9,
+      "rank": 10,
       "scores": [
         [
           0,
@@ -2216,7 +2278,7 @@
       "club": "CD Pobladura R",
       "brand": "BETA",
       "schedStart": "10:07",
-      "rank": 10,
+      "rank": 11,
       "scores": [
         [
           1,
@@ -2278,7 +2340,7 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "SIN MARCA",
       "schedStart": "10:08",
-      "rank": 11,
+      "rank": 12,
       "scores": [
         [
           0,
@@ -2340,7 +2402,7 @@
       "club": "CD Portillo",
       "brand": "VERTIGO",
       "schedStart": "10:09",
-      "rank": 12,
+      "rank": 13,
       "scores": [
         [
           0,
@@ -2402,7 +2464,7 @@
       "club": "CD Moto Nava",
       "brand": "BETA",
       "schedStart": "10:08",
-      "rank": 13,
+      "rank": 14,
       "scores": [
         [
           5,
@@ -2470,7 +2532,7 @@
       "club": "Club Motomontañismo Arteixo",
       "brand": "SHERCO",
       "schedStart": "10:05",
-      "rank": 14,
+      "rank": 15,
       "scores": [
         [
           null,
@@ -2532,7 +2594,7 @@
       "club": "CD Pobladura R",
       "brand": "SIN MARCA",
       "schedStart": "10:05",
-      "rank": 15,
+      "rank": 16,
       "scores": [
         [
           null,
@@ -2594,7 +2656,7 @@
       "club": "CD Moto Bierzo",
       "brand": "TRRS",
       "schedStart": "10:06",
-      "rank": 16,
+      "rank": 17,
       "scores": [
         [
           null,
@@ -2656,7 +2718,7 @@
       "club": "Asociación Motociclista de Asturias",
       "brand": "MONTESA",
       "schedStart": "10:09",
-      "rank": 17,
+      "rank": 18,
       "scores": [
         [
           null,
@@ -2718,7 +2780,7 @@
       "club": "CD Moto Bierzo",
       "brand": "SHERCO",
       "schedStart": "10:10",
-      "rank": 18,
+      "rank": 19,
       "scores": [
         [
           null,
@@ -2780,68 +2842,6 @@
       "club": "",
       "brand": "SIN MARCA",
       "schedStart": "10:11",
-      "rank": 19,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": null,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 81,
-      "name": "CABALLERO LOPEZ, AARON",
-      "cat": "TR4",
-      "club": "Club Motomontañismo Arteixo",
-      "brand": "",
-      "schedStart": "10:28",
       "rank": 20,
       "scores": [
         [
