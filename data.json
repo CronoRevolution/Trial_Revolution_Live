@@ -2,13 +2,13 @@
   "raceName": "Trial de Pobladura 2026",
   "organizer": "CD Pobladura R",
   "raceDate": "2026-04-12",
-  "publishedAt": "2026-04-12T06:54:28.352Z",
+  "publishedAt": "2026-04-12T06:54:58.313Z",
   "raceStarted": false,
   "raceFinished": false,
   "cfg": {
     "numZones": 7,
     "lap1MaxMins": 150,
-    "raceDurationHrs": 5
+    "raceDurationHrs": 4.666666666666667
   },
   "categories": [
     "TR1",
