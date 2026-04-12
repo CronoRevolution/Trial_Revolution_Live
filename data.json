@@ -2,7 +2,7 @@
   "raceName": "Trial de Pobladura 2026",
   "organizer": "CD Pobladura R",
   "raceDate": "2026-04-12",
-  "publishedAt": "2026-04-12T09:45:35.902Z",
+  "publishedAt": "2026-04-12T09:46:05.666Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -832,13 +832,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 126,
+      "name": "MENENDEZ DIEZ, DAVID",
+      "cat": "TR3",
+      "club": "Asociación Motociclista de Asturias",
+      "brand": "SIN MARCA",
+      "schedStart": "10:14",
+      "rank": 1,
+      "scores": [
+        [
+          2,
+          3,
+          5,
+          3,
+          0,
+          3,
+          1
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 17,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "01:31:24",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "11:45:24",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 17,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 1,
+      "n1s": 1,
+      "n2s": 1,
+      "n3s": 3,
+      "n5s": 1,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 118,
       "name": "MALLO RAMOS, ISMAEL",
       "cat": "TR3",
       "club": "CD Moto Nava",
       "brand": "TRS",
       "schedStart": "10:16",
-      "rank": 1,
+      "rank": 2,
       "scores": [
         [
           null,
@@ -907,7 +969,7 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "TRRS",
       "schedStart": "10:18",
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           null,
@@ -957,68 +1019,6 @@
         }
       ],
       "totalPoints": 1,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 126,
-      "name": "MENENDEZ DIEZ, DAVID",
-      "cat": "TR3",
-      "club": "Asociación Motociclista de Asturias",
-      "brand": "SIN MARCA",
-      "schedStart": "10:14",
-      "rank": 3,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": null,
       "lapsCompleted": 0,
       "totalTime": "",
       "n0s": 0,
