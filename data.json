@@ -2,7 +2,7 @@
   "raceName": "Trial de Pobladura 2026",
   "organizer": "CD Pobladura R",
   "raceDate": "2026-04-12",
-  "publishedAt": "2026-04-12T12:15:49.844Z",
+  "publishedAt": "2026-04-12T12:16:20.016Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -1714,13 +1714,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 81,
+      "name": "CABALLERO LOPEZ, AARON",
+      "cat": "TR4",
+      "club": "Club Motomontañismo Arteixo",
+      "brand": "",
+      "schedStart": "10:28",
+      "rank": 2,
+      "scores": [
+        [
+          0,
+          0,
+          0,
+          1,
+          2,
+          2,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          2,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          2,
+          3,
+          0
+        ]
+      ],
+      "lap1Points": 6,
+      "lap2Points": 8,
+      "lap3Points": 6,
+      "lap1Time": "01:31:36",
+      "lap2Time": "01:12:56",
+      "lap3Time": "01:02:27",
+      "arrV1": "11:59:36",
+      "arrV2": "13:11:56",
+      "arrCHF": "14:14:59",
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 20,
+      "lapsCompleted": 3,
+      "totalTime": "03:46:59",
+      "n0s": 10,
+      "n1s": 4,
+      "n2s": 5,
+      "n3s": 2,
+      "n5s": 0,
+      "finishTime": 51299000,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 68,
       "name": "CARBALLO QUIROGA, DAVID",
       "cat": "TR4",
       "club": "CD Moto Bierzo",
       "brand": "GASGAS",
       "schedStart": "10:06",
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           0,
@@ -1782,7 +1844,7 @@
       "club": "CD Pobladura R",
       "brand": "SIN MARCA",
       "schedStart": "10:11",
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           0,
@@ -1844,7 +1906,7 @@
       "club": "Club Motomontañismo Arteixo",
       "brand": "SIN MARCA",
       "schedStart": "10:04",
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           0,
@@ -1906,7 +1968,7 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "GASGAS",
       "schedStart": "10:13",
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           1,
@@ -1968,7 +2030,7 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "GASGAS",
       "schedStart": "10:07",
-      "rank": 6,
+      "rank": 7,
       "scores": [
         [
           0,
@@ -2030,7 +2092,7 @@
       "club": "Moto Club Villaviciosa",
       "brand": "GASGAS",
       "schedStart": "10:12",
-      "rank": 7,
+      "rank": 8,
       "scores": [
         [
           1,
@@ -2092,7 +2154,7 @@
       "club": "Club Motomontañismo Arteixo",
       "brand": "VERTIGO",
       "schedStart": "10:27",
-      "rank": 8,
+      "rank": 9,
       "scores": [
         [
           0,
@@ -2154,7 +2216,7 @@
       "club": "CD Moto Bierzo",
       "brand": "SHERCO",
       "schedStart": "10:10",
-      "rank": 9,
+      "rank": 10,
       "scores": [
         [
           0,
@@ -2202,68 +2264,6 @@
       "n0s": 9,
       "n1s": 3,
       "n2s": 1,
-      "n3s": 1,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 81,
-      "name": "CABALLERO LOPEZ, AARON",
-      "cat": "TR4",
-      "club": "Club Motomontañismo Arteixo",
-      "brand": "",
-      "schedStart": "10:28",
-      "rank": 10,
-      "scores": [
-        [
-          0,
-          0,
-          0,
-          1,
-          2,
-          2,
-          1
-        ],
-        [
-          0,
-          0,
-          1,
-          2,
-          2,
-          3,
-          0
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 6,
-      "lap2Points": 8,
-      "lap3Points": null,
-      "lap1Time": "01:31:36",
-      "lap2Time": "01:12:56",
-      "lap3Time": null,
-      "arrV1": "11:59:36",
-      "arrV2": "13:11:56",
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 14,
-      "lapsCompleted": 2,
-      "totalTime": "",
-      "n0s": 6,
-      "n1s": 3,
-      "n2s": 4,
       "n3s": 1,
       "n5s": 0,
       "finishTime": null,
