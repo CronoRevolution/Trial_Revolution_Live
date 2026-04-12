@@ -2,7 +2,7 @@
   "raceName": "Trial de Pobladura 2026",
   "organizer": "CD Pobladura R",
   "raceDate": "2026-04-12",
-  "publishedAt": "2026-04-12T10:24:35.691Z",
+  "publishedAt": "2026-04-12T10:25:05.647Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -218,10 +218,10 @@
           0,
           0,
           0,
-          null,
-          null,
-          null,
-          null
+          2,
+          3,
+          3,
+          5
         ],
         [
           null,
@@ -242,7 +242,7 @@
           null
         ]
       ],
-      "lap1Points": 0,
+      "lap1Points": 13,
       "lap2Points": null,
       "lap3Points": null,
       "lap1Time": "01:58:46",
@@ -254,14 +254,14 @@
       "lap1Penalty": 0,
       "finishPenalty": 0,
       "extraPenalties": [],
-      "totalPoints": 0,
+      "totalPoints": 13,
       "lapsCompleted": 1,
       "totalTime": "",
       "n0s": 3,
       "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
+      "n2s": 1,
+      "n3s": 2,
+      "n5s": 1,
       "finishTime": null,
       "dnf": false,
       "dsq": false,
@@ -2898,13 +2898,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 6,
+      "name": "ALVAREZ FERNANDEZ, ENZO",
+      "cat": "TR5",
+      "club": "CD Pobladura R",
+      "brand": "OSET BIKE",
+      "schedStart": "10:03",
+      "rank": 1,
+      "scores": [
+        [
+          5,
+          5,
+          5,
+          5,
+          0,
+          3,
+          3
+        ],
+        [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 26,
+      "lap2Points": 1,
+      "lap3Points": null,
+      "lap1Time": "01:08:11",
+      "lap2Time": "01:12:52",
+      "lap3Time": null,
+      "arrV1": "11:11:11",
+      "arrV2": "12:23:52",
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 27,
+      "lapsCompleted": 2,
+      "totalTime": "",
+      "n0s": 1,
+      "n1s": 1,
+      "n2s": 0,
+      "n3s": 2,
+      "n5s": 4,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 7,
       "name": "CANEDO ENRIQUEZ, ANDREA",
       "cat": "TR5",
       "club": "CD Moto Bierzo",
       "brand": "SIN MARCA",
       "schedStart": "10:01",
-      "rank": 1,
+      "rank": 2,
       "scores": [
         [
           0,
@@ -2966,7 +3028,7 @@
       "club": "CD Moto Bierzo",
       "brand": "SIN MARCA",
       "schedStart": "10:02",
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           1,
@@ -3028,7 +3090,7 @@
       "club": "CD Pobladura R",
       "brand": "BETA",
       "schedStart": "10:03",
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           0,
@@ -3090,7 +3152,7 @@
       "club": "CD Moto Bierzo",
       "brand": "SIN MARCA",
       "schedStart": "10:02",
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           1,
@@ -3158,7 +3220,7 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "TRRS",
       "schedStart": "10:04",
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           5,
@@ -3220,7 +3282,7 @@
       "club": "CD Pobladura R",
       "brand": "",
       "schedStart": "10:28",
-      "rank": 6,
+      "rank": 7,
       "scores": [
         [
           5,
@@ -3270,68 +3332,6 @@
       "n2s": 0,
       "n3s": 0,
       "n5s": 5,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 6,
-      "name": "ALVAREZ FERNANDEZ, ENZO",
-      "cat": "TR5",
-      "club": "CD Pobladura R",
-      "brand": "OSET BIKE",
-      "schedStart": "10:03",
-      "rank": 7,
-      "scores": [
-        [
-          5,
-          5,
-          5,
-          5,
-          0,
-          3,
-          3
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 26,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": "01:08:11",
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": "11:11:11",
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 26,
-      "lapsCompleted": 1,
-      "totalTime": "",
-      "n0s": 1,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 2,
-      "n5s": 4,
       "finishTime": null,
       "dnf": false,
       "dsq": false,
