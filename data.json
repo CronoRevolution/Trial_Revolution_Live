@@ -2,7 +2,7 @@
   "raceName": "Trial de Pobladura 2026",
   "organizer": "CD Pobladura R",
   "raceDate": "2026-04-12",
-  "publishedAt": "2026-04-12T12:26:49.717Z",
+  "publishedAt": "2026-04-12T12:27:19.746Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -1142,13 +1142,82 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 118,
+      "name": "MALLO RAMOS, ISMAEL",
+      "cat": "TR3",
+      "club": "CD Moto Nava",
+      "brand": "TRS",
+      "schedStart": "10:16",
+      "rank": 6,
+      "scores": [
+        [
+          1,
+          5,
+          3,
+          3,
+          3,
+          3,
+          2
+        ],
+        [
+          3,
+          1,
+          3,
+          3,
+          3,
+          3,
+          0
+        ],
+        [
+          1,
+          5,
+          3,
+          3,
+          3,
+          5,
+          0
+        ]
+      ],
+      "lap1Points": 20,
+      "lap2Points": 16,
+      "lap3Points": 20,
+      "lap1Time": "01:39:41",
+      "lap2Time": "01:16:51",
+      "lap3Time": "01:13:32",
+      "arrV1": "11:55:41",
+      "arrV2": "13:11:51",
+      "arrCHF": "14:26:04",
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [
+        {
+          "pts": 1,
+          "reason": "Retraso en salida (10:17 vs. 10:16) — 1 min",
+          "ts": "10:17:00",
+          "skipKey": "LATE_START"
+        }
+      ],
+      "totalPoints": 57,
+      "lapsCompleted": 3,
+      "totalTime": "04:10:04",
+      "n0s": 2,
+      "n1s": 3,
+      "n2s": 1,
+      "n3s": 12,
+      "n5s": 3,
+      "finishTime": 51964000,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 111,
       "name": "BARREDO RODRIGUEZ, SAUL",
       "cat": "TR3",
       "club": "CD Pobladura R",
       "brand": "GASGAS",
       "schedStart": "10:17",
-      "rank": 6,
+      "rank": 7,
       "scores": [
         [
           0,
@@ -1210,7 +1279,7 @@
       "club": "CD Moto Bierzo",
       "brand": "TRRS",
       "schedStart": "10:10",
-      "rank": 7,
+      "rank": 8,
       "scores": [
         [
           1,
@@ -1272,7 +1341,7 @@
       "club": "CD Moto Bierzo",
       "brand": "BETA",
       "schedStart": "10:19",
-      "rank": 8,
+      "rank": 9,
       "scores": [
         [
           0,
@@ -1334,7 +1403,7 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "TRRS",
       "schedStart": "10:17",
-      "rank": 9,
+      "rank": 10,
       "scores": [
         [
           3,
@@ -1385,75 +1454,6 @@
       "n3s": 6,
       "n5s": 2,
       "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 118,
-      "name": "MALLO RAMOS, ISMAEL",
-      "cat": "TR3",
-      "club": "CD Moto Nava",
-      "brand": "TRS",
-      "schedStart": "10:16",
-      "rank": 10,
-      "scores": [
-        [
-          1,
-          5,
-          3,
-          3,
-          3,
-          3,
-          2
-        ],
-        [
-          3,
-          1,
-          3,
-          3,
-          3,
-          3,
-          0
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 20,
-      "lap2Points": 16,
-      "lap3Points": null,
-      "lap1Time": "01:39:41",
-      "lap2Time": "01:16:51",
-      "lap3Time": "01:13:32",
-      "arrV1": "11:55:41",
-      "arrV2": "13:11:51",
-      "arrCHF": "14:26:04",
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [
-        {
-          "pts": 1,
-          "reason": "Retraso en salida (10:17 vs. 10:16) — 1 min",
-          "ts": "10:17:00",
-          "skipKey": "LATE_START"
-        }
-      ],
-      "totalPoints": 37,
-      "lapsCompleted": 2,
-      "totalTime": "04:10:04",
-      "n0s": 1,
-      "n1s": 2,
-      "n2s": 1,
-      "n3s": 9,
-      "n5s": 1,
-      "finishTime": 51964000,
       "dnf": false,
       "dsq": false,
       "dsqReason": ""
