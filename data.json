@@ -2,7 +2,7 @@
   "raceName": "Trial de Pobladura 2026",
   "organizer": "CD Pobladura R",
   "raceDate": "2026-04-12",
-  "publishedAt": "2026-04-12T12:23:19.720Z",
+  "publishedAt": "2026-04-12T12:23:49.698Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -1169,9 +1169,9 @@
           0
         ],
         [
-          null,
-          null,
-          null,
+          2,
+          1,
+          0,
           null,
           null,
           null,
@@ -1180,25 +1180,25 @@
       ],
       "lap1Points": 9,
       "lap2Points": 10,
-      "lap3Points": null,
+      "lap3Points": 3,
       "lap1Time": "01:42:08",
       "lap2Time": "01:14:12",
-      "lap3Time": null,
+      "lap3Time": "01:10:56",
       "arrV1": "11:58:08",
       "arrV2": "13:12:12",
-      "arrCHF": null,
+      "arrCHF": "14:23:16",
       "lap1Penalty": 0,
       "finishPenalty": 0,
       "extraPenalties": [],
-      "totalPoints": 19,
-      "lapsCompleted": 2,
-      "totalTime": "",
-      "n0s": 4,
-      "n1s": 3,
-      "n2s": 5,
+      "totalPoints": 22,
+      "lapsCompleted": 3,
+      "totalTime": "04:07:16",
+      "n0s": 5,
+      "n1s": 4,
+      "n2s": 6,
       "n3s": 2,
       "n5s": 0,
-      "finishTime": null,
+      "finishTime": 51796000,
       "dnf": false,
       "dsq": false,
       "dsqReason": ""
@@ -1900,13 +1900,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 63,
+      "name": "GARCIA RUIZ, SAUL",
+      "cat": "TR4",
+      "club": "CD Pobladura R",
+      "brand": "SIN MARCA",
+      "schedStart": "10:13",
+      "rank": 5,
+      "scores": [
+        [
+          0,
+          0,
+          1,
+          5,
+          5,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          1,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          1,
+          3,
+          0
+        ]
+      ],
+      "lap1Points": 14,
+      "lap2Points": 6,
+      "lap3Points": 5,
+      "lap1Time": "01:21:27",
+      "lap2Time": "01:36:00",
+      "lap3Time": "01:12:11",
+      "arrV1": "11:34:27",
+      "arrV2": "13:10:00",
+      "arrCHF": "14:22:38",
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 25,
+      "lapsCompleted": 3,
+      "totalTime": "04:09:38",
+      "n0s": 11,
+      "n1s": 4,
+      "n2s": 1,
+      "n3s": 3,
+      "n5s": 2,
+      "finishTime": 51758000,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 65,
       "name": "FERNANDEZ PEREZ, ANDRES",
       "cat": "TR4",
       "club": "CD Pobladura R",
       "brand": "SIN MARCA",
       "schedStart": "10:11",
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           0,
@@ -1968,7 +2030,7 @@
       "club": "Club Motomontañismo Arteixo",
       "brand": "SIN MARCA",
       "schedStart": "10:04",
-      "rank": 6,
+      "rank": 7,
       "scores": [
         [
           0,
@@ -2030,7 +2092,7 @@
       "club": "CD Portillo",
       "brand": "VERTIGO",
       "schedStart": "10:09",
-      "rank": 7,
+      "rank": 8,
       "scores": [
         [
           0,
@@ -2092,7 +2154,7 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "GASGAS",
       "schedStart": "10:13",
-      "rank": 8,
+      "rank": 9,
       "scores": [
         [
           1,
@@ -2154,7 +2216,7 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "GASGAS",
       "schedStart": "10:07",
-      "rank": 9,
+      "rank": 10,
       "scores": [
         [
           0,
@@ -2216,7 +2278,7 @@
       "club": "Moto Club Villaviciosa",
       "brand": "GASGAS",
       "schedStart": "10:12",
-      "rank": 10,
+      "rank": 11,
       "scores": [
         [
           1,
@@ -2278,7 +2340,7 @@
       "club": "CD Moto Bierzo",
       "brand": "SHERCO",
       "schedStart": "10:10",
-      "rank": 11,
+      "rank": 12,
       "scores": [
         [
           0,
@@ -2329,68 +2391,6 @@
       "n3s": 1,
       "n5s": 0,
       "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 63,
-      "name": "GARCIA RUIZ, SAUL",
-      "cat": "TR4",
-      "club": "CD Pobladura R",
-      "brand": "SIN MARCA",
-      "schedStart": "10:13",
-      "rank": 12,
-      "scores": [
-        [
-          0,
-          0,
-          1,
-          5,
-          5,
-          3,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          2,
-          1,
-          3,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          1,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 14,
-      "lap2Points": 6,
-      "lap3Points": 1,
-      "lap1Time": "01:21:27",
-      "lap2Time": "01:36:00",
-      "lap3Time": "01:12:11",
-      "arrV1": "11:34:27",
-      "arrV2": "13:10:00",
-      "arrCHF": "14:22:38",
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 21,
-      "lapsCompleted": 3,
-      "totalTime": "04:09:38",
-      "n0s": 10,
-      "n1s": 3,
-      "n2s": 1,
-      "n3s": 2,
-      "n5s": 2,
-      "finishTime": 51758000,
       "dnf": false,
       "dsq": false,
       "dsqReason": ""
