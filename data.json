@@ -2,7 +2,7 @@
   "raceName": "Trial de Pobladura 2026",
   "organizer": "CD Pobladura R",
   "raceDate": "2026-04-12",
-  "publishedAt": "2026-04-12T09:56:05.608Z",
+  "publishedAt": "2026-04-12T09:56:35.835Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -956,13 +956,82 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 118,
+      "name": "MALLO RAMOS, ISMAEL",
+      "cat": "TR3",
+      "club": "CD Moto Nava",
+      "brand": "TRS",
+      "schedStart": "10:16",
+      "rank": 3,
+      "scores": [
+        [
+          1,
+          5,
+          3,
+          3,
+          3,
+          3,
+          2
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 20,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "01:39:41",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "11:55:41",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [
+        {
+          "pts": 1,
+          "reason": "Retraso en salida (10:17 vs. 10:16) — 1 min",
+          "ts": "10:17:00",
+          "skipKey": "LATE_START"
+        }
+      ],
+      "totalPoints": 21,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 0,
+      "n1s": 1,
+      "n2s": 1,
+      "n3s": 4,
+      "n5s": 1,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 116,
       "name": "TORRE FERNANDEZ, PABLO",
       "cat": "TR3",
       "club": "CD Moto Nava",
       "brand": "ELECTRIC-MOTION",
       "schedStart": "10:15",
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           3,
@@ -1012,75 +1081,6 @@
       "n2s": 2,
       "n3s": 4,
       "n5s": 1,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 118,
-      "name": "MALLO RAMOS, ISMAEL",
-      "cat": "TR3",
-      "club": "CD Moto Nava",
-      "brand": "TRS",
-      "schedStart": "10:16",
-      "rank": 4,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [
-        {
-          "pts": 1,
-          "reason": "Retraso en salida (10:17 vs. 10:16) — 1 min",
-          "ts": "10:17:00",
-          "skipKey": "LATE_START"
-        }
-      ],
-      "totalPoints": 1,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
       "finishTime": null,
       "dnf": false,
       "dsq": false,
