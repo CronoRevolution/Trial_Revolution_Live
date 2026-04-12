@@ -2,7 +2,7 @@
   "raceName": "Trial de Pobladura 2026",
   "organizer": "CD Pobladura R",
   "raceDate": "2026-04-12",
-  "publishedAt": "2026-04-12T09:17:05.887Z",
+  "publishedAt": "2026-04-12T09:17:35.680Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -2898,75 +2898,13 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 8,
-      "name": "CASADO CUENDIAS, DAVID",
-      "cat": "TR5",
-      "club": "Moto Club Cuenca Minera",
-      "brand": "TRRS",
-      "schedStart": "10:04",
-      "rank": 1,
-      "scores": [
-        [
-          5,
-          5,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 10,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": "01:11:21",
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": "11:15:21",
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 10,
-      "lapsCompleted": 1,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 2,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
       "dorsal": 1,
       "name": "CASTRO GONZALEZ, NOEL",
       "cat": "TR5",
       "club": "CD Moto Bierzo",
       "brand": "SIN MARCA",
       "schedStart": "10:02",
-      "rank": 2,
+      "rank": 1,
       "scores": [
         [
           1,
@@ -3022,13 +2960,143 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 2,
+      "name": "GUERRERO CARBALLO, CARMEN",
+      "cat": "TR5",
+      "club": "CD Moto Bierzo",
+      "brand": "SIN MARCA",
+      "schedStart": "10:02",
+      "rank": 2,
+      "scores": [
+        [
+          1,
+          5,
+          5,
+          5,
+          0,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 16,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "01:14:45",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "11:16:45",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [
+        {
+          "pts": 3,
+          "reason": "3MIN. VERIFICACION TÉCNICA",
+          "ts": "10:34:03"
+        }
+      ],
+      "totalPoints": 19,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 1,
+      "n1s": 1,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 3,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
+      "dorsal": 8,
+      "name": "CASADO CUENDIAS, DAVID",
+      "cat": "TR5",
+      "club": "Moto Club Cuenca Minera",
+      "brand": "TRRS",
+      "schedStart": "10:04",
+      "rank": 3,
+      "scores": [
+        [
+          5,
+          5,
+          5,
+          5,
+          0,
+          5,
+          1
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 26,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "01:11:21",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "11:15:21",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 26,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 1,
+      "n1s": 1,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 5,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 6,
       "name": "ALVAREZ FERNANDEZ, ENZO",
       "cat": "TR5",
       "club": "CD Pobladura R",
       "brand": "OSET BIKE",
       "schedStart": "10:03",
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           5,
@@ -3078,74 +3146,6 @@
       "n2s": 0,
       "n3s": 2,
       "n5s": 4,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 2,
-      "name": "GUERRERO CARBALLO, CARMEN",
-      "cat": "TR5",
-      "club": "CD Moto Bierzo",
-      "brand": "SIN MARCA",
-      "schedStart": "10:02",
-      "rank": 4,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [
-        {
-          "pts": 3,
-          "reason": "3MIN. VERIFICACION TÉCNICA",
-          "ts": "10:34:03"
-        }
-      ],
-      "totalPoints": 3,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
       "finishTime": null,
       "dnf": false,
       "dsq": false,
