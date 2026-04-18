@@ -110,6 +110,31 @@ body{display:flex;flex-direction:column;height:100vh}
 @keyframes toastIn{from{opacity:0;transform:translate(-50%,20px)}to{opacity:1;transform:translate(-50%,0)}}
 @keyframes toastOut{to{opacity:0;transform:translate(-50%,20px)}}
 .toast.err{background:#dc2626}
+/* Pestañas del modal */
+.modal-tabs{display:flex;gap:4px;margin-bottom:14px;background:var(--bg);padding:3px;border-radius:10px}
+.modal-tab{flex:1;padding:8px 6px;border:none;background:transparent;color:var(--muted);font-weight:700;font-size:11px;letter-spacing:.5px;border-radius:7px;cursor:pointer;text-align:center}
+.modal-tab.active{background:var(--accent);color:#000}
+.modal-tab .ico{display:block;font-size:16px;margin-bottom:2px}
+.modal-section{display:none}
+.modal-section.active{display:block}
+.lap-picker{display:flex;gap:6px;margin-bottom:10px}
+.lap-pick-btn{flex:1;padding:10px;border:2px solid var(--border);background:var(--bg);color:var(--text);border-radius:10px;font-weight:800;cursor:pointer}
+.lap-pick-btn.active{border-color:var(--accent);background:var(--accent);color:#000}
+.lap-pick-btn .cur{display:block;font-size:10px;font-weight:500;color:var(--muted);margin-top:2px}
+.lap-pick-btn.active .cur{color:#000}
+.modal-textarea{width:100%;min-height:80px;background:var(--bg);border:2px solid var(--border);border-radius:10px;padding:10px;color:var(--text);font-size:14px;font-family:inherit;resize:vertical;outline:none}
+.modal-textarea:focus{border-color:var(--accent)}
+.yellow-card-box{background:#fef3c7;border:2px solid #f59e0b;border-radius:10px;padding:12px;margin-bottom:12px;color:#78350f}
+[data-theme=dark] .yellow-card-box{background:rgba(245,158,11,0.15);color:#fbbf24;border-color:#f59e0b}
+.yc-title{font-weight:900;font-size:14px;margin-bottom:6px;letter-spacing:1px}
+.yc-msg{font-size:11px;line-height:1.4}
+.submit-btn{width:100%;padding:14px;border:none;border-radius:10px;font-size:14px;font-weight:900;letter-spacing:1.5px;cursor:pointer}
+.submit-btn.yc{background:#f59e0b;color:#000}
+.submit-btn.obs{background:#3b82f6;color:#fff}
+.existing-yc,.existing-obs{margin-top:10px;padding:10px;background:var(--bg);border-radius:8px;border:1px solid var(--border);font-size:12px}
+.existing-yc .pts{color:#f59e0b;font-weight:900}
+.del-btn{background:transparent;border:none;color:var(--muted);font-size:14px;cursor:pointer;float:right}
+
 </style>
 </head>
 <body>
@@ -190,6 +215,8 @@ if (!raceId || !zone || !token) {
 // ── Estado ─────────────────────────────────────────────────────────────────
 let pilots = [];       // [{dorsal, name, cat, club}]
 let pilotScores = {};  // {dorsal: {V1:score, V2:score, V3:score}}
+let pilotYellowCards = {}; // {dorsal: {reason, ts}} — solo de esta zona
+let pilotObservations = {};// {dorsal: {text, ts}}    — solo de esta zona
 let raceInfo = {};     // {name, numLaps, numZones}
 let recentHistory = []; // [{dorsal, lap, score, ts, key}]
 
@@ -236,6 +263,21 @@ function setupListeners() {
       });
     }
 
+    // Tarjetas amarillas de esta zona
+    pilotYellowCards = {};
+    if (d.yellow_cards) {
+      Object.entries(d.yellow_cards).forEach(([key, yc]) => {
+        if (yc.zone === zone && yc.dorsal) pilotYellowCards[yc.dorsal] = yc;
+      });
+    }
+    // Observaciones de esta zona
+    pilotObservations = {};
+    if (d.observations) {
+      Object.entries(d.observations).forEach(([key, ob]) => {
+        if (ob.zone === zone && ob.dorsal) pilotObservations[ob.dorsal] = ob;
+      });
+    }
+
     document.getElementById('hdrRace').textContent = raceInfo.name || '—';
     statusEl.classList.add('ok');
     renderPilots();
@@ -274,10 +316,13 @@ function renderPilots() {
       laps.push(`<div class="lap-dot ${filled?'filled':''}">${filled ? v : i}</div>`);
     }
     const allDone = Object.keys(sc).length >= numLaps;
+    const hasYC  = pilotYellowCards[p.dorsal];
+    const hasObs = pilotObservations[p.dorsal];
+    const marks = (hasYC?'<span style="font-size:14px" title="Tarjeta amarilla">🟨</span>':'') + (hasObs?'<span style="font-size:14px" title="Observación">📝</span>':'');
     return `<div class="pilot ${allDone?'done-all':''}" onclick="window.selectPilot(${p.dorsal})">
       <div class="pilot-dorsal">${p.dorsal}</div>
       <div class="pilot-info">
-        <div class="pilot-name">${p.name || '—'}</div>
+        <div class="pilot-name">${p.name || '—'} ${marks}</div>
         <div class="pilot-club">${p.club || ''}</div>
       </div>
       <span class="pilot-cat cat-${p.cat}">${p.cat}</span>
@@ -286,51 +331,172 @@ function renderPilots() {
   }).join('');
 }
 
-// ── Modal de puntuación ────────────────────────────────────────────────────
+// ── Modal multi-sección por piloto ─────────────────────────────────────────
 window.selectPilot = function(dorsal) {
   const p = pilots.find(x => x.dorsal === dorsal);
   if (!p) return;
-  const sc = pilotScores[dorsal] || {};
-  const numLaps = raceInfo.numLaps || 3;
-  // Deducir vuelta actual: primera que no tenga score
-  let lap = null;
-  for (let i = 1; i <= numLaps; i++) {
-    if (sc['V'+i] === undefined || sc['V'+i] === null) { lap = i; break; }
-  }
-  if (lap === null) {
-    showToast('Este piloto ya tiene puntuación en todas las vueltas', 'err');
-    return;
-  }
-  openScoreModal(p, lap);
+  openPilotModal(p);
 };
 
-function openScoreModal(p, lap) {
+function openPilotModal(p) {
   const m = document.getElementById('scoreModal');
   m.style.display = 'block';
-  // Push history state para que el botón atrás cierre el modal
   try { history.pushState({modal:'score'}, '', location.href); } catch(e){}
+
+  const sc = pilotScores[p.dorsal] || {};
+  const numLaps = raceInfo.numLaps || 3;
+
+  // Deducir vuelta por defecto: primera sin puntuar
+  let defaultLap = null;
+  for (let i = 1; i <= numLaps; i++) {
+    if (sc['V'+i] === undefined || sc['V'+i] === null) { defaultLap = i; break; }
+  }
+  const initialLap = defaultLap || 1;
+  const canQuickScore = defaultLap !== null;
+
+  // Tarjeta amarilla existente (si hay)
+  const ycKey = `yc_dorsal_${p.dorsal}_zone_${zone}`;
+  const existingYC = pilotYellowCards[p.dorsal];
+  // Observación existente
+  const obsKey = `obs_dorsal_${p.dorsal}_zone_${zone}`;
+  const existingObs = pilotObservations[p.dorsal];
+
+  // Construir pestañas y secciones
+  const tabs = [
+    canQuickScore ? { id:'score', ico:'🎯', label:'Puntuar' } : null,
+    { id:'edit',  ico:'✎',  label:'Corregir' },
+    { id:'yc',    ico:'🟨', label:'T. Amarilla' },
+    { id:'obs',   ico:'📝', label:'Obs.' },
+  ].filter(Boolean);
+  const firstTab = tabs[0].id;
+
   m.innerHTML = `
     <div class="modal-bg" onclick="if(event.target===this){history.back()}">
       <div class="modal">
         <div class="modal-hdr">
           <div class="modal-dorsal">${p.dorsal}</div>
           <div class="modal-name">${p.name}</div>
-          <div class="modal-lap">VUELTA ${lap}</div>
+          <span class="pilot-cat cat-${p.cat}">${p.cat}</span>
         </div>
-        <div class="modal-subtitle">Zona ${zone} — ${p.cat} · Toca la puntuación</div>
-        <div class="score-grid">
-          <button class="score-btn score-0" onclick="window.submitScore(${p.dorsal}, ${lap}, 0)">0</button>
-          <button class="score-btn score-1" onclick="window.submitScore(${p.dorsal}, ${lap}, 1)">1</button>
-          <button class="score-btn score-2" onclick="window.submitScore(${p.dorsal}, ${lap}, 2)">2</button>
-          <button class="score-btn score-3" onclick="window.submitScore(${p.dorsal}, ${lap}, 3)">3</button>
-          <button class="score-btn score-5" onclick="window.submitScore(${p.dorsal}, ${lap}, 5)">5</button>
+
+        <div class="modal-tabs">
+          ${tabs.map(t => `<button class="modal-tab ${t.id===firstTab?'active':''}" data-tab="${t.id}" onclick="selectModalTab('${t.id}')"><span class="ico">${t.ico}</span>${t.label}</button>`).join('')}
         </div>
-        <div class="modal-actions">
-          <button class="modal-btn" onclick="history.back()">Cancelar</button>
+
+        ${canQuickScore ? `
+        <div class="modal-section active" data-section="score">
+          <div class="modal-subtitle">Zona ${zone} — <b>VUELTA ${initialLap}</b> · Toca la puntuación</div>
+          <div class="score-grid">
+            <button class="score-btn score-0" onclick="window.submitScore(${p.dorsal}, ${initialLap}, 0)">0</button>
+            <button class="score-btn score-1" onclick="window.submitScore(${p.dorsal}, ${initialLap}, 1)">1</button>
+            <button class="score-btn score-2" onclick="window.submitScore(${p.dorsal}, ${initialLap}, 2)">2</button>
+            <button class="score-btn score-3" onclick="window.submitScore(${p.dorsal}, ${initialLap}, 3)">3</button>
+            <button class="score-btn score-5" onclick="window.submitScore(${p.dorsal}, ${initialLap}, 5)">5</button>
+          </div>
+        </div>` : ''}
+
+        <div class="modal-section ${firstTab==='edit'?'active':''}" data-section="edit">
+          <div class="modal-subtitle">Elige vuelta a corregir</div>
+          <div class="lap-picker">
+            ${[1,2,3].slice(0, numLaps).map(l => {
+              const cur = sc['V'+l];
+              const hasVal = cur !== undefined && cur !== null;
+              return `<button class="lap-pick-btn ${l===initialLap?'active':''}" data-lap="${l}" onclick="selectEditLap(${l})">V${l}<span class="cur">${hasVal?'Actual: '+cur+'pts':'Sin puntuar'}</span></button>`;
+            }).join('')}
+          </div>
+          <div id="editLapScoreGrid" class="score-grid">
+            <button class="score-btn score-0" onclick="window.submitScore(${p.dorsal}, getEditLap(), 0)">0</button>
+            <button class="score-btn score-1" onclick="window.submitScore(${p.dorsal}, getEditLap(), 1)">1</button>
+            <button class="score-btn score-2" onclick="window.submitScore(${p.dorsal}, getEditLap(), 2)">2</button>
+            <button class="score-btn score-3" onclick="window.submitScore(${p.dorsal}, getEditLap(), 3)">3</button>
+            <button class="score-btn score-5" onclick="window.submitScore(${p.dorsal}, getEditLap(), 5)">5</button>
+          </div>
+        </div>
+
+        <div class="modal-section ${firstTab==='yc'?'active':''}" data-section="yc">
+          <div class="yellow-card-box">
+            <div class="yc-title">🟨 TARJETA AMARILLA — 10 PUNTOS</div>
+            <div class="yc-msg">Añade una sanción de 10 puntos al piloto con motivo explicado. El mesista lo revisará.</div>
+          </div>
+          <textarea id="ycReason" class="modal-textarea" placeholder="Motivo de la tarjeta amarilla (obligatorio)">${existingYC ? existingYC.reason : ''}</textarea>
+          <button class="submit-btn yc" style="margin-top:10px" onclick="submitYellowCard(${p.dorsal})">${existingYC ? '✓ ACTUALIZAR TARJETA' : '🟨 REGISTRAR TARJETA AMARILLA'}</button>
+          ${existingYC ? `<div class="existing-yc"><button class="del-btn" onclick="removeYellowCard(${p.dorsal})" title="Eliminar tarjeta">✕</button><b>Ya registrada:</b> <span class="pts">+10pts</span><br>${existingYC.reason}</div>` : ''}
+        </div>
+
+        <div class="modal-section ${firstTab==='obs'?'active':''}" data-section="obs">
+          <div class="modal-subtitle">📝 Observación (el mesista la revisará)</div>
+          <textarea id="obsText" class="modal-textarea" placeholder="Anotación libre sobre el piloto o incidencia">${existingObs ? existingObs.text : ''}</textarea>
+          <button class="submit-btn obs" style="margin-top:10px" onclick="submitObservation(${p.dorsal})">${existingObs ? '✓ ACTUALIZAR OBSERVACIÓN' : '📝 GUARDAR OBSERVACIÓN'}</button>
+          ${existingObs ? `<div class="existing-obs"><button class="del-btn" onclick="removeObservation(${p.dorsal})" title="Eliminar">✕</button><b>Ya registrada:</b><br>${existingObs.text}</div>` : ''}
+        </div>
+
+        <div class="modal-actions" style="margin-top:14px">
+          <button class="modal-btn" onclick="history.back()">Cerrar</button>
         </div>
       </div>
     </div>`;
+
+  // Guardar estado de edición (vuelta seleccionada en pestaña Corregir)
+  window._editLap = initialLap;
 }
+
+window.selectModalTab = function(tabId) {
+  document.querySelectorAll('.modal-tab').forEach(t => t.classList.toggle('active', t.dataset.tab === tabId));
+  document.querySelectorAll('.modal-section').forEach(s => s.classList.toggle('active', s.dataset.section === tabId));
+};
+window.selectEditLap = function(lap) {
+  window._editLap = lap;
+  document.querySelectorAll('[data-lap]').forEach(b => b.classList.toggle('active', parseInt(b.dataset.lap) === lap));
+};
+window.getEditLap = () => window._editLap || 1;
+
+window.submitYellowCard = async function(dorsal) {
+  const reason = (document.getElementById('ycReason').value || '').trim();
+  if (!reason) { showToast('Indica el motivo de la tarjeta', 'err'); return; }
+  const key = `dorsal_${dorsal}_zone_${zone}`;
+  try {
+    await set(ref(db, `races/${raceId}/yellow_cards/${key}`), {
+      dorsal, zone, reason, ts: Date.now(), token, source: 'judge'
+    });
+    showToast(`🟨 Tarjeta amarilla #${dorsal} registrada`);
+    try { history.back(); } catch(e) { document.getElementById('scoreModal').style.display='none'; }
+  } catch(e) {
+    showToast('⚠ Error al registrar tarjeta', 'err'); console.error(e);
+  }
+};
+window.removeYellowCard = async function(dorsal) {
+  if (!confirm('¿Eliminar esta tarjeta amarilla?')) return;
+  const key = `dorsal_${dorsal}_zone_${zone}`;
+  try {
+    await remove(ref(db, `races/${raceId}/yellow_cards/${key}`));
+    showToast('✓ Tarjeta eliminada');
+    try { history.back(); } catch(e){}
+  } catch(e) { showToast('⚠ Error', 'err'); }
+};
+
+window.submitObservation = async function(dorsal) {
+  const text = (document.getElementById('obsText').value || '').trim();
+  if (!text) { showToast('Escribe la observación', 'err'); return; }
+  const key = `dorsal_${dorsal}_zone_${zone}`;
+  try {
+    await set(ref(db, `races/${raceId}/observations/${key}`), {
+      dorsal, zone, text, ts: Date.now(), token, source: 'judge'
+    });
+    showToast(`📝 Observación #${dorsal} enviada`);
+    try { history.back(); } catch(e) { document.getElementById('scoreModal').style.display='none'; }
+  } catch(e) {
+    showToast('⚠ Error al enviar', 'err'); console.error(e);
+  }
+};
+window.removeObservation = async function(dorsal) {
+  if (!confirm('¿Eliminar esta observación?')) return;
+  const key = `dorsal_${dorsal}_zone_${zone}`;
+  try {
+    await remove(ref(db, `races/${raceId}/observations/${key}`));
+    showToast('✓ Observación eliminada');
+    try { history.back(); } catch(e){}
+  } catch(e) { showToast('⚠ Error', 'err'); }
+};
 
 // Cola offline: si falla, encolar localmente y reintentar cada 5s
 const OFFLINE_QUEUE_KEY = 'judge_offline_queue_' + zone;
