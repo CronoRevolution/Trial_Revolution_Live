@@ -346,13 +346,18 @@ function openPilotModal(p) {
   const sc = pilotScores[p.dorsal] || {};
   const numLaps = raceInfo.numLaps || 3;
 
-  // Deducir vuelta por defecto: primera sin puntuar
+  // Vuelta por defecto para Puntuar: primera sin puntuar
   let defaultLap = null;
   for (let i = 1; i <= numLaps; i++) {
     if (sc['V'+i] === undefined || sc['V'+i] === null) { defaultLap = i; break; }
   }
   const initialLap = defaultLap || 1;
   const canQuickScore = defaultLap !== null;
+  // Vuelta por defecto para Corregir: ÚLTIMA vuelta ya puntuada (la más reciente)
+  let editDefaultLap = 1;
+  for (let i = numLaps; i >= 1; i--) {
+    if (sc['V'+i] !== undefined && sc['V'+i] !== null) { editDefaultLap = i; break; }
+  }
 
   // Tarjeta amarilla existente (si hay)
   const ycKey = `yc_dorsal_${p.dorsal}_zone_${zone}`;
@@ -401,7 +406,7 @@ function openPilotModal(p) {
             ${[1,2,3].slice(0, numLaps).map(l => {
               const cur = sc['V'+l];
               const hasVal = cur !== undefined && cur !== null;
-              return `<button class="lap-pick-btn ${l===initialLap?'active':''}" data-lap="${l}" onclick="selectEditLap(${l})">V${l}<span class="cur">${hasVal?'Actual: '+cur+'pts':'Sin puntuar'}</span></button>`;
+              return `<button class="lap-pick-btn ${l===editDefaultLap?'active':''}" data-lap="${l}" onclick="selectEditLap(${l})">V${l}<span class="cur">${hasVal?'Actual: '+cur+'pts':'Sin puntuar'}</span></button>`;
             }).join('')}
           </div>
           <div id="editLapScoreGrid" class="score-grid">
@@ -437,8 +442,8 @@ function openPilotModal(p) {
       </div>
     </div>`;
 
-  // Guardar estado de edición (vuelta seleccionada en pestaña Corregir)
-  window._editLap = initialLap;
+  // Guardar estado de edición (vuelta seleccionada en pestaña Corregir: última puntuada)
+  window._editLap = editDefaultLap;
 }
 
 window.selectModalTab = function(tabId) {
