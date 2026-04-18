@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<!--
+  Trial Revolution — Juez de Zona (móvil)
+  © 2026 Pablo Cachán. Todos los derechos reservados.
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Juez de Zona — Trial Revolution</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0a0c14;color:#e2e8f0;overflow:hidden}
+body{display:flex;flex-direction:column;height:100vh}
+
+/* Header */
+.hdr{background:linear-gradient(135deg,#0f1520,#1a2236);border-bottom:2px solid #f59e0b;padding:10px 14px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.hdr-title{font-weight:800;letter-spacing:2px;font-size:13px;color:#f59e0b}
+.hdr-zone{font-size:22px;font-weight:900;color:#fff;font-family:'Space Mono',monospace}
+.hdr-race{font-size:10px;color:#94a3b8;letter-spacing:1px;text-transform:uppercase;margin-top:1px}
+.hdr-status{width:10px;height:10px;border-radius:50%;background:#dc2626;transition:background .3s}
+.hdr-status.ok{background:#16a34a;box-shadow:0 0 8px #16a34a}
+
+/* Main body */
+.main{flex:1;overflow-y:auto;padding:14px;padding-bottom:120px}
+
+/* Search */
+.search-bar{position:sticky;top:0;background:#0a0c14;padding:4px 0 10px;z-index:5;margin-bottom:6px}
+.search-bar input{width:100%;background:#1a2236;border:2px solid #3b4668;border-radius:10px;padding:12px 14px;font-size:18px;color:#fff;outline:none;font-family:'Space Mono',monospace;font-weight:700;text-align:center;letter-spacing:2px}
+.search-bar input:focus{border-color:#f59e0b}
+
+/* Pilot cards list */
+.pilot-list{display:flex;flex-direction:column;gap:8px}
+.pilot{background:#111828;border:1px solid #252d42;border-radius:12px;padding:10px 14px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:border-color .15s,transform .05s}
+.pilot:active{transform:scale(0.98)}
+.pilot.done-all{opacity:0.35}
+.pilot-dorsal{font-size:26px;font-weight:900;font-family:'Space Mono',monospace;min-width:54px;text-align:center;background:#0a0c14;border-radius:8px;padding:4px 6px}
+.pilot-info{flex:1;min-width:0}
+.pilot-name{font-size:14px;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pilot-club{font-size:11px;color:#94a3b8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pilot-cat{padding:2px 8px;border-radius:10px;font-size:10px;font-weight:900;letter-spacing:1px;color:#fff}
+.pilot-laps{display:flex;gap:3px;align-items:center}
+.lap-dot{width:18px;height:18px;border-radius:50%;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;background:#0a0c14;color:#475569;border:1px solid #252d42}
+.lap-dot.filled{background:#16a34a;color:#fff;border-color:#16a34a}
+
+.cat-TR1{background:#b91c1c}.cat-TR2{background:#1d4ed8}.cat-TR3{background:#15803d}
+.cat-TR4{background:#a16207}.cat-TR5{background:#c2410c}.cat-TR5A{background:#374151}
+
+/* Empty state */
+.empty{text-align:center;padding:40px 20px;color:#64748b}
+.empty-title{font-size:16px;font-weight:800;margin-bottom:6px;color:#94a3b8}
+
+/* Score modal */
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,0.85);backdrop-filter:blur(6px);z-index:100;display:flex;align-items:flex-end;justify-content:center;animation:fadeIn .2s}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.modal{background:#111828;border:1px solid #252d42;border-radius:20px 20px 0 0;width:100%;max-width:560px;padding:20px;animation:slideUp .25s}
+@keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.modal-hdr{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.modal-dorsal{font-size:36px;font-weight:900;font-family:'Space Mono',monospace;background:#0a0c14;padding:6px 14px;border-radius:10px;min-width:80px;text-align:center}
+.modal-name{font-size:14px;font-weight:700;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.modal-lap{background:#f59e0b;color:#000;padding:4px 12px;border-radius:8px;font-size:13px;font-weight:900;letter-spacing:1.5px}
+.modal-subtitle{font-size:12px;color:#94a3b8;margin-bottom:14px;text-align:center}
+
+.score-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:14px}
+.score-btn{padding:22px 0;border-radius:14px;border:2px solid;background:#0a0c14;font-size:32px;font-weight:900;font-family:'Space Mono',monospace;cursor:pointer;transition:transform .05s}
+.score-btn:active{transform:scale(0.94)}
+.score-0{border-color:#16a34a;color:#16a34a}
+.score-0:active{background:#16a34a;color:#fff}
+.score-1{border-color:#60a5fa;color:#60a5fa}
+.score-1:active{background:#60a5fa;color:#fff}
+.score-2{border-color:#f59e0b;color:#f59e0b}
+.score-2:active{background:#f59e0b;color:#000}
+.score-3{border-color:#f87171;color:#f87171}
+.score-3:active{background:#f87171;color:#fff}
+.score-5{border-color:#dc2626;color:#dc2626}
+.score-5:active{background:#dc2626;color:#fff}
+
+.modal-actions{display:flex;gap:10px}
+.modal-btn{flex:1;padding:12px;border-radius:10px;border:none;font-size:13px;font-weight:700;cursor:pointer;background:#252d42;color:#e2e8f0;letter-spacing:1px}
+
+/* History */
+.history{position:fixed;bottom:0;left:0;right:0;background:#080b14;border-top:1px solid #252d42;padding:10px 14px;max-height:110px;overflow-y:auto}
+.history-title{font-size:10px;color:#64748b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:4px}
+.history-item{display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid #1a2236;font-size:12px}
+.history-item:last-child{border-bottom:none}
+.h-dorsal{font-family:'Space Mono',monospace;font-weight:800;color:#f59e0b;min-width:36px}
+.h-name{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px;color:#94a3b8}
+.h-lap{font-size:10px;color:#f59e0b;font-weight:700;letter-spacing:1px}
+.h-score{font-weight:900;font-family:'Space Mono',monospace;min-width:18px;text-align:center}
+.h-undo{background:transparent;border:none;color:#64748b;font-size:14px;cursor:pointer;padding:2px 4px}
+.h-score.s-0{color:#16a34a}.h-score.s-1{color:#60a5fa}.h-score.s-2{color:#f59e0b}.h-score.s-3{color:#f87171}.h-score.s-5{color:#dc2626}
+
+/* Error */
+.err-banner{background:#dc2626;color:#fff;padding:14px;text-align:center;font-size:13px;font-weight:700;position:fixed;top:0;left:0;right:0;z-index:200}
+
+/* Toast */
+.toast{position:fixed;bottom:130px;left:50%;transform:translateX(-50%);background:#16a34a;color:#fff;padding:10px 18px;border-radius:10px;font-size:13px;font-weight:700;z-index:150;animation:toastIn .25s, toastOut .25s 1.5s forwards;box-shadow:0 4px 16px rgba(0,0,0,.4)}
+@keyframes toastIn{from{opacity:0;transform:translate(-50%,20px)}to{opacity:1;transform:translate(-50%,0)}}
+@keyframes toastOut{to{opacity:0;transform:translate(-50%,20px)}}
+.toast.err{background:#dc2626}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div>
+    <div class="hdr-title">JUEZ DE ZONA <span class="hdr-zone" id="hdrZone">—</span></div>
+    <div class="hdr-race" id="hdrRace">Conectando…</div>
+  </div>
+  <div class="hdr-status" id="hdrStatus" title="Estado de conexión"></div>
+</div>
+
+<div class="main">
+  <div class="search-bar">
+    <input type="tel" id="searchInput" placeholder="Buscar dorsal…" inputmode="numeric" autocomplete="off">
+  </div>
+  <div class="pilot-list" id="pilotList">
+    <div class="empty">
+      <div class="empty-title">Cargando pilotos…</div>
+      <div>Conectando con el servidor</div>
+    </div>
+  </div>
+</div>
+
+<!-- Score modal -->
+<div id="scoreModal" style="display:none"></div>
+
+<!-- History footer -->
+<div class="history" id="history" style="display:none">
+  <div class="history-title">Últimas puntuaciones registradas</div>
+  <div id="historyList"></div>
+</div>
+
+<!-- Firebase SDK -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getDatabase, ref, onValue, set, push, child, get, serverTimestamp, remove } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCnasN6ewMMAH5JebMiJeGXYVw8Km-quHc",
+  authDomain: "trial-revolution.firebaseapp.com",
+  databaseURL: "https://trial-revolution-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "trial-revolution",
+  storageBucket: "trial-revolution.firebasestorage.app",
+  messagingSenderId: "630413676427",
+  appId: "1:630413676427:web:af5a3afd21e67487ba698e",
+  measurementId: "G-PGS97VMKT5"
+};
+
+const app = initializeApp(firebaseConfig);
+const db  = getDatabase(app);
+
+// ── Parámetros URL ─────────────────────────────────────────────────────────
+const qs = new URLSearchParams(location.search);
+const raceId = qs.get('race');
+const zone   = parseInt(qs.get('zone'));
+const token  = qs.get('token');
+
+if (!raceId || !zone || !token) {
+  document.body.innerHTML = '<div class="err-banner">⚠ URL incompleta. Pide al mesista que te envíe de nuevo el enlace.</div>';
+  throw new Error('URL params missing');
+}
+
+// ── Estado ─────────────────────────────────────────────────────────────────
+let pilots = [];       // [{dorsal, name, cat, club}]
+let pilotScores = {};  // {dorsal: {V1:score, V2:score, V3:score}}
+let raceInfo = {};     // {name, numLaps, numZones}
+let recentHistory = []; // [{dorsal, lap, score, ts, key}]
+
+// ── Conexión a Firebase ────────────────────────────────────────────────────
+const statusEl = document.getElementById('hdrStatus');
+const raceRef  = ref(db, 'races/' + raceId);
+const tokenRef = ref(db, `races/${raceId}/judge_tokens/zone${zone}`);
+
+// Validar token primero
+get(tokenRef).then(snap => {
+  const stored = snap.val();
+  if (!stored || stored.token !== token) {
+    document.body.innerHTML = '<div class="err-banner">⛔ Acceso denegado. Token no válido o carrera no iniciada.</div>';
+    throw new Error('Invalid token');
+  }
+  document.getElementById('hdrZone').textContent = zone;
+  setupListeners();
+}).catch(err => {
+  document.body.innerHTML = '<div class="err-banner">⚠ No se puede verificar el acceso. Revisa tu conexión y vuelve a intentarlo.</div>';
+  console.error(err);
+});
+
+function setupListeners() {
+  // Listener de info de carrera + pilotos
+  onValue(raceRef, snap => {
+    const d = snap.val() || {};
+    raceInfo = d.info || {};
+    pilots = d.pilots ? Object.values(d.pilots) : [];
+    pilotScores = {};
+
+    // Reconstruir pilotScores leyendo los scores globales escritos por cualquier zona
+    // y también los scores escritos por el cronómetro principal
+    if (d.scores) {
+      Object.entries(d.scores).forEach(([key, sc]) => {
+        // key = "dorsal_<N>_zone_<Z>_lap_<L>"
+        const m = key.match(/^dorsal_(\d+)_zone_(\d+)_lap_(\d+)$/);
+        if (!m) return;
+        const dorsal = parseInt(m[1]);
+        const z = parseInt(m[2]);
+        const l = parseInt(m[3]);
+        if (z !== zone) return; // solo scores de esta zona
+        if (!pilotScores[dorsal]) pilotScores[dorsal] = {};
+        pilotScores[dorsal]['V' + l] = sc.score;
+      });
+    }
+
+    document.getElementById('hdrRace').textContent = raceInfo.name || '—';
+    statusEl.classList.add('ok');
+    renderPilots();
+    renderHistory();
+  }, err => {
+    statusEl.classList.remove('ok');
+    console.error('Listener error:', err);
+  });
+}
+
+// ── Render lista de pilotos ────────────────────────────────────────────────
+function renderPilots() {
+  const list = document.getElementById('pilotList');
+  const q = document.getElementById('searchInput').value.trim();
+
+  let filtered = pilots.slice().sort((a,b) => a.dorsal - b.dorsal);
+  if (q) {
+    filtered = filtered.filter(p =>
+      String(p.dorsal).includes(q) ||
+      (p.name||'').toLowerCase().includes(q.toLowerCase())
+    );
+  }
+
+  if (!filtered.length) {
+    list.innerHTML = '<div class="empty"><div class="empty-title">Sin resultados</div><div>Prueba con otro número o nombre</div></div>';
+    return;
+  }
+
+  list.innerHTML = filtered.map(p => {
+    const sc = pilotScores[p.dorsal] || {};
+    const numLaps = raceInfo.numLaps || 3;
+    const laps = [];
+    for (let i = 1; i <= numLaps; i++) {
+      const v = sc['V'+i];
+      const filled = v !== undefined && v !== null;
+      laps.push(`<div class="lap-dot ${filled?'filled':''}">${filled ? v : i}</div>`);
+    }
+    const allDone = Object.keys(sc).length >= numLaps;
+    return `<div class="pilot ${allDone?'done-all':''}" onclick="window.selectPilot(${p.dorsal})">
+      <div class="pilot-dorsal">${p.dorsal}</div>
+      <div class="pilot-info">
+        <div class="pilot-name">${p.name || '—'}</div>
+        <div class="pilot-club">${p.club || ''}</div>
+      </div>
+      <span class="pilot-cat cat-${p.cat}">${p.cat}</span>
+      <div class="pilot-laps">${laps.join('')}</div>
+    </div>`;
+  }).join('');
+}
+
+// ── Modal de puntuación ────────────────────────────────────────────────────
+window.selectPilot = function(dorsal) {
+  const p = pilots.find(x => x.dorsal === dorsal);
+  if (!p) return;
+  const sc = pilotScores[dorsal] || {};
+  const numLaps = raceInfo.numLaps || 3;
+  // Deducir vuelta actual: primera que no tenga score
+  let lap = null;
+  for (let i = 1; i <= numLaps; i++) {
+    if (sc['V'+i] === undefined || sc['V'+i] === null) { lap = i; break; }
+  }
+  if (lap === null) {
+    showToast('Este piloto ya tiene puntuación en todas las vueltas', 'err');
+    return;
+  }
+  openScoreModal(p, lap);
+};
+
+function openScoreModal(p, lap) {
+  const m = document.getElementById('scoreModal');
+  m.style.display = 'block';
+  m.innerHTML = `
+    <div class="modal-bg" onclick="if(event.target===this){this.parentElement.style.display='none';this.remove()}">
+      <div class="modal">
+        <div class="modal-hdr">
+          <div class="modal-dorsal">${p.dorsal}</div>
+          <div class="modal-name">${p.name}</div>
+          <div class="modal-lap">VUELTA ${lap}</div>
+        </div>
+        <div class="modal-subtitle">Zona ${zone} — ${p.cat} · Toca la puntuación</div>
+        <div class="score-grid">
+          <button class="score-btn score-0" onclick="window.submitScore(${p.dorsal}, ${lap}, 0)">0</button>
+          <button class="score-btn score-1" onclick="window.submitScore(${p.dorsal}, ${lap}, 1)">1</button>
+          <button class="score-btn score-2" onclick="window.submitScore(${p.dorsal}, ${lap}, 2)">2</button>
+          <button class="score-btn score-3" onclick="window.submitScore(${p.dorsal}, ${lap}, 3)">3</button>
+          <button class="score-btn score-5" onclick="window.submitScore(${p.dorsal}, ${lap}, 5)">5</button>
+        </div>
+        <div class="modal-actions">
+          <button class="modal-btn" onclick="document.getElementById('scoreModal').style.display='none'">Cancelar</button>
+        </div>
+      </div>
+    </div>`;
+}
+
+window.submitScore = async function(dorsal, lap, score) {
+  const p = pilots.find(x => x.dorsal === dorsal);
+  const key = `dorsal_${dorsal}_zone_${zone}_lap_${lap}`;
+  const scoreRef = ref(db, `races/${raceId}/scores/${key}`);
+  try {
+    await set(scoreRef, {
+      dorsal, zone, lap, score,
+      ts: Date.now(),
+      source: 'judge',
+      token
+    });
+    document.getElementById('scoreModal').style.display = 'none';
+    showToast(`✓ ${dorsal} — V${lap} — ${score}pts`);
+    // Añadir al historial local
+    recentHistory.unshift({ dorsal, lap, score, ts: Date.now(), key, name: p.name });
+    if (recentHistory.length > 6) recentHistory.length = 6;
+    renderHistory();
+  } catch(e) {
+    showToast('⚠ Error al enviar. Revisa conexión.', 'err');
+    console.error(e);
+  }
+};
+
+window.undoScore = async function(key) {
+  try {
+    await remove(ref(db, `races/${raceId}/scores/${key}`));
+    recentHistory = recentHistory.filter(h => h.key !== key);
+    renderHistory();
+    showToast('✓ Puntuación eliminada');
+  } catch(e) {
+    showToast('⚠ Error al eliminar', 'err');
+    console.error(e);
+  }
+};
+
+function renderHistory() {
+  const h = document.getElementById('history');
+  const list = document.getElementById('historyList');
+  if (!recentHistory.length) { h.style.display = 'none'; return; }
+  h.style.display = 'block';
+  list.innerHTML = recentHistory.map(r => `
+    <div class="history-item">
+      <span class="h-dorsal">${r.dorsal}</span>
+      <span class="h-name">${r.name || '—'}</span>
+      <span class="h-lap">V${r.lap}</span>
+      <span class="h-score s-${r.score}">${r.score}</span>
+      <button class="h-undo" onclick="window.undoScore('${r.key}')" title="Deshacer">↶</button>
+    </div>
+  `).join('');
+}
+
+// ── Toast ──────────────────────────────────────────────────────────────────
+function showToast(msg, type) {
+  const t = document.createElement('div');
+  t.className = 'toast' + (type === 'err' ? ' err' : '');
+  t.textContent = msg;
+  document.body.appendChild(t);
+  setTimeout(() => t.remove(), 2000);
+}
+
+// ── Buscador ───────────────────────────────────────────────────────────────
+document.getElementById('searchInput').addEventListener('input', renderPilots);
+</script>
+
+</body>
+</html>
