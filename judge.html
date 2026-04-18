@@ -411,6 +411,7 @@ function openPilotModal(p) {
             <button class="score-btn score-3" onclick="window.submitScore(${p.dorsal}, getEditLap(), 3)">3</button>
             <button class="score-btn score-5" onclick="window.submitScore(${p.dorsal}, getEditLap(), 5)">5</button>
           </div>
+          <button class="submit-btn" style="background:#dc2626;color:#fff;margin-top:10px" onclick="window.deleteScore(${p.dorsal}, getEditLap())">🗑 ELIMINAR PUNTUACIÓN DE ESTA VUELTA</button>
         </div>
 
         <div class="modal-section ${firstTab==='yc'?'active':''}" data-section="yc">
@@ -507,6 +508,31 @@ function setOfflineQueue(q) {
   try { localStorage.setItem(OFFLINE_QUEUE_KEY, JSON.stringify(q)); } catch(e){}
 }
 
+// Eliminar puntuación (por ejemplo error de piloto)
+window.deleteScore = async function(dorsal, lap) {
+  const p = pilots.find(x => x.dorsal === dorsal);
+  const sc = pilotScores[dorsal] || {};
+  const cur = sc['V'+lap];
+  if (cur === undefined || cur === null) {
+    showToast('Esta vuelta no tiene puntuación que eliminar', 'err');
+    return;
+  }
+  if (!confirm(`¿Eliminar la puntuación de V${lap} del dorsal ${dorsal}?`)) return;
+  const key = `dorsal_${dorsal}_zone_${zone}_lap_${lap}`;
+  try {
+    await remove(ref(db, `races/${raceId}/scores/${key}`));
+    try { history.back(); } catch(e) { document.getElementById('scoreModal').style.display='none'; }
+    showToast(`🗑 Eliminada V${lap} de #${dorsal}`);
+    // Marcar en historial local como "borrado"
+    recentHistory.unshift({ dorsal, lap, score: '—', ts: Date.now(), key, name: p?.name, deleted: true });
+    if (recentHistory.length > 6) recentHistory.length = 6;
+    renderHistory();
+  } catch(e) {
+    showToast('⚠ Error al eliminar', 'err');
+    console.error(e);
+  }
+};
+
 window.submitScore = async function(dorsal, lap, score) {
   const p = pilots.find(x => x.dorsal === dorsal);
   const key = `dorsal_${dorsal}_zone_${zone}_lap_${lap}`;
@@ -592,15 +618,23 @@ function renderHistory() {
   const list = document.getElementById('historyList');
   if (!recentHistory.length) { h.style.display = 'none'; return; }
   h.style.display = 'block';
-  list.innerHTML = recentHistory.map(r => `
-    <div class="history-item">
+  list.innerHTML = recentHistory.map(r => {
+    if (r.deleted) {
+      return `<div class="history-item" style="opacity:0.6">
+        <span class="h-dorsal">${r.dorsal}</span>
+        <span class="h-name">${r.name || '—'}</span>
+        <span class="h-lap">V${r.lap}</span>
+        <span style="font-weight:700;color:#dc2626;min-width:18px;text-align:center">🗑</span>
+      </div>`;
+    }
+    return `<div class="history-item">
       <span class="h-dorsal">${r.dorsal}</span>
       <span class="h-name">${r.name || '—'}</span>
       <span class="h-lap">V${r.lap}</span>
       <span class="h-score s-${r.score}">${r.score}</span>
       <button class="h-undo" onclick="window.undoScore('${r.key}')" title="Deshacer">↶</button>
-    </div>
-  `).join('');
+    </div>`;
+  }).join('');
 }
 
 // ── Toast ──────────────────────────────────────────────────────────────────
