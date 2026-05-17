@@ -2,7 +2,7 @@
   "raceName": "I TRIAL INDOOR VILLA DE ISCAR",
   "organizer": "CD PORTILLO",
   "raceDate": "2026-05-17",
-  "publishedAt": "2026-05-17T10:14:20.590Z",
+  "publishedAt": "2026-05-17T10:14:50.465Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -1383,13 +1383,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 78,
+      "name": "HERRAEZ RODRIGUEZ, JOSE MANUEL",
+      "cat": "TR4",
+      "club": "Top Racing",
+      "brand": "GASGAS",
+      "schedStart": "11:02",
+      "rank": 3,
+      "scores": [
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 1,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "01:12:08",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "12:14:08",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 1,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 6,
+      "n1s": 1,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 77,
       "name": "PEREZ SANCHEZ, MARIN",
       "cat": "TR4",
       "club": "CD Pobladura R",
       "brand": "BETA",
       "schedStart": "11:02",
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           0,
@@ -1451,7 +1513,7 @@
       "club": "CD Portillo",
       "brand": "TRS",
       "schedStart": "11:01",
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           0,
@@ -1513,7 +1575,7 @@
       "club": "CD Portillo",
       "brand": "SIN MARCA",
       "schedStart": "11:01",
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           0,
@@ -1581,7 +1643,7 @@
       "club": "CD Portillo",
       "brand": "BETA FACTORY",
       "schedStart": "11:03",
-      "rank": 6,
+      "rank": 7,
       "scores": [
         [
           0,
@@ -1631,68 +1693,6 @@
       "n2s": 0,
       "n3s": 3,
       "n5s": 3,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 78,
-      "name": "HERRAEZ RODRIGUEZ, JOSE MANUEL",
-      "cat": "TR4",
-      "club": "Top Racing",
-      "brand": "GASGAS",
-      "schedStart": "11:02",
-      "rank": 7,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
       "finishTime": null,
       "dnf": false,
       "dsq": false,
