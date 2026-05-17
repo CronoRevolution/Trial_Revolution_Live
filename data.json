@@ -2,7 +2,7 @@
   "raceName": "I TRIAL INDOOR VILLA DE ISCAR",
   "organizer": "CD PORTILLO",
   "raceDate": "2026-05-17",
-  "publishedAt": "2026-05-17T10:24:50.568Z",
+  "publishedAt": "2026-05-17T10:25:20.658Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -639,13 +639,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 180,
+      "name": "PARRA PEREZ, MIGUEL ANGEL",
+      "cat": "TR2",
+      "club": "CD Portillo",
+      "brand": "VERTIGO",
+      "schedStart": "11:08",
+      "rank": 3,
+      "scores": [
+        [
+          3,
+          2,
+          1,
+          3,
+          1,
+          2,
+          0
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 12,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "01:15:47",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "12:23:47",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 12,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 1,
+      "n1s": 2,
+      "n2s": 2,
+      "n3s": 2,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 186,
       "name": "BARREDO RODRIGUEZ, SAUL",
       "cat": "TR2",
       "club": "CD Pobladura R",
       "brand": "GASGAS",
       "schedStart": "11:14",
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           null,
@@ -707,7 +769,7 @@
       "club": "CD Moto Bierzo",
       "brand": "TRRS",
       "schedStart": "11:07",
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           null,
@@ -769,68 +831,6 @@
       "club": "",
       "brand": "SIN MARCA",
       "schedStart": "11:07",
-      "rank": 5,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 180,
-      "name": "PARRA PEREZ, MIGUEL ANGEL",
-      "cat": "TR2",
-      "club": "CD Portillo",
-      "brand": "VERTIGO",
-      "schedStart": "11:08",
       "rank": 6,
       "scores": [
         [
