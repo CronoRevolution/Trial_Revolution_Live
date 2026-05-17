@@ -2,7 +2,7 @@
   "raceName": "I TRIAL INDOOR VILLA DE ISCAR",
   "organizer": "CD PORTILLO",
   "raceDate": "2026-05-17",
-  "publishedAt": "2026-05-17T11:27:31.494Z",
+  "publishedAt": "2026-05-17T11:28:01.460Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -1321,13 +1321,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 75,
+      "name": "GOMEZ REQUENA, ARSENIO JESUS",
+      "cat": "TR4",
+      "club": "CD Pobladura R",
+      "brand": "SIN MARCA",
+      "schedStart": "11:00",
+      "rank": 2,
+      "scores": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          5,
+          0
+        ]
+      ],
+      "lap1Points": 0,
+      "lap2Points": 5,
+      "lap3Points": 5,
+      "lap1Time": "01:00:53",
+      "lap2Time": "00:47:44",
+      "lap3Time": "00:37:30",
+      "arrV1": "12:00:53",
+      "arrV2": "12:47:44",
+      "arrCHF": "13:26:07",
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 10,
+      "lapsCompleted": 3,
+      "totalTime": "02:26:07",
+      "n0s": 19,
+      "n1s": 0,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 2,
+      "finishTime": 48367000,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 77,
       "name": "PEREZ SANCHEZ, MARIN",
       "cat": "TR4",
       "club": "CD Pobladura R",
       "brand": "BETA",
       "schedStart": "11:02",
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           0,
@@ -1389,7 +1451,7 @@
       "club": "CD Portillo",
       "brand": "SIN MARCA",
       "schedStart": "11:01",
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           0,
@@ -1457,7 +1519,7 @@
       "club": "CD Portillo",
       "brand": "BETA FACTORY",
       "schedStart": "11:03",
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           0,
@@ -1519,7 +1581,7 @@
       "club": "Top Racing",
       "brand": "GASGAS",
       "schedStart": "11:02",
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           0,
@@ -1569,68 +1631,6 @@
       "n2s": 0,
       "n3s": 0,
       "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 75,
-      "name": "GOMEZ REQUENA, ARSENIO JESUS",
-      "cat": "TR4",
-      "club": "CD Pobladura R",
-      "brand": "SIN MARCA",
-      "schedStart": "11:00",
-      "rank": 6,
-      "scores": [
-        [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          5
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 0,
-      "lap2Points": 5,
-      "lap3Points": null,
-      "lap1Time": "01:00:53",
-      "lap2Time": "00:47:44",
-      "lap3Time": null,
-      "arrV1": "12:00:53",
-      "arrV2": "12:47:44",
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 5,
-      "lapsCompleted": 2,
-      "totalTime": "",
-      "n0s": 13,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 1,
       "finishTime": null,
       "dnf": false,
       "dsq": false,
