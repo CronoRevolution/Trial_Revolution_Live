@@ -2,7 +2,7 @@
   "raceName": "I TRIAL INDOOR VILLA DE ISCAR",
   "organizer": "CD PORTILLO",
   "raceDate": "2026-05-17",
-  "publishedAt": "2026-05-17T12:14:31.447Z",
+  "publishedAt": "2026-05-17T12:15:01.690Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -205,13 +205,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 213,
+      "name": "BAUTISTA GUTIERREZ, ROBERTO",
+      "cat": "TR1",
+      "club": "Top Racing",
+      "brand": "SHERCO",
+      "schedStart": "11:12",
+      "rank": 4,
+      "scores": [
+        [
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "lap1Points": 2,
+      "lap2Points": 1,
+      "lap3Points": 1,
+      "lap1Time": "01:22:21",
+      "lap2Time": "01:01:55",
+      "lap3Time": "00:37:24",
+      "arrV1": "12:34:21",
+      "arrV2": "13:35:55",
+      "arrCHF": "14:13:40",
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 4,
+      "lapsCompleted": 3,
+      "totalTime": "03:01:40",
+      "n0s": 17,
+      "n1s": 4,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": 51220000,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 215,
       "name": "FERNANDEZ PRIETO, JAVIER",
       "cat": "TR1",
       "club": "CD Moto Nava",
       "brand": "BETA",
       "schedStart": "11:15",
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           5,
@@ -273,7 +335,7 @@
       "club": "MC Vallisoletano",
       "brand": "TRRS",
       "schedStart": "11:16",
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           5,
@@ -335,7 +397,7 @@
       "club": "Moto Club Guadarrama",
       "brand": "ACCOSSATO",
       "schedStart": "11:15",
-      "rank": 6,
+      "rank": 7,
       "scores": [
         [
           3,
@@ -386,68 +448,6 @@
       "n3s": 10,
       "n5s": 3,
       "finishTime": 49363000,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 213,
-      "name": "BAUTISTA GUTIERREZ, ROBERTO",
-      "cat": "TR1",
-      "club": "Top Racing",
-      "brand": "SHERCO",
-      "schedStart": "11:12",
-      "rank": 7,
-      "scores": [
-        [
-          0,
-          1,
-          0,
-          1,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          1
-        ],
-        [
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 2,
-      "lap2Points": 1,
-      "lap3Points": 0,
-      "lap1Time": "01:22:21",
-      "lap2Time": "01:01:55",
-      "lap3Time": "00:37:24",
-      "arrV1": "12:34:21",
-      "arrV2": "13:35:55",
-      "arrCHF": "14:13:40",
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 3,
-      "lapsCompleted": 3,
-      "totalTime": "03:01:40",
-      "n0s": 13,
-      "n1s": 3,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": 51220000,
       "dnf": false,
       "dsq": false,
       "dsqReason": ""
