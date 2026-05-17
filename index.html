@@ -514,7 +514,7 @@ function renderPilot(){
 
   // Tope times
   const sch=p.schedStart||null;
-  const ch1tope=sch?addMins(sch,l1max):null;
+  const ch1tope=(sch && !cfg.kidsMode)?addMins(sch,l1max):null;
   const chftope=sch?addMins(sch,rdurMins):null;
 
   // Lap details
