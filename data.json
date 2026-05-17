@@ -2,7 +2,7 @@
   "raceName": "I TRIAL INDOOR VILLA DE ISCAR",
   "organizer": "CD PORTILLO",
   "raceDate": "2026-05-17",
-  "publishedAt": "2026-05-17T10:21:20.536Z",
+  "publishedAt": "2026-05-17T10:21:50.527Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -19,13 +19,75 @@
   ],
   "pilots": [
     {
+      "dorsal": 211,
+      "name": "GONZALEZ JUAN, SERGIO",
+      "cat": "TR1",
+      "club": "CD Moto Bierzo",
+      "brand": "SHERCO",
+      "schedStart": "11:11",
+      "rank": 1,
+      "scores": [
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 1,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "01:09:20",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "12:20:20",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 1,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 6,
+      "n1s": 1,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 216,
       "name": "LOZANO GARCIA, ALBERTO",
       "cat": "TR1",
       "club": "Moto Club Guadarrama",
       "brand": "ACCOSSATO",
       "schedStart": "11:15",
-      "rank": 1,
+      "rank": 2,
       "scores": [
         [
           3,
@@ -87,7 +149,7 @@
       "club": "CD Moto Nava",
       "brand": "BETA",
       "schedStart": "11:15",
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           null,
@@ -149,68 +211,6 @@
       "club": "MC Vallisoletano",
       "brand": "TRRS",
       "schedStart": "11:16",
-      "rank": 3,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 211,
-      "name": "GONZALEZ JUAN, SERGIO",
-      "cat": "TR1",
-      "club": "CD Moto Bierzo",
-      "brand": "SHERCO",
-      "schedStart": "11:11",
       "rank": 4,
       "scores": [
         [
