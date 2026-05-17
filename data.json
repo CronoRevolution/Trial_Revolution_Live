@@ -2,7 +2,7 @@
   "raceName": "I TRIAL INDOOR VILLA DE ISCAR",
   "organizer": "CD PORTILLO",
   "raceDate": "2026-05-17",
-  "publishedAt": "2026-05-17T11:14:31.614Z",
+  "publishedAt": "2026-05-17T11:15:01.489Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -537,9 +537,9 @@
           0,
           0,
           0,
-          null,
-          null,
-          null
+          1,
+          0,
+          0
         ],
         [
           null,
@@ -552,7 +552,7 @@
         ]
       ],
       "lap1Points": 0,
-      "lap2Points": 0,
+      "lap2Points": 1,
       "lap3Points": null,
       "lap1Time": "01:10:25",
       "lap2Time": "00:53:33",
@@ -563,11 +563,11 @@
       "lap1Penalty": 0,
       "finishPenalty": 0,
       "extraPenalties": [],
-      "totalPoints": 0,
+      "totalPoints": 1,
       "lapsCompleted": 2,
       "totalTime": "",
-      "n0s": 11,
-      "n1s": 0,
+      "n0s": 13,
+      "n1s": 1,
       "n2s": 0,
       "n3s": 0,
       "n5s": 0,
