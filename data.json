@@ -2,7 +2,7 @@
   "raceName": "I TRIAL INDOOR VILLA DE ISCAR",
   "organizer": "CD PORTILLO",
   "raceDate": "2026-05-17",
-  "publishedAt": "2026-05-15T12:27:57.377Z",
+  "publishedAt": "2026-05-17T08:11:27.024Z",
   "raceStarted": false,
   "raceFinished": false,
   "cfg": {
@@ -23,7 +23,7 @@
       "cat": "TR1",
       "club": "CD Moto Bierzo",
       "brand": "SHERCO",
-      "schedStart": "11:12",
+      "schedStart": "11:11",
       "rank": 1,
       "scores": [
         [
@@ -147,7 +147,7 @@
       "cat": "TR1",
       "club": "Top Racing",
       "brand": "SHERCO",
-      "schedStart": "11:13",
+      "schedStart": "11:12",
       "rank": 3,
       "scores": [
         [
@@ -271,8 +271,70 @@
       "cat": "TR1",
       "club": "Moto Club Cuenca Minera",
       "brand": "BETA TRUEBA",
-      "schedStart": "11:14",
+      "schedStart": "11:13",
       "rank": 5,
+      "scores": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": null,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": null,
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": null,
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": null,
+      "lapsCompleted": 0,
+      "totalTime": "",
+      "n0s": 0,
+      "n1s": 0,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
+      "dorsal": 186,
+      "name": "GARCIA RUIZ, ROBERTO",
+      "cat": "TR2",
+      "club": "CD Moto Nava",
+      "brand": "ELECTRIC-MOTION",
+      "schedStart": "11:13",
+      "rank": 1,
       "scores": [
         [
           null,
@@ -333,8 +395,8 @@
       "cat": "TR2",
       "club": "Moto Club Guadarrama",
       "brand": "ACCOSSATO",
-      "schedStart": "11:07",
-      "rank": 1,
+      "schedStart": "11:06",
+      "rank": 2,
       "scores": [
         [
           null,
@@ -396,7 +458,7 @@
       "club": "CD Moto Bierzo",
       "brand": "TRRS",
       "schedStart": "11:07",
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           null,
@@ -457,8 +519,8 @@
       "cat": "TR2",
       "club": "",
       "brand": "SIN MARCA",
-      "schedStart": "11:08",
-      "rank": 3,
+      "schedStart": "11:07",
+      "rank": 4,
       "scores": [
         [
           null,
@@ -520,7 +582,7 @@
       "club": "CD Portillo",
       "brand": "VERTIGO",
       "schedStart": "11:08",
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           null,
@@ -581,8 +643,8 @@
       "cat": "TR2",
       "club": "",
       "brand": "SIN MARCA",
-      "schedStart": "11:09",
-      "rank": 5,
+      "schedStart": "11:08",
+      "rank": 6,
       "scores": [
         [
           null,
@@ -644,7 +706,7 @@
       "club": "CD Pobladura R",
       "brand": "SIN MARCA",
       "schedStart": "11:09",
-      "rank": 6,
+      "rank": 7,
       "scores": [
         [
           null,
@@ -705,8 +767,8 @@
       "cat": "TR2",
       "club": "CD Moto Nava",
       "brand": "BETA",
-      "schedStart": "11:10",
-      "rank": 7,
+      "schedStart": "11:09",
+      "rank": 8,
       "scores": [
         [
           null,
@@ -768,7 +830,7 @@
       "club": "CD Moto Nava",
       "brand": "ELECTRIC-MOTION",
       "schedStart": "11:10",
-      "rank": 8,
+      "rank": 9,
       "scores": [
         [
           null,
@@ -829,8 +891,8 @@
       "cat": "TR2",
       "club": "MC Vallisoletano",
       "brand": "TRRS",
-      "schedStart": "11:11",
-      "rank": 9,
+      "schedStart": "11:10",
+      "rank": 10,
       "scores": [
         [
           null,
@@ -892,7 +954,131 @@
       "club": "CD Pobladura R",
       "brand": "GASGAS",
       "schedStart": "11:11",
-      "rank": 10,
+      "rank": 11,
+      "scores": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": null,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": null,
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": null,
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": null,
+      "lapsCompleted": 0,
+      "totalTime": "",
+      "n0s": 0,
+      "n1s": 0,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
+      "dorsal": 123,
+      "name": "ARCE SANCHEZ, JOSE MARIA",
+      "cat": "TR3",
+      "club": "CD Pobladura R",
+      "brand": "BETA",
+      "schedStart": "11:03",
+      "rank": 1,
+      "scores": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": null,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": null,
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": null,
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": null,
+      "lapsCompleted": 0,
+      "totalTime": "",
+      "n0s": 0,
+      "n1s": 0,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
+      "dorsal": 122,
+      "name": "DOMINGUEZ CRIADO, RICARDO",
+      "cat": "TR3",
+      "club": "CD Portillo",
+      "brand": "VERTIGO MOTORS",
+      "schedStart": "11:04",
+      "rank": 2,
       "scores": [
         [
           null,
@@ -953,70 +1139,8 @@
       "cat": "TR3",
       "club": "CD Portillo",
       "brand": "TRRS",
-      "schedStart": "11:05",
-      "rank": 1,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": null,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 121,
-      "name": "GARCIA RUIZ, ROBERTO",
-      "cat": "TR3",
-      "club": "CD Moto Nava",
-      "brand": "ELECTRIC-MOTION",
-      "schedStart": "11:05",
-      "rank": 2,
+      "schedStart": "11:04",
+      "rank": 3,
       "scores": [
         [
           null,
@@ -1077,8 +1201,8 @@
       "cat": "TR3",
       "club": "CD Pobladura R",
       "brand": "GASGAS",
-      "schedStart": "11:06",
-      "rank": 3,
+      "schedStart": "11:05",
+      "rank": 4,
       "scores": [
         [
           null,
@@ -1140,69 +1264,7 @@
       "club": "CD Portillo",
       "brand": "VERTIGO",
       "schedStart": "11:06",
-      "rank": 4,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": null,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 72,
-      "name": "GUTIERREZ PEREZ, SAUL",
-      "cat": "TR4",
-      "club": "MC Vallisoletano",
-      "brand": "GASGAS",
-      "schedStart": "11:00",
-      "rank": 1,
+      "rank": 5,
       "scores": [
         [
           null,
@@ -1264,7 +1326,7 @@
       "club": "CD Pobladura R",
       "brand": "SIN MARCA",
       "schedStart": "11:00",
-      "rank": 2,
+      "rank": 1,
       "scores": [
         [
           null,
@@ -1325,132 +1387,8 @@
       "cat": "TR4",
       "club": "CD Moto Bierzo",
       "brand": "SHERCO",
-      "schedStart": "11:01",
-      "rank": 3,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": null,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 61,
-      "name": "ARCE SANCHEZ, JOSE MARIA",
-      "cat": "TR4",
-      "club": "CD Pobladura R",
-      "brand": "BETA",
-      "schedStart": "11:01",
-      "rank": 4,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": null,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 74,
-      "name": "DOMINGUEZ CRIADO, RICARDO",
-      "cat": "TR4",
-      "club": "CD Portillo",
-      "brand": "VERTIGO MOTORS",
-      "schedStart": "11:02",
-      "rank": 5,
+      "schedStart": "11:00",
+      "rank": 2,
       "scores": [
         [
           null,
@@ -1511,8 +1449,8 @@
       "cat": "TR4",
       "club": "CD Portillo",
       "brand": "TRS",
-      "schedStart": "11:02",
-      "rank": 6,
+      "schedStart": "11:01",
+      "rank": 3,
       "scores": [
         [
           null,
@@ -1573,8 +1511,8 @@
       "cat": "TR4",
       "club": "CD Portillo",
       "brand": "SIN MARCA",
-      "schedStart": "11:03",
-      "rank": 7,
+      "schedStart": "11:01",
+      "rank": 4,
       "scores": [
         [
           null,
@@ -1635,8 +1573,8 @@
       "cat": "TR4",
       "club": "Top Racing",
       "brand": "GASGAS",
-      "schedStart": "11:03",
-      "rank": 8,
+      "schedStart": "11:02",
+      "rank": 5,
       "scores": [
         [
           null,
@@ -1697,8 +1635,8 @@
       "cat": "TR4",
       "club": "CD Pobladura R",
       "brand": "BETA",
-      "schedStart": "11:04",
-      "rank": 9,
+      "schedStart": "11:02",
+      "rank": 6,
       "scores": [
         [
           null,
@@ -1759,8 +1697,8 @@
       "cat": "TR4",
       "club": "CD Portillo",
       "brand": "BETA FACTORY",
-      "schedStart": "11:04",
-      "rank": 10,
+      "schedStart": "11:03",
+      "rank": 7,
       "scores": [
         [
           null,
