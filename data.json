@@ -2,7 +2,7 @@
   "raceName": "I TRIAL INDOOR VILLA DE ISCAR",
   "organizer": "CD PORTILLO",
   "raceDate": "2026-05-17",
-  "publishedAt": "2026-05-17T11:37:31.448Z",
+  "publishedAt": "2026-05-17T11:38:01.647Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -515,13 +515,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 189,
+      "name": "GARCIA RUIZ, ROBERTO",
+      "cat": "TR2",
+      "club": "CD Moto Nava",
+      "brand": "ELECTRIC-MOTION",
+      "schedStart": "11:14",
+      "rank": 1,
+      "scores": [
+        [
+          5,
+          0,
+          1,
+          0,
+          1,
+          3,
+          1
+        ],
+        [
+          3,
+          2,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          3,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      "lap1Points": 11,
+      "lap2Points": 7,
+      "lap3Points": 5,
+      "lap1Time": "00:54:07",
+      "lap2Time": "00:44:33",
+      "lap3Time": "00:44:25",
+      "arrV1": "12:08:07",
+      "arrV2": "12:52:33",
+      "arrCHF": "13:37:05",
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 23,
+      "lapsCompleted": 3,
+      "totalTime": "02:23:05",
+      "n0s": 9,
+      "n1s": 7,
+      "n2s": 1,
+      "n3s": 3,
+      "n5s": 1,
+      "finishTime": 49025000,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 179,
       "name": "FERNANDEZ GALLARDO, LUIS ADRIAN",
       "cat": "TR2",
       "club": "CD Moto Nava",
       "brand": "ELECTRIC-MOTION",
       "schedStart": "11:10",
-      "rank": 1,
+      "rank": 2,
       "scores": [
         [
           0,
@@ -583,7 +645,7 @@
       "club": "CD Pobladura R",
       "brand": "SIN MARCA",
       "schedStart": "11:09",
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           1,
@@ -645,7 +707,7 @@
       "club": "CD Pobladura R",
       "brand": "GASGAS",
       "schedStart": "11:11",
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           3,
@@ -692,68 +754,6 @@
       "totalTime": "",
       "n0s": 6,
       "n1s": 4,
-      "n2s": 1,
-      "n3s": 2,
-      "n5s": 1,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 189,
-      "name": "GARCIA RUIZ, ROBERTO",
-      "cat": "TR2",
-      "club": "CD Moto Nava",
-      "brand": "ELECTRIC-MOTION",
-      "schedStart": "11:14",
-      "rank": 4,
-      "scores": [
-        [
-          5,
-          0,
-          1,
-          0,
-          1,
-          3,
-          1
-        ],
-        [
-          3,
-          2,
-          0,
-          1,
-          0,
-          1,
-          0
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 11,
-      "lap2Points": 7,
-      "lap3Points": null,
-      "lap1Time": "00:54:07",
-      "lap2Time": "00:44:33",
-      "lap3Time": null,
-      "arrV1": "12:08:07",
-      "arrV2": "12:52:33",
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 18,
-      "lapsCompleted": 2,
-      "totalTime": "",
-      "n0s": 5,
-      "n1s": 5,
       "n2s": 1,
       "n3s": 2,
       "n5s": 1,
