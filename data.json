@@ -2,7 +2,7 @@
   "raceName": "I TRIAL INDOOR VILLA DE ISCAR",
   "organizer": "CD PORTILLO",
   "raceDate": "2026-05-17",
-  "publishedAt": "2026-05-17T10:27:50.536Z",
+  "publishedAt": "2026-05-17T10:28:21.085Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -577,75 +577,13 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 181,
-      "name": "GARCIA LOPEZ, JAIME FRANCISCO",
-      "cat": "TR2",
-      "club": "",
-      "brand": "SIN MARCA",
-      "schedStart": "11:08",
-      "rank": 2,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": "01:19:15",
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": "12:27:15",
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
       "dorsal": 188,
       "name": "BALBOA ALVAREZ, SAMUEL",
       "cat": "TR2",
       "club": "CD Pobladura R",
       "brand": "SIN MARCA",
       "schedStart": "11:09",
-      "rank": 3,
+      "rank": 2,
       "scores": [
         [
           1,
@@ -707,7 +645,7 @@
       "club": "CD Moto Bierzo",
       "brand": "TRRS",
       "schedStart": "11:07",
-      "rank": 4,
+      "rank": 3,
       "scores": [
         [
           1,
@@ -769,7 +707,7 @@
       "club": "CD Moto Nava",
       "brand": "ELECTRIC-MOTION",
       "schedStart": "11:14",
-      "rank": 5,
+      "rank": 4,
       "scores": [
         [
           5,
@@ -831,7 +769,7 @@
       "club": "CD Portillo",
       "brand": "VERTIGO",
       "schedStart": "11:08",
-      "rank": 6,
+      "rank": 5,
       "scores": [
         [
           3,
@@ -893,7 +831,7 @@
       "club": "CD Pobladura R",
       "brand": "GASGAS",
       "schedStart": "11:11",
-      "rank": 7,
+      "rank": 6,
       "scores": [
         [
           3,
@@ -942,6 +880,68 @@
       "n1s": 3,
       "n2s": 1,
       "n3s": 1,
+      "n5s": 1,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
+      "dorsal": 181,
+      "name": "GARCIA LOPEZ, JAIME FRANCISCO",
+      "cat": "TR2",
+      "club": "",
+      "brand": "SIN MARCA",
+      "schedStart": "11:08",
+      "rank": 7,
+      "scores": [
+        [
+          3,
+          3,
+          2,
+          2,
+          5,
+          3,
+          3
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 21,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "01:19:15",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "12:27:15",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 21,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 0,
+      "n1s": 0,
+      "n2s": 2,
+      "n3s": 4,
       "n5s": 1,
       "finishTime": null,
       "dnf": false,
