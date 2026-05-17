@@ -2,7 +2,7 @@
   "raceName": "I TRIAL INDOOR VILLA DE ISCAR",
   "organizer": "CD PORTILLO",
   "raceDate": "2026-05-17",
-  "publishedAt": "2026-05-17T10:31:50.625Z",
+  "publishedAt": "2026-05-17T10:32:20.792Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -81,13 +81,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 212,
+      "name": "RODRIGUEZ REYERO, LUCAS",
+      "cat": "TR1",
+      "club": "CD Moto Nava",
+      "brand": "ELECTRIC-MOTION",
+      "schedStart": "11:13",
+      "rank": 2,
+      "scores": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 1,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "01:17:20",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "12:30:20",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 1,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 6,
+      "n1s": 1,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 214,
       "name": "IGLESIAS CORDERO, SAUL",
       "cat": "TR1",
       "club": "Moto Club Cuenca Minera",
       "brand": "BETA",
       "schedStart": "11:12",
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           1,
@@ -149,7 +211,7 @@
       "club": "Moto Club Guadarrama",
       "brand": "ACCOSSATO",
       "schedStart": "11:15",
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           3,
@@ -211,7 +273,7 @@
       "club": "CD Moto Nava",
       "brand": "BETA",
       "schedStart": "11:15",
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           null,
@@ -273,7 +335,7 @@
       "club": "MC Vallisoletano",
       "brand": "TRRS",
       "schedStart": "11:16",
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           null,
@@ -335,68 +397,6 @@
       "club": "Top Racing",
       "brand": "SHERCO",
       "schedStart": "11:12",
-      "rank": 6,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 212,
-      "name": "RODRIGUEZ REYERO, LUCAS",
-      "cat": "TR1",
-      "club": "CD Moto Nava",
-      "brand": "ELECTRIC-MOTION",
-      "schedStart": "11:13",
       "rank": 7,
       "scores": [
         [
@@ -577,75 +577,13 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 186,
-      "name": "BARREDO RODRIGUEZ, SAUL",
-      "cat": "TR2",
-      "club": "CD Pobladura R",
-      "brand": "GASGAS",
-      "schedStart": "11:14",
-      "rank": 2,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": "01:14:41",
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": "12:28:41",
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
       "dorsal": 188,
       "name": "BALBOA ALVAREZ, SAMUEL",
       "cat": "TR2",
       "club": "CD Pobladura R",
       "brand": "SIN MARCA",
       "schedStart": "11:09",
-      "rank": 3,
+      "rank": 2,
       "scores": [
         [
           1,
@@ -692,6 +630,68 @@
       "totalTime": "",
       "n0s": 6,
       "n1s": 1,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
+      "dorsal": 186,
+      "name": "BARREDO RODRIGUEZ, SAUL",
+      "cat": "TR2",
+      "club": "CD Pobladura R",
+      "brand": "GASGAS",
+      "schedStart": "11:14",
+      "rank": 3,
+      "scores": [
+        [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 2,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "01:14:41",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "12:28:41",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 2,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 5,
+      "n1s": 2,
       "n2s": 0,
       "n3s": 0,
       "n5s": 0,
