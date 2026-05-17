@@ -2,7 +2,7 @@
   "raceName": "I TRIAL INDOOR VILLA DE ISCAR",
   "organizer": "CD PORTILLO",
   "raceDate": "2026-05-17",
-  "publishedAt": "2026-05-17T12:00:01.525Z",
+  "publishedAt": "2026-05-17T12:00:31.665Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -1073,13 +1073,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 123,
+      "name": "ARCE SANCHEZ, JOSE MARIA",
+      "cat": "TR3",
+      "club": "CD Pobladura R",
+      "brand": "BETA",
+      "schedStart": "11:03",
+      "rank": 1,
+      "scores": [
+        [
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          0,
+          2
+        ]
+      ],
+      "lap1Points": 3,
+      "lap2Points": 1,
+      "lap3Points": 6,
+      "lap1Time": "01:14:03",
+      "lap2Time": "00:54:42",
+      "lap3Time": "00:47:32",
+      "arrV1": "12:17:03",
+      "arrV2": "13:11:42",
+      "arrCHF": "13:59:17",
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 10,
+      "lapsCompleted": 3,
+      "totalTime": "02:56:17",
+      "n0s": 13,
+      "n1s": 6,
+      "n2s": 2,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": 50357000,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 119,
       "name": "ALLENDE MORO, ANGELA",
       "cat": "TR3",
       "club": "CD Portillo",
       "brand": "VERTIGO",
       "schedStart": "11:06",
-      "rank": 1,
+      "rank": 2,
       "scores": [
         [
           0,
@@ -1141,7 +1203,7 @@
       "club": "CD Portillo",
       "brand": "VERTIGO MOTORS",
       "schedStart": "11:04",
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           2,
@@ -1192,68 +1254,6 @@
       "n3s": 10,
       "n5s": 1,
       "finishTime": 49008000,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 123,
-      "name": "ARCE SANCHEZ, JOSE MARIA",
-      "cat": "TR3",
-      "club": "CD Pobladura R",
-      "brand": "BETA",
-      "schedStart": "11:03",
-      "rank": 3,
-      "scores": [
-        [
-          0,
-          1,
-          0,
-          0,
-          1,
-          0,
-          1
-        ],
-        [
-          0,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 3,
-      "lap2Points": 1,
-      "lap3Points": null,
-      "lap1Time": "01:14:03",
-      "lap2Time": "00:54:42",
-      "lap3Time": null,
-      "arrV1": "12:17:03",
-      "arrV2": "13:11:42",
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 4,
-      "lapsCompleted": 2,
-      "totalTime": "",
-      "n0s": 10,
-      "n1s": 4,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
       "dnf": false,
       "dsq": false,
       "dsqReason": ""
