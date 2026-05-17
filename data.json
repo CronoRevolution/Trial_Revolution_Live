@@ -2,7 +2,7 @@
   "raceName": "I TRIAL INDOOR VILLA DE ISCAR",
   "organizer": "CD PORTILLO",
   "raceDate": "2026-05-17",
-  "publishedAt": "2026-05-17T09:57:20.554Z",
+  "publishedAt": "2026-05-17T09:57:50.555Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -1321,13 +1321,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 77,
+      "name": "PEREZ SANCHEZ, MARIN",
+      "cat": "TR4",
+      "club": "CD Pobladura R",
+      "brand": "BETA",
+      "schedStart": "11:02",
+      "rank": 2,
+      "scores": [
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 1,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "00:54:57",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "11:56:57",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 1,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 6,
+      "n1s": 1,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 73,
       "name": "ARROYO MARTIN, SEVERIANO",
       "cat": "TR4",
       "club": "CD Portillo",
       "brand": "TRS",
       "schedStart": "11:01",
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           0,
@@ -1389,7 +1451,7 @@
       "club": "CD Pobladura R",
       "brand": "SIN MARCA",
       "schedStart": "11:00",
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           null,
@@ -1450,68 +1512,6 @@
       "cat": "TR4",
       "club": "Top Racing",
       "brand": "GASGAS",
-      "schedStart": "11:02",
-      "rank": 4,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 77,
-      "name": "PEREZ SANCHEZ, MARIN",
-      "cat": "TR4",
-      "club": "CD Pobladura R",
-      "brand": "BETA",
       "schedStart": "11:02",
       "rank": 5,
       "scores": [
