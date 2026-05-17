@@ -2,7 +2,7 @@
   "raceName": "I TRIAL INDOOR VILLA DE ISCAR",
   "organizer": "CD PORTILLO",
   "raceDate": "2026-05-17",
-  "publishedAt": "2026-05-17T10:34:50.633Z",
+  "publishedAt": "2026-05-17T10:35:20.521Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -205,13 +205,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 213,
+      "name": "BAUTISTA GUTIERREZ, ROBERTO",
+      "cat": "TR1",
+      "club": "Top Racing",
+      "brand": "SHERCO",
+      "schedStart": "11:12",
+      "rank": 4,
+      "scores": [
+        [
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 2,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "01:22:21",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "12:34:21",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 2,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 5,
+      "n1s": 2,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 214,
       "name": "IGLESIAS CORDERO, SAUL",
       "cat": "TR1",
       "club": "Moto Club Cuenca Minera",
       "brand": "BETA",
       "schedStart": "11:12",
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           1,
@@ -273,7 +335,7 @@
       "club": "Moto Club Guadarrama",
       "brand": "ACCOSSATO",
       "schedStart": "11:15",
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           3,
@@ -335,7 +397,7 @@
       "club": "CD Moto Nava",
       "brand": "BETA",
       "schedStart": "11:15",
-      "rank": 6,
+      "rank": 7,
       "scores": [
         [
           null,
@@ -397,68 +459,6 @@
       "club": "MC Vallisoletano",
       "brand": "TRRS",
       "schedStart": "11:16",
-      "rank": 7,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 213,
-      "name": "BAUTISTA GUTIERREZ, ROBERTO",
-      "cat": "TR1",
-      "club": "Top Racing",
-      "brand": "SHERCO",
-      "schedStart": "11:12",
       "rank": 8,
       "scores": [
         [
@@ -1259,13 +1259,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 64,
+      "name": "PLAZA FERNANDEZ, VICTOR",
+      "cat": "TR4",
+      "club": "CD Moto Bierzo",
+      "brand": "SHERCO",
+      "schedStart": "11:00",
+      "rank": 1,
+      "scores": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 0,
+      "lap2Points": 2,
+      "lap3Points": null,
+      "lap1Time": "00:54:55",
+      "lap2Time": "00:38:27",
+      "lap3Time": null,
+      "arrV1": "11:54:55",
+      "arrV2": "12:32:27",
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 2,
+      "lapsCompleted": 2,
+      "totalTime": "",
+      "n0s": 12,
+      "n1s": 2,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 76,
       "name": "PINEDA NAVARRO, ANDRES",
       "cat": "TR4",
       "club": "CD Portillo",
       "brand": "BETA FACTORY",
       "schedStart": "11:03",
-      "rank": 1,
+      "rank": 2,
       "scores": [
         [
           0,
@@ -1327,7 +1389,7 @@
       "club": "CD Pobladura R",
       "brand": "SIN MARCA",
       "schedStart": "11:00",
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           0,
@@ -1365,68 +1427,6 @@
       "lap3Time": null,
       "arrV1": "12:00:53",
       "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 1,
-      "totalTime": "",
-      "n0s": 7,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 64,
-      "name": "PLAZA FERNANDEZ, VICTOR",
-      "cat": "TR4",
-      "club": "CD Moto Bierzo",
-      "brand": "SHERCO",
-      "schedStart": "11:00",
-      "rank": 3,
-      "scores": [
-        [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 0,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": "00:54:55",
-      "lap2Time": "00:38:27",
-      "lap3Time": null,
-      "arrV1": "11:54:55",
-      "arrV2": "12:32:27",
       "arrCHF": null,
       "lap1Penalty": 0,
       "finishPenalty": 0,
