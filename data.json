@@ -2,7 +2,7 @@
   "raceName": "I TRIAL INDOOR VILLA DE ISCAR",
   "organizer": "CD PORTILLO",
   "raceDate": "2026-05-17",
-  "publishedAt": "2026-05-17T09:59:50.587Z",
+  "publishedAt": "2026-05-17T10:00:20.504Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -1073,12 +1073,12 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 123,
-      "name": "ARCE SANCHEZ, JOSE MARIA",
+      "dorsal": 122,
+      "name": "DOMINGUEZ CRIADO, RICARDO",
       "cat": "TR3",
-      "club": "CD Pobladura R",
-      "brand": "BETA",
-      "schedStart": "11:03",
+      "club": "CD Portillo",
+      "brand": "VERTIGO MOTORS",
+      "schedStart": "11:04",
       "rank": 1,
       "scores": [
         [
@@ -1112,10 +1112,10 @@
       "lap1Points": null,
       "lap2Points": null,
       "lap3Points": null,
-      "lap1Time": null,
+      "lap1Time": "00:55:49",
       "lap2Time": null,
       "lap3Time": null,
-      "arrV1": null,
+      "arrV1": "11:59:49",
       "arrV2": null,
       "arrCHF": null,
       "lap1Penalty": 0,
@@ -1135,12 +1135,12 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 122,
-      "name": "DOMINGUEZ CRIADO, RICARDO",
+      "dorsal": 123,
+      "name": "ARCE SANCHEZ, JOSE MARIA",
       "cat": "TR3",
-      "club": "CD Portillo",
-      "brand": "VERTIGO MOTORS",
-      "schedStart": "11:04",
+      "club": "CD Pobladura R",
+      "brand": "BETA",
+      "schedStart": "11:03",
       "rank": 2,
       "scores": [
         [
