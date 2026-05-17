@@ -2,7 +2,7 @@
   "raceName": "I TRIAL INDOOR VILLA DE ISCAR",
   "organizer": "CD PORTILLO",
   "raceDate": "2026-05-17",
-  "publishedAt": "2026-05-17T10:57:20.562Z",
+  "publishedAt": "2026-05-17T10:57:50.482Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -1259,75 +1259,13 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 76,
-      "name": "PINEDA NAVARRO, ANDRES",
-      "cat": "TR4",
-      "club": "CD Portillo",
-      "brand": "BETA FACTORY",
-      "schedStart": "11:03",
-      "rank": 1,
-      "scores": [
-        [
-          0,
-          3,
-          3,
-          5,
-          5,
-          5,
-          3
-        ],
-        [
-          1,
-          2,
-          3,
-          3,
-          3,
-          0,
-          3
-        ],
-        [
-          3,
-          3,
-          1,
-          1,
-          3,
-          0,
-          5
-        ]
-      ],
-      "lap1Points": 24,
-      "lap2Points": 15,
-      "lap3Points": 16,
-      "lap1Time": "00:54:51",
-      "lap2Time": "00:28:47",
-      "lap3Time": "00:27:37",
-      "arrV1": "11:57:51",
-      "arrV2": "12:25:47",
-      "arrCHF": "12:54:15",
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 55,
-      "lapsCompleted": 3,
-      "totalTime": "01:51:15",
-      "n0s": 3,
-      "n1s": 3,
-      "n2s": 1,
-      "n3s": 10,
-      "n5s": 4,
-      "finishTime": 46455000,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
       "dorsal": 64,
       "name": "PLAZA FERNANDEZ, VICTOR",
       "cat": "TR4",
       "club": "CD Moto Bierzo",
       "brand": "SHERCO",
       "schedStart": "11:00",
-      "rank": 2,
+      "rank": 1,
       "scores": [
         [
           0,
@@ -1389,7 +1327,7 @@
       "club": "Top Racing",
       "brand": "GASGAS",
       "schedStart": "11:02",
-      "rank": 3,
+      "rank": 2,
       "scores": [
         [
           0,
@@ -1451,7 +1389,7 @@
       "club": "CD Pobladura R",
       "brand": "BETA",
       "schedStart": "11:02",
-      "rank": 4,
+      "rank": 3,
       "scores": [
         [
           0,
@@ -1513,7 +1451,7 @@
       "club": "CD Pobladura R",
       "brand": "SIN MARCA",
       "schedStart": "11:00",
-      "rank": 5,
+      "rank": 4,
       "scores": [
         [
           0,
@@ -1575,7 +1513,7 @@
       "club": "CD Portillo",
       "brand": "TRS",
       "schedStart": "11:01",
-      "rank": 6,
+      "rank": 5,
       "scores": [
         [
           0,
@@ -1637,7 +1575,7 @@
       "club": "CD Portillo",
       "brand": "SIN MARCA",
       "schedStart": "11:01",
-      "rank": 7,
+      "rank": 6,
       "scores": [
         [
           0,
@@ -1694,6 +1632,68 @@
       "n3s": 1,
       "n5s": 1,
       "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
+      "dorsal": 76,
+      "name": "PINEDA NAVARRO, ANDRES",
+      "cat": "TR4",
+      "club": "CD Portillo",
+      "brand": "BETA FACTORY",
+      "schedStart": "11:03",
+      "rank": 7,
+      "scores": [
+        [
+          0,
+          3,
+          3,
+          5,
+          5,
+          5,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          3,
+          3,
+          0,
+          3
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 24,
+      "lap2Points": 15,
+      "lap3Points": null,
+      "lap1Time": "00:54:51",
+      "lap2Time": "00:28:47",
+      "lap3Time": "00:27:37",
+      "arrV1": "11:57:51",
+      "arrV2": "12:25:47",
+      "arrCHF": "12:54:15",
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 39,
+      "lapsCompleted": 2,
+      "totalTime": "01:51:15",
+      "n0s": 2,
+      "n1s": 1,
+      "n2s": 1,
+      "n3s": 7,
+      "n5s": 3,
+      "finishTime": 46455000,
       "dnf": false,
       "dsq": false,
       "dsqReason": ""
