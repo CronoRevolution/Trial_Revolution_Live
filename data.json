@@ -2,7 +2,7 @@
   "raceName": "I TRIAL INDOOR VILLA DE ISCAR",
   "organizer": "CD PORTILLO",
   "raceDate": "2026-05-17",
-  "publishedAt": "2026-05-17T12:10:01.651Z",
+  "publishedAt": "2026-05-17T12:10:31.659Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -267,13 +267,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 217,
+      "name": "PASTOR NOGUEIRA, ENRIQUE",
+      "cat": "TR1",
+      "club": "MC Vallisoletano",
+      "brand": "TRRS",
+      "schedStart": "11:16",
+      "rank": 5,
+      "scores": [
+        [
+          5,
+          1,
+          3,
+          0,
+          3,
+          1,
+          2
+        ],
+        [
+          3,
+          0,
+          0,
+          0,
+          3,
+          3,
+          0
+        ],
+        [
+          3,
+          0,
+          3,
+          0,
+          3,
+          2,
+          5
+        ]
+      ],
+      "lap1Points": 15,
+      "lap2Points": 9,
+      "lap3Points": 16,
+      "lap1Time": "01:33:20",
+      "lap2Time": "00:41:29",
+      "lap3Time": "00:38:33",
+      "arrV1": "12:49:20",
+      "arrV2": "13:30:29",
+      "arrCHF": "14:09:22",
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 40,
+      "lapsCompleted": 3,
+      "totalTime": "02:53:22",
+      "n0s": 7,
+      "n1s": 2,
+      "n2s": 2,
+      "n3s": 8,
+      "n5s": 2,
+      "finishTime": 50962000,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 216,
       "name": "LOZANO GARCIA, ALBERTO",
       "cat": "TR1",
       "club": "Moto Club Guadarrama",
       "brand": "ACCOSSATO",
       "schedStart": "11:15",
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           3,
@@ -335,7 +397,7 @@
       "club": "Top Racing",
       "brand": "SHERCO",
       "schedStart": "11:12",
-      "rank": 6,
+      "rank": 7,
       "scores": [
         [
           0,
@@ -397,7 +459,7 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "BETA",
       "schedStart": "11:12",
-      "rank": 7,
+      "rank": 8,
       "scores": [
         [
           1,
@@ -448,68 +510,6 @@
       "n3s": 1,
       "n5s": 2,
       "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 217,
-      "name": "PASTOR NOGUEIRA, ENRIQUE",
-      "cat": "TR1",
-      "club": "MC Vallisoletano",
-      "brand": "TRRS",
-      "schedStart": "11:16",
-      "rank": 8,
-      "scores": [
-        [
-          5,
-          1,
-          3,
-          0,
-          3,
-          1,
-          2
-        ],
-        [
-          3,
-          0,
-          0,
-          0,
-          3,
-          3,
-          0
-        ],
-        [
-          3,
-          0,
-          3,
-          0,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 15,
-      "lap2Points": 9,
-      "lap3Points": 6,
-      "lap1Time": "01:33:20",
-      "lap2Time": "00:41:29",
-      "lap3Time": "00:38:33",
-      "arrV1": "12:49:20",
-      "arrV2": "13:30:29",
-      "arrCHF": "14:09:22",
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 30,
-      "lapsCompleted": 3,
-      "totalTime": "02:53:22",
-      "n0s": 7,
-      "n1s": 2,
-      "n2s": 1,
-      "n3s": 7,
-      "n5s": 1,
-      "finishTime": 50962000,
       "dnf": false,
       "dsq": false,
       "dsqReason": ""
