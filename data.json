@@ -2,7 +2,7 @@
   "raceName": "I TRIAL INDOOR VILLA DE ISCAR",
   "organizer": "CD PORTILLO",
   "raceDate": "2026-05-17",
-  "publishedAt": "2026-05-17T10:22:50.466Z",
+  "publishedAt": "2026-05-17T10:23:20.552Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -19,13 +19,75 @@
   ],
   "pilots": [
     {
+      "dorsal": 214,
+      "name": "IGLESIAS CORDERO, SAUL",
+      "cat": "TR1",
+      "club": "Moto Club Cuenca Minera",
+      "brand": "BETA",
+      "schedStart": "11:12",
+      "rank": 1,
+      "scores": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": null,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "01:10:45",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "12:22:45",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 0,
+      "lapsCompleted": 0,
+      "totalTime": "",
+      "n0s": 0,
+      "n1s": 0,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 211,
       "name": "GONZALEZ JUAN, SERGIO",
       "cat": "TR1",
       "club": "CD Moto Bierzo",
       "brand": "SHERCO",
       "schedStart": "11:11",
-      "rank": 1,
+      "rank": 2,
       "scores": [
         [
           0,
@@ -87,7 +149,7 @@
       "club": "Moto Club Guadarrama",
       "brand": "ACCOSSATO",
       "schedStart": "11:15",
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           3,
@@ -149,7 +211,7 @@
       "club": "CD Moto Nava",
       "brand": "BETA",
       "schedStart": "11:15",
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           null,
@@ -211,68 +273,6 @@
       "club": "MC Vallisoletano",
       "brand": "TRRS",
       "schedStart": "11:16",
-      "rank": 4,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 214,
-      "name": "IGLESIAS CORDERO, SAUL",
-      "cat": "TR1",
-      "club": "Moto Club Cuenca Minera",
-      "brand": "BETA",
-      "schedStart": "11:12",
       "rank": 5,
       "scores": [
         [
