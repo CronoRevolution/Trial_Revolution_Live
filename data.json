@@ -2,7 +2,7 @@
   "raceName": "I TRIAL INDOOR VILLA DE ISCAR",
   "organizer": "CD PORTILLO",
   "raceDate": "2026-05-17",
-  "publishedAt": "2026-05-17T11:51:31.506Z",
+  "publishedAt": "2026-05-17T11:52:01.432Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -81,13 +81,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 212,
+      "name": "RODRIGUEZ REYERO, LUCAS",
+      "cat": "TR1",
+      "club": "CD Moto Nava",
+      "brand": "ELECTRIC-MOTION",
+      "schedStart": "11:13",
+      "rank": 2,
+      "scores": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "lap1Points": 1,
+      "lap2Points": 3,
+      "lap3Points": 0,
+      "lap1Time": "01:17:20",
+      "lap2Time": "00:38:12",
+      "lap3Time": "00:39:38",
+      "arrV1": "12:30:20",
+      "arrV2": "13:08:12",
+      "arrCHF": "13:48:10",
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 4,
+      "lapsCompleted": 3,
+      "totalTime": "02:35:10",
+      "n0s": 17,
+      "n1s": 4,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": 49690000,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 216,
       "name": "LOZANO GARCIA, ALBERTO",
       "cat": "TR1",
       "club": "Moto Club Guadarrama",
       "brand": "ACCOSSATO",
       "schedStart": "11:15",
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           3,
@@ -149,7 +211,7 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "BETA TRUEBA",
       "schedStart": "11:13",
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           0,
@@ -211,7 +273,7 @@
       "club": "Top Racing",
       "brand": "SHERCO",
       "schedStart": "11:12",
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           0,
@@ -262,68 +324,6 @@
       "n3s": 0,
       "n5s": 0,
       "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 212,
-      "name": "RODRIGUEZ REYERO, LUCAS",
-      "cat": "TR1",
-      "club": "CD Moto Nava",
-      "brand": "ELECTRIC-MOTION",
-      "schedStart": "11:13",
-      "rank": 5,
-      "scores": [
-        [
-          0,
-          0,
-          0,
-          0,
-          0,
-          1,
-          0
-        ],
-        [
-          1,
-          0,
-          1,
-          0,
-          0,
-          1,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 1,
-      "lap2Points": 3,
-      "lap3Points": 0,
-      "lap1Time": "01:17:20",
-      "lap2Time": "00:38:12",
-      "lap3Time": "00:39:38",
-      "arrV1": "12:30:20",
-      "arrV2": "13:08:12",
-      "arrCHF": "13:48:10",
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 4,
-      "lapsCompleted": 3,
-      "totalTime": "02:35:10",
-      "n0s": 15,
-      "n1s": 4,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": 49690000,
       "dnf": false,
       "dsq": false,
       "dsqReason": ""
