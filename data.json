@@ -2,7 +2,7 @@
   "raceName": "I TRIAL INDOOR VILLA DE ISCAR",
   "organizer": "CD PORTILLO",
   "raceDate": "2026-05-17",
-  "publishedAt": "2026-05-17T10:02:20.502Z",
+  "publishedAt": "2026-05-17T10:03:22.514Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -1259,13 +1259,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 75,
+      "name": "GOMEZ REQUENA, ARSENIO JESUS",
+      "cat": "TR4",
+      "club": "CD Pobladura R",
+      "brand": "SIN MARCA",
+      "schedStart": "11:00",
+      "rank": 1,
+      "scores": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 0,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "01:00:53",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "12:00:53",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 0,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 7,
+      "n1s": 0,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 64,
       "name": "PLAZA FERNANDEZ, VICTOR",
       "cat": "TR4",
       "club": "CD Moto Bierzo",
       "brand": "SHERCO",
       "schedStart": "11:00",
-      "rank": 1,
+      "rank": 2,
       "scores": [
         [
           0,
@@ -1327,7 +1389,7 @@
       "club": "CD Pobladura R",
       "brand": "BETA",
       "schedStart": "11:02",
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           0,
@@ -1389,7 +1451,7 @@
       "club": "CD Portillo",
       "brand": "TRS",
       "schedStart": "11:01",
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           0,
@@ -1445,13 +1507,81 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 79,
+      "name": "MUÑOZ MENENDEZ, ESTEBAN",
+      "cat": "TR4",
+      "club": "CD Portillo",
+      "brand": "SIN MARCA",
+      "schedStart": "11:01",
+      "rank": 5,
+      "scores": [
+        [
+          0,
+          5,
+          0,
+          0,
+          3,
+          0,
+          0
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 8,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "01:01:34",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "12:02:34",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [
+        {
+          "pts": 5,
+          "reason": "5 MIN VERIFICACION",
+          "ts": "11:26:48"
+        }
+      ],
+      "totalPoints": 13,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 5,
+      "n1s": 0,
+      "n2s": 0,
+      "n3s": 1,
+      "n5s": 1,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 76,
       "name": "PINEDA NAVARRO, ANDRES",
       "cat": "TR4",
       "club": "CD Portillo",
       "brand": "BETA FACTORY",
       "schedStart": "11:03",
-      "rank": 4,
+      "rank": 6,
       "scores": [
         [
           0,
@@ -1507,136 +1637,12 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 75,
-      "name": "GOMEZ REQUENA, ARSENIO JESUS",
-      "cat": "TR4",
-      "club": "CD Pobladura R",
-      "brand": "SIN MARCA",
-      "schedStart": "11:00",
-      "rank": 5,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
       "dorsal": 78,
       "name": "HERRAEZ RODRIGUEZ, JOSE MANUEL",
       "cat": "TR4",
       "club": "Top Racing",
       "brand": "GASGAS",
       "schedStart": "11:02",
-      "rank": 6,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 79,
-      "name": "MUÑOZ MENENDEZ, ESTEBAN",
-      "cat": "TR4",
-      "club": "CD Portillo",
-      "brand": "SIN MARCA",
-      "schedStart": "11:01",
       "rank": 7,
       "scores": [
         [
@@ -1678,14 +1684,8 @@
       "arrCHF": null,
       "lap1Penalty": 0,
       "finishPenalty": 0,
-      "extraPenalties": [
-        {
-          "pts": 5,
-          "reason": "5 MIN VERIFICACION",
-          "ts": "11:26:48"
-        }
-      ],
-      "totalPoints": 5,
+      "extraPenalties": [],
+      "totalPoints": 0,
       "lapsCompleted": 0,
       "totalTime": "",
       "n0s": 0,
