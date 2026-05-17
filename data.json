@@ -2,7 +2,7 @@
   "raceName": "I TRIAL INDOOR VILLA DE ISCAR",
   "organizer": "CD PORTILLO",
   "raceDate": "2026-05-17",
-  "publishedAt": "2026-05-17T11:25:31.430Z",
+  "publishedAt": "2026-05-17T11:26:01.525Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -1259,13 +1259,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 64,
+      "name": "PLAZA FERNANDEZ, VICTOR",
+      "cat": "TR4",
+      "club": "CD Moto Bierzo",
+      "brand": "SHERCO",
+      "schedStart": "11:00",
+      "rank": 1,
+      "scores": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "lap1Points": 0,
+      "lap2Points": 2,
+      "lap3Points": 1,
+      "lap1Time": "00:54:55",
+      "lap2Time": "00:38:27",
+      "lap3Time": "00:51:58",
+      "arrV1": "11:54:55",
+      "arrV2": "12:32:27",
+      "arrCHF": "13:25:20",
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 3,
+      "lapsCompleted": 3,
+      "totalTime": "02:25:20",
+      "n0s": 18,
+      "n1s": 3,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": 48320000,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 77,
       "name": "PEREZ SANCHEZ, MARIN",
       "cat": "TR4",
       "club": "CD Pobladura R",
       "brand": "BETA",
       "schedStart": "11:02",
-      "rank": 1,
+      "rank": 2,
       "scores": [
         [
           0,
@@ -1327,7 +1389,7 @@
       "club": "CD Portillo",
       "brand": "SIN MARCA",
       "schedStart": "11:01",
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           0,
@@ -1395,7 +1457,7 @@
       "club": "CD Portillo",
       "brand": "BETA FACTORY",
       "schedStart": "11:03",
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           0,
@@ -1446,68 +1508,6 @@
       "n3s": 10,
       "n5s": 4,
       "finishTime": 46455000,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 64,
-      "name": "PLAZA FERNANDEZ, VICTOR",
-      "cat": "TR4",
-      "club": "CD Moto Bierzo",
-      "brand": "SHERCO",
-      "schedStart": "11:00",
-      "rank": 4,
-      "scores": [
-        [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          1,
-          0,
-          0,
-          0,
-          0,
-          1
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 0,
-      "lap2Points": 2,
-      "lap3Points": null,
-      "lap1Time": "00:54:55",
-      "lap2Time": "00:38:27",
-      "lap3Time": null,
-      "arrV1": "11:54:55",
-      "arrV2": "12:32:27",
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 2,
-      "lapsCompleted": 2,
-      "totalTime": "",
-      "n0s": 12,
-      "n1s": 2,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
       "dnf": false,
       "dsq": false,
       "dsqReason": ""
