@@ -2,7 +2,7 @@
   "raceName": "I TRIAL INDOOR VILLA DE ISCAR",
   "organizer": "CD PORTILLO",
   "raceDate": "2026-05-17",
-  "publishedAt": "2026-05-17T10:21:50.527Z",
+  "publishedAt": "2026-05-17T10:22:20.501Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -515,13 +515,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 179,
+      "name": "FERNANDEZ GALLARDO, LUIS ADRIAN",
+      "cat": "TR2",
+      "club": "CD Moto Nava",
+      "brand": "ELECTRIC-MOTION",
+      "schedStart": "11:10",
+      "rank": 1,
+      "scores": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 0,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "01:10:25",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "12:20:25",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 0,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 7,
+      "n1s": 0,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 189,
       "name": "GARCIA RUIZ, ROBERTO",
       "cat": "TR2",
       "club": "CD Moto Nava",
       "brand": "ELECTRIC-MOTION",
       "schedStart": "11:14",
-      "rank": 1,
+      "rank": 2,
       "scores": [
         [
           5,
@@ -583,7 +645,7 @@
       "club": "CD Pobladura R",
       "brand": "GASGAS",
       "schedStart": "11:14",
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           null,
@@ -645,7 +707,7 @@
       "club": "CD Moto Bierzo",
       "brand": "TRRS",
       "schedStart": "11:07",
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           null,
@@ -707,7 +769,7 @@
       "club": "",
       "brand": "SIN MARCA",
       "schedStart": "11:07",
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           null,
@@ -769,7 +831,7 @@
       "club": "CD Portillo",
       "brand": "VERTIGO",
       "schedStart": "11:08",
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           null,
@@ -831,7 +893,7 @@
       "club": "",
       "brand": "SIN MARCA",
       "schedStart": "11:08",
-      "rank": 6,
+      "rank": 7,
       "scores": [
         [
           null,
@@ -893,68 +955,6 @@
       "club": "CD Pobladura R",
       "brand": "SIN MARCA",
       "schedStart": "11:09",
-      "rank": 7,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 179,
-      "name": "FERNANDEZ GALLARDO, LUIS ADRIAN",
-      "cat": "TR2",
-      "club": "CD Moto Nava",
-      "brand": "ELECTRIC-MOTION",
-      "schedStart": "11:10",
       "rank": 8,
       "scores": [
         [
