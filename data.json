@@ -2,7 +2,7 @@
   "raceName": "I TRIAL INDOOR VILLA DE ISCAR",
   "organizer": "CD PORTILLO",
   "raceDate": "2026-05-17",
-  "publishedAt": "2026-05-17T10:26:50.570Z",
+  "publishedAt": "2026-05-17T10:27:20.579Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -763,13 +763,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 187,
+      "name": "OVIEDO RODRIGUEZ, UNAI",
+      "cat": "TR2",
+      "club": "CD Pobladura R",
+      "brand": "GASGAS",
+      "schedStart": "11:11",
+      "rank": 5,
+      "scores": [
+        [
+          3,
+          1,
+          1,
+          0,
+          2,
+          5,
+          1
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 13,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "01:15:23",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "12:26:23",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 13,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 1,
+      "n1s": 3,
+      "n2s": 1,
+      "n3s": 1,
+      "n5s": 1,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 186,
       "name": "BARREDO RODRIGUEZ, SAUL",
       "cat": "TR2",
       "club": "CD Pobladura R",
       "brand": "GASGAS",
       "schedStart": "11:14",
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           null,
@@ -831,7 +893,7 @@
       "club": "CD Moto Bierzo",
       "brand": "TRRS",
       "schedStart": "11:07",
-      "rank": 6,
+      "rank": 7,
       "scores": [
         [
           null,
@@ -893,7 +955,7 @@
       "club": "",
       "brand": "SIN MARCA",
       "schedStart": "11:07",
-      "rank": 7,
+      "rank": 8,
       "scores": [
         [
           null,
@@ -955,68 +1017,6 @@
       "club": "",
       "brand": "SIN MARCA",
       "schedStart": "11:08",
-      "rank": 8,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 187,
-      "name": "OVIEDO RODRIGUEZ, UNAI",
-      "cat": "TR2",
-      "club": "CD Pobladura R",
-      "brand": "GASGAS",
-      "schedStart": "11:11",
       "rank": 9,
       "scores": [
         [
