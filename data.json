@@ -2,11 +2,11 @@
   "raceName": "I TRIAL INDOOR VILLA DE ISCAR",
   "organizer": "CD PORTILLO",
   "raceDate": "2026-05-17",
-  "publishedAt": "2026-05-17T08:11:27.024Z",
+  "publishedAt": "2026-05-17T08:50:13.871Z",
   "raceStarted": false,
   "raceFinished": false,
   "cfg": {
-    "numZones": 6,
+    "numZones": 7,
     "lap1MaxMins": 150,
     "raceDurationHrs": 3.5
   },
@@ -18,13 +18,199 @@
   ],
   "pilots": [
     {
+      "dorsal": 216,
+      "name": "LOZANO GARCIA, ALBERTO",
+      "cat": "TR1",
+      "club": "Moto Club Guadarrama",
+      "brand": "ACCOSSATO",
+      "schedStart": "11:15",
+      "rank": 1,
+      "scores": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": null,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": null,
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": null,
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": null,
+      "lapsCompleted": 0,
+      "totalTime": "",
+      "n0s": 0,
+      "n1s": 0,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
+      "dorsal": 215,
+      "name": "FERNANDEZ PRIETO, JAVIER",
+      "cat": "TR1",
+      "club": "CD Moto Nava",
+      "brand": "BETA",
+      "schedStart": "11:15",
+      "rank": 2,
+      "scores": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": null,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": null,
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": null,
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": null,
+      "lapsCompleted": 0,
+      "totalTime": "",
+      "n0s": 0,
+      "n1s": 0,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
+      "dorsal": 217,
+      "name": "PASTOR NOGUEIRA, ENRIQUE",
+      "cat": "TR1",
+      "club": "MC Vallisoletano",
+      "brand": "TRRS",
+      "schedStart": "11:16",
+      "rank": 3,
+      "scores": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": null,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": null,
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": null,
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": null,
+      "lapsCompleted": 0,
+      "totalTime": "",
+      "n0s": 0,
+      "n1s": 0,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 211,
       "name": "GONZALEZ JUAN, SERGIO",
       "cat": "TR1",
       "club": "CD Moto Bierzo",
       "brand": "SHERCO",
-      "schedStart": "11:11",
-      "rank": 1,
+      "schedStart": "11:09",
+      "rank": 4,
       "scores": [
         [
           null,
@@ -85,8 +271,8 @@
       "cat": "TR1",
       "club": "Moto Club Cuenca Minera",
       "brand": "BETA",
-      "schedStart": "11:12",
-      "rank": 2,
+      "schedStart": "11:09",
+      "rank": 5,
       "scores": [
         [
           null,
@@ -147,8 +333,8 @@
       "cat": "TR1",
       "club": "Top Racing",
       "brand": "SHERCO",
-      "schedStart": "11:12",
-      "rank": 3,
+      "schedStart": "11:10",
+      "rank": 6,
       "scores": [
         [
           null,
@@ -209,8 +395,8 @@
       "cat": "TR1",
       "club": "CD Moto Nava",
       "brand": "ELECTRIC-MOTION",
-      "schedStart": "11:13",
-      "rank": 4,
+      "schedStart": "11:10",
+      "rank": 7,
       "scores": [
         [
           null,
@@ -271,8 +457,8 @@
       "cat": "TR1",
       "club": "Moto Club Cuenca Minera",
       "brand": "BETA TRUEBA",
-      "schedStart": "11:13",
-      "rank": 5,
+      "schedStart": "11:11",
+      "rank": 8,
       "scores": [
         [
           null,
@@ -328,12 +514,12 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 186,
+      "dorsal": 189,
       "name": "GARCIA RUIZ, ROBERTO",
       "cat": "TR2",
       "club": "CD Moto Nava",
       "brand": "ELECTRIC-MOTION",
-      "schedStart": "11:13",
+      "schedStart": "11:14",
       "rank": 1,
       "scores": [
         [
@@ -390,12 +576,12 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 185,
-      "name": "LOZANO GARCIA, ALBERTO",
+      "dorsal": 186,
+      "name": "BARREDO RODRIGUEZ, SAUL",
       "cat": "TR2",
-      "club": "Moto Club Guadarrama",
-      "brand": "ACCOSSATO",
-      "schedStart": "11:06",
+      "club": "CD Pobladura R",
+      "brand": "GASGAS",
+      "schedStart": "11:14",
       "rank": 2,
       "scores": [
         [
@@ -457,7 +643,7 @@
       "cat": "TR2",
       "club": "CD Moto Bierzo",
       "brand": "TRRS",
-      "schedStart": "11:07",
+      "schedStart": "11:05",
       "rank": 3,
       "scores": [
         [
@@ -519,7 +705,7 @@
       "cat": "TR2",
       "club": "",
       "brand": "SIN MARCA",
-      "schedStart": "11:07",
+      "schedStart": "11:06",
       "rank": 4,
       "scores": [
         [
@@ -581,7 +767,7 @@
       "cat": "TR2",
       "club": "CD Portillo",
       "brand": "VERTIGO",
-      "schedStart": "11:08",
+      "schedStart": "11:06",
       "rank": 5,
       "scores": [
         [
@@ -643,7 +829,7 @@
       "cat": "TR2",
       "club": "",
       "brand": "SIN MARCA",
-      "schedStart": "11:08",
+      "schedStart": "11:07",
       "rank": 6,
       "scores": [
         [
@@ -700,75 +886,13 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 178,
+      "dorsal": 188,
       "name": "BALBOA ALVAREZ, SAMUEL",
       "cat": "TR2",
       "club": "CD Pobladura R",
       "brand": "SIN MARCA",
-      "schedStart": "11:09",
+      "schedStart": "11:07",
       "rank": 7,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": null,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 175,
-      "name": "FERNANDEZ PRIETO, JAVIER",
-      "cat": "TR2",
-      "club": "CD Moto Nava",
-      "brand": "BETA",
-      "schedStart": "11:09",
-      "rank": 8,
       "scores": [
         [
           null,
@@ -829,8 +953,8 @@
       "cat": "TR2",
       "club": "CD Moto Nava",
       "brand": "ELECTRIC-MOTION",
-      "schedStart": "11:10",
-      "rank": 9,
+      "schedStart": "11:08",
+      "rank": 8,
       "scores": [
         [
           null,
@@ -886,75 +1010,13 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 174,
-      "name": "PASTOR NOGUEIRA, ENRIQUE",
-      "cat": "TR2",
-      "club": "MC Vallisoletano",
-      "brand": "TRRS",
-      "schedStart": "11:10",
-      "rank": 10,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": null,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 177,
+      "dorsal": 187,
       "name": "OVIEDO RODRIGUEZ, UNAI",
       "cat": "TR2",
       "club": "CD Pobladura R",
       "brand": "GASGAS",
-      "schedStart": "11:11",
-      "rank": 11,
+      "schedStart": "11:08",
+      "rank": 9,
       "scores": [
         [
           null,
@@ -1196,75 +1258,13 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 111,
-      "name": "BARREDO RODRIGUEZ, SAUL",
-      "cat": "TR3",
-      "club": "CD Pobladura R",
-      "brand": "GASGAS",
-      "schedStart": "11:05",
-      "rank": 4,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": null,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
       "dorsal": 119,
       "name": "ALLENDE MORO, ANGELA",
       "cat": "TR3",
       "club": "CD Portillo",
       "brand": "VERTIGO",
-      "schedStart": "11:06",
-      "rank": 5,
+      "schedStart": "11:05",
+      "rank": 4,
       "scores": [
         [
           null,
