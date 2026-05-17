@@ -2,7 +2,7 @@
   "raceName": "I TRIAL INDOOR VILLA DE ISCAR",
   "organizer": "CD PORTILLO",
   "raceDate": "2026-05-17",
-  "publishedAt": "2026-05-17T09:26:20.435Z",
+  "publishedAt": "2026-05-17T09:26:50.690Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -1445,75 +1445,13 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 79,
-      "name": "MUÑOZ MENENDEZ, ESTEBAN",
-      "cat": "TR4",
-      "club": "CD Portillo",
-      "brand": "SIN MARCA",
-      "schedStart": "11:01",
-      "rank": 4,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
       "dorsal": 78,
       "name": "HERRAEZ RODRIGUEZ, JOSE MANUEL",
       "cat": "TR4",
       "club": "Top Racing",
       "brand": "GASGAS",
       "schedStart": "11:02",
-      "rank": 5,
+      "rank": 4,
       "scores": [
         [
           null,
@@ -1575,7 +1513,7 @@
       "club": "CD Pobladura R",
       "brand": "BETA",
       "schedStart": "11:02",
-      "rank": 6,
+      "rank": 5,
       "scores": [
         [
           null,
@@ -1637,7 +1575,7 @@
       "club": "CD Portillo",
       "brand": "BETA FACTORY",
       "schedStart": "11:03",
-      "rank": 7,
+      "rank": 6,
       "scores": [
         [
           null,
@@ -1680,6 +1618,74 @@
       "finishPenalty": 0,
       "extraPenalties": [],
       "totalPoints": 0,
+      "lapsCompleted": 0,
+      "totalTime": "",
+      "n0s": 0,
+      "n1s": 0,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
+      "dorsal": 79,
+      "name": "MUÑOZ MENENDEZ, ESTEBAN",
+      "cat": "TR4",
+      "club": "CD Portillo",
+      "brand": "SIN MARCA",
+      "schedStart": "11:01",
+      "rank": 7,
+      "scores": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": null,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": null,
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": null,
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [
+        {
+          "pts": 5,
+          "reason": "5 MIN VERIFICACION",
+          "ts": "11:26:48"
+        }
+      ],
+      "totalPoints": 5,
       "lapsCompleted": 0,
       "totalTime": "",
       "n0s": 0,
