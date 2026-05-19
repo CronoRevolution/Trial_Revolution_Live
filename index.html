@@ -3,6 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="refresh" content="30">
+<meta name="theme-color" content="#f59e0b">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Trial Live">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="LOGOS/trialrev.png">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 <meta name="theme-color" id="themeColor" content="#1a1f35">
 <title>Trial Revolution — Clasificación</title>
@@ -427,11 +433,29 @@ function renderHome(){
     const rCount=cp.filter(p=>p.dnf).length;
     const tile=document.createElement('div');
     tile.className='ctile'; tile.style.borderColor=col+'33';
+    // Desglose por vuelta (solo pilotos activos)
+    const v1Count=cp.filter(p=>!p.dnf&&!p.dsq&&!p.totalTime&&p.lap1Time==null&&!(p.scores&&p.scores[0]&&p.scores[0].some(v=>v!=null))).length;
+    const v1ActiveCount=cp.filter(p=>!p.dnf&&!p.dsq&&!p.totalTime&&p.lap1Time==null).length;
+    const v2Count=cp.filter(p=>!p.dnf&&!p.dsq&&!p.totalTime&&p.lap1Time!=null&&p.lap2Time==null).length;
+    const v3Count=cp.filter(p=>!p.dnf&&!p.dsq&&!p.totalTime&&p.lap2Time!=null).length;
+    const lapBreakdown=[];
+    if(v1ActiveCount>0)lapBreakdown.push(`<span style="color:#60a5fa">V1·${v1ActiveCount}</span>`);
+    if(v2Count>0)lapBreakdown.push(`<span style="color:#f59e0b">V2·${v2Count}</span>`);
+    if(v3Count>0)lapBreakdown.push(`<span style="color:#22c55e">V3·${v3Count}</span>`);
+    const metaLines=[];
+    if(lapBreakdown.length)metaLines.push(lapBreakdown.join(' · '));
+    if(fCount||rCount){
+      const fin=[];
+      if(fCount)fin.push(`✓ ${fCount}`);
+      if(rCount)fin.push(`R: ${rCount}`);
+      metaLines.push(`<span style="color:var(--mu)">${fin.join(' · ')}</span>`);
+    }
+    if(!metaLines.length)metaLines.push(`<span style="color:var(--mu)">${cp.length} pilotos</span>`);
     tile.innerHTML=
       `<div class="ctbar" style="background:${col}"></div>`+
       `<div class="ctbody">`+
         `<div class="ctname" style="color:${col}">${cat}</div>`+
-        `<div class="ctmeta">${fCount} finalizados${rCount?' · '+rCount+' retirados':''}</div>`+
+        `<div class="ctmeta" style="font-weight:700">${metaLines.join(' · ')}</div>`+
       `</div>`+
       `<div class="ctcount" style="color:${col}"><div class="ctnum">${cp.length}</div><div class="ctclbl">pilotos</div></div>`+
       `<div class="ctarrow">›</div>`;
@@ -612,6 +636,13 @@ document.getElementById('vWait').style.display='flex';
 history.replaceState({view:'home'},'','#home');
 fetchData();
 setInterval(fetchData, POLL_MS);
+
+// ── PWA: registrar service worker ─────────────────────────────────
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').catch(err => console.log('SW reg fail:', err));
+  });
+}
 </script>
 </body>
 </html>

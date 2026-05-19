@@ -1,0 +1,26 @@
+{
+  "name": "Trial Revolution — Clasificación en vivo",
+  "short_name": "Trial Live",
+  "description": "Clasificación en vivo de pruebas de Trial motociclista",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0a0c14",
+  "theme_color": "#f59e0b",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "LOGOS/trialrev.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "LOGOS/trialrev.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
