@@ -1,6 +1,6 @@
 {
-  "name": "Trial Revolution — Clasificación en vivo",
-  "short_name": "Trial Live",
+  "name": "Trial Revolution",
+  "short_name": "Trial Revolution",
   "description": "Clasificación en vivo de pruebas de Trial motociclista",
   "start_url": "./index.html",
   "scope": "./",
