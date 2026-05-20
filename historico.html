@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<!--
+  Trial Revolution — Histórico de Pruebas
+  © 2026 Pablo Cachán. Todos los derechos reservados.
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="theme-color" content="#3b82f6">
+<title>Histórico — Trial Revolution</title>
+<style>
+:root {
+  --bg: #0a1018; --bg2: #121a26; --bg3: #1a2432; --border: #252d42; --border2: #3b4668;
+  --text: #e2e8f0; --mu: #94a3b8; --accent: #f59e0b; --accent2: #3b82f6;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+body{padding-bottom:60px}
+
+.hdr{position:sticky;top:0;background:linear-gradient(180deg,var(--bg2),var(--bg));border-bottom:1px solid var(--border);padding:14px 16px;z-index:10;display:flex;align-items:center;gap:12px}
+.hdr-back{background:transparent;border:1px solid var(--border);color:var(--text);padding:6px 10px;border-radius:8px;font-size:18px;cursor:pointer;line-height:1}
+.hdr-title{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:3px;color:var(--accent2);flex:1}
+.hdr-sub{font-size:10px;color:var(--mu);letter-spacing:1.5px;text-transform:uppercase}
+
+.year-section{padding:18px 16px 4px}
+.year-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.year-label{font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:4px;color:#fff}
+.year-count{background:var(--bg3);color:var(--mu);padding:2px 10px;border-radius:12px;font-size:11px;font-weight:700;letter-spacing:1px}
+
+.race-list{display:flex;flex-direction:column;gap:8px;padding:0 16px}
+.race-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:14px 16px;cursor:pointer;transition:transform .05s,border-color .15s}
+.race-card:hover{border-color:var(--accent2)}
+.race-card:active{transform:scale(.99)}
+.race-name{font-weight:800;font-size:15px;margin-bottom:3px}
+.race-meta{display:flex;gap:10px;font-size:11px;color:var(--mu);align-items:center;flex-wrap:wrap}
+.race-meta .pill{background:var(--bg3);padding:2px 8px;border-radius:8px;letter-spacing:.5px}
+.race-meta .pill.org{color:var(--accent)}
+
+.empty{text-align:center;padding:60px 20px;color:var(--mu)}
+.empty-icon{font-size:48px;opacity:.3;margin-bottom:14px}
+.empty-title{font-size:16px;font-weight:700;margin-bottom:6px}
+
+.loading{text-align:center;padding:60px 20px;color:var(--mu)}
+.loading::after{content:'';display:inline-block;width:32px;height:32px;border:3px solid var(--border);border-top-color:var(--accent2);border-radius:50%;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Detalle de carrera */
+#raceDetail{display:none;position:fixed;inset:0;background:var(--bg);z-index:50;overflow-y:auto}
+#raceDetail.active{display:block}
+.rd-hdr{position:sticky;top:0;background:linear-gradient(180deg,var(--bg2),var(--bg));padding:14px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;z-index:10}
+.rd-hdr h1{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;flex:1;line-height:1.1}
+.rd-hdr-meta{font-size:10px;color:var(--mu);letter-spacing:1px}
+.rd-content{padding:14px 16px}
+.cat-block{margin-bottom:22px}
+.cat-block h2{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:3px;color:#fff;margin-bottom:10px;padding-left:12px;border-left:4px solid}
+.rank-row{display:grid;grid-template-columns:32px 40px 1fr 60px;gap:8px;align-items:center;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:8px 12px;margin-bottom:6px}
+.rank-row.top1{border-color:#fbbf24;background:rgba(251,191,36,.08)}
+.rank-row.top2{border-color:#94a3b8;background:rgba(148,163,184,.06)}
+.rank-row.top3{border-color:#d97706;background:rgba(217,119,6,.06)}
+.rank-pos{font-family:'Bebas Neue',sans-serif;font-size:22px;text-align:center;color:var(--mu)}
+.rank-pos.top1{color:#fbbf24}
+.rank-pos.top2{color:#94a3b8}
+.rank-pos.top3{color:#d97706}
+.rank-dorsal{font-family:'Space Mono',monospace;font-weight:800;color:var(--accent);text-align:center}
+.rank-name{font-weight:700;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rank-name small{font-weight:400;font-size:10px;color:var(--mu);display:block}
+.rank-pts{font-family:'Space Mono',monospace;font-weight:900;text-align:right;font-size:15px}
+.rank-pts small{font-weight:400;font-size:9px;color:var(--mu);display:block;letter-spacing:1px}
+.rank-row.dsq{opacity:.5}
+.rank-row.dsq .rank-pts{color:var(--mu)}
+
+.cat-TR1{border-color:#b91c1c!important;color:#fca5a5}
+.cat-TR2{border-color:#1d4ed8!important;color:#93c5fd}
+.cat-TR3{border-color:#15803d!important;color:#86efac}
+.cat-TR4{border-color:#a16207!important;color:#fcd34d}
+.cat-TR5{border-color:#c2410c!important;color:#fdba74}
+.cat-TR5A{border-color:#374151!important;color:#cbd5e1}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <a href="index.html" class="hdr-back" title="Volver">←</a>
+  <div style="flex:1">
+    <div class="hdr-title">📚 HISTÓRICO</div>
+    <div class="hdr-sub">Pruebas del año en curso</div>
+  </div>
+</div>
+
+<div id="content" class="loading"></div>
+
+<div id="raceDetail">
+  <div class="rd-hdr">
+    <button class="hdr-back" onclick="closeRaceDetail()">←</button>
+    <div style="flex:1">
+      <h1 id="rdTitle">—</h1>
+      <div class="rd-hdr-meta" id="rdMeta">—</div>
+    </div>
+  </div>
+  <div class="rd-content" id="rdContent"></div>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCnasN6ewMMAH5JebMiJeGXYVw8Km-quHc",
+  authDomain: "trial-revolution.firebaseapp.com",
+  databaseURL: "https://trial-revolution-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "trial-revolution",
+  storageBucket: "trial-revolution.firebasestorage.app",
+  messagingSenderId: "630413676427",
+  appId: "1:630413676427:web:af5a3afd21e67487ba698e"
+};
+
+const app = initializeApp(firebaseConfig);
+const db  = getDatabase(app);
+
+const CAT_ORDER = ['TR5A','TR5','TR4','TR3','TR2','TR1'];
+const CAT_HEX = { TR1:'#b91c1c', TR2:'#1d4ed8', TR3:'#15803d', TR4:'#a16207', TR5:'#c2410c', TR5A:'#374151' };
+const pad = n => String(n).padStart(2,'0');
+
+let _allArchives = {}; // { year: { archiveId: meta } }
+
+async function loadIndex() {
+  const content = document.getElementById('content');
+  try {
+    const snap = await get(ref(db, 'races_archive_index'));
+    const data = snap.val() || {};
+    _allArchives = data;
+    renderIndex();
+  } catch (e) {
+    content.classList.remove('loading');
+    content.innerHTML = `<div class="empty"><div class="empty-icon">⚠</div><div class="empty-title">Error</div><div>${e.message}</div></div>`;
+  }
+}
+
+function renderIndex() {
+  const content = document.getElementById('content');
+  content.classList.remove('loading');
+
+  const years = Object.keys(_allArchives).sort((a,b) => b.localeCompare(a));
+  if (!years.length) {
+    content.innerHTML = `
+      <div class="empty">
+        <div class="empty-icon">📭</div>
+        <div class="empty-title">Sin pruebas archivadas</div>
+        <div>Cuando la mesa central archive una carrera aparecerá aquí.</div>
+      </div>`;
+    return;
+  }
+
+  let html = '';
+  years.forEach(year => {
+    const races = _allArchives[year] || {};
+    const ids = Object.keys(races);
+    if (!ids.length) return;
+    // Ordenar por fecha descendente (más reciente arriba)
+    ids.sort((a,b) => {
+      const da = races[a].date || '';
+      const db = races[b].date || '';
+      return db.localeCompare(da);
+    });
+
+    html += `
+      <div class="year-section">
+        <div class="year-head">
+          <div class="year-label">${year}</div>
+          <div class="year-count">${ids.length} prueba${ids.length>1?'s':''}</div>
+        </div>
+      </div>
+      <div class="race-list">
+    `;
+    ids.forEach(id => {
+      const r = races[id];
+      const dateStr = r.date ? new Date(r.date).toLocaleDateString('es-ES', {day:'numeric', month:'short'}) : '';
+      html += `
+        <div class="race-card" onclick="window.openRace('${year}','${id}')">
+          <div class="race-name">${r.name || id}</div>
+          <div class="race-meta">
+            ${dateStr ? `<span class="pill">📅 ${dateStr}</span>` : ''}
+            ${r.organizer ? `<span class="pill org">${r.organizer}</span>` : ''}
+            ${r.pilotsCount ? `<span class="pill">${r.pilotsCount} pilotos</span>` : ''}
+          </div>
+        </div>`;
+    });
+    html += `</div>`;
+  });
+
+  content.innerHTML = html;
+}
+
+window.openRace = async function(year, archiveId) {
+  const detail = document.getElementById('raceDetail');
+  const rdContent = document.getElementById('rdContent');
+  const rdTitle = document.getElementById('rdTitle');
+  const rdMeta = document.getElementById('rdMeta');
+
+  detail.classList.add('active');
+  rdContent.innerHTML = '<div class="loading"></div>';
+  history.pushState({view:'race'}, '', `?race=${year}/${archiveId}`);
+
+  try {
+    const snap = await get(ref(db, `races_archive/${year}/${archiveId}`));
+    const data = snap.val();
+    if (!data) {
+      rdContent.innerHTML = '<div class="empty"><div class="empty-icon">⚠</div><div class="empty-title">No encontrada</div></div>';
+      return;
+    }
+    rdTitle.textContent = data.meta?.name || archiveId;
+    const parts = [];
+    if (data.meta?.date) parts.push(new Date(data.meta.date).toLocaleDateString('es-ES', {day:'numeric',month:'long',year:'numeric'}));
+    if (data.meta?.organizer) parts.push(data.meta.organizer);
+    rdMeta.textContent = parts.join(' · ');
+
+    renderRaceDetail(data.state || {});
+  } catch (e) {
+    rdContent.innerHTML = `<div class="empty"><div class="empty-icon">⚠</div><div class="empty-title">Error</div><div>${e.message}</div></div>`;
+  }
+};
+
+window.closeRaceDetail = function() {
+  document.getElementById('raceDetail').classList.remove('active');
+  history.pushState({view:'index'}, '', 'historico.html');
+};
+
+window.addEventListener('popstate', () => {
+  const params = new URLSearchParams(location.search);
+  if (!params.get('race')) closeRaceDetail();
+});
+
+function _totalMs(p) {
+  if (p.finishTime == null || !p.schedStart) return null;
+  const [sh, sm] = p.schedStart.split(':').map(Number);
+  const schedMs = (sh * 3600 + sm * 60) * 1000;
+  let fin = p.finishTime;
+  if (fin > 1e12) { const d = new Date(fin); fin = (d.getHours()*3600+d.getMinutes()*60+d.getSeconds())*1000; }
+  return fin - schedMs;
+}
+
+function cnt(p, v) {
+  let n = 0;
+  for (let l = 0; l < 3; l++)
+    for (let z = 0; z < 7; z++)
+      if (p.scores?.[l]?.[z] === v) n++;
+  return n;
+}
+
+function getTotal(p) {
+  if (p.dsq || p.dnf) return null;
+  let total = 0;
+  for (let l = 0; l < 3; l++)
+    for (let z = 0; z < (p.scores?.[l]?.length || 0); z++)
+      total += (p.scores[l][z] || 0);
+  total += (p.lap1Penalty || 0) + (p.finishPenalty || 0);
+  (p.extraPenalties || []).forEach(e => { total += (e.pts || 0); });
+  return total;
+}
+
+function fmtCrono(ms) {
+  if (ms == null || ms < 0) return '—';
+  const s = Math.floor(ms / 1000);
+  const h = Math.floor(s/3600), m = Math.floor((s%3600)/60), ss = s%60;
+  return pad(h)+':'+pad(m)+':'+pad(ss);
+}
+
+function tieBreak(a, b) {
+  for (const v of [0,1,2,3]) {
+    const d = cnt(b,v) - cnt(a,v);
+    if (d !== 0) return d;
+  }
+  const ta = _totalMs(a), tb = _totalMs(b);
+  if (ta != null && tb != null) return ta - tb;
+  if (ta != null) return -1;
+  if (tb != null) return 1;
+  return 0;
+}
+
+function sortCat(arr) {
+  return arr.slice().sort((a,b) => {
+    if (a.dsq && !b.dsq) return 1; if (!a.dsq && b.dsq) return -1;
+    if (a.dnf && !b.dnf) return 1; if (!a.dnf && b.dnf) return -1;
+    const pa = getTotal(a) ?? 9999, pb = getTotal(b) ?? 9999;
+    if (pa !== pb) return pa - pb;
+    return tieBreak(a, b);
+  });
+}
+
+function renderRaceDetail(state) {
+  const rdContent = document.getElementById('rdContent');
+  const pilots = state.pilots || [];
+  if (!pilots.length) {
+    rdContent.innerHTML = '<div class="empty"><div class="empty-icon">📭</div><div class="empty-title">Sin pilotos</div></div>';
+    return;
+  }
+  let html = '';
+  CAT_ORDER.forEach(cat => {
+    const cp = pilots.filter(p => p.cat === cat);
+    if (!cp.length) return;
+    const sorted = sortCat(cp);
+    const color = CAT_HEX[cat] || '#374151';
+    html += `<div class="cat-block"><h2 class="cat-${cat}" style="border-left-color:${color}">${cat} — ${cp.length} pilotos</h2>`;
+    sorted.forEach((p, i) => {
+      const pos = i + 1;
+      const topCls = pos === 1 ? 'top1' : pos === 2 ? 'top2' : pos === 3 ? 'top3' : '';
+      const dsqCls = (p.dsq || p.dnf) ? 'dsq' : '';
+      const total = getTotal(p);
+      const crono = _totalMs(p);
+      let ptsLabel = '—';
+      if (p.dsq) ptsLabel = 'DSQ';
+      else if (p.dnf) ptsLabel = 'R';
+      else if (total != null) ptsLabel = total;
+      html += `
+        <div class="rank-row ${topCls} ${dsqCls}">
+          <div class="rank-pos ${topCls}">${p.dsq||p.dnf?'—':pos}</div>
+          <div class="rank-dorsal">${p.dorsal||''}</div>
+          <div class="rank-name">${p.name||'—'}<small>${p.club||''}${p.brand?' · '+p.brand:''}</small></div>
+          <div class="rank-pts">${ptsLabel}<small>${p.dsq||p.dnf?'':fmtCrono(crono)}</small></div>
+        </div>`;
+    });
+    html += `</div>`;
+  });
+  rdContent.innerHTML = html;
+}
+
+// Bootstrap: si hay ?race= en URL, abrir directamente esa carrera
+const initialParams = new URLSearchParams(location.search);
+const initialRace = initialParams.get('race');
+
+loadIndex().then(() => {
+  if (initialRace) {
+    const [year, id] = initialRace.split('/');
+    if (year && id) window.openRace(year, id);
+  }
+});
+</script>
+
+</body>
+</html>
