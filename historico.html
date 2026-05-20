@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--
-  Trial Revolution — Histórico de Pruebas
-  © 2026 Pablo Cachán. Todos los derechos reservados.
--->
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -10,95 +6,141 @@
 <meta name="theme-color" content="#3b82f6">
 <title>Histórico — Trial Revolution</title>
 <style>
-:root {
-  --bg: #0a1018; --bg2: #121a26; --bg3: #1a2432; --border: #252d42; --border2: #3b4668;
-  --text: #e2e8f0; --mu: #94a3b8; --accent: #f59e0b; --accent2: #3b82f6;
+:root{
+  --bg:#0a1018; --sf:#121a26; --sf2:#1a2432; --bd:#252d42; --bd2:#3b4668;
+  --tx:#e2e8f0; --mu:#94a3b8; --ac:#f59e0b; --ac2:#3b82f6;
+  --ok:#16a34a; --dg:#dc2626;
+  --s0:#15803d; --s1:#1d4ed8; --s2:#a16207; --s3:#b91c1c; --s5:#7e22ce;
+  --hbg:linear-gradient(180deg,#1a2432,#0a1018);
+  --sh:rgba(0,0,0,.3);
 }
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
-html,body{height:100%;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+html,body{height:100%;background:var(--bg);color:var(--tx);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
 body{padding-bottom:60px}
 
-.hdr{position:sticky;top:0;background:linear-gradient(180deg,var(--bg2),var(--bg));border-bottom:1px solid var(--border);padding:14px 16px;z-index:10;display:flex;align-items:center;gap:12px}
-.hdr-back{background:transparent;border:1px solid var(--border);color:var(--text);padding:6px 10px;border-radius:8px;font-size:18px;cursor:pointer;line-height:1}
-.hdr-title{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:3px;color:var(--accent2);flex:1}
-.hdr-sub{font-size:10px;color:var(--mu);letter-spacing:1.5px;text-transform:uppercase}
+.hdr{position:sticky;top:0;background:var(--hbg);border-bottom:1px solid var(--bd);padding:14px 16px;z-index:20;display:flex;align-items:center;gap:12px}
+.hback{background:transparent;border:1px solid var(--bd);color:var(--tx);padding:6px 11px;border-radius:8px;font-size:18px;cursor:pointer;line-height:1;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+.htit{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:3px;color:var(--ac2)}
+.hsub{font-size:10px;color:var(--mu);letter-spacing:1.5px;text-transform:uppercase}
 
-.year-section{padding:18px 16px 4px}
+/* INDEX */
+.year-sec{padding:18px 16px 4px}
 .year-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
-.year-label{font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:4px;color:#fff}
-.year-count{background:var(--bg3);color:var(--mu);padding:2px 10px;border-radius:12px;font-size:11px;font-weight:700;letter-spacing:1px}
-
+.year-lbl{font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:4px;color:#fff}
+.year-cnt{background:var(--sf2);color:var(--mu);padding:2px 10px;border-radius:12px;font-size:11px;font-weight:700;letter-spacing:1px}
 .race-list{display:flex;flex-direction:column;gap:8px;padding:0 16px}
-.race-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:14px 16px;cursor:pointer;transition:transform .05s,border-color .15s}
-.race-card:hover{border-color:var(--accent2)}
+.race-card{background:var(--sf);border:1px solid var(--bd);border-radius:12px;padding:14px 16px;cursor:pointer;transition:transform .05s,border-color .15s}
+.race-card:hover{border-color:var(--ac2)}
 .race-card:active{transform:scale(.99)}
 .race-name{font-weight:800;font-size:15px;margin-bottom:3px}
 .race-meta{display:flex;gap:10px;font-size:11px;color:var(--mu);align-items:center;flex-wrap:wrap}
-.race-meta .pill{background:var(--bg3);padding:2px 8px;border-radius:8px;letter-spacing:.5px}
-.race-meta .pill.org{color:var(--accent)}
+.race-meta .pill{background:var(--sf2);padding:2px 8px;border-radius:8px;letter-spacing:.5px}
+.race-meta .pill.org{color:var(--ac)}
 
 .empty{text-align:center;padding:60px 20px;color:var(--mu)}
 .empty-icon{font-size:48px;opacity:.3;margin-bottom:14px}
 .empty-title{font-size:16px;font-weight:700;margin-bottom:6px}
-
 .loading{text-align:center;padding:60px 20px;color:var(--mu)}
-.loading::after{content:'';display:inline-block;width:32px;height:32px;border:3px solid var(--border);border-top-color:var(--accent2);border-radius:50%;animation:spin 1s linear infinite}
+.loading::after{content:'';display:inline-block;width:32px;height:32px;border:3px solid var(--bd);border-top-color:var(--ac2);border-radius:50%;animation:spin 1s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 
-/* Detalle de carrera */
-#raceDetail{display:none;position:fixed;inset:0;background:var(--bg);z-index:50;overflow-y:auto}
-#raceDetail.active{display:block}
-.rd-hdr{position:sticky;top:0;background:linear-gradient(180deg,var(--bg2),var(--bg));padding:14px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;z-index:10}
-.rd-hdr h1{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;flex:1;line-height:1.1}
-.rd-hdr-meta{font-size:10px;color:var(--mu);letter-spacing:1px}
-.rd-content{padding:14px 16px}
-.cat-block{margin-bottom:22px}
+/* CATEGORY LIST in race detail */
+.cat-block{margin:18px 14px 24px}
 .cat-block h2{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:3px;color:#fff;margin-bottom:10px;padding-left:12px;border-left:4px solid}
-.rank-row{display:grid;grid-template-columns:32px 40px 1fr 60px;gap:8px;align-items:center;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:8px 12px;margin-bottom:6px}
-.rank-row.top1{border-color:#fbbf24;background:rgba(251,191,36,.08)}
-.rank-row.top2{border-color:#94a3b8;background:rgba(148,163,184,.06)}
-.rank-row.top3{border-color:#d97706;background:rgba(217,119,6,.06)}
-.rank-pos{font-family:'Bebas Neue',sans-serif;font-size:22px;text-align:center;color:var(--mu)}
-.rank-pos.top1{color:#fbbf24}
-.rank-pos.top2{color:#94a3b8}
-.rank-pos.top3{color:#d97706}
-.rank-dorsal{font-family:'Space Mono',monospace;font-weight:800;color:var(--accent);text-align:center}
-.rank-name{font-weight:700;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.rank-name small{font-weight:400;font-size:10px;color:var(--mu);display:block}
-.rank-pts{font-family:'Space Mono',monospace;font-weight:900;text-align:right;font-size:15px}
-.rank-pts small{font-weight:400;font-size:9px;color:var(--mu);display:block;letter-spacing:1px}
-.rank-row.dsq{opacity:.5}
-.rank-row.dsq .rank-pts{color:var(--mu)}
 
-.cat-TR1{border-color:#b91c1c!important;color:#fca5a5}
-.cat-TR2{border-color:#1d4ed8!important;color:#93c5fd}
-.cat-TR3{border-color:#15803d!important;color:#86efac}
-.cat-TR4{border-color:#a16207!important;color:#fcd34d}
-.cat-TR5{border-color:#c2410c!important;color:#fdba74}
-.cat-TR5A{border-color:#374151!important;color:#cbd5e1}
+/* Pilot row */
+.prow{display:grid;grid-template-columns:32px 40px 1fr auto auto;gap:8px;align-items:center;background:var(--sf);border:1px solid var(--bd);border-radius:10px;padding:8px 12px;margin-bottom:6px;cursor:pointer;transition:transform .05s,border-color .15s}
+.prow:active{transform:scale(.99)}
+.prow:hover{border-color:var(--ac2)}
+.prow.top1{border-color:#fbbf24;background:rgba(251,191,36,.06)}
+.prow.top2{border-color:#94a3b8;background:rgba(148,163,184,.05)}
+.prow.top3{border-color:#d97706;background:rgba(217,119,6,.05)}
+.prow.dsq{opacity:.55}
+.ppos{font-family:'Bebas Neue',sans-serif;font-size:22px;text-align:center;color:var(--mu)}
+.ppos.top1{color:#fbbf24}
+.ppos.top2{color:#94a3b8}
+.ppos.top3{color:#d97706}
+.pdor{font-family:'Space Mono',monospace;font-weight:800;color:var(--ac);text-align:center}
+.pnm{font-weight:700;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.pnm small{font-weight:400;font-size:10px;color:var(--mu);display:block}
+.pbdg{padding:1px 7px;border-radius:6px;font-weight:800;font-size:10px;letter-spacing:1px;font-family:monospace}
+.bv1{background:rgba(29,78,216,.15);color:#60a5fa}
+.bv2{background:rgba(161,98,7,.15);color:#fcd34d}
+.bv3{background:rgba(126,34,206,.15);color:#c084fc}
+.bfin{background:rgba(21,128,61,.15);color:#4ade80}
+.br{background:rgba(185,28,28,.15);color:#fca5a5}
+.bdq{background:rgba(194,65,12,.15);color:#fdba74}
+.ppts{font-family:'Space Mono',monospace;font-weight:900;text-align:right;font-size:15px;color:var(--ac)}
+.ppts small{font-weight:400;font-size:9px;color:var(--mu);display:block;letter-spacing:1px}
+
+/* DETAIL VIEW (pilot) */
+#detail{display:none;position:fixed;inset:0;background:var(--bg);z-index:50;overflow-y:auto}
+#detail.active{display:block}
+.pdhero{background:var(--hbg);padding:14px 16px}
+.pdname{font-size:18px;font-weight:900;color:#f1f5f9;line-height:1.2}
+.pdmeta{font-size:11px;color:#94a3b8;margin-top:3px}
+.pdtotals{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.pdchip{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:8px 12px;text-align:center;flex:1;min-width:70px}
+.pdchip .cv{font-size:20px;font-weight:900;font-family:monospace;color:#f59e0b}
+.pdchip .cl{font-size:9px;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;margin-top:2px}
+
+.pdsec{padding:12px 14px 0}
+.pdstitle{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--mu);margin-bottom:8px}
+
+.scbar{display:flex;gap:6px;flex-wrap:wrap;padding:0 14px 10px}
+.scchip{display:flex;align-items:center;gap:5px;padding:4px 10px;border-radius:8px;font-size:13px;font-weight:800;font-family:monospace}
+
+.lapcard{background:var(--sf);border-radius:12px;box-shadow:0 1px 6px var(--sh);margin:0 12px 10px;overflow:hidden}
+.laphead{display:flex;align-items:center;justify-content:space-between;padding:8px 14px;background:var(--sf2);border-bottom:1px solid var(--bd)}
+.laptitle{font-weight:800;font-size:13px;letter-spacing:1px}
+.lappts{font-family:monospace;font-size:16px;font-weight:900;color:var(--ac)}
+
+.zgrid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;padding:10px 12px}
+.zcell{text-align:center}
+.zlbl{font-size:9px;color:var(--mu);margin-bottom:3px;text-transform:uppercase;letter-spacing:.5px}
+.zval{font-size:17px;font-weight:900;font-family:monospace;width:34px;height:34px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;border:1.5px solid}
+.z0{color:var(--s0);background:rgba(21,128,61,.1);border-color:rgba(21,128,61,.3)}
+.z1{color:var(--s1);background:rgba(29,78,216,.1);border-color:rgba(29,78,216,.3)}
+.z2{color:var(--s2);background:rgba(161,98,7,.1);border-color:rgba(161,98,7,.3)}
+.z3{color:var(--s3);background:rgba(185,28,28,.1);border-color:rgba(185,28,28,.3)}
+.z5{color:var(--s5);background:rgba(126,34,206,.1);border-color:rgba(126,34,206,.3)}
+.zn{color:var(--mu);background:var(--sf2);border-color:var(--bd)}
+
+.timegrid{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:0 12px 10px}
+.tchip{background:var(--sf2);border-radius:8px;padding:8px 10px}
+.tchip .tl{font-size:9px;color:var(--mu);text-transform:uppercase;letter-spacing:.5px}
+.tchip .tv{font-size:14px;font-weight:800;font-family:monospace;margin-top:2px}
+.tv.tok{color:var(--ok)}.tv.twn{color:var(--dg)}
+
+.penlist{padding:0 12px 10px;display:flex;flex-direction:column;gap:6px}
+.penitem{background:rgba(185,28,28,.08);border:1px solid rgba(185,28,28,.2);border-radius:8px;padding:8px 12px;display:flex;align-items:center;gap:10px}
+.penpts{font-size:15px;font-weight:900;font-family:monospace;color:var(--dg);flex-shrink:0}
+.penrsn{flex:1;font-size:12px}
+.pents{font-size:10px;color:var(--mu);font-family:monospace}
 </style>
 </head>
 <body>
 
-<div class="hdr">
-  <a href="index.html" class="hdr-back" title="Volver">←</a>
+<div class="hdr" id="topHdr">
+  <a href="index.html" class="hback" title="Volver">←</a>
   <div style="flex:1">
-    <div class="hdr-title">📚 HISTÓRICO</div>
-    <div class="hdr-sub">Pruebas del año en curso</div>
+    <div class="htit">📚 HISTÓRICO</div>
+    <div class="hsub" id="hsub">Pruebas del año en curso</div>
   </div>
 </div>
 
 <div id="content" class="loading"></div>
 
-<div id="raceDetail">
-  <div class="rd-hdr">
-    <button class="hdr-back" onclick="closeRaceDetail()">←</button>
+<!-- DETAIL PILOTO -->
+<div id="detail">
+  <div class="hdr">
+    <button class="hback" onclick="closeDetail()">←</button>
     <div style="flex:1">
-      <h1 id="rdTitle">—</h1>
-      <div class="rd-hdr-meta" id="rdMeta">—</div>
+      <div class="htit" id="dTitle" style="font-size:18px">—</div>
+      <div class="hsub" id="dMeta">—</div>
     </div>
   </div>
-  <div class="rd-content" id="rdContent"></div>
+  <div id="dBody"></div>
 </div>
 
 <script type="module">
@@ -114,7 +156,6 @@ const firebaseConfig = {
   messagingSenderId: "630413676427",
   appId: "1:630413676427:web:af5a3afd21e67487ba698e"
 };
-
 const app = initializeApp(firebaseConfig);
 const db  = getDatabase(app);
 
@@ -122,217 +163,362 @@ const CAT_ORDER = ['TR5A','TR5','TR4','TR3','TR2','TR1'];
 const CAT_HEX = { TR1:'#b91c1c', TR2:'#1d4ed8', TR3:'#15803d', TR4:'#a16207', TR5:'#c2410c', TR5A:'#374151' };
 const pad = n => String(n).padStart(2,'0');
 
-let _allArchives = {}; // { year: { archiveId: meta } }
+// Estado actual de la web
+let _viewMode = 'index'; // 'index' | 'race'
+let _currentRace = null; // { meta, state }
 
-async function loadIndex() {
-  const content = document.getElementById('content');
-  try {
-    const snap = await get(ref(db, 'races_archive_index'));
-    const data = snap.val() || {};
-    _allArchives = data;
-    renderIndex();
-  } catch (e) {
-    content.classList.remove('loading');
-    content.innerHTML = `<div class="empty"><div class="empty-icon">⚠</div><div class="empty-title">Error</div><div>${e.message}</div></div>`;
+// ── Helpers (alineados con index.html) ─────────────────────────────────────
+function cnt(p,v){let n=0;const nz=(p.scores&&p.scores[0])?p.scores[0].length:7;for(let l=0;l<3;l++)for(let z=0;z<nz;z++)if(p.scores?.[l]?.[z]===v)n++;return n;}
+function lapPts(p,l){const s=p.scores?.[l];if(!s||s.every(v=>v===null))return null;return s.reduce((a,v)=>a+(v===null?0:v),0);}
+function getTotal(p){
+  if(p.totalPoints!==null&&p.totalPoints!==undefined) return p.totalPoints;
+  let t=0,any=false;
+  for(let l=0;l<3;l++){const lp=lapPts(p,l);if(lp!==null){t+=lp;any=true;}}
+  if(!any)return null;
+  const ep=(p.extraPenalties||[]).reduce((s,x)=>s+(x.pts||0),0);
+  return t+(p.lap1Penalty||0)+(p.finishPenalty||0)+ep;
+}
+function _totalMs(p){
+  if(p.finishTime==null||!p.schedStart)return null;
+  const[sh,sm]=p.schedStart.split(':').map(Number);
+  const schedMs=(sh*3600+sm*60)*1000;
+  let fin=p.finishTime;
+  if(fin>1e12){const d=new Date(fin);fin=(d.getHours()*3600+d.getMinutes()*60+d.getSeconds())*1000;}
+  return fin-schedMs;
+}
+function tieBreak(a,b){for(const v of[0,1,2,3]){const d=cnt(b,v)-cnt(a,v);if(d!==0)return d;}const ta=_totalMs(a),tb=_totalMs(b);if(ta!=null&&tb!=null)return ta-tb;if(ta!=null)return-1;if(tb!=null)return 1;return 0;}
+function sortCat(arr){return arr.slice().sort((a,b)=>{if(a.dsq&&!b.dsq)return 1;if(!a.dsq&&b.dsq)return-1;if(a.dnf&&!b.dnf)return 1;if(!a.dnf&&b.dnf)return-1;const pa=getTotal(a)??9999,pb=getTotal(b)??9999;if(pa!==pb)return pa-pb;return tieBreak(a,b);});}
+function zoneClass(v){if(v===null||v===undefined)return 'zn';return{0:'z0',1:'z1',2:'z2',3:'z3',5:'z5'}[v]||'zn';}
+function lapBadge(p){
+  if(p.dsq)return '<span class="pbdg bdq">DQ</span>';
+  if(p.dnf)return '<span class="pbdg br">R</span>';
+  if(p.finishTime!=null||p.totalTime){
+    // Verificar que tiene todas las zonas de V3
+    const nz=p.scores?.[0]?.length||7;
+    const v3Done=p.scores?.[2]?.every(v=>v!==null);
+    if(v3Done)return '<span class="pbdg bfin">✓ FIN</span>';
+    return '<span class="pbdg bv3">V3</span>';
   }
+  if(p.lap2Time!=null)return '<span class="pbdg bv3">V3</span>';
+  if(p.lap1Time!=null)return '<span class="pbdg bv2">V2</span>';
+  return '<span class="pbdg bv1">V1</span>';
 }
-
-function renderIndex() {
-  const content = document.getElementById('content');
-  content.classList.remove('loading');
-
-  const years = Object.keys(_allArchives).sort((a,b) => b.localeCompare(a));
-  if (!years.length) {
-    content.innerHTML = `
-      <div class="empty">
-        <div class="empty-icon">📭</div>
-        <div class="empty-title">Sin pruebas archivadas</div>
-        <div>Cuando la mesa central archive una carrera aparecerá aquí.</div>
-      </div>`;
-    return;
-  }
-
-  let html = '';
-  years.forEach(year => {
-    const races = _allArchives[year] || {};
-    const ids = Object.keys(races);
-    if (!ids.length) return;
-    // Ordenar por fecha descendente (más reciente arriba)
-    ids.sort((a,b) => {
-      const da = races[a].date || '';
-      const db = races[b].date || '';
-      return db.localeCompare(da);
-    });
-
-    html += `
-      <div class="year-section">
-        <div class="year-head">
-          <div class="year-label">${year}</div>
-          <div class="year-count">${ids.length} prueba${ids.length>1?'s':''}</div>
-        </div>
-      </div>
-      <div class="race-list">
-    `;
-    ids.forEach(id => {
-      const r = races[id];
-      const dateStr = r.date ? new Date(r.date).toLocaleDateString('es-ES', {day:'numeric', month:'short'}) : '';
-      html += `
-        <div class="race-card" onclick="window.openRace('${year}','${id}')">
-          <div class="race-name">${r.name || id}</div>
-          <div class="race-meta">
-            ${dateStr ? `<span class="pill">📅 ${dateStr}</span>` : ''}
-            ${r.organizer ? `<span class="pill org">${r.organizer}</span>` : ''}
-            ${r.pilotsCount ? `<span class="pill">${r.pilotsCount} pilotos</span>` : ''}
-          </div>
-        </div>`;
-    });
-    html += `</div>`;
-  });
-
-  content.innerHTML = html;
+function addMins(hhmm,mins){
+  if(!hhmm)return null;
+  const[h,m]=hhmm.split(':').map(Number);
+  const t=h*60+m+mins;
+  return pad(Math.floor(t/60)%24)+':'+pad(t%60);
 }
-
-window.openRace = async function(year, archiveId) {
-  const detail = document.getElementById('raceDetail');
-  const rdContent = document.getElementById('rdContent');
-  const rdTitle = document.getElementById('rdTitle');
-  const rdMeta = document.getElementById('rdMeta');
-
-  detail.classList.add('active');
-  rdContent.innerHTML = '<div class="loading"></div>';
-  history.pushState({view:'race'}, '', `?race=${year}/${archiveId}`);
-
-  try {
-    const snap = await get(ref(db, `races_archive/${year}/${archiveId}`));
-    const data = snap.val();
-    if (!data) {
-      rdContent.innerHTML = '<div class="empty"><div class="empty-icon">⚠</div><div class="empty-title">No encontrada</div></div>';
-      return;
-    }
-    rdTitle.textContent = data.meta?.name || archiveId;
-    const parts = [];
-    if (data.meta?.date) parts.push(new Date(data.meta.date).toLocaleDateString('es-ES', {day:'numeric',month:'long',year:'numeric'}));
-    if (data.meta?.organizer) parts.push(data.meta.organizer);
-    rdMeta.textContent = parts.join(' · ');
-
-    renderRaceDetail(data.state || {});
-  } catch (e) {
-    rdContent.innerHTML = `<div class="empty"><div class="empty-icon">⚠</div><div class="empty-title">Error</div><div>${e.message}</div></div>`;
-  }
-};
-
-window.closeRaceDetail = function() {
-  document.getElementById('raceDetail').classList.remove('active');
-  history.pushState({view:'index'}, '', 'historico.html');
-};
-
-window.addEventListener('popstate', () => {
-  const params = new URLSearchParams(location.search);
-  if (!params.get('race')) closeRaceDetail();
-});
-
-function _totalMs(p) {
-  if (p.finishTime == null || !p.schedStart) return null;
-  const [sh, sm] = p.schedStart.split(':').map(Number);
-  const schedMs = (sh * 3600 + sm * 60) * 1000;
-  let fin = p.finishTime;
-  if (fin > 1e12) { const d = new Date(fin); fin = (d.getHours()*3600+d.getMinutes()*60+d.getSeconds())*1000; }
-  return fin - schedMs;
-}
-
-function cnt(p, v) {
-  let n = 0;
-  for (let l = 0; l < 3; l++)
-    for (let z = 0; z < 7; z++)
-      if (p.scores?.[l]?.[z] === v) n++;
-  return n;
-}
-
-function getTotal(p) {
-  if (p.dsq || p.dnf) return null;
-  let total = 0;
-  for (let l = 0; l < 3; l++)
-    for (let z = 0; z < (p.scores?.[l]?.length || 0); z++)
-      total += (p.scores[l][z] || 0);
-  total += (p.lap1Penalty || 0) + (p.finishPenalty || 0);
-  (p.extraPenalties || []).forEach(e => { total += (e.pts || 0); });
-  return total;
-}
-
-function fmtCrono(ms) {
-  if (ms == null || ms < 0) return '—';
-  const s = Math.floor(ms / 1000);
-  const h = Math.floor(s/3600), m = Math.floor((s%3600)/60), ss = s%60;
+function fmtMs(ms){
+  if(ms==null||isNaN(ms)||ms<0)return null;
+  const s=Math.floor(ms/1000);
+  const h=Math.floor(s/3600),m=Math.floor((s%3600)/60),ss=s%60;
   return pad(h)+':'+pad(m)+':'+pad(ss);
 }
+// Hora de llegada como HH:MM:SS a partir de ms-desde-medianoche
+function arrTime(msOfDay){
+  if(msOfDay==null||isNaN(msOfDay))return null;
+  const m=((msOfDay%86400000)+86400000)%86400000;
+  const s=Math.floor(m/1000);
+  return pad(Math.floor(s/3600))+':'+pad(Math.floor((s%3600)/60))+':'+pad(s%60);
+}
+// Duración de vuelta a partir de tiempos absolutos
+function lapDuration(startMs, endMs){
+  if(startMs==null||endMs==null)return null;
+  let d=endMs-startMs;
+  if(d<0)d+=86400000; // cruzó medianoche
+  return fmtMs(d);
+}
 
-function tieBreak(a, b) {
-  for (const v of [0,1,2,3]) {
-    const d = cnt(b,v) - cnt(a,v);
-    if (d !== 0) return d;
+// ── Carga del índice ──────────────────────────────────────────────────────
+let _allArchives = {};
+async function loadIndex(){
+  const content=document.getElementById('content');
+  try{
+    const snap=await get(ref(db,'races_archive_index'));
+    _allArchives=snap.val()||{};
+    renderIndex();
+  }catch(e){
+    content.classList.remove('loading');
+    content.innerHTML=`<div class="empty"><div class="empty-icon">⚠</div><div class="empty-title">Error</div><div>${e.message}</div></div>`;
   }
-  const ta = _totalMs(a), tb = _totalMs(b);
-  if (ta != null && tb != null) return ta - tb;
-  if (ta != null) return -1;
-  if (tb != null) return 1;
-  return 0;
 }
 
-function sortCat(arr) {
-  return arr.slice().sort((a,b) => {
-    if (a.dsq && !b.dsq) return 1; if (!a.dsq && b.dsq) return -1;
-    if (a.dnf && !b.dnf) return 1; if (!a.dnf && b.dnf) return -1;
-    const pa = getTotal(a) ?? 9999, pb = getTotal(b) ?? 9999;
-    if (pa !== pb) return pa - pb;
-    return tieBreak(a, b);
-  });
-}
-
-function renderRaceDetail(state) {
-  const rdContent = document.getElementById('rdContent');
-  const pilots = state.pilots || [];
-  if (!pilots.length) {
-    rdContent.innerHTML = '<div class="empty"><div class="empty-icon">📭</div><div class="empty-title">Sin pilotos</div></div>';
+function renderIndex(){
+  const content=document.getElementById('content');
+  content.classList.remove('loading');
+  const years=Object.keys(_allArchives).sort((a,b)=>b.localeCompare(a));
+  if(!years.length){
+    content.innerHTML=`<div class="empty"><div class="empty-icon">📭</div><div class="empty-title">Sin pruebas archivadas</div><div>Cuando la mesa central archive una carrera aparecerá aquí.</div></div>`;
     return;
   }
-  let html = '';
-  CAT_ORDER.forEach(cat => {
-    const cp = pilots.filter(p => p.cat === cat);
-    if (!cp.length) return;
-    const sorted = sortCat(cp);
-    const color = CAT_HEX[cat] || '#374151';
-    html += `<div class="cat-block"><h2 class="cat-${cat}" style="border-left-color:${color}">${cat} — ${cp.length} pilotos</h2>`;
-    sorted.forEach((p, i) => {
-      const pos = i + 1;
-      const topCls = pos === 1 ? 'top1' : pos === 2 ? 'top2' : pos === 3 ? 'top3' : '';
-      const dsqCls = (p.dsq || p.dnf) ? 'dsq' : '';
-      const total = getTotal(p);
-      const crono = _totalMs(p);
-      let ptsLabel = '—';
-      if (p.dsq) ptsLabel = 'DSQ';
-      else if (p.dnf) ptsLabel = 'R';
-      else if (total != null) ptsLabel = total;
-      html += `
-        <div class="rank-row ${topCls} ${dsqCls}">
-          <div class="rank-pos ${topCls}">${p.dsq||p.dnf?'—':pos}</div>
-          <div class="rank-dorsal">${p.dorsal||''}</div>
-          <div class="rank-name">${p.name||'—'}<small>${p.club||''}${p.brand?' · '+p.brand:''}</small></div>
-          <div class="rank-pts">${ptsLabel}<small>${p.dsq||p.dnf?'':fmtCrono(crono)}</small></div>
-        </div>`;
+  let html='';
+  years.forEach(year=>{
+    const races=_allArchives[year]||{};
+    const ids=Object.keys(races);
+    if(!ids.length)return;
+    // Cronológico (más antigua → más reciente)
+    ids.sort((a,b)=>(races[a].date||'').localeCompare(races[b].date||''));
+    html+=`<div class="year-sec"><div class="year-head"><div class="year-lbl">${year}</div><div class="year-cnt">${ids.length} prueba${ids.length>1?'s':''}</div></div></div><div class="race-list">`;
+    ids.forEach(id=>{
+      const r=races[id];
+      const dateStr=r.date?new Date(r.date).toLocaleDateString('es-ES',{day:'numeric',month:'short'}):'';
+      html+=`<div class="race-card" onclick="window.openRace('${year}','${id}')">
+        <div class="race-name">${r.name||id}</div>
+        <div class="race-meta">
+          ${dateStr?`<span class="pill">📅 ${dateStr}</span>`:''}
+          ${r.organizer?`<span class="pill org">${r.organizer}</span>`:''}
+          ${r.pilotsCount?`<span class="pill">${r.pilotsCount} pilotos</span>`:''}
+        </div>
+      </div>`;
     });
-    html += `</div>`;
+    html+=`</div>`;
   });
-  rdContent.innerHTML = html;
+  content.innerHTML=html;
 }
 
-// Bootstrap: si hay ?race= en URL, abrir directamente esa carrera
-const initialParams = new URLSearchParams(location.search);
-const initialRace = initialParams.get('race');
+// ── Abrir prueba: clasificaciones por categoría ───────────────────────────
+window.openRace=async function(year,id){
+  const content=document.getElementById('content');
+  content.classList.add('loading');
+  content.innerHTML='';
+  try{
+    const snap=await get(ref(db,`races_archive/${year}/${id}`));
+    const data=snap.val();
+    if(!data){
+      content.classList.remove('loading');
+      content.innerHTML='<div class="empty"><div class="empty-icon">⚠</div><div class="empty-title">No encontrada</div></div>';
+      return;
+    }
+    _currentRace={ year, id, ...data };
+    _viewMode='race';
+    history.pushState({view:'race',year,id},'',`?race=${year}/${id}`);
+    renderRace();
+  }catch(e){
+    content.classList.remove('loading');
+    content.innerHTML=`<div class="empty"><div class="empty-icon">⚠</div><div class="empty-title">Error</div><div>${e.message}</div></div>`;
+  }
+};
 
-loadIndex().then(() => {
-  if (initialRace) {
-    const [year, id] = initialRace.split('/');
-    if (year && id) window.openRace(year, id);
+function renderRace(){
+  const content=document.getElementById('content');
+  content.classList.remove('loading');
+
+  // Header con info de la carrera y botón atrás
+  document.getElementById('hsub').textContent=_currentRace.meta?.name||'';
+
+  const state=_currentRace.state||{};
+  const pilots=state.pilots||[];
+  if(!pilots.length){
+    content.innerHTML='<div class="empty"><div class="empty-icon">📭</div><div class="empty-title">Sin pilotos</div></div>';
+    return;
+  }
+
+  // Hero
+  const meta=_currentRace.meta||{};
+  const dateStr=meta.date?new Date(meta.date+'T12:00:00').toLocaleDateString('es-ES',{day:'numeric',month:'long',year:'numeric'}):'';
+  let html=`<div class="pdhero">
+    <div class="pdname">${meta.name||''}</div>
+    <div class="pdmeta">${dateStr}${meta.organizer?' · '+meta.organizer:''}</div>
+  </div>`;
+
+  // Botón volver al listado
+  html+=`<div style="padding:10px 14px"><button class="hback" onclick="window.backToList()" style="background:var(--sf2);padding:8px 14px;font-size:13px"><span style="margin-right:6px">←</span> Volver al histórico</button></div>`;
+
+  CAT_ORDER.forEach(cat=>{
+    const cp=pilots.filter(p=>p.cat===cat);
+    if(!cp.length)return;
+    const sorted=sortCat(cp);
+    const color=CAT_HEX[cat]||'#374151';
+    html+=`<div class="cat-block"><h2 style="border-left-color:${color}">${cat} — ${cp.length} pilotos</h2>`;
+    sorted.forEach((p,i)=>{
+      const pos=i+1;
+      const topCls=pos===1?'top1':pos===2?'top2':pos===3?'top3':'';
+      const dsqCls=(p.dsq||p.dnf)?'dsq':'';
+      const total=getTotal(p);
+      const crono=fmtMs(_totalMs(p));
+      let ptsLabel=total!=null?total:'—';
+      if(p.dsq)ptsLabel='DSQ';
+      else if(p.dnf)ptsLabel='R';
+      html+=`<div class="prow ${topCls} ${dsqCls}" onclick="window.openPilot(${p.dorsal},'${p.cat}')">
+        <div class="ppos ${topCls}">${p.dsq||p.dnf?'—':pos}</div>
+        <div class="pdor">${p.dorsal||''}</div>
+        <div class="pnm">${p.name||'—'}<small>${p.club||''}${p.brand?' · '+p.brand:''}</small></div>
+        <div>${lapBadge(p)}</div>
+        <div class="ppts">${ptsLabel}<small>${p.dsq||p.dnf?'':(crono||'')}</small></div>
+      </div>`;
+    });
+    html+=`</div>`;
+  });
+
+  content.innerHTML=html;
+  window.scrollTo(0,0);
+}
+
+window.backToList=function(){
+  _viewMode='index';
+  _currentRace=null;
+  history.pushState({view:'index'},'','historico.html');
+  document.getElementById('hsub').textContent='Pruebas del año en curso';
+  renderIndex();
+  window.scrollTo(0,0);
+};
+
+// ── Detalle del piloto ────────────────────────────────────────────────────
+window.openPilot=function(dorsal,cat){
+  if(!_currentRace)return;
+  const pilots=_currentRace.state?.pilots||[];
+  const p=pilots.find(x=>x.dorsal===dorsal&&x.cat===cat);
+  if(!p)return;
+  const cfg=_currentRace.state?.cfg||{};
+  renderPilotDetail(p,cfg);
+  document.getElementById('detail').classList.add('active');
+  history.pushState({view:'pilot',dorsal,cat},'',`?race=${_currentRace.year}/${_currentRace.id}&pilot=${dorsal}-${cat}`);
+};
+
+window.closeDetail=function(){
+  document.getElementById('detail').classList.remove('active');
+  history.back();
+};
+
+function renderPilotDetail(p,cfg){
+  const nz=cfg.numZones||p.scores?.[0]?.length||7;
+  const l1max=cfg.lap1MaxMins||150;
+  const rdurMins=Math.round((cfg.raceDurationHrs||5)*60);
+  const isKids=cfg.kidsMode===true;
+
+  document.getElementById('dTitle').textContent=p.name||'—';
+  const parts=[`#${p.dorsal}`,p.cat];
+  if(p.club)parts.push(p.club);
+  if(p.brand)parts.push(p.brand);
+  document.getElementById('dMeta').textContent=parts.join(' · ');
+
+  const tp=getTotal(p);
+  const l1p=lapPts(p,0);
+  const l2p=lapPts(p,1);
+  const l3p=lapPts(p,2);
+  const zonePts=(l1p??0)+(l2p??0)+(l3p??0);
+  const timePen=(p.lap1Penalty||0)+(p.finishPenalty||0);
+  const extraPen=(p.extraPenalties||[]).reduce((s,e)=>s+(e.pts||0),0);
+  const totalPen=timePen+extraPen;
+  const cronoStr=fmtMs(_totalMs(p));
+
+  // Heroe con totales
+  let body=`<div class="pdhero">
+    <div class="pdtotals">
+      <div class="pdchip"><div class="cv">${tp!==null?tp:'—'}</div><div class="cl">Total pts</div></div>
+      <div class="pdchip"><div class="cv" style="color:#94a3b8">${zonePts}</div><div class="cl">Zonas</div></div>
+      <div class="pdchip"><div class="cv" style="color:#ef4444">${totalPen>0?'+'+totalPen:'0'}</div><div class="cl">Penaliz.</div></div>
+      ${cronoStr?`<div class="pdchip"><div class="cv" style="font-size:14px">${cronoStr}</div><div class="cl">Tiempo</div></div>`:''}
+    </div>
+  </div>`;
+
+  // Distribución de puntuaciones
+  const scBar=[[0,'var(--s0)'],[1,'var(--s1)'],[2,'var(--s2)'],[3,'var(--s3)'],[5,'var(--s5)']]
+    .map(([v,c])=>`<div class="scchip" style="background:${c}22;color:${c};border:1px solid ${c}44"><span style="font-size:14px">${v}</span><span>×${cnt(p,v)}</span></div>`).join('');
+
+  body+=`<div class="pdsec"><div class="pdstitle">Distribución de puntuaciones</div></div><div class="scbar">${scBar}</div>`;
+
+  // Status (DSQ/DNF)
+  if(p.dsq){
+    body=`<div style="margin:12px 14px;background:rgba(194,65,12,.1);border:1px solid rgba(194,65,12,.4);border-radius:10px;padding:10px 14px"><div style="font-weight:800;color:#fdba74;font-size:13px;margin-bottom:4px">⛔ DESCALIFICADO</div><div style="font-size:12px">${p.dsqReason||'Sin motivo'}</div></div>`+body;
+  } else if(p.dnf){
+    body=`<div style="margin:12px 14px;background:rgba(185,28,28,.08);border:1px solid rgba(185,28,28,.3);border-radius:10px;padding:10px 14px"><div style="font-weight:800;color:var(--dg);font-size:13px">🚩 RETIRADO</div></div>`+body;
+  }
+
+  // Hora de salida programada
+  const sch=p.schedStart||null;
+  if(sch){
+    body+=`<div style="display:flex;align-items:center;gap:10px;margin:10px 14px;background:var(--sf2);border:1px solid var(--bd);border-radius:10px;padding:10px 14px">
+      <div style="font-size:20px">🏁</div>
+      <div><div style="font-size:9px;color:var(--mu);text-transform:uppercase;letter-spacing:.5px">Hora de salida</div>
+      <div style="font-size:20px;font-weight:900;font-family:monospace;color:var(--ac)">${sch}</div></div>
+    </div>`;
+  }
+
+  // Detalle por vuelta
+  const ch1tope=(sch && !isKids)?addMins(sch,l1max):null;
+  const chftope=sch?addMins(sch,rdurMins):null;
+
+  // Calcular hora de salida real (ms-desde-medianoche para diffs de vuelta)
+  const startMsOfDay=sch?(parseInt(sch.split(':')[0])*60+parseInt(sch.split(':')[1]))*60*1000:null;
+
+  const lapDefs=[
+    {title:'1ª Vuelta',pts:l1p,arr:arrTime(p.lap1Time),tope:ch1tope,pen:p.lap1Penalty||0,
+     dur:lapDuration(startMsOfDay, p.lap1Time), li:0},
+    {title:'2ª Vuelta',pts:l2p,arr:arrTime(p.lap2Time),tope:null,pen:0,
+     dur:lapDuration(p.lap1Time, p.lap2Time), li:1},
+    {title:'3ª Vuelta — CHF',pts:l3p,arr:arrTime(p.finishTime),tope:chftope,pen:p.finishPenalty||0,
+     dur:lapDuration(p.lap2Time, p.finishTime), li:2}
+  ];
+
+  body+=lapDefs.map(({title,pts,arr,tope,pen,dur,li})=>{
+    const scores=p.scores?.[li]||[];
+    const zonesHtml=Array.from({length:nz},(_,z)=>{
+      const v=scores[z];
+      return `<div class="zcell"><div class="zlbl">Z${z+1}</div><div class="zval ${zoneClass(v)}">${v!==null&&v!==undefined?v:'—'}</div></div>`;
+    }).join('');
+    const isLate=pen>0;
+    const timesHtml=
+      (arr?`<div class="tchip"><div class="tl">Llegada real</div><div class="tv ${isLate?'twn':'tok'}">${arr}</div></div>`:`<div class="tchip"><div class="tl">Llegada real</div><div class="tv">—</div></div>`)+
+      (tope?`<div class="tchip"><div class="tl">Hora tope</div><div class="tv">${tope}</div></div>`:'')+
+      (dur?`<div class="tchip"><div class="tl">Tiempo vuelta</div><div class="tv">${dur}</div></div>`:'')+
+      (pen>0?`<div class="tchip"><div class="tl">Penaliz. tiempo</div><div class="tv twn">+${pen} pts</div></div>`:'');
+    return `<div class="lapcard">
+      <div class="laphead"><div class="laptitle">${title}</div><div class="lappts">${pts!==null?pts+' pts':'—'}</div></div>
+      <div class="zgrid">${zonesHtml}</div>
+      <div class="timegrid">${timesHtml}</div>
+    </div>`;
+  }).join('');
+
+  // Penalizaciones adicionales
+  const extras=p.extraPenalties||[];
+  if(extras.length){
+    body+=`<div class="pdsec"><div class="pdstitle">Penalizaciones adicionales</div></div>
+    <div class="penlist">${extras.map(ep=>`<div class="penitem"><div class="penpts">+${ep.pts}</div><div class="penrsn">${ep.reason||'Sin motivo'}</div><div class="pents">${ep.ts||''}</div></div>`).join('')}</div>`;
+  }
+
+  document.getElementById('dBody').innerHTML=body;
+  document.getElementById('detail').scrollTo(0,0);
+}
+
+// ── Back-button native ────────────────────────────────────────────────────
+window.addEventListener('popstate',()=>{
+  const params=new URLSearchParams(location.search);
+  const raceId=params.get('race');
+  const pilotId=params.get('pilot');
+
+  if(pilotId&&_currentRace){
+    // Estábamos en piloto, ahora deberíamos estar en lista de carrera
+    document.getElementById('detail').classList.remove('active');
+  } else if(raceId){
+    document.getElementById('detail').classList.remove('active');
+    if(_viewMode!=='race'){
+      const[year,id]=raceId.split('/');
+      if(year&&id)window.openRace(year,id);
+    }
+  } else {
+    document.getElementById('detail').classList.remove('active');
+    if(_viewMode!=='index')window.backToList();
+  }
+});
+
+// ── Bootstrap ─────────────────────────────────────────────────────────────
+const initialParams=new URLSearchParams(location.search);
+const initialRace=initialParams.get('race');
+const initialPilot=initialParams.get('pilot');
+
+loadIndex().then(()=>{
+  if(initialRace){
+    const[year,id]=initialRace.split('/');
+    if(year&&id){
+      window.openRace(year,id).then(()=>{
+        if(initialPilot){
+          const[dor,cat]=initialPilot.split('-');
+          if(dor&&cat)window.openPilot(parseInt(dor),cat);
+        }
+      });
+    }
   }
 });
 </script>
