@@ -86,7 +86,10 @@ html:not([data-archive="1"]) .archive-bar{display:none}
 /* INTRO landing */
 #vIntro{display:none;flex-direction:column;align-items:center;justify-content:center;padding:24px 16px;text-align:center;min-height:100vh;background:linear-gradient(180deg,var(--bg) 0%,#0a1018 100%)}
 #vIntro.active{display:flex}
-.intro-logo{font-family:'Bebas Neue',sans-serif;font-size:48px;line-height:.95;letter-spacing:6px;color:#fff;margin-bottom:8px}
+.intro-img{width:140px;height:140px;object-fit:contain;margin-bottom:18px;filter:drop-shadow(0 4px 20px rgba(245,158,11,.35))}
+.intro-logo{font-family:'Bebas Neue',sans-serif;font-size:42px;line-height:.95;letter-spacing:6px;color:#fff;margin-bottom:8px}
+.back-to-intro{position:fixed;top:12px;left:12px;background:rgba(0,0,0,0.55);border:1px solid rgba(255,255,255,0.18);color:#fff;padding:8px 13px;border-radius:8px;font-size:18px;cursor:pointer;line-height:1;z-index:15;backdrop-filter:blur(8px)}
+.back-to-intro:hover{background:rgba(0,0,0,0.75)}
 .intro-logo .red{color:#dc2626}
 .intro-sub{color:var(--mu);font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:42px}
 .intro-btns{display:flex;flex-direction:column;gap:14px;width:100%;max-width:340px}
@@ -226,6 +229,7 @@ footer{text-align:center;padding:20px 16px 30px;font-size:10px;color:var(--mu);
 <div class="archive-bar">📚 Resultados archivados — Vista detallada<a href="historico.html">← Volver al histórico</a></div>
 <!-- INTRO -->
 <div class="view" id="vIntro">
+  <img src="trialrev.png" alt="Trial Revolution" class="intro-img" onerror="this.style.display='none'">
   <div class="intro-logo">TRIAL<br><span class="red">REVOLUTION</span></div>
   <div class="intro-sub">Clasificación · Resultados</div>
   <div class="intro-btns">
@@ -238,6 +242,10 @@ footer{text-align:center;padding:20px 16px 30px;font-size:10px;color:var(--mu);
       <span class="lbl">Histórico de pruebas<small>Resultados del año</small></span>
     </a>
   </div>
+  <button id="installBtn" class="intro-btn" style="display:none;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);max-width:340px;margin:24px auto 0;padding:14px;font-size:13px" onclick="installPWA()">
+      <span class="ico">📲</span>
+      <span class="lbl">Instalar app<small>Tenla siempre a mano</small></span>
+    </button>
   <div class="intro-foot">© 2026 Crono Revolution</div>
 </div>
 
@@ -250,6 +258,7 @@ footer{text-align:center;padding:20px 16px 30px;font-size:10px;color:var(--mu);
 
 <!-- HOME -->
 <div class="view" id="vHome">
+  <button class="back-to-intro" onclick="goBackToIntro()" title="Volver al inicio">←</button>
   <div class="hero">
     <div class="hero-race" id="hRace">Trial Revolution</div>
     <div class="hero-sub">Campeonato de Trial de Castilla y León 2026</div>
@@ -415,6 +424,18 @@ function goHome(){
 // Handle browser back/forward
 window.addEventListener('popstate', e=>{
   const st=e.state;
+  if(st && st.view==='intro') {
+    // Volver a pantalla de bienvenida
+    document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+    document.getElementById('vWait').style.display='none';
+    document.getElementById('vIntro').classList.add('active');
+    sessionStorage.removeItem('tr_chose_live');
+    return;
+  }
+  // Si la vista intro está activa y se pulsa atrás, dejar al navegador salir naturalmente
+  if(document.getElementById('vIntro').classList.contains('active')) {
+    return;
+  }
   if(!st||st.view==='home') { renderHome(); navigate('home',false); }
   else if(st.view==='cat')  { _selCat=st.cat; renderCat(); navigate('cat',false); }
   else if(st.view==='pilot'){
@@ -728,8 +749,16 @@ function goLive(){
   sessionStorage.setItem('tr_chose_live', '1');
   document.getElementById('vIntro')?.classList.remove('active');
   document.getElementById('vWait').style.display='flex';
-  history.replaceState({view:'home'},'','#home');
+  history.pushState({view:'home'},'','#home');
   fetchData();
+}
+
+function goBackToIntro(){
+  sessionStorage.removeItem('tr_chose_live');
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.getElementById('vWait').style.display='none';
+  document.getElementById('vIntro').classList.add('active');
+  history.pushState({view:'intro'},'','#intro');
 }
 
 // Initial load
@@ -739,6 +768,8 @@ if (_isArchive) {
   history.replaceState({view:'home'},'','#home');
   fetchData();
 } else if (showIntroIfNeeded()) {
+  // Establecer estado inicial para que back vuelva aquí
+  history.replaceState({view:'intro'}, '', '#intro');
   // Polling pausado mientras se ve la pantalla intro
   setInterval(() => {
     if (!document.getElementById('vIntro').classList.contains('active')) fetchData();
@@ -756,6 +787,33 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('./sw.js').catch(err => console.log('SW reg fail:', err));
   });
 }
+
+// ── PWA: capturar evento de instalación y mostrar botón ──────────
+let _deferredPrompt = null;
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  _deferredPrompt = e;
+  const btn = document.getElementById('installBtn');
+  if (btn) btn.style.display = 'flex';
+});
+window.installPWA = async function() {
+  if (!_deferredPrompt) {
+    alert('Para instalar la app:\n\n• Android: pulsa ⋮ arriba a la derecha y elige "Añadir a pantalla de inicio" o "Instalar app".\n\n• iPhone (Safari): toca el botón de compartir ↑ y elige "Añadir a pantalla de inicio".');
+    return;
+  }
+  _deferredPrompt.prompt();
+  const { outcome } = await _deferredPrompt.userChoice;
+  _deferredPrompt = null;
+  if (outcome === 'accepted') {
+    document.getElementById('installBtn').style.display = 'none';
+  }
+};
+// Cuando la app ya está instalada, ocultar el botón
+window.addEventListener('appinstalled', () => {
+  const btn = document.getElementById('installBtn');
+  if (btn) btn.style.display = 'none';
+  _deferredPrompt = null;
+});
 </script>
 </body>
 </html>
