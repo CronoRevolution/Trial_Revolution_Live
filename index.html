@@ -734,6 +734,13 @@ async function fetchData(){
 function showIntroIfNeeded(){
   // En modo archivo, saltar intro y cargar directamente
   if (_isArchive) return false;
+  // Si el hash es '#intro' SIEMPRE mostrar intro (incluso si había elegido live antes)
+  if (location.hash === '#intro') {
+    sessionStorage.removeItem('tr_chose_live');
+    document.getElementById('vIntro')?.classList.add('active');
+    document.getElementById('vWait').style.display='none';
+    return true;
+  }
   const goneToLive = sessionStorage.getItem('tr_chose_live') === '1';
   const hasHash = location.hash && location.hash.length > 1 && location.hash !== '#home';
   if (!goneToLive && !hasHash) {
