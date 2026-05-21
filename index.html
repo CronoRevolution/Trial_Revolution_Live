@@ -88,9 +88,7 @@ html:not([data-archive="1"]) .archive-bar{display:none}
 #vIntro.active{display:flex}
 .intro-img{width:140px;height:140px;object-fit:contain;margin-bottom:18px;filter:drop-shadow(0 4px 20px rgba(245,158,11,.35))}
 .intro-logo{font-family:'Bebas Neue',sans-serif;font-size:42px;line-height:.95;letter-spacing:6px;color:#fff;margin-bottom:8px}
-.back-to-intro{position:fixed;top:max(8px,env(safe-area-inset-top,8px));left:8px;background:rgba(245,158,11,0.95);border:none;color:#000;padding:7px 12px;border-radius:22px;font-size:12px;font-weight:800;letter-spacing:.5px;cursor:pointer;line-height:1;z-index:200;box-shadow:0 3px 12px rgba(0,0,0,.6);display:flex;align-items:center;gap:4px}
-.back-to-intro:hover{background:rgba(245,158,11,1)}
-.back-to-intro:active{transform:scale(.96)}
+
 .intro-logo .red{color:#dc2626}
 .intro-sub{color:var(--mu);font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:42px}
 .intro-btns{display:flex;flex-direction:column;gap:14px;width:100%;max-width:340px}
@@ -212,7 +210,9 @@ footer{text-align:center;padding:20px 16px 30px;font-size:10px;color:var(--mu);
 <body>
 
 <header class="hdr" id="hdr">
-  <button class="hbk ibtn" id="btnBack" onclick="goBack()" style="display:none">‹</button><button class="hbk ibtn" id="btnHome" onclick="goHome()" style="display:none">⌂</button>
+  <button class="hbk ibtn" id="btnIntro" onclick="goBackToIntro()" title="Volver al inicio" style="display:none">🏠</button>
+  <button class="hbk ibtn" id="btnBack" onclick="goBack()" style="display:none">‹</button>
+  <button class="hbk ibtn" id="btnHome" onclick="goHome()" style="display:none">⌂</button>
   <div class="htitle" id="hTitle">Trial Revolution <small>Clasificación en directo</small></div>
   <div class="hright">
     <span class="bpre" id="sBadge">En espera</span>
@@ -228,9 +228,6 @@ footer{text-align:center;padding:20px 16px 30px;font-size:10px;color:var(--mu);
 
 <!-- WAITING -->
 <div class="archive-bar">📚 Resultados archivados — Vista detallada<a href="historico.html">← Volver al histórico</a></div>
-<!-- Botón flotante para volver al inicio (no se muestra en intro) -->
-<button id="floatBack" class="back-to-intro" onclick="goBackToIntro()" title="Volver al inicio" style="display:none">← Inicio</button>
-
 <!-- INTRO -->
 <div class="view" id="vIntro">
   <img src="trialrev.png" alt="Trial Revolution" class="intro-img" onerror="this.style.display='none'">
@@ -430,8 +427,7 @@ window.addEventListener('popstate', e=>{
   if(st && st.view==='intro') {
     document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
     document.getElementById('vWait').style.display='none';
-    document.getElementById('floatBack').style.display='none';
-    document.getElementById('vIntro').classList.add('active');
+      document.getElementById('vIntro').classList.add('active');
     sessionStorage.removeItem('tr_chose_live');
     return;
   }
@@ -752,7 +748,7 @@ function goLive(){
   sessionStorage.setItem('tr_chose_live', '1');
   document.getElementById('vIntro')?.classList.remove('active');
   document.getElementById('vWait').style.display='flex';
-  document.getElementById('floatBack').style.display='flex';
+  document.getElementById('btnIntro').style.display='';
   history.pushState({view:'home'},'','#home');
   fetchData();
 }
@@ -761,7 +757,9 @@ function goBackToIntro(){
   sessionStorage.removeItem('tr_chose_live');
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
   document.getElementById('vWait').style.display='none';
-  document.getElementById('floatBack').style.display='none';
+  document.getElementById('btnIntro').style.display='none';
+  document.getElementById('btnBack').style.display='none';
+  document.getElementById('btnHome').style.display='none';
   document.getElementById('vIntro').classList.add('active');
   history.pushState({view:'intro'},'','#intro');
 }
@@ -781,7 +779,7 @@ if (_isArchive) {
   }, POLL_MS);
 } else {
   document.getElementById('vWait').style.display='flex';
-  document.getElementById('floatBack').style.display='flex';
+  document.getElementById('btnIntro').style.display='';
   history.replaceState({view:'home'},'','#home');
   fetchData();
   setInterval(fetchData, POLL_MS);
