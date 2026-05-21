@@ -86,8 +86,8 @@ html:not([data-archive="1"]) .archive-bar{display:none}
 /* INTRO landing */
 #vIntro{display:none;flex-direction:column;align-items:center;justify-content:center;padding:24px 16px;text-align:center;min-height:100vh;background:linear-gradient(180deg,var(--bg) 0%,#0a1018 100%)}
 #vIntro.active{display:flex}
-.intro-img{width:140px;height:140px;object-fit:contain;margin-bottom:18px;filter:drop-shadow(0 4px 20px rgba(245,158,11,.35))}
-.intro-logo{font-family:'Bebas Neue',sans-serif;font-size:42px;line-height:.95;letter-spacing:6px;color:#fff;margin-bottom:8px}
+.intro-img{width:220px;height:220px;object-fit:contain;margin-bottom:24px;filter:drop-shadow(0 6px 28px rgba(245,158,11,.45))}
+.intro-logo{font-family:'Bebas Neue',sans-serif;font-size:42px;line-height:.95;letter-spacing:6px;color:#fff;margin-bottom:42px}
 
 .intro-logo .red{color:#dc2626}
 .intro-sub{color:var(--mu);font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:42px}
@@ -232,7 +232,6 @@ footer{text-align:center;padding:20px 16px 30px;font-size:10px;color:var(--mu);
 <div class="view" id="vIntro">
   <img src="trialrev.png" alt="Trial Revolution" class="intro-img" onerror="this.style.display='none'">
   <div class="intro-logo">TRIAL<br><span class="red">REVOLUTION</span></div>
-  <div class="intro-sub">Clasificación · Resultados</div>
   <div class="intro-btns">
     <button class="intro-btn live" onclick="goLive()">
       <span class="ico">🏁</span>

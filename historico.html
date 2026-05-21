@@ -428,7 +428,7 @@ function renderRace() {
     const color = CAT_HEX[cat] || '#374151';
     const sorted = sortCat(cp);
     const leader = sorted[0];
-    const leaderTxt = leader ? `1º: #${leader.dorsal} ${leader.name?.split(' ')[0]||''}` : '';
+    const leaderTxt = leader ? `1º · #${leader.dorsal} ${leader.name||''}` : '';
     const fCount = cp.filter(p => p.finishTime && p.scores?.[2]?.every(v=>v!==null)).length;
     const rCount = cp.filter(p => p.dnf || p.dsq).length;
     html += `
