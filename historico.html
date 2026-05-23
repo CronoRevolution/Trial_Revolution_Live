@@ -241,6 +241,7 @@ const CAT_COLORS = CAT_HEX;
 const pad = n => String(n).padStart(2,'0');
 
 let _allArchives = {};
+let _filterChamp = localStorage.getItem('tr_hist_champ') || '__all__';
 let _currentRace = null; // {year, id, meta, state}
 let _selCat = null;
 let _selPilot = null;
@@ -351,13 +352,49 @@ function renderIndex() {
     content.innerHTML = `<div class="empty"><div class="empty-icon">📭</div><div class="empty-title">Sin pruebas archivadas</div><div>Cuando la mesa central archive una carrera aparecerá aquí.</div></div>`;
     return;
   }
+
+  // Recopilar campeonatos disponibles
+  const champs = new Set();
+  let hasNoChamp = false;
+  Object.values(_allArchives).forEach(yr => {
+    Object.values(yr || {}).forEach(r => {
+      if (r.championship) champs.add(r.championship);
+      else hasNoChamp = true;
+    });
+  });
+
+  // Filtrar usando _filterChamp
+  const matchesFilter = (r) => {
+    if (_filterChamp === '__all__') return true;
+    if (_filterChamp === '__nochamp__') return !r.championship;
+    return r.championship === _filterChamp;
+  };
+
   let html = '';
+
+  // Selector de campeonato (siempre visible si hay >0 campeonatos)
+  if (champs.size > 0 || hasNoChamp) {
+    const opts = ['<option value="__all__">Todos los campeonatos</option>'];
+    [...champs].sort().forEach(c => {
+      const sel = c === _filterChamp ? 'selected' : '';
+      opts.push(`<option value="${c.replace(/"/g,'&quot;')}" ${sel}>${c}</option>`);
+    });
+    if (hasNoChamp) {
+      const sel = _filterChamp === '__nochamp__' ? 'selected' : '';
+      opts.push(`<option value="__nochamp__" ${sel}>— Sin campeonato —</option>`);
+    }
+    if (_filterChamp === '__all__') opts[0] = '<option value="__all__" selected>Todos los campeonatos</option>';
+    html += `<div style="padding:14px 14px 4px"><select id="_hChampFilter" onchange="window.setChampFilter(this.value)" style="width:100%;background:var(--sf);border:2px solid var(--bd);border-radius:10px;color:var(--tx);padding:11px 12px;font-size:14px;font-weight:700;-webkit-appearance:none;appearance:none;background-image:url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;%2394a3b8&quot; stroke-width=&quot;2.5&quot;><polyline points=&quot;6,9 12,15 18,9&quot;/></svg>');background-repeat:no-repeat;background-position:right 12px center;background-size:18px;padding-right:38px">${opts.join('')}</select></div>`;
+  }
+
+  let anyShown = false;
   years.forEach(year => {
     const races = _allArchives[year] || {};
-    const ids = Object.keys(races);
+    const ids = Object.keys(races).filter(id => matchesFilter(races[id]));
     if (!ids.length) return;
     // Cronológico ascendente
     ids.sort((a,b) => (races[a].date||'').localeCompare(races[b].date||''));
+    anyShown = true;
     html += `<div class="year-header"><div class="year-label">${year}</div><div class="year-count">${ids.length} prueba${ids.length>1?'s':''}</div></div>`;
     html += `<div class="racegrid">`;
     ids.forEach(id => {
@@ -371,6 +408,7 @@ function renderIndex() {
             <div class="rtmeta">
               ${dateStr?`<span class="pill">📅 ${dateStr}</span>`:''}
               ${r.organizer?`<span class="pill org">${r.organizer}</span>`:''}
+              ${r.championship?`<span class="pill" style="color:var(--ac)">🏆 ${r.championship}</span>`:''}
             </div>
           </div>
           <div class="rtcount"><div class="rtnum">${r.pilotsCount||'—'}</div><div class="rtclbl">Pilotos</div></div>
@@ -379,8 +417,18 @@ function renderIndex() {
     });
     html += `</div>`;
   });
+
+  if (!anyShown) {
+    html += `<div class="empty"><div class="empty-icon">📭</div><div class="empty-title">Sin pruebas para este filtro</div><div>Prueba con otro campeonato o selecciona "Todos".</div></div>`;
+  }
   content.innerHTML = html;
 }
+
+window.setChampFilter = function(value) {
+  _filterChamp = value;
+  try { localStorage.setItem('tr_hist_champ', value); } catch(e){}
+  renderIndex();
+};
 
 // ── Abrir prueba ──────────────────────────────────────────────────────────
 window.openRace = async function(year, id) {
