@@ -222,6 +222,7 @@ footer{text-align:center;padding:20px 16px 30px;font-size:10px;color:var(--mu);
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCnasN6ewMMAH5JebMiJeGXYVw8Km-quHc",
@@ -234,6 +235,9 @@ const firebaseConfig = {
 };
 const app = initializeApp(firebaseConfig);
 const db  = getDatabase(app);
+const auth = getAuth(app);
+// Autenticar anónimamente para poder leer (las reglas exigirán auth para leer)
+signInAnonymously(auth).catch(e => console.warn('Auth falló:', e.message));
 
 const CAT_ORDER = ['TR1','TR2','TR3','TR4','TR5','TR5A'];
 const CAT_HEX   = { TR1:'#b91c1c', TR2:'#1d4ed8', TR3:'#15803d', TR4:'#a16207', TR5:'#c2410c', TR5A:'#374151' };
