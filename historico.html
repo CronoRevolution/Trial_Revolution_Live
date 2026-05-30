@@ -239,8 +239,13 @@ const auth = getAuth(app);
 // Autenticar anónimamente para poder leer (las reglas exigirán auth para leer)
 signInAnonymously(auth).catch(e => console.warn('Auth falló:', e.message));
 
-const CAT_ORDER = ['TR1','TR2','TR3','TR4','TR5','TR5A'];
-const CAT_HEX   = { TR1:'#b91c1c', TR2:'#1d4ed8', TR3:'#15803d', TR4:'#a16207', TR5:'#c2410c', TR5A:'#374151' };
+const CAT_ORDER_ADULTS = ['TR1','TR2','TR3','TR4','TR5','TR5A'];
+const CAT_ORDER_KIDS   = ['TRA','TRB','TRC'];
+let CAT_ORDER = CAT_ORDER_ADULTS; // se ajusta al cargar una carrera concreta
+const CAT_HEX   = {
+  TR1:'#b91c1c', TR2:'#1d4ed8', TR3:'#15803d', TR4:'#a16207', TR5:'#c2410c', TR5A:'#374151',
+  TRA:'#b91c1c', TRB:'#1d4ed8', TRC:'#15803d'
+};
 const CAT_COLORS = CAT_HEX;
 const pad = n => String(n).padStart(2,'0');
 
@@ -457,6 +462,10 @@ window.openRace = async function(year, id) {
 };
 
 function renderRace() {
+  // Detectar modo niños según las categorías de los pilotos archivados
+  const _kp = _currentRace.state?.pilots || [];
+  CAT_ORDER = _kp.some(p => p && p.cat && /^TR[ABC]$/.test(p.cat)) ? CAT_ORDER_KIDS : CAT_ORDER_ADULTS;
+
   const meta = _currentRace.meta || {};
   const state = _currentRace.state || {};
   const pilots = state.pilots || [];
