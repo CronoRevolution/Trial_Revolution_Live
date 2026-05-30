@@ -295,8 +295,13 @@ footer{text-align:center;padding:20px 16px 30px;font-size:10px;color:var(--mu);
 </div>
 
 <script>
-const CAT_ORDER  = ['TR1','TR2','TR3','TR4','TR5','TR5A'];
-const CAT_COLORS = {TR1:'#b91c1c',TR2:'#1d4ed8',TR3:'#15803d',TR4:'#a16207',TR5:'#c2410c',TR5A:'#374151'};
+const CAT_ORDER_ADULTS = ['TR1','TR2','TR3','TR4','TR5','TR5A'];
+const CAT_ORDER_KIDS   = ['TRA','TRB','TRC'];
+let CAT_ORDER = CAT_ORDER_ADULTS; // se ajusta al cargar los datos
+const CAT_COLORS = {
+  TR1:'#b91c1c',TR2:'#1d4ed8',TR3:'#15803d',TR4:'#a16207',TR5:'#c2410c',TR5A:'#374151',
+  TRA:'#b91c1c',TRB:'#1d4ed8',TRC:'#15803d'
+};
 const DATA_URL = 'data.json';
 const POLL_MS  = 30000;
 
@@ -711,6 +716,8 @@ async function fetchData(){
       d = await res.json();
     }
     if(!d||!d.pilots)return;
+    // Detectar modo niños automáticamente
+    CAT_ORDER = d.pilots.some(p => p && p.cat && /^TR[ABC]$/.test(p.cat)) ? CAT_ORDER_KIDS : CAT_ORDER_ADULTS;
     _data=d;
     // Refresh pilot detail if open
     if(_selPilot){
