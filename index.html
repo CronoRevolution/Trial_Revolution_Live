@@ -113,6 +113,18 @@ html:not([data-archive="1"]) .archive-bar{display:none}
 .hstat .v{font-size:28px;font-weight:900;color:#f59e0b;}
 .hstat .l{font-size:9px;color:#94a3b8;text-transform:uppercase;letter-spacing:1.5px;}
 .upd{text-align:center;font-size:10px;color:var(--mu);padding:6px 0;letter-spacing:.5px;}
+/* Tabla de salida (modo previa) */
+#startTable{padding:8px 12px 12px;display:flex;flex-direction:column;gap:5px;}
+.strow{background:var(--sf);border-radius:10px;box-shadow:0 1px 4px var(--sh);
+  display:flex;align-items:center;gap:10px;padding:9px 12px;}
+.stdor{font-size:18px;font-weight:900;font-family:monospace;color:var(--ac);
+  min-width:34px;text-align:center;flex-shrink:0;}
+.stinfo{flex:1;min-width:0;}
+.stname{font-size:14px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.stsub{font-size:11px;color:var(--mu);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.stcat{font-size:11px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:6px;flex-shrink:0;}
+.sttime{font-size:17px;font-weight:900;font-family:monospace;color:var(--tx);
+  min-width:58px;text-align:right;flex-shrink:0;}
 .catgrid{padding:12px;display:flex;flex-direction:column;gap:10px;}
 .ctile{background:var(--sf);border-radius:14px;box-shadow:0 2px 8px var(--sh);
   display:flex;align-items:center;overflow:hidden;cursor:pointer;
@@ -498,7 +510,7 @@ function renderHome(){
       preBanner = document.createElement('div');
       preBanner.id = 'preBanner';
       preBanner.style.cssText = 'margin:12px;padding:12px 14px;background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.35);border-radius:10px;color:var(--ac);font-size:13px;font-weight:700;text-align:center';
-      preBanner.innerHTML = '⏳ La carrera aún no ha comenzado · Pulsa una categoría para ver el horario de salida';
+      preBanner.innerHTML = '⏳ La carrera aún no ha comenzado · Horario de salida';
       const grid = document.getElementById('catGrid');
       grid.parentNode.insertBefore(preBanner, grid);
     }
@@ -507,7 +519,43 @@ function renderHome(){
     preBanner.style.display = 'none';
   }
 
-  const grid=document.getElementById('catGrid'); grid.innerHTML='';
+  const grid=document.getElementById('catGrid');
+  let startTable = document.getElementById('startTable');
+
+  // ── MODO PREVIA: tabla única con todas las salidas, sin tarjetas de categoría ──
+  if (!d.raceStarted) {
+    grid.style.display = 'none';
+    if (!startTable) {
+      startTable = document.createElement('div');
+      startTable.id = 'startTable';
+      grid.parentNode.insertBefore(startTable, grid);
+    }
+    startTable.style.display = 'block';
+    const byTime = pilots.slice().sort((a,b)=>{
+      const sa=a.schedStart||'99:99', sb=b.schedStart||'99:99';
+      if(sa!==sb) return sa.localeCompare(sb);
+      return (a.dorsal||0)-(b.dorsal||0);
+    });
+    let rows = '';
+    byTime.forEach(p=>{
+      const col=CAT_COLORS[p.cat]||'#888';
+      rows +=
+        `<div class="strow">`+
+          `<div class="stdor">${p.dorsal}</div>`+
+          `<div class="stinfo"><div class="stname">${p.name}</div>`+
+            `<div class="stsub">${p.club||''}${p.brand?' · '+p.brand:''}</div></div>`+
+          `<div class="stcat" style="background:${col}22;color:${col};border:1px solid ${col}55">${p.cat}</div>`+
+          `<div class="sttime">${p.schedStart||'--:--'}</div>`+
+        `</div>`;
+    });
+    startTable.innerHTML = rows || '<div style="text-align:center;padding:30px;color:var(--mu)">Sin pilotos</div>';
+    return;
+  }
+
+  // ── MODO CARRERA: tarjetas de categoría ──
+  grid.style.display = '';
+  if (startTable) startTable.style.display = 'none';
+  grid.innerHTML='';
   activeCats.forEach(cat=>{
     const col=CAT_COLORS[cat]||'#888';
     const cp=sortPilots(pilots.filter(p=>p.cat===cat));
