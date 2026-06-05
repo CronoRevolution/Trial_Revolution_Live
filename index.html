@@ -491,6 +491,22 @@ function renderHome(){
     document.getElementById('ticker').style.display='none';
   }
 
+  // Aviso de "horarios de salida" en modo previa
+  let preBanner = document.getElementById('preBanner');
+  if (!d.raceStarted) {
+    if (!preBanner) {
+      preBanner = document.createElement('div');
+      preBanner.id = 'preBanner';
+      preBanner.style.cssText = 'margin:12px;padding:12px 14px;background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.35);border-radius:10px;color:var(--ac);font-size:13px;font-weight:700;text-align:center';
+      preBanner.innerHTML = '⏳ La carrera aún no ha comenzado · Pulsa una categoría para ver el horario de salida';
+      const grid = document.getElementById('catGrid');
+      grid.parentNode.insertBefore(preBanner, grid);
+    }
+    preBanner.style.display = 'block';
+  } else if (preBanner) {
+    preBanner.style.display = 'none';
+  }
+
   const grid=document.getElementById('catGrid'); grid.innerHTML='';
   activeCats.forEach(cat=>{
     const col=CAT_COLORS[cat]||'#888';
@@ -534,13 +550,43 @@ function renderHome(){
 // ── RENDER CATEGORY ───────────────────────────────────────────
 function renderCat(){
   const pilots=(_data?.pilots||[]).filter(p=>p.cat===_selCat);
-  const sorted=sortPilots(pilots);
+  const raceStarted = _data?.raceStarted;
   const col=CAT_COLORS[_selCat]||'#888';
   const strip=document.getElementById('catStrip');
   strip.style.borderBottomColor=col; strip.style.background=`${col}14`;
   document.getElementById('catNm').style.color=col;
   document.getElementById('catNm').textContent=_selCat;
   const _rd=_data?.raceDate?new Date(_data.raceDate+'T12:00:00').toLocaleDateString('es-ES',{day:'2-digit',month:'2-digit',year:'numeric'}):'';
+
+  // ── MODO PREVIA: listado de salida ordenado por hora ──
+  if (!raceStarted) {
+    const byTime = pilots.slice().sort((a,b)=>{
+      const sa=a.schedStart||'99:99', sb=b.schedStart||'99:99';
+      if(sa!==sb) return sa.localeCompare(sb);
+      return (a.dorsal||0)-(b.dorsal||0);
+    });
+    document.getElementById('catMt').innerHTML=
+      `<span style="font-weight:700;color:var(--tx)">${_data?.raceName||''}</span>`+
+      (_rd?` <span style="color:var(--mu)">· ${_rd}</span>`:'')+
+      `<br><span style="color:var(--ac)">⏳ Horario de salida</span> · ${byTime.length} pilotos`;
+    const list=document.getElementById('pList'); list.innerHTML='';
+    byTime.forEach(p=>{
+      const row=document.createElement('div');
+      row.className='prow';
+      row.innerHTML=
+        `<div class="ppos" style="font-family:monospace;font-size:15px;font-weight:800;color:${col}">${p.schedStart||'--:--'}</div>`+
+        `<div class="pdors">${p.dorsal}</div>`+
+        `<div class="pinfo"><div class="pname">${p.name}</div>`+
+        `<div class="psub">${p.club||''}${p.brand?' · '+p.brand:''}</div></div>`+
+        `<div class="pright"></div>`;
+      row.addEventListener('click',()=>{_selPilot=p;renderPilot();navigate('pilot');});
+      list.appendChild(row);
+    });
+    return;
+  }
+
+  // ── MODO CARRERA: clasificación ──
+  const sorted=sortPilots(pilots);
   document.getElementById('catMt').innerHTML=
     `<span style="font-weight:700;color:var(--tx)">${_data?.raceName||''}</span>`+
     (_rd?` <span style="color:var(--mu)">· ${_rd}</span>`:'')+
