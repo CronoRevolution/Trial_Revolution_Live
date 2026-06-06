@@ -2,7 +2,7 @@
   "raceName": "Trial de Tabanera 2026",
   "organizer": "CD PORTILLO",
   "raceDate": "2026-06-06",
-  "publishedAt": "2026-06-06T11:16:33.237Z",
+  "publishedAt": "2026-06-06T11:17:03.252Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -703,13 +703,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 112,
+      "name": "BUSTILLO FERNANDEZ, LUIS JOSE",
+      "cat": "TR3",
+      "club": "MC Vallisoletano",
+      "brand": "BETA",
+      "schedStart": "10:41",
+      "rank": 4,
+      "scores": [
+        [
+          0,
+          0,
+          3,
+          1,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3
+        ]
+      ],
+      "lap1Points": 7,
+      "lap2Points": 2,
+      "lap3Points": 3,
+      "lap1Time": "00:54:13",
+      "lap2Time": "00:52:33",
+      "lap3Time": "00:48:35",
+      "arrV1": "11:35:13",
+      "arrV2": "12:27:33",
+      "arrCHF": "13:16:21",
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 12,
+      "lapsCompleted": 3,
+      "totalTime": "02:35:21",
+      "n0s": 15,
+      "n1s": 2,
+      "n2s": 2,
+      "n3s": 2,
+      "n5s": 0,
+      "finishTime": 47781000,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 117,
       "name": "VALLE TORRES, VICTOR",
       "cat": "TR3",
       "club": "CD Portillo",
       "brand": "TRRS",
       "schedStart": "10:40",
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           0,
@@ -771,7 +833,7 @@
       "club": "CD Moto Bierzo",
       "brand": "BETA",
       "schedStart": "10:39",
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           0,
@@ -822,68 +884,6 @@
       "n3s": 0,
       "n5s": 0,
       "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 112,
-      "name": "BUSTILLO FERNANDEZ, LUIS JOSE",
-      "cat": "TR3",
-      "club": "MC Vallisoletano",
-      "brand": "BETA",
-      "schedStart": "10:41",
-      "rank": 6,
-      "scores": [
-        [
-          0,
-          0,
-          3,
-          1,
-          0,
-          1,
-          2
-        ],
-        [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          2
-        ],
-        [
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 7,
-      "lap2Points": 2,
-      "lap3Points": 0,
-      "lap1Time": "00:54:13",
-      "lap2Time": "00:52:33",
-      "lap3Time": "00:48:35",
-      "arrV1": "11:35:13",
-      "arrV2": "12:27:33",
-      "arrCHF": "13:16:21",
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 9,
-      "lapsCompleted": 3,
-      "totalTime": "02:35:21",
-      "n0s": 13,
-      "n1s": 2,
-      "n2s": 2,
-      "n3s": 1,
-      "n5s": 0,
-      "finishTime": 47781000,
       "dnf": false,
       "dsq": false,
       "dsqReason": ""
