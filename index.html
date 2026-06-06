@@ -320,6 +320,66 @@ const POLL_MS  = 30000;
 let _data = null;
 let _selCat = null, _selPilot = null;
 
+// ── FIREBASE EN VIVO ──────────────────────────────────────────
+// Canal principal de datos en tiempo real. GitHub Pages queda de respaldo.
+const FB_CONFIG = {
+  apiKey: 'AIzaSyCnasN6ewMMAH5JebMiJeGXYVw8Km-quHc',
+  databaseURL: 'https://trial-revolution-default-rtdb.europe-west1.firebasedatabase.app',
+  projectId: 'trial-revolution',
+  appId: '1:630413676427:web:af5a3afd21e67487ba698e'
+};
+let _fbLiveActive = false;
+async function _initFirebaseLive(){
+  if (_isArchive) return; // el modo archivo usa su propia carga
+  try {
+    const fb   = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js');
+    const dbm  = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js');
+    const auth = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js');
+    const app  = fb.initializeApp(FB_CONFIG);
+    try { await auth.signInAnonymously(auth.getAuth(app)); } catch(e){}
+    const db = dbm.getDatabase(app);
+
+    // 1. Saber cuál es la carrera actual
+    dbm.onValue(dbm.ref(db, 'current_race'), (snap) => {
+      const cur = snap.val();
+      if (!cur || !cur.raceId) return;
+      // 2. Suscribirse al nodo en vivo de esa carrera
+      dbm.onValue(dbm.ref(db, `races_live/${cur.raceId}`), (s2) => {
+        const d = s2.val();
+        if (d && d.pilots) {
+          _fbLiveActive = true;
+          _applyData(d);
+        }
+      });
+    });
+  } catch(e) {
+    console.warn('Firebase live no disponible, se usará GitHub Pages:', e.message);
+  }
+}
+
+// Aplica un objeto de datos (venga de Firebase o de GitHub) a la UI
+function _applyData(d){
+  if(!d||!d.pilots) return;
+  CAT_ORDER = d.pilots.some(p => p && p.cat && /^TR[ABC]$/.test(p.cat)) ? CAT_ORDER_KIDS : CAT_ORDER_ADULTS;
+  _data=d;
+  if(_selPilot){
+    _selPilot=d.pilots.find(p=>p.dorsal===_selPilot.dorsal&&p.cat===_selPilot.cat)||_selPilot;
+  }
+  const h=location.hash;
+  if(!h||h==='#home'||h===''){
+    renderHome();
+    if(h===''){ history.replaceState({view:'home'},'','#home'); navigate('home',false); }
+  } else if(h.startsWith('#cat-')){
+    _selCat=h.replace('#cat-','');renderCat();navigate('cat',false);
+  } else if(h.startsWith('#pilot-')){
+    if(_selPilot) renderPilot();
+  }
+  if(_data&&document.getElementById('vWait').style.display!=='none'){
+    document.getElementById('vWait').style.display='none';
+    renderHome(); history.replaceState({view:'home'},'','#home'); navigate('home',false);
+  }
+}
+
 // ── THEME ─────────────────────────────────────────────────────
 let theme = localStorage.getItem('tr_theme') ||
   (window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light');
@@ -804,32 +864,16 @@ async function fetchData(){
     let d;
     if (_isArchive) {
       d = await _fetchFromFirebase();
-    } else {
-      const res = await fetch(DATA_URL+'?t='+Date.now());
-      if(!res.ok) return;
-      d = await res.json();
+      _applyData(d);
+      return;
     }
-    if(!d||!d.pilots)return;
-    // Detectar modo niños automáticamente
-    CAT_ORDER = d.pilots.some(p => p && p.cat && /^TR[ABC]$/.test(p.cat)) ? CAT_ORDER_KIDS : CAT_ORDER_ADULTS;
-    _data=d;
-    // Refresh pilot detail if open
-    if(_selPilot){
-      _selPilot=d.pilots.find(p=>p.dorsal===_selPilot.dorsal&&p.cat===_selPilot.cat)||_selPilot;
-    }
-    const h=location.hash;
-    if(!h||h==='#home'||h===''){
-      renderHome();
-      if(h===''){ history.replaceState({view:'home'},'','#home'); navigate('home',false); }
-    } else if(h.startsWith('#cat-')){
-      _selCat=h.replace('#cat-','');renderCat();navigate('cat',false);
-    } else if(h.startsWith('#pilot-')){
-      // stay on pilot view, just refresh data
-    }
-    if(_data&&document.getElementById('vWait').style.display!=='none'){
-      document.getElementById('vWait').style.display='none';
-      renderHome(); history.replaceState({view:'home'},'','#home'); navigate('home',false);
-    }
+    // Si Firebase en vivo ya está alimentando datos, GitHub solo es respaldo:
+    // no pisar datos más frescos. Solo usamos GitHub si Firebase no está activo.
+    if (_fbLiveActive) return;
+    const res = await fetch(DATA_URL+'?t='+Date.now());
+    if(!res.ok) return;
+    d = await res.json();
+    _applyData(d);
   }catch(e){}
 }
 
@@ -874,6 +918,7 @@ function goBackToIntro(){
 }
 
 // Initial load
+_initFirebaseLive(); // canal en vivo (si hay red); GitHub queda de respaldo
 if (_isArchive) {
   // Archivo: solo una carga, sin polling, sin intro
   document.getElementById('vWait').style.display='flex';
