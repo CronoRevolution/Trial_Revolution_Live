@@ -2,7 +2,7 @@
   "raceName": "Trial de Tabanera 2026",
   "organizer": "CD PORTILLO",
   "raceDate": "2026-06-06",
-  "publishedAt": "2026-06-06T09:17:24.253Z",
+  "publishedAt": "2026-06-06T09:17:54.246Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -889,13 +889,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 64,
+      "name": "PLAZA FERNANDEZ, VICTOR",
+      "cat": "TR4",
+      "club": "CD Moto Bierzo",
+      "brand": "SHERCO",
+      "schedStart": "10:36",
+      "rank": 1,
+      "scores": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 0,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "00:41:32",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "11:17:32",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 0,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 7,
+      "n1s": 0,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 69,
       "name": "FERNANDEZ LOPEZ, JORGE",
       "cat": "TR4",
       "club": "CD Moto Bierzo",
       "brand": "VERTIGO",
       "schedStart": "10:36",
-      "rank": 1,
+      "rank": 2,
       "scores": [
         [
           1,
@@ -957,7 +1019,7 @@
       "club": "",
       "brand": "TRRS",
       "schedStart": "10:34",
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           null,
@@ -1019,7 +1081,7 @@
       "club": "MC Vallisoletano",
       "brand": "GASGAS",
       "schedStart": "10:35",
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           null,
@@ -1081,68 +1143,6 @@
       "club": "CD Portillo",
       "brand": "TRS",
       "schedStart": "10:35",
-      "rank": 4,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 64,
-      "name": "PLAZA FERNANDEZ, VICTOR",
-      "cat": "TR4",
-      "club": "CD Moto Bierzo",
-      "brand": "SHERCO",
-      "schedStart": "10:36",
       "rank": 5,
       "scores": [
         [
