@@ -2,7 +2,7 @@
   "raceName": "Trial de Tabanera 2026",
   "organizer": "CD PORTILLO",
   "raceDate": "2026-06-06",
-  "publishedAt": "2026-06-06T11:18:33.245Z",
+  "publishedAt": "2026-06-06T11:19:03.240Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -145,13 +145,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 180,
+      "name": "PARRA PEREZ, MIGUEL ANGEL",
+      "cat": "TR2",
+      "club": "CD Portillo",
+      "brand": "VERTIGO",
+      "schedStart": "10:44",
+      "rank": 2,
+      "scores": [
+        [
+          1,
+          1,
+          1,
+          0,
+          2,
+          0,
+          3
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "lap1Points": 8,
+      "lap2Points": 2,
+      "lap3Points": 1,
+      "lap1Time": "01:18:42",
+      "lap2Time": "00:38:55",
+      "lap3Time": "00:36:23",
+      "arrV1": "12:02:42",
+      "arrV2": "12:40:55",
+      "arrCHF": "13:18:00",
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 11,
+      "lapsCompleted": 3,
+      "totalTime": "02:34:00",
+      "n0s": 13,
+      "n1s": 6,
+      "n2s": 1,
+      "n3s": 1,
+      "n5s": 0,
+      "finishTime": 47880000,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 179,
       "name": "FERNANDEZ GALLARDO, LUIS ADRIAN",
       "cat": "TR2",
       "club": "CD Moto Nava",
       "brand": "ELECTRIC-MOTION",
       "schedStart": "10:43",
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           0,
@@ -213,7 +275,7 @@
       "club": "CD Pobladura R",
       "brand": "GASGAS",
       "schedStart": "10:44",
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           0,
@@ -264,68 +326,6 @@
       "n3s": 0,
       "n5s": 0,
       "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 180,
-      "name": "PARRA PEREZ, MIGUEL ANGEL",
-      "cat": "TR2",
-      "club": "CD Portillo",
-      "brand": "VERTIGO",
-      "schedStart": "10:44",
-      "rank": 4,
-      "scores": [
-        [
-          1,
-          1,
-          1,
-          0,
-          2,
-          0,
-          3
-        ],
-        [
-          0,
-          0,
-          1,
-          0,
-          0,
-          0,
-          1
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 8,
-      "lap2Points": 2,
-      "lap3Points": null,
-      "lap1Time": "01:18:42",
-      "lap2Time": "00:38:55",
-      "lap3Time": "00:36:23",
-      "arrV1": "12:02:42",
-      "arrV2": "12:40:55",
-      "arrCHF": "13:18:00",
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 10,
-      "lapsCompleted": 2,
-      "totalTime": "02:34:00",
-      "n0s": 7,
-      "n1s": 5,
-      "n2s": 1,
-      "n3s": 1,
-      "n5s": 0,
-      "finishTime": 47880000,
       "dnf": false,
       "dsq": false,
       "dsqReason": ""
