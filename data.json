@@ -2,7 +2,7 @@
   "raceName": "Trial de Tabanera 2026",
   "organizer": "CD PORTILLO",
   "raceDate": "2026-06-06",
-  "publishedAt": "2026-06-06T11:06:24.267Z",
+  "publishedAt": "2026-06-06T11:06:54.264Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -145,13 +145,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 177,
+      "name": "OVIEDO RODRIGUEZ, UNAI",
+      "cat": "TR2",
+      "club": "CD Pobladura R",
+      "brand": "GASGAS",
+      "schedStart": "10:44",
+      "rank": 2,
+      "scores": [
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 3,
+      "lap2Points": 1,
+      "lap3Points": null,
+      "lap1Time": "01:48:35",
+      "lap2Time": "00:33:14",
+      "lap3Time": null,
+      "arrV1": "12:32:35",
+      "arrV2": "13:05:14",
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 4,
+      "lapsCompleted": 2,
+      "totalTime": "",
+      "n0s": 11,
+      "n1s": 2,
+      "n2s": 1,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 180,
       "name": "PARRA PEREZ, MIGUEL ANGEL",
       "cat": "TR2",
       "club": "CD Portillo",
       "brand": "VERTIGO",
       "schedStart": "10:44",
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           1,
@@ -213,7 +275,7 @@
       "club": "CD Pobladura R",
       "brand": "GASGAS",
       "schedStart": "10:42",
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           0,
@@ -275,7 +337,7 @@
       "club": "Elias Sport  Team",
       "brand": "BETA FACTORY",
       "schedStart": "10:41",
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           0,
@@ -337,7 +399,7 @@
       "club": "CD Pobladura R",
       "brand": "BETA TRUEBA",
       "schedStart": "10:42",
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           0,
@@ -399,7 +461,7 @@
       "club": "CD Moto Nava",
       "brand": "ELECTRIC-MOTION",
       "schedStart": "10:43",
-      "rank": 6,
+      "rank": 7,
       "scores": [
         [
           0,
@@ -447,68 +509,6 @@
       "n0s": 6,
       "n1s": 1,
       "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 177,
-      "name": "OVIEDO RODRIGUEZ, UNAI",
-      "cat": "TR2",
-      "club": "CD Pobladura R",
-      "brand": "GASGAS",
-      "schedStart": "10:44",
-      "rank": 7,
-      "scores": [
-        [
-          0,
-          0,
-          0,
-          1,
-          0,
-          0,
-          2
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 3,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": "01:48:35",
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": "12:32:35",
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 3,
-      "lapsCompleted": 1,
-      "totalTime": "",
-      "n0s": 5,
-      "n1s": 1,
-      "n2s": 1,
       "n3s": 0,
       "n5s": 0,
       "finishTime": null,
