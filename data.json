@@ -2,7 +2,7 @@
   "raceName": "Trial de Tabanera 2026",
   "organizer": "CD PORTILLO",
   "raceDate": "2026-06-06",
-  "publishedAt": "2026-06-06T09:56:24.259Z",
+  "publishedAt": "2026-06-06T09:56:54.263Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -83,13 +83,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 182,
+      "name": "BAUTISTA GUTIERREZ, ROBERTO",
+      "cat": "TR2",
+      "club": "Top Racing",
+      "brand": "SHERCO",
+      "schedStart": "10:43",
+      "rank": 1,
+      "scores": [
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 1,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "01:13:12",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "11:56:12",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 1,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 6,
+      "n1s": 1,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 181,
       "name": "HERNANDO MARTINEZ, DANIELA",
       "cat": "TR2",
       "club": "Elias Sport  Team",
       "brand": "BETA FACTORY",
       "schedStart": "10:41",
-      "rank": 1,
+      "rank": 2,
       "scores": [
         [
           null,
@@ -151,7 +213,7 @@
       "club": "CD Pobladura R",
       "brand": "GASGAS",
       "schedStart": "10:42",
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           null,
@@ -213,68 +275,6 @@
       "club": "CD Pobladura R",
       "brand": "BETA TRUEBA",
       "schedStart": "10:42",
-      "rank": 3,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 182,
-      "name": "BAUTISTA GUTIERREZ, ROBERTO",
-      "cat": "TR2",
-      "club": "Top Racing",
-      "brand": "SHERCO",
-      "schedStart": "10:43",
       "rank": 4,
       "scores": [
         [
