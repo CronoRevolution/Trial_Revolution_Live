@@ -2,7 +2,7 @@
   "raceName": "Trial de Tabanera 2026",
   "organizer": "CD PORTILLO",
   "raceDate": "2026-06-06",
-  "publishedAt": "2026-06-06T09:42:25.167Z",
+  "publishedAt": "2026-06-06T09:42:54.251Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -951,13 +951,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 63,
+      "name": "GARCIA RUIZ, SAUL",
+      "cat": "TR4",
+      "club": "CD Pobladura R",
+      "brand": "SIN MARCA",
+      "schedStart": "10:38",
+      "rank": 2,
+      "scores": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 0,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "01:03:22",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "11:41:22",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 0,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 7,
+      "n1s": 0,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 70,
       "name": "ARROYO MARTIN, SEVERIANO",
       "cat": "TR4",
       "club": "CD Portillo",
       "brand": "TRS",
       "schedStart": "10:35",
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           0,
@@ -1019,7 +1081,7 @@
       "club": "CD Moto Bierzo",
       "brand": "VERTIGO",
       "schedStart": "10:36",
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           1,
@@ -1081,7 +1143,7 @@
       "club": "MC Vallisoletano",
       "brand": "GASGAS",
       "schedStart": "10:35",
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           0,
@@ -1143,7 +1205,7 @@
       "club": "CD Portillo",
       "brand": "TRRS",
       "schedStart": "10:37",
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           1,
@@ -1205,7 +1267,7 @@
       "club": "CD Pobladura R",
       "brand": "BETA TRUEBA",
       "schedStart": "10:37",
-      "rank": 6,
+      "rank": 7,
       "scores": [
         [
           5,
@@ -1267,7 +1329,7 @@
       "club": "",
       "brand": "TRRS",
       "schedStart": "10:34",
-      "rank": 7,
+      "rank": 8,
       "scores": [
         [
           0,
@@ -1316,68 +1378,6 @@
       "n1s": 1,
       "n2s": 2,
       "n3s": 1,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 63,
-      "name": "GARCIA RUIZ, SAUL",
-      "cat": "TR4",
-      "club": "CD Pobladura R",
-      "brand": "SIN MARCA",
-      "schedStart": "10:38",
-      "rank": 8,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
       "n5s": 0,
       "finishTime": null,
       "dnf": false,
