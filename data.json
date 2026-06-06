@@ -2,7 +2,7 @@
   "raceName": "Trial de Tabanera 2026",
   "organizer": "CD PORTILLO",
   "raceDate": "2026-06-06",
-  "publishedAt": "2026-06-06T07:46:54.181Z",
+  "publishedAt": "2026-06-06T07:47:24.185Z",
   "raceStarted": false,
   "raceFinished": false,
   "cfg": {
@@ -951,13 +951,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 72,
+      "name": "GUTIERREZ PEREZ, SAUL",
+      "cat": "TR4",
+      "club": "MC Vallisoletano",
+      "brand": "GASGAS",
+      "schedStart": "10:35",
+      "rank": 1,
+      "scores": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": null,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": null,
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": null,
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": null,
+      "lapsCompleted": 0,
+      "totalTime": "",
+      "n0s": 0,
+      "n1s": 0,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 70,
       "name": "ARROYO MARTIN, SEVERIANO",
       "cat": "TR4",
       "club": "CD Portillo",
       "brand": "TRS",
       "schedStart": "10:35",
-      "rank": 1,
+      "rank": 2,
       "scores": [
         [
           null,
@@ -1019,7 +1081,7 @@
       "club": "CD Moto Bierzo",
       "brand": "VERTIGO",
       "schedStart": "10:36",
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           null,
@@ -1081,7 +1143,7 @@
       "club": "CD Moto Bierzo",
       "brand": "SHERCO",
       "schedStart": "10:36",
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           null,
@@ -1143,7 +1205,7 @@
       "club": "CD Pobladura R",
       "brand": "BETA TRUEBA",
       "schedStart": "10:37",
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           null,
@@ -1205,7 +1267,7 @@
       "club": "CD Portillo",
       "brand": "TRRS",
       "schedStart": "10:37",
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           null,
@@ -1267,7 +1329,7 @@
       "club": "CD Pobladura R",
       "brand": "SIN MARCA",
       "schedStart": "10:38",
-      "rank": 6,
+      "rank": 7,
       "scores": [
         [
           null,
@@ -1447,75 +1509,13 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 3,
-      "name": "GUTIERREZ PEREZ, SAUL",
-      "cat": "TR5",
-      "club": "MC Vallisoletano",
-      "brand": "GASGAS",
-      "schedStart": "10:32",
-      "rank": 3,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": null,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
       "dorsal": 1,
       "name": "CASTRO GONZALEZ, NOEL",
       "cat": "TR5",
       "club": "CD Moto Bierzo",
       "brand": "SIN MARCA",
       "schedStart": "10:32",
-      "rank": 4,
+      "rank": 3,
       "scores": [
         [
           null,
@@ -1576,8 +1576,8 @@
       "cat": "TR5",
       "club": "CD Moto Bierzo",
       "brand": "SIN MARCA",
-      "schedStart": "10:33",
-      "rank": 5,
+      "schedStart": "10:32",
+      "rank": 4,
       "scores": [
         [
           null,
@@ -1639,7 +1639,7 @@
       "club": "CD Pobladura R",
       "brand": "SIN MARCA",
       "schedStart": "10:33",
-      "rank": 6,
+      "rank": 5,
       "scores": [
         [
           null,
@@ -1700,8 +1700,8 @@
       "cat": "TR5",
       "club": "Moto Club C.S.R. Sport",
       "brand": "BETA",
-      "schedStart": "10:34",
-      "rank": 7,
+      "schedStart": "10:33",
+      "rank": 6,
       "scores": [
         [
           null,
@@ -1763,7 +1763,7 @@
       "club": "Moto Club C.S.R. Sport",
       "brand": "SIN MARCA",
       "schedStart": "10:34",
-      "rank": 8,
+      "rank": 7,
       "scores": [
         [
           null,
@@ -1824,8 +1824,8 @@
       "cat": "TR5",
       "club": "CD Pobladura R",
       "brand": "BETA",
-      "schedStart": "10:35",
-      "rank": 9,
+      "schedStart": "10:34",
+      "rank": 8,
       "scores": [
         [
           null,
