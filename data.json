@@ -2,7 +2,7 @@
   "raceName": "Trial de Tabanera 2026",
   "organizer": "CD PORTILLO",
   "raceDate": "2026-06-06",
-  "publishedAt": "2026-06-06T10:22:24.257Z",
+  "publishedAt": "2026-06-06T10:22:54.255Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -889,13 +889,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 69,
+      "name": "FERNANDEZ LOPEZ, JORGE",
+      "cat": "TR4",
+      "club": "CD Moto Bierzo",
+      "brand": "VERTIGO",
+      "schedStart": "10:36",
+      "rank": 1,
+      "scores": [
+        [
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "lap1Points": 2,
+      "lap2Points": 0,
+      "lap3Points": 2,
+      "lap1Time": "00:40:23",
+      "lap2Time": "00:29:35",
+      "lap3Time": "00:36:08",
+      "arrV1": "11:16:23",
+      "arrV2": "11:45:35",
+      "arrCHF": "12:22:06",
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 4,
+      "lapsCompleted": 3,
+      "totalTime": "01:46:06",
+      "n0s": 18,
+      "n1s": 2,
+      "n2s": 1,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": 44526000,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 64,
       "name": "PLAZA FERNANDEZ, VICTOR",
       "cat": "TR4",
       "club": "CD Moto Bierzo",
       "brand": "SHERCO",
       "schedStart": "10:36",
-      "rank": 1,
+      "rank": 2,
       "scores": [
         [
           0,
@@ -957,7 +1019,7 @@
       "club": "CD Pobladura R",
       "brand": "SIN MARCA",
       "schedStart": "10:38",
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           0,
@@ -1008,68 +1070,6 @@
       "n3s": 0,
       "n5s": 0,
       "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 69,
-      "name": "FERNANDEZ LOPEZ, JORGE",
-      "cat": "TR4",
-      "club": "CD Moto Bierzo",
-      "brand": "VERTIGO",
-      "schedStart": "10:36",
-      "rank": 3,
-      "scores": [
-        [
-          1,
-          0,
-          1,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 2,
-      "lap2Points": 0,
-      "lap3Points": 0,
-      "lap1Time": "00:40:23",
-      "lap2Time": "00:29:35",
-      "lap3Time": "00:36:08",
-      "arrV1": "11:16:23",
-      "arrV2": "11:45:35",
-      "arrCHF": "12:22:06",
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 2,
-      "lapsCompleted": 3,
-      "totalTime": "01:46:06",
-      "n0s": 13,
-      "n1s": 2,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": 44526000,
       "dnf": false,
       "dsq": false,
       "dsqReason": ""
