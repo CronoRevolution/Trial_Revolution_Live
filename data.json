@@ -2,7 +2,7 @@
   "raceName": "Trial de Tabanera 2026",
   "organizer": "CD PORTILLO",
   "raceDate": "2026-06-06",
-  "publishedAt": "2026-06-06T11:19:03.240Z",
+  "publishedAt": "2026-06-06T11:19:33.245Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -579,13 +579,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 115,
+      "name": "MACIAS PARAMO, SAMUEL",
+      "cat": "TR3",
+      "club": "CD Moto Bierzo",
+      "brand": "BETA",
+      "schedStart": "10:39",
+      "rank": 2,
+      "scores": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "lap1Points": 0,
+      "lap2Points": 0,
+      "lap3Points": 0,
+      "lap1Time": "01:32:26",
+      "lap2Time": "00:37:07",
+      "lap3Time": "00:30:19",
+      "arrV1": "12:11:26",
+      "arrV2": "12:48:07",
+      "arrCHF": "13:18:52",
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 0,
+      "lapsCompleted": 3,
+      "totalTime": "02:39:52",
+      "n0s": 21,
+      "n1s": 0,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": 47932000,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 114,
       "name": "GOMEZ SANCHEZ, MAIKEL",
       "cat": "TR3",
       "club": "CD Moto Bierzo",
       "brand": "TRRS",
       "schedStart": "10:38",
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           0,
@@ -647,7 +709,7 @@
       "club": "CD Moto Nava",
       "brand": "ELECTRIC-MOTION",
       "schedStart": "10:39",
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           0,
@@ -709,7 +771,7 @@
       "club": "MC Vallisoletano",
       "brand": "BETA",
       "schedStart": "10:41",
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           0,
@@ -771,7 +833,7 @@
       "club": "CD Portillo",
       "brand": "TRRS",
       "schedStart": "10:40",
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           0,
@@ -822,68 +884,6 @@
       "n3s": 0,
       "n5s": 2,
       "finishTime": 47602000,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 115,
-      "name": "MACIAS PARAMO, SAMUEL",
-      "cat": "TR3",
-      "club": "CD Moto Bierzo",
-      "brand": "BETA",
-      "schedStart": "10:39",
-      "rank": 6,
-      "scores": [
-        [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 0,
-      "lap2Points": 0,
-      "lap3Points": null,
-      "lap1Time": "01:32:26",
-      "lap2Time": "00:37:07",
-      "lap3Time": null,
-      "arrV1": "12:11:26",
-      "arrV2": "12:48:07",
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 2,
-      "totalTime": "",
-      "n0s": 14,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
       "dnf": false,
       "dsq": false,
       "dsqReason": ""
