@@ -2,7 +2,7 @@
   "raceName": "Trial de Tabanera 2026",
   "organizer": "CD PORTILLO",
   "raceDate": "2026-06-06",
-  "publishedAt": "2026-06-06T10:20:24.250Z",
+  "publishedAt": "2026-06-06T10:20:54.254Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -1385,13 +1385,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 4,
+      "name": "MUÑOZ MENENDEZ, ESTEBAN",
+      "cat": "TR5",
+      "club": "CD Portillo",
+      "brand": "SIN MARCA",
+      "schedStart": "10:31",
+      "rank": 1,
+      "scores": [
+        [
+          0,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          3,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "lap1Points": 3,
+      "lap2Points": 4,
+      "lap3Points": 0,
+      "lap1Time": "00:41:34",
+      "lap2Time": "00:31:36",
+      "lap3Time": "00:36:13",
+      "arrV1": "11:12:34",
+      "arrV2": "11:43:36",
+      "arrCHF": "12:20:23",
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 7,
+      "lapsCompleted": 3,
+      "totalTime": "01:49:23",
+      "n0s": 18,
+      "n1s": 1,
+      "n2s": 0,
+      "n3s": 2,
+      "n5s": 0,
+      "finishTime": 44423000,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 10,
       "name": "SAL GONZALEZ, MARCO",
       "cat": "TR5",
       "club": "CD Pobladura R",
       "brand": "SIN MARCA",
       "schedStart": "10:32",
-      "rank": 1,
+      "rank": 2,
       "scores": [
         [
           1,
@@ -1453,7 +1515,7 @@
       "club": "CD Moto Bierzo",
       "brand": "SIN MARCA",
       "schedStart": "10:31",
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           0,
@@ -1515,7 +1577,7 @@
       "club": "CD Moto Bierzo",
       "brand": "SIN MARCA",
       "schedStart": "10:32",
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           0,
@@ -1565,68 +1627,6 @@
       "n2s": 0,
       "n3s": 0,
       "n5s": 1,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 4,
-      "name": "MUÑOZ MENENDEZ, ESTEBAN",
-      "cat": "TR5",
-      "club": "CD Portillo",
-      "brand": "SIN MARCA",
-      "schedStart": "10:31",
-      "rank": 4,
-      "scores": [
-        [
-          0,
-          0,
-          3,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          1,
-          0,
-          3,
-          0,
-          0
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 3,
-      "lap2Points": 4,
-      "lap3Points": null,
-      "lap1Time": "00:41:34",
-      "lap2Time": "00:31:36",
-      "lap3Time": null,
-      "arrV1": "11:12:34",
-      "arrV2": "11:43:36",
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 7,
-      "lapsCompleted": 2,
-      "totalTime": "",
-      "n0s": 11,
-      "n1s": 1,
-      "n2s": 0,
-      "n3s": 2,
-      "n5s": 0,
       "finishTime": null,
       "dnf": false,
       "dsq": false,
