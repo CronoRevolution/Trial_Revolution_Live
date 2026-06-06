@@ -2,7 +2,7 @@
   "raceName": "Trial de Tabanera 2026",
   "organizer": "CD PORTILLO",
   "raceDate": "2026-06-06",
-  "publishedAt": "2026-06-06T10:59:54.270Z",
+  "publishedAt": "2026-06-06T11:00:24.258Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -207,13 +207,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 181,
+      "name": "HERNANDO MARTINEZ, DANIELA",
+      "cat": "TR2",
+      "club": "Elias Sport  Team",
+      "brand": "BETA FACTORY",
+      "schedStart": "10:41",
+      "rank": 3,
+      "scores": [
+        [
+          0,
+          0,
+          3,
+          0,
+          1,
+          0,
+          5
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 9,
+      "lap2Points": 5,
+      "lap3Points": null,
+      "lap1Time": "01:37:29",
+      "lap2Time": "00:41:21",
+      "lap3Time": null,
+      "arrV1": "12:18:29",
+      "arrV2": "12:59:21",
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 14,
+      "lapsCompleted": 2,
+      "totalTime": "",
+      "n0s": 10,
+      "n1s": 1,
+      "n2s": 0,
+      "n3s": 1,
+      "n5s": 2,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 178,
       "name": "BALBOA ALVAREZ, SAMUEL",
       "cat": "TR2",
       "club": "CD Pobladura R",
       "brand": "BETA TRUEBA",
       "schedStart": "10:42",
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           0,
@@ -275,7 +337,7 @@
       "club": "CD Moto Nava",
       "brand": "ELECTRIC-MOTION",
       "schedStart": "10:43",
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           0,
@@ -337,7 +399,7 @@
       "club": "CD Pobladura R",
       "brand": "GASGAS",
       "schedStart": "10:44",
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           0,
@@ -387,68 +449,6 @@
       "n2s": 1,
       "n3s": 0,
       "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 181,
-      "name": "HERNANDO MARTINEZ, DANIELA",
-      "cat": "TR2",
-      "club": "Elias Sport  Team",
-      "brand": "BETA FACTORY",
-      "schedStart": "10:41",
-      "rank": 6,
-      "scores": [
-        [
-          0,
-          0,
-          3,
-          0,
-          1,
-          0,
-          5
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 9,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": "01:37:29",
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": "12:18:29",
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 9,
-      "lapsCompleted": 1,
-      "totalTime": "",
-      "n0s": 4,
-      "n1s": 1,
-      "n2s": 0,
-      "n3s": 1,
-      "n5s": 1,
       "finishTime": null,
       "dnf": false,
       "dsq": false,
