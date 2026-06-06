@@ -2,7 +2,7 @@
   "raceName": "Trial de Tabanera 2026",
   "organizer": "CD PORTILLO",
   "raceDate": "2026-06-06",
-  "publishedAt": "2026-06-06T09:06:24.252Z",
+  "publishedAt": "2026-06-06T09:06:54.245Z",
   "raceStarted": false,
   "raceFinished": false,
   "cfg": {
@@ -1819,11 +1819,11 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 36,
-      "name": "FERNANDEZ BELLO, DOMINGO",
+      "dorsal": 39,
+      "name": "PINEDA NAVARRO, ANDRES",
       "cat": "TR5A",
-      "club": "CD Moto Bierzo",
-      "brand": "SIN MARCA",
+      "club": "CD Portillo",
+      "brand": "BETA FACTORY",
       "schedStart": "10:30",
       "rank": 1,
       "scores": [
@@ -1858,10 +1858,10 @@
       "lap1Points": null,
       "lap2Points": null,
       "lap3Points": null,
-      "lap1Time": null,
+      "lap1Time": "00:36:11",
       "lap2Time": null,
       "lap3Time": null,
-      "arrV1": null,
+      "arrV1": "11:06:11",
       "arrV2": null,
       "arrCHF": null,
       "lap1Penalty": 0,
@@ -1881,11 +1881,11 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 39,
-      "name": "PINEDA NAVARRO, ANDRES",
+      "dorsal": 36,
+      "name": "FERNANDEZ BELLO, DOMINGO",
       "cat": "TR5A",
-      "club": "CD Portillo",
-      "brand": "BETA FACTORY",
+      "club": "CD Moto Bierzo",
+      "brand": "SIN MARCA",
       "schedStart": "10:30",
       "rank": 2,
       "scores": [
