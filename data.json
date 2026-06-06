@@ -2,7 +2,7 @@
   "raceName": "Trial de Tabanera 2026",
   "organizer": "CD PORTILLO",
   "raceDate": "2026-06-06",
-  "publishedAt": "2026-06-06T09:32:54.257Z",
+  "publishedAt": "2026-06-06T09:33:24.248Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -517,22 +517,22 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 114,
-      "name": "GOMEZ SANCHEZ, MAIKEL",
+      "dorsal": 113,
+      "name": "GARCIA RUIZ, ROBERTO",
       "cat": "TR3",
-      "club": "CD Moto Bierzo",
-      "brand": "TRRS",
-      "schedStart": "10:38",
+      "club": "CD Moto Nava",
+      "brand": "ELECTRIC-MOTION",
+      "schedStart": "10:39",
       "rank": 1,
       "scores": [
         [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          1
         ],
         [
           null,
@@ -553,23 +553,23 @@
           null
         ]
       ],
-      "lap1Points": null,
+      "lap1Points": 3,
       "lap2Points": null,
       "lap3Points": null,
-      "lap1Time": null,
+      "lap1Time": "00:53:31",
       "lap2Time": null,
       "lap3Time": null,
-      "arrV1": null,
+      "arrV1": "11:32:31",
       "arrV2": null,
       "arrCHF": null,
       "lap1Penalty": 0,
       "finishPenalty": 0,
       "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
+      "totalPoints": 3,
+      "lapsCompleted": 1,
       "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
+      "n0s": 4,
+      "n1s": 3,
       "n2s": 0,
       "n3s": 0,
       "n5s": 0,
@@ -579,12 +579,12 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 113,
-      "name": "GARCIA RUIZ, ROBERTO",
+      "dorsal": 114,
+      "name": "GOMEZ SANCHEZ, MAIKEL",
       "cat": "TR3",
-      "club": "CD Moto Nava",
-      "brand": "ELECTRIC-MOTION",
-      "schedStart": "10:39",
+      "club": "CD Moto Bierzo",
+      "brand": "TRRS",
+      "schedStart": "10:38",
       "rank": 2,
       "scores": [
         [
