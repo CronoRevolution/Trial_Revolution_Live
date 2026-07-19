@@ -310,6 +310,19 @@ footer{text-align:center;padding:20px 16px 30px;font-size:10px;color:var(--mu);
 const CAT_ORDER_ADULTS = ['TR1','TR2','TR3','TR4','TR5','TR5A'];
 const CAT_ORDER_KIDS   = ['TRA','TRB','TRC'];
 let CAT_ORDER = CAT_ORDER_ADULTS; // se ajusta al cargar los datos
+// Normaliza el nombre de categoria: 'TrA', 'tr-a' -> 'TRA'
+function normCat(c){ return String(c||'').toUpperCase().replace(/[\s\-\.]+/g,''); }
+function catColor(c){ return CAT_COLORS[normCat(c)] || '#888'; }
+function activeCatsOf(list){
+  const present = [];
+  (list||[]).forEach(p => { if (p && p.cat && !present.includes(p.cat)) present.push(p.cat); });
+  const known = [];
+  CAT_ORDER.forEach(c => {
+    const hit = present.find(x => normCat(x) === normCat(c));
+    if (hit) known.push(hit);
+  });
+  return [...known, ...present.filter(x => !known.includes(x)).sort()];
+}
 const CAT_COLORS = {
   TR1:'#b91c1c',TR2:'#1d4ed8',TR3:'#15803d',TR4:'#a16207',TR5:'#c2410c',TR5A:'#374151',
   TRA:'#b91c1c',TRB:'#1d4ed8',TRC:'#15803d'
@@ -360,7 +373,7 @@ async function _initFirebaseLive(){
 // Aplica un objeto de datos (venga de Firebase o de GitHub) a la UI
 function _applyData(d){
   if(!d||!d.pilots) return;
-  CAT_ORDER = d.pilots.some(p => p && p.cat && /^TR[ABC]$/.test(p.cat)) ? CAT_ORDER_KIDS : CAT_ORDER_ADULTS;
+  CAT_ORDER = d.pilots.some(p => p && p.cat && /^TR[ABC]$/.test(normCat(p.cat))) ? CAT_ORDER_KIDS : CAT_ORDER_ADULTS;
   _data=d;
   if(_selPilot){
     _selPilot=d.pilots.find(p=>p.dorsal===_selPilot.dorsal&&p.cat===_selPilot.cat)||_selPilot;
@@ -476,7 +489,7 @@ function navigate(view, pushState=true) {
   } else if(view==='cat'){
     document.getElementById('vCat').classList.add('active');
     backBtn.style.display=''; if(homeBtn) homeBtn.style.display='';
-    const col=CAT_COLORS[_selCat]||'#888';
+    const col=catColor(_selCat);
     document.getElementById('hTitle').innerHTML=`<span style="color:${col};font-size:20px;letter-spacing:3px">${_selCat}</span>`;
     if(pushState && _histOk) try { history.pushState({view:'cat',cat:_selCat},'','#cat-'+_selCat); } catch(e) {}
   } else if(view==='pilot'){
@@ -526,7 +539,7 @@ function renderHome(){
   const pilots=d.pilots||[];
   document.getElementById('hRace').textContent=d.raceName||'Trial Revolution';
   document.getElementById('hPilots').textContent=pilots.length;
-  const activeCats=CAT_ORDER.filter(c=>pilots.some(p=>p.cat===c));
+  const activeCats=activeCatsOf(pilots);
   document.getElementById('hCats').textContent=activeCats.length;
   document.getElementById('hFin').textContent=pilots.filter(p=>p.totalTime&&!p.dnf&&!p.dsq).length;
 
@@ -598,7 +611,7 @@ function renderHome(){
     });
     let rows = '';
     byTime.forEach(p=>{
-      const col=CAT_COLORS[p.cat]||'#888';
+      const col=catColor(p.cat);
       rows +=
         `<div class="strow">`+
           `<div class="stdor">${p.dorsal}</div>`+
@@ -617,7 +630,7 @@ function renderHome(){
   if (startTable) startTable.style.display = 'none';
   grid.innerHTML='';
   activeCats.forEach(cat=>{
-    const col=CAT_COLORS[cat]||'#888';
+    const col=catColor(cat);
     const cp=sortPilots(pilots.filter(p=>p.cat===cat));
     const ldr=cp.find(p=>!p.dnf&&!p.dsq);
     const fCount=cp.filter(p=>p.totalTime&&!p.dnf&&!p.dsq).length;
@@ -659,7 +672,7 @@ function renderHome(){
 function renderCat(){
   const pilots=(_data?.pilots||[]).filter(p=>p.cat===_selCat);
   const raceStarted = _data?.raceStarted;
-  const col=CAT_COLORS[_selCat]||'#888';
+  const col=catColor(_selCat);
   const strip=document.getElementById('catStrip');
   strip.style.borderBottomColor=col; strip.style.background=`${col}14`;
   document.getElementById('catNm').style.color=col;
@@ -725,7 +738,7 @@ function renderCat(){
 // ── RENDER PILOT DETAIL ───────────────────────────────────────
 function renderPilot(){
   const p=_selPilot; if(!p) return;
-  const col=CAT_COLORS[p.cat]||'#888';
+  const col=catColor(p.cat);
   const cfg=_data?.cfg||{};
   const nz=cfg.numZones||7;
   const l1max=cfg.lap1MaxMins||150;
