@@ -378,6 +378,10 @@ function startPresence() {
 initLogin();
 
 function setupListeners() {
+  // Referencias que dependen de la carrera y la zona ya elegidas
+  const statusEl = document.getElementById('hdrStatus');
+  const raceRef  = ref(db, 'races/' + raceId);
+
   // Listener de info de carrera + pilotos
   onValue(raceRef, snap => {
     const d = snap.val() || {};

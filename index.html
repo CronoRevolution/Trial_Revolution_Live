@@ -881,8 +881,9 @@ async function fetchData(){
       return;
     }
     // Si Firebase en vivo ya está alimentando datos, GitHub solo es respaldo:
-    // no pisar datos más frescos. Solo usamos GitHub si Firebase no está activo.
-    if (_fbLiveActive) return;
+    // no pisar datos más frescos, pero sí repintar con lo ya recibido
+    // (si no, la pantalla de espera se queda colgada al entrar desde la intro).
+    if (_fbLiveActive) { if (_data) _applyData(_data); return; }
     const res = await fetch(DATA_URL+'?t='+Date.now());
     if(!res.ok) return;
     d = await res.json();
@@ -913,9 +914,16 @@ function showIntroIfNeeded(){
 function goLive(){
   sessionStorage.setItem('tr_chose_live', '1');
   document.getElementById('vIntro')?.classList.remove('active');
-  document.getElementById('vWait').style.display='flex';
   document.getElementById('btnIntro').style.display='';
   history.pushState({view:'home'},'','#home');
+  if (_data && _data.pilots) {
+    // Ya hay datos en memoria: entrar directo, sin pantalla de espera
+    document.getElementById('vWait').style.display='none';
+    renderHome();
+    navigate('home', false);
+  } else {
+    document.getElementById('vWait').style.display='flex';
+  }
   fetchData();
 }
 
