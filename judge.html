@@ -53,7 +53,15 @@ body{display:flex;flex-direction:column;height:100vh}
 .zgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
 .zbtn{padding:14px 0;font-size:18px;font-weight:900;border-radius:10px;border:2px solid var(--border);
   background:var(--bg2);color:var(--text);cursor:pointer}
-.zbtn.sel{border-color:var(--accent);background:var(--accent);color:#000}
+.zbtn.sel{border-color:var(--accent);background:var(--accent);color:#000;
+  box-shadow:0 0 0 3px color-mix(in srgb, var(--accent) 35%, transparent);
+  transform:translateY(-1px)}
+.zbtn.sel::after{content:' ✓';font-size:13px}
+.login .picked{font-size:12px;color:var(--accent);font-weight:800;letter-spacing:1px;min-height:16px}
+.login .pwrap{position:relative}
+.login .showpw{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);
+  margin-top:8px;cursor:pointer;user-select:none}
+.login .showpw input{width:16px;height:16px;accent-color:var(--accent)}
 
 /* Main body */
 .main{flex:1;overflow-y:auto;padding:14px;padding-bottom:120px}
@@ -196,9 +204,11 @@ body{display:flex;flex-direction:column;height:100vh}
       <label>Zona que vas a puntuar</label>
       <div class="zgrid" id="zoneGrid"></div>
     </div>
-    <div>
+    <div class="picked" id="pickedZone"></div>
+    <div class="pwrap">
       <label>Contraseña</label>
       <input type="password" id="loginPass" inputmode="text" autocomplete="off" placeholder="Contraseña de la carrera">
+      <label class="showpw"><input type="checkbox" id="showPass" onchange="window.togglePass(this.checked)"> Mostrar contraseña</label>
     </div>
     <div class="err" id="loginErr"></div>
     <button id="loginBtn" onclick="window.doLogin()" disabled>ENTRAR</button>
@@ -308,7 +318,9 @@ async function initLogin() {
         selectedZone = z;
         document.querySelectorAll('.zbtn').forEach(x => x.classList.remove('sel'));
         b.classList.add('sel');
+        document.getElementById('pickedZone').textContent = 'Vas a puntuar la ZONA ' + z;
         document.getElementById('loginBtn').disabled = false;
+        document.getElementById('loginPass').focus();
       };
       grid.appendChild(b);
     }
@@ -324,6 +336,11 @@ async function initLogin() {
     console.error(e);
   }
 }
+
+window.togglePass = function(show) {
+  const el = document.getElementById('loginPass');
+  if (el) el.type = show ? 'text' : 'password';
+};
 
 window.doLogin = async function() {
   const errEl = document.getElementById('loginErr');
@@ -377,14 +394,48 @@ function startPresence() {
 
 initLogin();
 
+function showLoadProblem(title, detail) {
+  const list = document.getElementById('pilotList');
+  if (!list) return;
+  list.innerHTML = `<div class="empty">
+      <div class="empty-title">${title}</div>
+      <div style="margin-top:6px">${detail}</div>
+      <div style="margin-top:14px;font-size:11px;color:var(--muted)">
+        Carrera: <b>${raceId || '—'}</b> · Zona: <b>${zone || '—'}</b>
+      </div>
+      <button onclick="location.reload()" style="margin-top:14px;padding:10px 18px;border:none;
+        border-radius:8px;background:var(--accent);color:#000;font-weight:800;cursor:pointer">
+        Reintentar
+      </button>
+    </div>`;
+}
+
 function setupListeners() {
   // Referencias que dependen de la carrera y la zona ya elegidas
   const statusEl = document.getElementById('hdrStatus');
   const raceRef  = ref(db, 'races/' + raceId);
+  let gotSnapshot = false;
+
+  // Si en 8 s no ha llegado nada, decir por qué en vez de dejarlo cargando
+  setTimeout(() => {
+    if (!gotSnapshot) {
+      showLoadProblem('No llegan los datos de la carrera',
+        'Hay conexión, pero el servidor no ha enviado la lista de pilotos. ' +
+        'Comprueba en la mesa que la carrera está publicada para los jueces.');
+    }
+  }, 8000);
 
   // Listener de info de carrera + pilotos
   onValue(raceRef, snap => {
+    gotSnapshot = true;
     const d = snap.val() || {};
+    if (!d.pilots) {
+      showLoadProblem('La carrera aún no tiene pilotos publicados',
+        'En la mesa, abre la pestaña 📡 Jueces y pulsa "Guardar y publicar" para enviar la lista de pilotos.');
+      document.getElementById('hdrRace').textContent = (d.info && d.info.name) || '—';
+      statusEl.classList.add('ok');
+      return;
+    }
     raceInfo = d.info || {};
     pilots = d.pilots ? Object.values(d.pilots) : [];
     pilotScores = {};
@@ -425,8 +476,11 @@ function setupListeners() {
     renderPilots();
     renderHistory();
   }, err => {
+    gotSnapshot = true;
     statusEl.classList.remove('ok');
     console.error('Listener error:', err);
+    showLoadProblem('El servidor ha rechazado la conexión',
+      'Motivo: ' + (err && err.message ? err.message : 'desconocido'));
   });
 }
 
