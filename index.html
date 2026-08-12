@@ -271,7 +271,7 @@ footer{text-align:center;padding:20px 16px 30px;font-size:10px;color:var(--mu);
 <div class="view" id="vHome">
   <div class="hero">
     <div class="hero-race" id="hRace">Trial Revolution</div>
-    <div class="hero-sub">Campeonato de Trial de Castilla y León 2026</div>
+    <div class="hero-sub" id="hChamp"></div>
     <div class="hero-date" id="hDate"></div>
     <div class="hero-org" id="hOrg"></div>
     <div class="hero-stats">
@@ -538,6 +538,8 @@ function renderHome(){
   const d=_data; if(!d) return;
   const pilots=d.pilots||[];
   document.getElementById('hRace').textContent=d.raceName||'Trial Revolution';
+  const champEl=document.getElementById('hChamp');
+  if(champEl){ champEl.textContent=d.championship||''; champEl.style.display=d.championship?'':'none'; }
   document.getElementById('hPilots').textContent=pilots.length;
   const activeCats=activeCatsOf(pilots);
   document.getElementById('hCats').textContent=activeCats.length;
