@@ -413,9 +413,45 @@ async function _initFirebaseLive(){
   }
 }
 
+// ── Normalizacion de lo que llega de Firebase ─────────────────────────────
+// Realtime Database descarta los null y los arrays vacios. Consecuencias:
+//   · un piloto sin puntuar se guarda con scores [[],[],[]] y vuelve SIN el
+//     campo scores  ->  p.scores es undefined
+//   · una vuelta a medias puede volver como objeto con claves numericas
+//   · extraPenalties: [] vuelve como null
+// Aqui se reconstruye siempre la misma forma que tiene data.json: 3 vueltas
+// por numZones, con null donde no hay puntuacion. Asi el resto de la pagina
+// no tiene que preocuparse de por donde vinieron los datos.
+function _normalizaPilotos(d){
+  if(!d) return d;
+  const nz=(d.cfg&&d.cfg.numZones)||7;
+  if(d.pilots&&!Array.isArray(d.pilots)) d.pilots=Object.values(d.pilots);
+  (d.pilots||[]).forEach(p=>{
+    if(!p) return;
+    const s=p.scores;
+    const out=[];
+    for(let l=0;l<3;l++){
+      const fila = s ? (Array.isArray(s)? s[l] : s[String(l)]) : null;
+      const dest = new Array(nz).fill(null);
+      if(fila){
+        const pares = Array.isArray(fila)
+          ? fila.map((v,i)=>[i,v])
+          : Object.keys(fila).map(k=>[parseInt(k,10), fila[k]]);
+        pares.forEach(([i,v])=>{ if(i>=0&&i<nz&&v!==undefined) dest[i]=v; });
+      }
+      out.push(dest);
+    }
+    p.scores=out;
+    if(!Array.isArray(p.extraPenalties))
+      p.extraPenalties = p.extraPenalties ? Object.values(p.extraPenalties) : [];
+  });
+  return d;
+}
+
 // Aplica un objeto de datos (venga de Firebase o de GitHub) a la UI
 function _applyData(d){
   if(!d||!d.pilots) return;
+  d=_normalizaPilotos(d);
   CAT_ORDER = d.pilots.some(p => p && p.cat && /^TR[ABC]$/.test(normCat(p.cat))) ? CAT_ORDER_KIDS : CAT_ORDER_ADULTS;
   _data=d;
   if(_selPilot){
@@ -460,7 +496,7 @@ function shortName(name){
   const p=name.split(',');
   return p.length<2?name:p[1].trim().split(' ')[0]+' '+p[0].trim();
 }
-function cnt(p,v){let n=0;for(let l=0;l<3;l++)for(let z=0;z<7;z++)if(p.scores[l]&&p.scores[l][z]===v)n++;return n;}
+function cnt(p,v){let n=0;const s=p&&p.scores;if(!s)return 0;for(let l=0;l<3;l++)for(let z=0;z<7;z++)if(s[l]&&s[l][z]===v)n++;return n;}
 function lapPts(p,l){
   const s=p.scores[l];if(!s||s.every(v=>v===null))return null;
   return s.reduce((a,v)=>a+(v===null?0:v),0);

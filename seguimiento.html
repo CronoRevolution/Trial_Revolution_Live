@@ -153,7 +153,7 @@ button.b:active{opacity:.75}
 </main>
 
 <script type="module">
-const VERSION = '2026.08.17.1';
+const VERSION = '2026.08.25.1';
 document.getElementById('v').textContent = VERSION;
 
 const FB_CONFIG = {
@@ -215,6 +215,37 @@ function buscarPilotos(t){
       .sort((a, b) => a.dorsal - b.dorsal);
   }
   return (datos?.pilots || []).filter(casa);
+}
+
+/* ── Normalización de lo que llega de Firebase ─────────────────────────────
+   Realtime Database descarta los null y los arrays vacíos: un piloto sin
+   puntuar vuelve SIN el campo `scores`, y una vuelta a medias puede volver
+   como objeto con claves numéricas. Aquí se reconstruye siempre la misma
+   forma —3 vueltas × numZones, con null donde no hay nada— para que el resto
+   de la página no dependa de por dónde vinieron los datos. */
+function normalizaPilotos(d){
+  if (!d) return d;
+  const nz = (d.cfg && d.cfg.numZones) || 7;
+  if (d.pilots && !Array.isArray(d.pilots)) d.pilots = Object.values(d.pilots);
+  (d.pilots || []).forEach(p => {
+    if (!p) return;
+    const s = p.scores, out = [];
+    for (let l = 0; l < 3; l++){
+      const fila = s ? (Array.isArray(s) ? s[l] : s[String(l)]) : null;
+      const dest = new Array(nz).fill(null);
+      if (fila){
+        const pares = Array.isArray(fila)
+          ? fila.map((v, i) => [i, v])
+          : Object.keys(fila).map(k => [parseInt(k, 10), fila[k]]);
+        pares.forEach(([i, v]) => { if (i >= 0 && i < nz && v !== undefined) dest[i] = v; });
+      }
+      out.push(dest);
+    }
+    p.scores = out;
+    if (!Array.isArray(p.extraPenalties))
+      p.extraPenalties = p.extraPenalties ? Object.values(p.extraPenalties) : [];
+  });
+  return d;
 }
 
 function ultimaVueltaConDatos(p){
@@ -417,7 +448,7 @@ function rehacerDatos(){
   if (modo !== 'ligero' || !metaLigera) return;
   const pilots = [];
   pilotosPorCat.forEach(lista => (lista || []).forEach(p => pilots.push(p)));
-  datos = Object.assign({}, metaLigera, { pilots });
+  datos = normalizaPilotos(Object.assign({}, metaLigera, { pilots }));
   pintar();
 }
 
@@ -467,7 +498,7 @@ function modoCompleto(){
               'En cuanto la organización empiece a publicar, esto se llenará solo.');
         return;
       }
-      datos = v;
+      datos = normalizaPilotos(v);
       recibidoEn = Date.now();
       // La carrera está viva si publishedAt avanza, no si la lectura funciona.
       if (v.publishedAt !== ultimoPub){ ultimoPub = v.publishedAt; cambioEn = Date.now(); }
