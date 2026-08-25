@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<title>Trial Revolution — Mesa</title>
+<!--
+  Trial Revolution — Mesa (panel de apoyo remoto)
+  © 2026 Pablo Parro Asensio. Todos los derechos reservados.
+
+  Vista de SOLO LECTURA del estado de la carrera, pensada para el móvil.
+  No escribe nada en ninguna parte: lee races_live/{raceId}, que es lo que el
+  cronómetro publica cada 8 segundos cuando la publicación automática está activa.
+
+  Su trabajo no es enseñar la clasificación —para eso está la web pública— sino
+  responder a "¿qué está fallando ahí?" cuando cronometra alguien sin experiencia.
+-->
+<style>
+:root{
+  --bg:#0a0c14; --surface:#111828; --surface2:#161f33; --border:#252d42;
+  --text:#e2e8f0; --muted:#94a3b8; --accent:#f59e0b;
+  --ok:#22c55e; --warn:#f59e0b; --bad:#ef4444;
+}
+@media (prefers-color-scheme: light){
+  :root{
+    --bg:#f1f5f9; --surface:#ffffff; --surface2:#f8fafc; --border:#dfe6ee;
+    --text:#0f172a; --muted:#64748b; --accent:#b45309;
+    --ok:#15803d; --warn:#b45309; --bad:#b91c1c;
+  }
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--text);
+  font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  font-size:15px;line-height:1.45;padding-bottom:40px}
+header{position:sticky;top:0;z-index:10;background:var(--surface);
+  border-bottom:2px solid var(--accent);padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px))}
+.h-row{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.h-name{font-weight:800;font-size:17px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.h-ver{font-family:ui-monospace,monospace;font-size:11px;color:var(--muted);flex-shrink:0}
+.h-sub{font-size:12px;color:var(--muted);margin-top:2px}
+main{padding:12px 14px;max-width:760px;margin:0 auto}
+section{margin-bottom:18px}
+h2{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);
+  margin:0 0 8px;font-weight:800}
+
+/* Estado: el color nunca va solo, siempre con icono y palabra. */
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;
+  padding:5px 11px;border-radius:999px;border:1px solid var(--border);background:var(--surface2)}
+.pill.ok{color:var(--ok);border-color:color-mix(in srgb,var(--ok) 45%,transparent)}
+.pill.warn{color:var(--warn);border-color:color-mix(in srgb,var(--warn) 45%,transparent)}
+.pill.bad{color:var(--bad);border-color:color-mix(in srgb,var(--bad) 45%,transparent)}
+
+/* Cifras */
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(88px,1fr));gap:8px}
+.tile{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:10px 12px}
+.tile .n{font-size:26px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
+.tile .l{font-size:11px;color:var(--muted);margin-top:4px;letter-spacing:.3px}
+.tile.warn .n{color:var(--warn)} .tile.bad .n{color:var(--bad)}
+
+/* Avisos */
+.issue{display:flex;gap:10px;align-items:flex-start;background:var(--surface);
+  border:1px solid var(--border);border-left:3px solid var(--muted);
+  border-radius:10px;padding:10px 12px;margin-bottom:8px}
+.issue.warn{border-left-color:var(--warn)}
+.issue.bad{border-left-color:var(--bad)}
+.issue.ok{border-left-color:var(--ok)}
+.issue .ic{font-size:16px;line-height:1.2;flex-shrink:0}
+.issue .tt{font-weight:700;font-size:14px}
+.issue .dd{font-size:13px;color:var(--muted);margin-top:2px;word-break:break-word}
+
+/* Progreso por categoría */
+.cat{margin-bottom:10px}
+.cat-h{display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px}
+.cat-h b{font-weight:800;letter-spacing:1px}
+.cat-h span{color:var(--muted);font-variant-numeric:tabular-nums}
+.bar{height:8px;background:var(--surface2);border:1px solid var(--border);border-radius:4px;overflow:hidden}
+.bar>i{display:block;height:100%;background:var(--accent);border-radius:4px}
+
+/* Detalle */
+details{background:var(--surface);border:1px solid var(--border);border-radius:10px;
+  padding:10px 12px;margin-bottom:8px}
+summary{cursor:pointer;font-weight:700;font-size:14px;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:'▸ ';color:var(--muted)}
+details[open] summary::before{content:'▾ '}
+table{width:100%;border-collapse:collapse;margin-top:8px;font-size:12px}
+th,td{padding:4px 3px;text-align:center;border-bottom:1px solid var(--border)}
+th{color:var(--muted);font-size:10px;letter-spacing:.5px;text-transform:uppercase}
+td.l,th.l{text-align:left}
+tbody tr:nth-child(even){background:var(--surface2)}
+.miss{color:var(--warn);font-weight:800}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--muted);margin-right:5px}
+.dot.ok{background:var(--ok)} .dot.warn{background:var(--warn)} .dot.bad{background:var(--bad)}
+.empty{color:var(--muted);font-size:13px;padding:14px;text-align:center;
+  border:1px dashed var(--border);border-radius:10px}
+code{font-family:ui-monospace,monospace;font-size:12px;background:var(--surface2);
+  padding:1px 5px;border-radius:4px}
+.foot{font-size:11px;color:var(--muted);text-align:center;margin-top:22px;line-height:1.6}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="h-row">
+    <div class="h-name" id="hName">Conectando…</div>
+    <div class="h-ver" id="hVer"></div>
+  </div>
+  <div class="h-sub" id="hSub">Buscando la carrera activa</div>
+</header>
+
+<main>
+  <section id="secEstado"></section>
+  <section id="secTiles"></section>
+  <section id="secIssues"></section>
+  <section id="secCats"></section>
+  <section id="secDetalle"></section>
+  <div class="foot">
+    Vista de solo lectura · se actualiza sola<br>
+    Trial Revolution · Mesa <span id="vMesa"></span>
+  </div>
+</main>
+
+<script type="module">
+const VERSION = '2026.08.17.1';
+document.getElementById('vMesa').textContent = VERSION;
+
+const FB_CONFIG = {
+  apiKey: 'AIzaSyCnasN6ewMMAH5JebMiJeGXYVw8Km-quHc',
+  databaseURL: 'https://trial-revolution-default-rtdb.europe-west1.firebasedatabase.app',
+  projectId: 'trial-revolution',
+  appId: '1:630413676427:web:af5a3afd21e67487ba698e'
+};
+
+const qs = new URLSearchParams(location.search);
+const forcedRace = qs.get('race');   // ?race=ID para mirar una carrera concreta
+
+let ultimo = null;       // último payload recibido
+let recibidoEn = 0;      // reloj local al recibirlo
+
+/* ── Utilidades ─────────────────────────────────────────────────────────── */
+const el = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+function haceStr(ms){
+  if (ms < 0) ms = 0;
+  const s = Math.floor(ms/1000);
+  if (s < 60) return s + ' s';
+  const m = Math.floor(s/60);
+  if (m < 60) return m + ' min';
+  return Math.floor(m/60) + 'h ' + String(m%60).padStart(2,'0');
+}
+function hhmmAMin(hhmm){
+  if (!hhmm || !/^\d{1,2}:\d{2}/.test(hhmm)) return null;
+  const [h,m] = hhmm.split(':').map(Number);
+  return h*60 + m;
+}
+function ahoraMin(){
+  const d = new Date();
+  return d.getHours()*60 + d.getMinutes();
+}
+
+/* ── Diagnóstico: todo se calcula sobre el payload publicado ─────────────── */
+function analizar(d){
+  const nz    = d?.cfg?.numZones || 7;
+  const horas = d?.cfg?.raceDurationHrs || 5;
+  const pil   = Array.isArray(d?.pilots) ? d.pilots : [];
+
+  const r = {
+    nz, horas,
+    total: pil.length,
+    sinEmpezar: [], enPista: [], finalizados: [], retirados: [],
+    huecos: [],            // vueltas empezadas con zonas sin puntuar
+    fueraDeTiempo: [],
+    sinCategoria: [],
+    dorsalesDup: [],
+    incoherentes: [],      // puntos de vuelta sin hora de paso
+    celdasTotales: 0, celdasPuestas: 0,
+    porCat: {}
+  };
+
+  const vistos = new Map();
+  pil.forEach(p => {
+    const key = p.dorsal;
+    vistos.set(key, (vistos.get(key)||0)+1);
+  });
+  vistos.forEach((n,dorsal) => { if (n > 1) r.dorsalesDup.push(dorsal); });
+
+  pil.forEach(p => {
+    const cat = (p.cat || '').trim();
+    if (!cat) r.sinCategoria.push(p);
+
+    const sc = Array.isArray(p.scores) ? p.scores : [[],[],[]];
+    let puestasP = 0, vueltasConAlgo = 0;
+    const huecosP = [];
+
+    for (let l = 0; l < 3; l++){
+      const fila = Array.isArray(sc[l]) ? sc[l] : [];
+      let n = 0; const faltan = [];
+      for (let z = 0; z < nz; z++){
+        const v = fila[z];
+        if (v === null || v === undefined || v === '') faltan.push(z+1); else n++;
+      }
+      puestasP += n;
+      if (n > 0){
+        vueltasConAlgo++;
+        if (faltan.length) huecosP.push({ vuelta: l+1, zonas: faltan });
+      }
+    }
+
+    const empezado = puestasP > 0 || !!p.arrV1 || p.lapsCompleted > 0;
+    const acabado  = p.finishTime !== null && p.finishTime !== undefined;
+
+    if (p.dnf || p.dsq)      r.retirados.push(p);
+    else if (acabado)        r.finalizados.push(p);
+    else if (empezado)       r.enPista.push(p);
+    else                     r.sinEmpezar.push(p);
+
+    if (empezado){
+      r.celdasTotales += nz * Math.max(1, vueltasConAlgo);
+      r.celdasPuestas += puestasP;
+      if (huecosP.length) r.huecos.push({ p, huecos: huecosP });
+    }
+
+    // Fuera de tiempo: su hora límite ya pasó y sigue sin CHF
+    const ss = hhmmAMin(p.schedStart);
+    if (ss !== null && empezado && !acabado && !p.dnf && !p.dsq){
+      const limite = ss + horas*60;
+      if (ahoraMin() > limite) r.fueraDeTiempo.push({ p, pasados: ahoraMin() - limite });
+    }
+
+    // Puntos de una vuelta cerrada pero sin hora de paso registrada
+    if (p.lap1Points !== null && p.lap1Points !== undefined && !p.lap1Time)
+      r.incoherentes.push({ p, que: 'V1 puntuada sin hora de paso (CH1)' });
+
+    const c = cat || 'SIN CATEGORÍA';
+    if (!r.porCat[c]) r.porCat[c] = { n:0, puestas:0, totales:0 };
+    r.porCat[c].n++;
+    r.porCat[c].puestas += puestasP;
+    if (empezado) r.porCat[c].totales += nz * Math.max(1, vueltasConAlgo);
+  });
+
+  return r;
+}
+
+/* ── Pintado ────────────────────────────────────────────────────────────── */
+function pintar(){
+  const d = ultimo;
+  if (!d) return;
+  const a = analizar(d);
+
+  el('hName').textContent = d.raceName || 'Sin nombre';
+  el('hVer').textContent  = d.appVersion ? 'v' + d.appVersion : '';
+
+  // ── Estado de la conexión con la mesa ──────────────────────────────────
+  // Con la publicación automática activa el cronómetro publica cada 8 s aunque
+  // no cambie nada, así que un retraso grande significa algo real: se apagó la
+  // publicación, o el PC se quedó sin cobertura.
+  const edad = Date.now() - recibidoEn;
+  let cls = 'ok', ic = '●', txt = 'Al día';
+  if (edad > 300000)      { cls='bad';  ic='■'; txt='Sin señal'; }
+  else if (edad > 45000)  { cls='warn'; ic='▲'; txt='Con retraso'; }
+
+  const estado = d.raceFinished ? { c:'ok', i:'✔', t:'Carrera finalizada' }
+              : d.raceStarted  ? { c:'ok', i:'▶', t:'Carrera en curso' }
+                               : { c:'warn', i:'■', t:'Carrera NO iniciada' };
+
+  el('secEstado').innerHTML = `
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <span class="pill ${estado.c}">${estado.i} ${estado.t}</span>
+      <span class="pill ${cls}">${ic} ${txt} · hace ${haceStr(edad)}</span>
+    </div>`;
+
+  // ── Cifras ─────────────────────────────────────────────────────────────
+  const pct = a.celdasTotales ? Math.round(a.celdasPuestas/a.celdasTotales*100) : 0;
+  el('secTiles').innerHTML = `
+    <h2>De un vistazo</h2>
+    <div class="tiles">
+      <div class="tile"><div class="n">${a.total}</div><div class="l">Inscritos</div></div>
+      <div class="tile"><div class="n">${a.enPista.length}</div><div class="l">En pista</div></div>
+      <div class="tile"><div class="n">${a.finalizados.length}</div><div class="l">Finalizados</div></div>
+      <div class="tile"><div class="n">${a.sinEmpezar.length}</div><div class="l">Sin salir</div></div>
+      <div class="tile ${a.retirados.length?'warn':''}"><div class="n">${a.retirados.length}</div><div class="l">Ret. / DSQ</div></div>
+      <div class="tile ${pct<100&&a.celdasTotales?'warn':''}"><div class="n">${pct}%</div><div class="l">Zonas puntuadas</div></div>
+    </div>`;
+
+  // ── Qué revisar ────────────────────────────────────────────────────────
+  const avisos = [];
+
+  if (edad > 45000) avisos.push({ c: edad>300000?'bad':'warn', i:'📡',
+    t:'La mesa no publica desde hace ' + haceStr(edad),
+    d:'O se ha desactivado la publicación automática en el PC, o se ha quedado sin cobertura. Todo lo que ves debajo es de ese momento.' });
+
+  if (!d.raceStarted && a.total > 0) avisos.push({ c:'warn', i:'⏸',
+    t:'La carrera no está iniciada',
+    d:'Mientras no se pulse "Iniciar Carrera" no se puede puntuar. Es la causa más habitual de "no me deja meter puntos".' });
+
+  if (a.sinCategoria.length) avisos.push({ c:'bad', i:'🏷',
+    t:a.sinCategoria.length + ' piloto(s) sin categoría',
+    d:'Dorsales ' + a.sinCategoria.map(p=>p.dorsal).join(', ') + '. No saldrán en la clasificación de ninguna categoría. Suele ser una categoría que la federación escribió distinto en el Excel.' });
+
+  if (a.dorsalesDup.length) avisos.push({ c:'bad', i:'⚠',
+    t:'Dorsales repetidos: ' + a.dorsalesDup.join(', '),
+    d:'Dos pilotos con el mismo dorsal mezclan sus puntuaciones. Hay que corregirlo cuanto antes.' });
+
+  if (a.fueraDeTiempo.length) avisos.push({ c:'bad', i:'⏰',
+    t:a.fueraDeTiempo.length + ' piloto(s) fuera de tiempo',
+    d:a.fueraDeTiempo.slice(0,8).map(x=>`#${x.p.dorsal} (${haceStr(x.pasados*60000)} de más)`).join(' · ') +
+      (a.fueraDeTiempo.length>8 ? ' …' : '') +
+      '. Han pasado de su hora límite y siguen sin CHF: o no han terminado, o falta marcarles la llegada.' });
+
+  if (a.huecos.length) avisos.push({ c:'warn', i:'🕳',
+    t:a.huecos.length + ' piloto(s) con zonas sin puntuar',
+    d:'Vueltas empezadas a las que les falta alguna zona. Es lo que suele quedarse atrás cuando se pasan las tarjetas a mano. El detalle está más abajo.' });
+
+  if (a.incoherentes.length) avisos.push({ c:'warn', i:'🔀',
+    t:a.incoherentes.length + ' piloto(s) con vuelta puntuada y sin hora de paso',
+    d:a.incoherentes.slice(0,8).map(x=>'#'+x.p.dorsal).join(', ') + (a.incoherentes.length>8?' …':'') +
+      '. Tienen puntos de V1 pero no se les marcó CH1.' });
+
+  el('secIssues').innerHTML = '<h2>Qué revisar</h2>' + (avisos.length
+    ? avisos.map(v=>`<div class="issue ${v.c}"><div class="ic">${v.i}</div><div><div class="tt">${esc(v.t)}</div><div class="dd">${esc(v.d)}</div></div></div>`).join('')
+    : `<div class="issue ok"><div class="ic">✔</div><div><div class="tt">Nada que revisar</div><div class="dd">No veo huecos, ni pilotos sin categoría, ni nadie fuera de tiempo.</div></div></div>`);
+
+  // ── Progreso por categoría ─────────────────────────────────────────────
+  const cats = Object.entries(a.porCat).sort((x,y)=>x[0].localeCompare(y[0]));
+  el('secCats').innerHTML = '<h2>Avance por categoría</h2>' + (cats.length
+    ? cats.map(([c,v])=>{
+        const p = v.totales ? Math.round(v.puestas/v.totales*100) : 0;
+        return `<div class="cat">
+          <div class="cat-h"><b>${esc(c)}</b><span>${v.n} ${v.n===1?'piloto':'pilotos'} · ${p}%</span></div>
+          <div class="bar"><i style="width:${p}%"></i></div>
+        </div>`;
+      }).join('')
+    : '<div class="empty">Todavía no hay categorías.</div>');
+
+  // ── Detalle de los huecos ──────────────────────────────────────────────
+  el('secDetalle').innerHTML = '<h2>Detalle de zonas sin puntuar</h2>' + (a.huecos.length
+    ? a.huecos.slice(0,40).map(({p,huecos})=>`
+        <details>
+          <summary><span class="dot warn"></span>#${p.dorsal} · ${esc(p.name||'')} <span style="color:var(--muted);font-weight:400">(${esc(p.cat||'—')})</span></summary>
+          <table>
+            <thead><tr><th class="l">Vuelta</th>${Array.from({length:a.nz},(_,i)=>`<th>Z${i+1}</th>`).join('')}</tr></thead>
+            <tbody>
+              ${[0,1,2].map(l=>{
+                const fila = (p.scores && p.scores[l]) || [];
+                const algo = fila.some(v=>v!==null&&v!==undefined&&v!=='');
+                if (!algo) return '';
+                return `<tr><td class="l">V${l+1}</td>${Array.from({length:a.nz},(_,z)=>{
+                  const v = fila[z];
+                  const falta = (v===null||v===undefined||v==='');
+                  return `<td class="${falta?'miss':''}">${falta?'–':esc(v)}</td>`;
+                }).join('')}</tr>`;
+              }).join('')}
+            </tbody>
+          </table>
+          <div style="font-size:12px;color:var(--muted);margin-top:6px">
+            Faltan: ${huecos.map(h=>`V${h.vuelta} → zonas ${h.zonas.join(', ')}`).join(' · ')}
+          </div>
+        </details>`).join('') + (a.huecos.length>40 ? `<div class="empty">…y ${a.huecos.length-40} más.</div>` : '')
+    : '<div class="empty">Ningún hueco: todas las vueltas empezadas están completas.</div>');
+
+  el('hSub').textContent = (d.raceDate ? d.raceDate + ' · ' : '') +
+    (d.cfg?.kidsMode ? 'Infantil' : 'Adultos') + ' · ' + (d.cfg?.numZones||'?') + ' zonas';
+}
+
+/* Refrescar la antigüedad aunque no lleguen datos nuevos */
+setInterval(() => { if (ultimo) pintar(); }, 5000);
+
+/* ── Conexión ───────────────────────────────────────────────────────────── */
+function fallo(titulo, detalle){
+  el('hName').textContent = 'Sin conexión';
+  el('hSub').textContent  = titulo;
+  el('secEstado').innerHTML = `<div class="issue bad"><div class="ic">✖</div><div>
+    <div class="tt">${esc(titulo)}</div><div class="dd">${esc(detalle||'')}</div></div></div>`;
+}
+
+(async () => {
+  let fb, dbm, auth;
+  try {
+    fb   = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js');
+    dbm  = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js');
+    auth = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js');
+  } catch(e){
+    fallo('No se pudo cargar Firebase', 'Esta página necesita internet. ' + e.message);
+    return;
+  }
+
+  const app = fb.initializeApp(FB_CONFIG);
+  const db  = dbm.getDatabase(app);
+  try {
+    await auth.signInAnonymously(auth.getAuth(app));
+  } catch(e){
+    fallo('El servidor ha rechazado la conexión', e.message);
+    return;
+  }
+
+  function escuchar(raceId){
+    dbm.onValue(dbm.ref(db, 'races_live/' + raceId), snap => {
+      const v = snap.val();
+      if (!v){
+        fallo('La carrera activa aún no ha publicado nada',
+              'El cronómetro publica al activar "Publicar". Carrera: ' + raceId);
+        return;
+      }
+      ultimo = v;
+      recibidoEn = Date.now();
+      pintar();
+    }, err => fallo('El servidor ha rechazado la lectura', err.message));
+  }
+
+  if (forcedRace){ escuchar(forcedRace); return; }
+
+  dbm.onValue(dbm.ref(db, 'current_race'), snap => {
+    const cr = snap.val();
+    if (!cr || !cr.raceId){
+      fallo('No hay ninguna carrera activa',
+            'El cronómetro apunta la carrera activa al publicar. Si sabes el identificador, abre esta página con ?race=EL_ID');
+      return;
+    }
+    escuchar(cr.raceId);
+  }, err => fallo('El servidor ha rechazado la lectura', err.message));
+})();
+</script>
+</body>
+</html>

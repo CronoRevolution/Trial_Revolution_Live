@@ -342,6 +342,44 @@ const FB_CONFIG = {
   appId: '1:630413676427:web:af5a3afd21e67487ba698e'
 };
 let _fbLiveActive = false;
+
+// ── Canal en vivo ─────────────────────────────────────────────────────────
+// Dos formas de recibir lo mismo:
+//   · reducido  → races_live_min: meta + una rama por categoria. Con
+//     onChildChanged solo viaja la categoria que ha cambiado.
+//   · completo  → races_live: el estado entero en cada cambio. Es lo que
+//     habia siempre, y sigue siendo el plan B si el canal reducido no esta.
+let _liveRaceId = null;
+let _liveMeta   = null;
+const _liveCats = new Map();   // categoria -> pilotos de esa categoria
+
+function _rearmarLigero(){
+  if (!_liveMeta) return;
+  const pilots = [];
+  _liveCats.forEach(lista => (lista || []).forEach(p => pilots.push(p)));
+  if (!pilots.length) return;
+  _fbLiveActive = true;
+  _applyData(Object.assign({}, _liveMeta, { pilots }));
+}
+
+function _suscribirLigero(dbm, db, raceId){
+  const base = `races_live_min/${raceId}`;
+  dbm.onValue(dbm.ref(db, base + '/meta'), s => { _liveMeta = s.val(); _rearmarLigero(); });
+
+  const catRef = dbm.ref(db, base + '/cat');
+  const meter  = s => { _liveCats.set(s.key, s.val() || []); _rearmarLigero(); };
+  dbm.onChildAdded(catRef, meter);
+  dbm.onChildChanged(catRef, meter);
+  dbm.onChildRemoved(catRef, s => { _liveCats.delete(s.key); _rearmarLigero(); });
+}
+
+function _suscribirCompleto(dbm, db, raceId){
+  dbm.onValue(dbm.ref(db, `races_live/${raceId}`), s => {
+    const d = s.val();
+    if (d && d.pilots) { _fbLiveActive = true; _applyData(d); }
+  });
+}
+
 async function _initFirebaseLive(){
   if (_isArchive) return; // el modo archivo usa su propia carga
   try {
@@ -353,17 +391,22 @@ async function _initFirebaseLive(){
     const db = dbm.getDatabase(app);
 
     // 1. Saber cuál es la carrera actual
-    dbm.onValue(dbm.ref(db, 'current_race'), (snap) => {
+    dbm.onValue(dbm.ref(db, 'current_race'), async (snap) => {
       const cur = snap.val();
       if (!cur || !cur.raceId) return;
-      // 2. Suscribirse al nodo en vivo de esa carrera
-      dbm.onValue(dbm.ref(db, `races_live/${cur.raceId}`), (s2) => {
-        const d = s2.val();
-        if (d && d.pilots) {
-          _fbLiveActive = true;
-          _applyData(d);
-        }
-      });
+      if (_liveRaceId === cur.raceId) return;   // ya suscritos a esta carrera
+      _liveRaceId = cur.raceId;
+
+      // 2. Si existe el canal reducido, usarlo: llega solo la categoría que
+      //    cambia, en vez de la carrera entera cada vez que alguien puntúa.
+      //    Si no existe, se lee el nodo completo como toda la vida.
+      let ligero = false;
+      try {
+        ligero = (await dbm.get(dbm.ref(db, `races_live_min/${cur.raceId}/meta`))).exists();
+      } catch(e) { ligero = false; }
+
+      if (ligero) _suscribirLigero(dbm, db, cur.raceId);
+      else        _suscribirCompleto(dbm, db, cur.raceId);
     });
   } catch(e) {
     console.warn('Firebase live no disponible, se usará GitHub Pages:', e.message);

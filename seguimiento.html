@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta name="theme-color" content="#f59e0b">
+<title>Sigue a tu piloto — Trial Revolution</title>
+<!--
+  Trial Revolution — Seguimiento de pilotos (público)
+  © 2026 Pablo Parro Asensio. Todos los derechos reservados.
+
+  Página independiente: no toca la web de resultados. Lee races_live/{raceId},
+  lo mismo que publica el cronómetro cada 8 s, y filtra en el móvil.
+
+  Los pilotos seguidos se guardan en el propio teléfono y viajan en la URL
+  (?seguir=69,73), para poder mandar el enlace por WhatsApp sin que nadie
+  tenga que buscar nada. No hay cuentas ni datos en ningún servidor.
+-->
+<style>
+:root{
+  --bg:#0a0c14; --surface:#111828; --surface2:#161f33; --border:#252d42;
+  --text:#e2e8f0; --muted:#94a3b8; --accent:#f59e0b;
+  --ok:#22c55e; --warn:#f59e0b; --bad:#ef4444;
+}
+@media (prefers-color-scheme: light){
+  :root{
+    --bg:#eef2f7; --surface:#ffffff; --surface2:#f5f8fb; --border:#d9e2ec;
+    --text:#0f172a; --muted:#5b6b7f; --accent:#b45309;
+    --ok:#15803d; --warn:#b45309; --bad:#b91c1c;
+  }
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--text);
+  font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  font-size:16px;line-height:1.4;padding-bottom:36px}
+
+header{position:sticky;top:0;z-index:20;background:var(--surface);
+  border-bottom:2px solid var(--accent);padding:11px 15px}
+.h-t{font-weight:800;font-size:15px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.h-s{font-size:12px;color:var(--muted);margin-top:2px;display:flex;gap:8px;align-items:center}
+.punto{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--muted)}
+.punto.ok{background:var(--ok)} .punto.warn{background:var(--warn)} .punto.bad{background:var(--bad)}
+
+main{padding:14px 15px;max-width:720px;margin:0 auto}
+h2{font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);
+  margin:20px 0 9px;font-weight:800}
+
+/* Buscador */
+.buscar{position:relative}
+input[type=search]{width:100%;padding:14px 15px;font-size:17px;border-radius:12px;
+  border:2px solid var(--border);background:var(--surface);color:var(--text);
+  -webkit-appearance:none;appearance:none}
+input[type=search]:focus{outline:none;border-color:var(--accent)}
+.res{margin-top:8px;background:var(--surface);border:1px solid var(--border);
+  border-radius:12px;overflow:hidden}
+.res-i{display:flex;align-items:center;gap:11px;padding:12px 14px;cursor:pointer;
+  border-bottom:1px solid var(--border)}
+.res-i:last-child{border-bottom:none}
+.res-i:active{background:var(--surface2)}
+.dor{font-family:ui-monospace,monospace;font-weight:800;font-size:17px;color:var(--accent);
+  min-width:42px}
+.res-n{flex:1;font-weight:600;font-size:15px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.res-c{font-size:12px;color:var(--muted);font-weight:700;letter-spacing:1px}
+
+/* Tarjeta de piloto seguido */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;
+  margin-bottom:12px;overflow:hidden}
+.card-h{display:flex;align-items:center;gap:11px;padding:13px 14px}
+.card-h .dor{font-size:22px;min-width:50px}
+.card-nm{flex:1;min-width:0}
+.card-nm b{display:block;font-size:16px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card-nm span{font-size:12px;color:var(--muted)}
+.quitar{background:transparent;border:none;color:var(--muted);font-size:19px;
+  padding:6px 4px;cursor:pointer;line-height:1}
+
+.cifras{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border)}
+.cif{background:var(--surface);padding:11px 8px;text-align:center}
+.cif b{display:block;font-size:23px;font-weight:800;font-variant-numeric:tabular-nums;line-height:1.1}
+.cif span{font-size:10.5px;color:var(--muted);letter-spacing:.4px}
+
+.estado{padding:9px 14px;font-size:13px;font-weight:700;display:flex;align-items:center;gap:7px;
+  border-top:1px solid var(--border)}
+.estado.ok{color:var(--ok)} .estado.warn{color:var(--warn)} .estado.bad{color:var(--bad)}
+.nota{padding:0 14px 10px;font-size:12px;color:var(--muted)}
+
+.zonas{padding:2px 14px 12px;display:flex;gap:5px;flex-wrap:wrap;align-items:center}
+.zl{font-size:11px;color:var(--muted);letter-spacing:1px;font-weight:700;margin-right:3px}
+.z{min-width:27px;height:27px;border-radius:7px;border:1px solid var(--border);
+  background:var(--surface2);display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:14px;font-variant-numeric:tabular-nums}
+.z.falta{color:var(--muted);border-style:dashed}
+
+.vs{padding:0 14px 12px;font-size:13px;display:flex;flex-direction:column;gap:3px}
+.vs div{color:var(--muted)}
+.vs b{color:var(--text)}
+
+details{border-top:1px solid var(--border)}
+summary{padding:11px 14px;font-size:13px;font-weight:700;color:var(--accent);
+  cursor:pointer;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:'▸ '}
+details[open] summary::before{content:'▾ '}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{padding:7px 6px;border-bottom:1px solid var(--border)}
+th{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;text-align:left}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+tbody tr.yo{background:color-mix(in srgb,var(--accent) 16%,transparent);font-weight:800}
+tbody tr:last-child td{border-bottom:none}
+
+.acciones{display:flex;gap:9px;margin-top:14px;flex-wrap:wrap}
+button.b{flex:1;min-width:135px;padding:13px;border-radius:12px;border:1px solid var(--border);
+  background:var(--surface);color:var(--text);font-size:14px;font-weight:700;cursor:pointer}
+button.b.pri{background:var(--accent);color:#fff;border-color:transparent}
+button.b:active{opacity:.75}
+
+.vacio{background:var(--surface);border:1px dashed var(--border);border-radius:14px;
+  padding:22px 18px;text-align:center;color:var(--muted);font-size:14px}
+.vacio b{display:block;color:var(--text);font-size:16px;margin-bottom:6px}
+.pie{font-size:11px;color:var(--muted);text-align:center;margin-top:26px;line-height:1.6}
+.aviso{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--warn);
+  border-radius:10px;padding:10px 13px;font-size:13px;color:var(--muted);margin-bottom:12px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="h-t" id="hT">Cargando…</div>
+  <div class="h-s"><span class="punto" id="hP"></span><span id="hS">Buscando la carrera</span></div>
+</header>
+
+<main>
+  <div id="avisos"></div>
+
+  <div class="buscar">
+    <input type="search" id="q" placeholder="Busca por dorsal o nombre" autocomplete="off"
+           inputmode="search" aria-label="Buscar piloto">
+    <div class="res" id="res" hidden></div>
+  </div>
+
+  <div id="seguidos"></div>
+
+  <div class="acciones" id="acciones" hidden>
+    <button class="b pri" id="btnCompartir">🔗 Compartir esta lista</button>
+    <button class="b" id="btnVaciar">Quitar todos</button>
+  </div>
+
+  <div class="pie">
+    Los pilotos que sigues se guardan solo en este teléfono.<br>
+    Trial Revolution · Seguimiento <span id="v"></span>
+  </div>
+</main>
+
+<script type="module">
+const VERSION = '2026.08.17.1';
+document.getElementById('v').textContent = VERSION;
+
+const FB_CONFIG = {
+  apiKey: 'AIzaSyCnasN6ewMMAH5JebMiJeGXYVw8Km-quHc',
+  databaseURL: 'https://trial-revolution-default-rtdb.europe-west1.firebasedatabase.app',
+  projectId: 'trial-revolution',
+  appId: '1:630413676427:web:af5a3afd21e67487ba698e'
+};
+
+const CLAVE = 'tr_seguidos';
+const el  = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* ── Lista de seguidos: teléfono + URL ──────────────────────────────── */
+function leerGuardados(){
+  try { return JSON.parse(localStorage.getItem(CLAVE) || '[]').filter(n => Number.isFinite(n)); }
+  catch(e){ return []; }
+}
+function guardar(lista){
+  try { localStorage.setItem(CLAVE, JSON.stringify(lista)); } catch(e){}
+}
+const qs = new URLSearchParams(location.search);
+const deURL = (qs.get('seguir') || '').split(',')
+  .map(s => parseInt(s.trim(), 10)).filter(Number.isFinite);
+
+// La URL manda al abrirla, pero se suma a lo que ya hubiera guardado.
+let seguidos = Array.from(new Set([...deURL, ...leerGuardados()]));
+if (deURL.length) guardar(seguidos);
+
+let datos = null, recibidoEn = 0;
+let idx = null;              // índice ligero dorsal -> {n: nombre, c: categoría}
+let modo = 'completo';       // 'ligero' si existe el canal reducido
+let ultimoPub = null;        // último publishedAt visto (modo completo)
+let cambioEn = 0;            // cuándo cambió por última vez, en reloj local
+
+/* ── Utilidades ─────────────────────────────────────────────────────── */
+// Antigüedad real del dato. En modo ligero la marca el latido; en modo
+// completo, el último cambio de publishedAt (no la última descarga: con
+// lectura periódica, descargar no significa que la mesa siga viva).
+function edadDatos(){ return Date.now() - (cambioEn || recibidoEn); }
+
+function hace(ms){
+  const s = Math.floor(ms/1000);
+  if (s < 60) return s + ' s';
+  const m = Math.floor(s/60);
+  return m < 60 ? m + ' min' : Math.floor(m/60) + ' h';
+}
+function normaliza(s){
+  return String(s || '').toUpperCase()
+    .normalize('NFD').replace(/[̀-ͯ]/g, '');
+}
+function buscarPilotos(t){
+  const n = normaliza(t);
+  const casa = p => String(p.dorsal) === t || normaliza(p.name).includes(n);
+  if (idx){
+    return Object.entries(idx)
+      .map(([k, v]) => ({ dorsal: parseInt(String(k).replace(/^d/, ''), 10), name: v.n || '', cat: v.c || '' }))
+      .filter(p => Number.isFinite(p.dorsal) && casa(p))
+      .sort((a, b) => a.dorsal - b.dorsal);
+  }
+  return (datos?.pilots || []).filter(casa);
+}
+
+function ultimaVueltaConDatos(p){
+  const sc = p.scores || [[],[],[]];
+  for (let l = 2; l >= 0; l--){
+    if ((sc[l] || []).some(v => v !== null && v !== undefined && v !== '')) return l;
+  }
+  return -1;
+}
+function estado(p){
+  if (p.dsq) return { c:'bad',  i:'⛔', t:'Descalificado' + (p.dsqReason ? ' · ' + p.dsqReason : '') };
+  if (p.dnf) return { c:'warn', i:'🚩', t:'Retirado' };
+  if (p.finishTime !== null && p.finishTime !== undefined)
+    return { c:'ok', i:'🏁', t:'Ha terminado' + (p.totalTime ? ' · ' + p.totalTime : '') };
+  const l = ultimaVueltaConDatos(p);
+  if (l >= 0) return { c:'ok', i:'▶', t:'En pista · vuelta ' + (l + 1) };
+  return { c:'warn', i:'⏱', t:'Todavía sin datos · sale a las ' + (p.schedStart || '--:--') };
+}
+
+/* ── Pintado ────────────────────────────────────────────────────────── */
+function pintar(){
+  if (!datos) return;
+  const pilotos = datos.pilots || [];
+  const nz = datos.cfg?.numZones || 7;
+  const edad = edadDatos();
+
+  el('hT').textContent = datos.raceName || 'Trial Revolution';
+  const p = el('hP'), s = el('hS');
+  // En modo completo se lee cada 30 s, así que el umbral de aviso es más
+  // holgado y nunca se dice "en directo": sería mentira.
+  const umbral = (modo === 'ligero') ? 45000 : 75000;
+  if (edad > 300000)      { p.className = 'punto bad';  s.textContent = 'Sin datos nuevos desde hace ' + hace(edad); }
+  else if (edad > umbral) { p.className = 'punto warn'; s.textContent = 'Actualizado hace ' + hace(edad); }
+  else if (modo === 'ligero') { p.className = 'punto ok'; s.textContent = 'En directo'; }
+  else                    { p.className = 'punto ok';   s.textContent = 'Actualizado hace ' + hace(edad); }
+
+  // Avisos generales, solo cuando aportan algo
+  const av = [];
+  if (!datos.raceStarted) av.push('La carrera todavía no ha empezado. Aquí verás los resultados en cuanto arranque.');
+  if (edad > 300000)      av.push('Hace un rato que no llegan datos nuevos. Puede que en la organización se hayan quedado sin cobertura; en cuanto vuelva, esto se actualiza solo.');
+  el('avisos').innerHTML = av.map(t => '<div class="aviso">' + esc(t) + '</div>').join('');
+
+  // Tarjetas
+  const cont = el('seguidos');
+  if (!seguidos.length){
+    cont.innerHTML = `<div class="vacio"><b>Sigue a tu piloto</b>
+      Escribe su dorsal o su nombre arriba y aparecerá aquí, con su puesto y sus
+      puntuaciones actualizándose solas.</div>`;
+    el('acciones').hidden = true;
+    return;
+  }
+  el('acciones').hidden = false;
+
+  cont.innerHTML = '<h2>Siguiendo</h2>' + seguidos.map(d => {
+    const p = pilotos.find(x => x.dorsal === d);
+    if (!p) return `<div class="card"><div class="card-h">
+        <span class="dor">${d}</span>
+        <div class="card-nm"><b>No está en esta carrera</b>
+        <span>Puede que el dorsal sea de otra prueba</span></div>
+        <button class="quitar" data-quitar="${d}" aria-label="Quitar">✕</button></div></div>`;
+
+    const mismos = pilotos.filter(x => x.cat === p.cat).sort((a,b) => (a.rank||99) - (b.rank||99));
+    const idx    = mismos.findIndex(x => x.dorsal === p.dorsal);
+    const delante = idx > 0 ? mismos[idx-1] : null;
+    const detras  = idx >= 0 && idx < mismos.length-1 ? mismos[idx+1] : null;
+    const est = estado(p);
+    const lv  = ultimaVueltaConDatos(p);
+    const fila = lv >= 0 ? (p.scores[lv] || []) : [];
+    const faltan = lv >= 0 ? Array.from({length:nz},(_,z)=>z).filter(z => {
+      const v = fila[z]; return v === null || v === undefined || v === '';
+    }) : [];
+    const pts = (p.totalPoints === null || p.totalPoints === undefined) ? '—' : p.totalPoints;
+
+    const dif = (otro, sentido) => {
+      if (!otro) return '';
+      const a = p.totalPoints ?? null, b = otro.totalPoints ?? null;
+      if (a === null || b === null) return '';
+      const d2 = Math.abs(a - b);
+      const txt = d2 === 0 ? 'empatado con' : (d2 + ' punto' + (d2===1?'':'s') + (sentido==='arriba'?' por detrás de':' por delante de'));
+      return `<div>${sentido==='arriba'?'⬆':'⬇'} ${txt} <b>#${otro.dorsal} ${esc(((otro.name||'').split(',')[0] || '').trim().split(/\s+/)[0])}</b></div>`;
+    };
+
+    return `<div class="card">
+      <div class="card-h">
+        <span class="dor">${p.dorsal}</span>
+        <div class="card-nm"><b>${esc(p.name || '')}</b>
+          <span>${esc(p.cat || '')}${p.club ? ' · ' + esc(p.club) : ''}</span></div>
+        <button class="quitar" data-quitar="${p.dorsal}" aria-label="Dejar de seguir">✕</button>
+      </div>
+      <div class="cifras">
+        <div class="cif"><b>${p.dsq ? 'DQ' : p.dnf ? 'R' : (p.rank || '—') + 'º'}</b><span>EN ${esc(p.cat||'')}</span></div>
+        <div class="cif"><b>${pts}</b><span>PUNTOS</span></div>
+        <div class="cif"><b>${p.lapsCompleted ?? 0}/3</b><span>VUELTAS</span></div>
+      </div>
+      <div class="estado ${est.c}">${est.i} ${esc(est.t)}</div>
+      ${lv >= 0 ? `<div class="zonas"><span class="zl">V${lv+1}</span>${
+        Array.from({length:nz},(_,z)=>{
+          const v = fila[z]; const f = (v===null||v===undefined||v==='');
+          return `<span class="z${f?' falta':''}">${f?'·':esc(v)}</span>`;
+        }).join('')}</div>` : ''}
+      ${faltan.length ? `<div class="nota">Le faltan ${faltan.length} zona(s) por anotar en esta vuelta,
+        así que el puesto todavía puede cambiar.</div>` : ''}
+      ${(delante || detras) ? `<div class="vs">${dif(delante,'arriba')}${dif(detras,'abajo')}</div>` : ''}
+      <details>
+        <summary>Ver toda la categoría ${esc(p.cat || '')} (${mismos.length})</summary>
+        <table>
+          <thead><tr><th class="n">#</th><th>Piloto</th><th class="n">Pts</th></tr></thead>
+          <tbody>${mismos.map(x => `<tr class="${x.dorsal===p.dorsal?'yo':''}">
+            <td class="n">${x.dsq?'DQ':x.dnf?'R':(x.rank||'—')}</td>
+            <td>${x.dorsal} · ${esc(x.name || '')}</td>
+            <td class="n">${(x.totalPoints===null||x.totalPoints===undefined)?'—':x.totalPoints}</td>
+          </tr>`).join('')}</tbody>
+        </table>
+      </details>
+    </div>`;
+  }).join('');
+
+  cont.querySelectorAll('[data-quitar]').forEach(b => {
+    b.onclick = () => {
+      seguidos = seguidos.filter(d => d !== parseInt(b.dataset.quitar, 10));
+      guardar(seguidos); sincronizarCategorias(); pintar();
+    };
+  });
+}
+
+/* ── Buscador ───────────────────────────────────────────────────────── */
+el('q').addEventListener('input', () => {
+  const t = el('q').value.trim();
+  const caja = el('res');
+  if (!t || (!datos && !idx)){ caja.hidden = true; caja.innerHTML = ''; return; }
+  const hits = buscarPilotos(t).filter(p => !seguidos.includes(p.dorsal)).slice(0, 8);
+  caja.hidden = hits.length === 0;
+  caja.innerHTML = hits.map(p => `<div class="res-i" data-add="${p.dorsal}">
+      <span class="dor">${p.dorsal}</span>
+      <span class="res-n">${esc(p.name || '')}</span>
+      <span class="res-c">${esc(p.cat || '')}</span></div>`).join('');
+  caja.querySelectorAll('[data-add]').forEach(d => {
+    d.onclick = () => {
+      const dor = parseInt(d.dataset.add, 10);
+      if (!seguidos.includes(dor)) seguidos.push(dor);
+      guardar(seguidos);
+      sincronizarCategorias();
+      el('q').value = ''; caja.hidden = true; caja.innerHTML = '';
+      pintar();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+  });
+});
+
+/* ── Compartir y vaciar ─────────────────────────────────────────────── */
+el('btnCompartir').onclick = async () => {
+  const url = location.origin + location.pathname + '?seguir=' + seguidos.join(',');
+  const txt = 'Sigue en directo a ' + seguidos.map(d => '#' + d).join(', ') +
+              ' en ' + (datos?.raceName || 'la carrera');
+  try {
+    if (navigator.share) { await navigator.share({ title: 'Trial Revolution', text: txt, url }); return; }
+    await navigator.clipboard.writeText(url);
+    el('btnCompartir').textContent = '✓ Enlace copiado';
+    setTimeout(() => el('btnCompartir').textContent = '🔗 Compartir esta lista', 2200);
+  } catch(e){ /* el usuario ha cancelado: no hay nada que hacer */ }
+};
+el('btnVaciar').onclick = () => {
+  if (!confirm('¿Dejar de seguir a todos?')) return;
+  seguidos = []; guardar(seguidos); pintar();
+};
+
+setInterval(() => { if (datos) pintar(); }, 10000);
+
+/* ── Conexión ───────────────────────────────────────────────────────────
+   Dos modos, y la página elige sola:
+
+   · LIGERO — si el cronómetro publica `races_live_min`, el móvil escucha en
+     directo SOLO la categoría de los pilotos que sigue, más un índice para
+     buscar y un latido de 8 bytes. Unos KB en toda la carrera.
+
+   · COMPLETO — si ese canal no existe todavía, lee `races_live` entero cada
+     30 segundos. Funciona igual, pero gasta bastante más, así que no se
+     escucha en directo.
+
+   El modo ligero llegará cuando se toque el cronómetro; esta página ya está
+   preparada y no hay que volver a subirla.
+   ──────────────────────────────────────────────────────────────────────── */
+
+const INTERVALO_COMPLETO = 30000;   // ms entre lecturas en modo completo
+
+let db = null, dbm = null, raceIdActual = null;
+let metaLigera = null;
+const subsCat        = new Map();   // categoría -> función para desuscribirse
+const pilotosPorCat  = new Map();   // categoría -> pilotos de esa categoría
+
+function fallo(t, d){
+  el('hT').textContent = 'Sin conexión';
+  el('hP').className = 'punto bad';
+  el('hS').textContent = t;
+  el('avisos').innerHTML = '<div class="aviso">' + esc(d || t) + '</div>';
+}
+
+/* ── Modo ligero ──────────────────────────────────────────────────────── */
+function rehacerDatos(){
+  if (modo !== 'ligero' || !metaLigera) return;
+  const pilots = [];
+  pilotosPorCat.forEach(lista => (lista || []).forEach(p => pilots.push(p)));
+  datos = Object.assign({}, metaLigera, { pilots });
+  pintar();
+}
+
+function asegurarCategoria(c){
+  if (modo !== 'ligero' || !c || subsCat.has(c)) return;
+  const off = dbm.onValue(dbm.ref(db, 'races_live_min/' + raceIdActual + '/cat/' + c),
+    snap => { pilotosPorCat.set(c, snap.val() || []); rehacerDatos(); },
+    () => {});
+  subsCat.set(c, off);
+}
+
+function sincronizarCategorias(){
+  if (modo !== 'ligero' || !idx) return;
+  const quiero = new Set(seguidos.map(d => (idx['d' + d] || {}).c).filter(Boolean));
+  quiero.forEach(asegurarCategoria);
+  // Soltar las que ya no sigue nadie: dejan de gastar datos al momento.
+  Array.from(subsCat.keys()).forEach(c => {
+    if (!quiero.has(c)){
+      try { subsCat.get(c)(); } catch(e){}
+      subsCat.delete(c); pilotosPorCat.delete(c);
+    }
+  });
+  rehacerDatos();
+}
+
+function modoLigero(){
+  modo = 'ligero';
+  dbm.onValue(dbm.ref(db, 'races_live_min/' + raceIdActual + '/meta'),
+    s => { metaLigera = s.val() || {}; rehacerDatos(); }, () => {});
+  dbm.onValue(dbm.ref(db, 'races_live_min/' + raceIdActual + '/idx'),
+    s => { idx = s.val() || {}; sincronizarCategorias(); }, () => {});
+  // El latido llega cada 8 s. Se marca con el reloj del móvil a propósito:
+  // comparar con el reloj del PC daría sustos si van desfasados.
+  dbm.onValue(dbm.ref(db, 'races_live_ts/' + raceIdActual),
+    () => { cambioEn = Date.now(); if (datos) pintar(); }, () => {});
+}
+
+/* ── Modo completo ────────────────────────────────────────────────────── */
+function modoCompleto(){
+  modo = 'completo';
+  const leer = async () => {
+    try {
+      const snap = await dbm.get(dbm.ref(db, 'races_live/' + raceIdActual));
+      const v = snap.val();
+      if (!v){
+        fallo('La carrera aún no ha publicado nada',
+              'En cuanto la organización empiece a publicar, esto se llenará solo.');
+        return;
+      }
+      datos = v;
+      recibidoEn = Date.now();
+      // La carrera está viva si publishedAt avanza, no si la lectura funciona.
+      if (v.publishedAt !== ultimoPub){ ultimoPub = v.publishedAt; cambioEn = Date.now(); }
+      pintar();
+    } catch(e){
+      fallo('No se pudo leer la carrera', e.message);
+    }
+  };
+  leer();
+  setInterval(leer, INTERVALO_COMPLETO);
+}
+
+/* ── Arranque ─────────────────────────────────────────────────────────── */
+(async () => {
+  let fb, auth;
+  try {
+    fb   = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js');
+    dbm  = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js');
+    auth = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js');
+  } catch(e){
+    fallo('Sin internet', 'Esta página necesita conexión para ver la carrera en directo.');
+    return;
+  }
+
+  const app = fb.initializeApp(FB_CONFIG);
+  db = dbm.getDatabase(app);
+  try { await auth.signInAnonymously(auth.getAuth(app)); }
+  catch(e){ fallo('No se pudo conectar', e.message); return; }
+
+  async function arrancar(raceId){
+    raceIdActual = raceId;
+    let ligero = false;
+    try {
+      const m = await dbm.get(dbm.ref(db, 'races_live_min/' + raceId + '/meta'));
+      ligero = m.exists();
+    } catch(e){ ligero = false; }
+    if (ligero) modoLigero(); else modoCompleto();
+  }
+
+  const forzada = qs.get('race');
+  if (forzada){ arrancar(forzada); return; }
+
+  try {
+    const cr = (await dbm.get(dbm.ref(db, 'current_race'))).val();
+    if (!cr || !cr.raceId){
+      fallo('No hay ninguna carrera activa', 'Cuando empiece la siguiente prueba, aparecerá aquí.');
+      return;
+    }
+    arrancar(cr.raceId);
+  } catch(e){
+    fallo('No se pudo leer la carrera', e.message);
+  }
+})();
+</script>
+</body>
+</html>
