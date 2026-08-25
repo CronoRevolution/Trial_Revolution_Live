@@ -153,7 +153,7 @@ button.b:active{opacity:.75}
 </main>
 
 <script type="module">
-const VERSION = '2026.08.25.1';
+const VERSION = '2026.08.25.2';
 document.getElementById('v').textContent = VERSION;
 
 const FB_CONFIG = {
@@ -449,6 +449,10 @@ function rehacerDatos(){
   const pilots = [];
   pilotosPorCat.forEach(lista => (lista || []).forEach(p => pilots.push(p)));
   datos = normalizaPilotos(Object.assign({}, metaLigera, { pilots }));
+  // Sembrar la antigüedad con la primera llegada de datos. Si el nodo del
+  // latido no existe —borrado, o denegado por reglas— sin esto la cabecera
+  // diría "sin datos nuevos desde hace 20.000 h", que no ayuda a nadie.
+  if (!cambioEn) cambioEn = Date.now();
   pintar();
 }
 
