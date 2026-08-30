@@ -49,14 +49,27 @@ html,body{min-height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI
 .bpre{display:inline-flex;align-items:center;gap:5px;background:rgba(100,116,139,.15);
   border:1px solid rgba(100,116,139,.3);border-radius:20px;padding:3px 9px;font-size:9px;
   font-weight:700;letter-spacing:1.5px;color:#94a3b8;text-transform:uppercase;}
+.bfin{display:inline-flex;align-items:center;gap:5px;background:rgba(22,163,74,.18);
+  border:1px solid rgba(22,163,74,.45);border-radius:20px;padding:3px 9px;font-size:9px;
+  font-weight:800;letter-spacing:1.5px;color:#4ade80;text-transform:uppercase;}
+.bold{display:inline-flex;align-items:center;gap:5px;background:rgba(100,116,139,.15);
+  border:1px solid rgba(100,116,139,.3);border-radius:20px;padding:3px 9px;font-size:9px;
+  font-weight:700;letter-spacing:1.5px;color:#94a3b8;text-transform:uppercase;}
+.aviso{margin:12px;padding:12px 14px;border-radius:10px;font-size:13px;font-weight:700;text-align:center;line-height:1.45;}
+.av-previa{background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.35);color:var(--ac);}
+.av-fin{background:rgba(22,163,74,.10);border:1px solid rgba(22,163,74,.32);color:#4ade80;}
+.av-alerta{background:rgba(239,68,68,.10);border:1px solid rgba(239,68,68,.32);color:#fca5a5;}
 .ldot{width:6px;height:6px;border-radius:50%;background:#ef4444;animation:blink 1s step-end infinite;}
 @keyframes blink{50%{opacity:0;}}
 .clk{font-family:monospace;font-size:14px;font-weight:700;color:#f59e0b;}
 
 /* TICKER */
-.ticker{background:var(--hbg);border-bottom:2px solid var(--ac);height:24px;display:none;align-items:center;overflow:hidden;}
-.tklbl{background:var(--ac);color:#000;padding:0 10px;height:100%;display:flex;align-items:center;
-  font-size:10px;font-weight:800;letter-spacing:2px;flex-shrink:0;}
+.ticker{background:#0c1120;border-bottom:1px solid rgba(245,158,11,.28);height:26px;display:none;align-items:center;overflow:hidden;}
+/* El rotulo va opaco a proposito: el texto se desplaza por debajo y con fondo
+   transparente se pisan. */
+.tklbl{background:#0c1120;position:relative;z-index:2;color:var(--acl);padding:0 11px;
+  height:100%;display:flex;align-items:center;font-size:11px;font-weight:800;
+  letter-spacing:.22em;flex-shrink:0;border-right:1px solid rgba(245,158,11,.28);}
 .tktxt{white-space:nowrap;animation:tick 50s linear infinite;padding-left:20px;
   font-size:10px;color:#94a3b8;font-weight:700;}
 @keyframes tick{from{transform:translateX(0);}to{transform:translateX(-50%);}}
@@ -130,6 +143,7 @@ html:not([data-archive="1"]) .archive-bar{display:none}
   display:flex;align-items:center;overflow:hidden;cursor:pointer;
   transition:transform .1s;border:2px solid transparent;}
 .ctile:active{transform:scale(.98);}
+.ctile:focus-visible{outline:2px solid var(--acl);outline-offset:2px;}
 .ctbar{width:6px;align-self:stretch;flex-shrink:0;}
 .ctbody{flex:1;padding:14px;}
 .ctname{font-size:22px;font-weight:900;letter-spacing:3px;}
@@ -148,7 +162,27 @@ html:not([data-archive="1"]) .archive-bar{display:none}
 .prow{background:var(--sf);border-bottom:1px solid var(--bd);display:flex;
   align-items:center;gap:10px;padding:11px 14px;cursor:pointer;transition:background .1s;}
 .prow:active{background:var(--sf2);}
+.prow:focus-visible{outline:2px solid var(--acl);outline-offset:-2px;}
 .ppos{font-size:19px;font-weight:900;width:30px;text-align:center;flex-shrink:0;}
+.ppos .ord{font-size:11px;font-weight:700;opacity:.55;}
+/* El lider: filete grueso, fondo teñido con el color de su categoria y la
+   cifra de puntos mas grande. El 2o y el 3o, solo el filete fino. */
+.prow.pod1{box-shadow:inset 4px 0 0 var(--pod);background:var(--sf2);}
+@supports (background:color-mix(in srgb, red 9%, blue)){
+  .prow.pod1{background:color-mix(in srgb, var(--pod) 9%, var(--sf));}
+}
+.prow.pod1 .ppos{font-size:23px;}
+.prow.pod1 .pname{font-weight:800;}
+.prow.pod1 .ppts{font-size:23px;}
+.prow.pod23{box-shadow:inset 2px 0 0 var(--pod);}
+.prow.pod23 .ppos{opacity:.85;}
+.plisthd{display:flex;align-items:center;gap:10px;padding:7px 14px;
+  background:var(--sf2);border-bottom:1px solid var(--bd);
+  font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mu);font-weight:800;}
+.plisthd .a{width:30px;text-align:center;}
+.plisthd .b{width:30px;text-align:center;}
+.plisthd .c{flex:1;}
+.plisthd .d{text-align:right;}
 .pdors{font-size:17px;font-weight:900;width:30px;text-align:center;flex-shrink:0;color:var(--ac);}
 .pinfo{flex:1;min-width:0;}
 .pname{font-size:14px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
@@ -246,7 +280,7 @@ footer{text-align:center;padding:20px 16px 30px;font-size:10px;color:var(--mu);
   <div class="intro-btns">
     <button class="intro-btn live" onclick="goLive()">
       <span class="ico">🏁</span>
-      <span class="lbl">Carrera actual<small>Resultados en directo</small></span>
+      <span class="lbl">Carrera actual<small id="introSub">Resultados en directo</small></span>
     </button>
     <a href="historico.html" class="intro-btn hist">
       <span class="ico">📚</span>
@@ -353,6 +387,132 @@ let _liveRaceId = null;
 let _liveMeta   = null;
 const _liveCats = new Map();   // categoria -> pilotos de esa categoria
 
+// ── Latido de la mesa ─────────────────────────────────────────────────────
+// El cronometro escribe races_live_ts/{raceId} cada 8 s. Sirve para distinguir
+// "esto esta pasando ahora" de "esto se quedo aqui la ultima vez que se abrio
+// el programa", que es justo lo que confundia: la web ensenaba la ultima
+// prueba abierta como si fuera la de hoy.
+let _latido = null;              // ms de la ultima escritura de la mesa
+const LATIDO_VIVO_MS = 3 * 60 * 1000;   // 3 min: 22 latidos perdidos seguidos
+// El respaldo de GitHub se republica cada 180 s exactos, asi que con el mismo
+// margen la pagina parpadearia entre publicacion y publicacion.
+const SELLO_VIVO_MS  = 10 * 60 * 1000;  // 10 min: tres publicaciones perdidas
+
+// Estados posibles, por orden de prioridad:
+//   finalizada  -> la mesa dijo que la carrera termino. Resultados definitivos.
+//   directo     -> empezada y la mesa sigue dando senales de vida.
+//   sinsenal    -> empezada, pero llevamos rato sin saber de la mesa.
+//   previa      -> aun no ha empezado, y la mesa esta al aparato.
+//   antigua     -> ni empezada ni terminada, y sin senal: es un resto.
+function _estadoCarrera(d) {
+  if (!d) return 'previa';
+  if (d.raceFinished) return 'finalizada';
+  // Cuando los datos vienen de data.json (GitHub Pages) no hay latido. Ahi se
+  // usa publishedAt, que el cronometro sella en cada publicacion: peor senal
+  // que el latido, pero mejor que dar por vivo un fichero de hace tres semanas.
+  let sello = _latido, margen = LATIDO_VIVO_MS;
+  if (sello === null && d.publishedAt) {
+    const t = Date.parse(d.publishedAt);
+    if (!isNaN(t)) { sello = t; margen = SELLO_VIVO_MS; }
+  }
+  if (sello === null) return d.raceStarted ? 'directo' : 'previa';
+  const fresco = (Date.now() - sello) < margen;
+  if (d.raceStarted) return fresco ? 'directo' : 'sinsenal';
+  return fresco ? 'previa' : 'antigua';
+}
+
+// Pinta insignia, ticker y aviso segun el estado. Se llama al repintar y cada
+// vez que llega (o deja de llegar) un latido.
+function _pintaEstado(d, activeCats, pilots) {
+  const sb = document.getElementById('sBadge');
+  const tk = document.getElementById('ticker');
+  if (!sb || !d) return;
+  const estado = _estadoCarrera(d);
+
+  if (estado === 'directo' && activeCats && pilots) {
+    sb.className = 'blive';
+    sb.innerHTML = '<div class="ldot"></div>En directo';
+    tk.style.display = 'flex';
+    const parts = activeCats.map(cat => {
+      const s = sortPilots(pilots.filter(p => p.cat === cat));
+      const l = s[0]; if (!l) return null;
+      return cat + ': ' + shortName(l.name) + ' — ' + (getTotal(l) ?? '—') + ' pts';
+    }).filter(Boolean).join('   ·   ');
+    document.getElementById('tkTxt').textContent = parts + '   ·   ' + parts + '   ·   ';
+  } else if (estado === 'directo') {
+    sb.className = 'blive';
+    sb.innerHTML = '<div class="ldot"></div>En directo';
+  } else {
+    tk.style.display = 'none';
+    if (estado === 'finalizada')      { sb.className = 'bfin'; sb.textContent = '🏁 Finalizada'; }
+    else if (estado === 'sinsenal')   { sb.className = 'bold'; sb.textContent = 'Sin señal'; }
+    else if (estado === 'antigua')    { sb.className = 'bold'; sb.textContent = 'Sin carrera'; }
+    else                              { sb.className = 'bpre'; sb.textContent = 'Previa'; }
+  }
+
+  // Aviso bajo el encabezado. Un solo elemento con cuatro textos posibles: es
+  // preferible a tres banners que se pisan.
+  let av = document.getElementById('preBanner');
+  const grid = document.getElementById('catGrid');
+  if (!av && grid && grid.parentNode) {
+    av = document.createElement('div');
+    av.id = 'preBanner';
+    grid.parentNode.insertBefore(av, grid);
+  }
+  if (!av) return;
+
+  const fecha = _fechaLarga(d.raceDate);
+  const AVISOS = {
+    previa:     { cls:'av-previa', txt:'⏳ La carrera aún no ha comenzado · Horario de salida' },
+    finalizada: { cls:'av-fin',    txt:'🏁 Prueba finalizada · Resultados definitivos' +
+                                       (fecha ? ' · ' + fecha : '') },
+    // Ni empezada ni terminada, y sin senal: una prueba preparada que se quedo
+    // ahi. No hay resultados que ensenar, solo el horario previsto.
+    antigua:    { cls:'av-previa', txt:'⏳ No hay ninguna carrera en directo ahora mismo' +
+                                       (fecha ? ' · Prueba prevista: ' + fecha : '') },
+    sinsenal:   { cls:'av-alerta', txt:'📡 Sin conexión con la mesa de cronometraje' +
+                                       (_latido ? ' desde ' + _haceCuanto(_latido) : '') +
+                                       ' · Los resultados pueden no estar al día' }
+  };
+  const a = AVISOS[estado];
+  if (!a) { av.style.display = 'none'; }
+  else {
+    av.style.display = 'block';
+    av.className = 'aviso ' + a.cls;
+    av.textContent = a.txt;
+  }
+
+  // El boton de la portada tambien tiene que decir la verdad: prometer
+  // "resultados en directo" cuando la ultima prueba fue hace tres semanas es
+  // justo lo que hacia que la web pareciera desactualizada.
+  const sub = document.getElementById('introSub');
+  if (sub) {
+    const nom = d.raceName || '';
+    if (estado === 'directo')          sub.textContent = 'Resultados en directo';
+    else if (estado === 'sinsenal')    sub.textContent = 'Sin señal de la mesa';
+    else if (estado === 'previa')      sub.textContent = 'Horario de salida';
+    else if (estado === 'antigua')     sub.textContent = 'Ninguna carrera en directo';
+    else                               sub.textContent = (nom ? nom + ' · ' : '') + 'Finalizada';
+  }
+}
+
+function _haceCuanto(ms) {
+  const s = Math.max(0, Math.round((Date.now() - ms) / 1000));
+  if (s < 90) return 'hace ' + s + ' s';
+  const m = Math.round(s / 60);
+  if (m < 90) return 'hace ' + m + ' min';
+  const h = Math.floor(m / 60);
+  return 'hace ' + h + ' h ' + (m % 60) + ' min';
+}
+
+function _fechaLarga(iso) {
+  if (!iso) return '';
+  try {
+    return new Date(iso + 'T12:00:00').toLocaleDateString('es-ES',
+      { weekday:'long', day:'numeric', month:'long', year:'numeric' });
+  } catch(e) { return iso; }
+}
+
 function _rearmarLigero(){
   if (!_liveMeta) return;
   const pilots = [];
@@ -407,6 +567,14 @@ async function _initFirebaseLive(){
 
       if (ligero) _suscribirLigero(dbm, db, cur.raceId);
       else        _suscribirCompleto(dbm, db, cur.raceId);
+
+      // Latido de la mesa. Va aparte del nodo de datos a proposito: unos bytes
+      // cada 8 s, sin mover la clasificacion entera.
+      dbm.onValue(dbm.ref(db, `races_live_ts/${cur.raceId}`), s => {
+        const v = s.val();
+        _latido = (typeof v === 'number') ? v : null;
+        if (_data) _pintaEstado(_data);
+      });
     });
   } catch(e) {
     console.warn('Firebase live no disponible, se usará GitHub Pages:', e.message);
@@ -492,9 +660,23 @@ setInterval(()=>{
 },500);
 
 // ── HELPERS ───────────────────────────────────────────────────
+// El Excel de inscripciones viene TODO EN MAYUSCULAS y asi se pintaba. En una
+// lista de 50 pilotos se lee peor. Se cambia solo al pintar: el dato guardado,
+// el que va a los PDF y al Excel, no se toca.
+const _PARTICULAS = new Set(['de','del','la','las','los','y','da','do','dos','van','von','di','le']);
+function nombreBonito(txt){
+  if(!txt) return '';
+  // Si ya viene en mixto no se toca: puede haber apellidos con mayuscula
+  // interior (McCarthy, D'Angelo) que un title-case ciego estropearia.
+  if(txt !== txt.toUpperCase()) return txt;
+  return txt.toLowerCase().replace(/[\p{L}][\p{L}'’-]*/gu, (w, i) =>
+    (i > 0 && _PARTICULAS.has(w)) ? w : w.charAt(0).toUpperCase() + w.slice(1)
+  );
+}
 function shortName(name){
-  const p=name.split(',');
-  return p.length<2?name:p[1].trim().split(' ')[0]+' '+p[0].trim();
+  const p=(name||'').split(',');
+  const corto = p.length<2 ? name : p[1].trim().split(' ')[0]+' '+p[0].trim();
+  return nombreBonito(corto);
 }
 function cnt(p,v){let n=0;const s=p&&p.scores;if(!s)return 0;for(let l=0;l<3;l++)for(let z=0;z<7;z++)if(s[l]&&s[l][z]===v)n++;return n;}
 function lapPts(p,l){
@@ -575,7 +757,7 @@ function navigate(view, pushState=true) {
     document.getElementById('vPilot').classList.add('active');
     backBtn.style.display=''; if(homeBtn) homeBtn.style.display='';
     document.getElementById('hTitle').innerHTML=
-      `<span style="font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${_selPilot.name}</span>`;
+      `<span style="font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${nombreBonito(_selPilot.name)}</span>`;
     if(pushState && _histOk) try { history.pushState({view:'pilot',cat:_selCat,dorsal:_selPilot.dorsal},'','#pilot-'+_selPilot.dorsal); } catch(e) {}
   }
   window.scrollTo(0,0);
@@ -642,42 +824,17 @@ function renderHome(){
   document.getElementById('hUpd').textContent=
     'Actualizado: '+pad(now.getHours())+':'+pad(now.getMinutes())+':'+pad(now.getSeconds());
 
-  const sb=document.getElementById('sBadge');
-  if(d.raceStarted){
-    sb.className='blive'; sb.innerHTML='<div class="ldot"></div>En directo';
-    const tk=document.getElementById('ticker'); tk.style.display='flex';
-    const parts=activeCats.map(cat=>{
-      const s=sortPilots(pilots.filter(p=>p.cat===cat));
-      const l=s[0]; if(!l)return null;
-      return cat+': '+shortName(l.name)+' — '+(getTotal(l)??'—')+' pts';
-    }).filter(Boolean).join('   ·   ');
-    document.getElementById('tkTxt').textContent=parts+'   ·   '+parts+'   ·   ';
-  } else {
-    sb.className='bpre'; sb.textContent='Previa';
-    document.getElementById('ticker').style.display='none';
-  }
-
-  // Aviso de "horarios de salida" en modo previa
-  let preBanner = document.getElementById('preBanner');
-  if (!d.raceStarted) {
-    if (!preBanner) {
-      preBanner = document.createElement('div');
-      preBanner.id = 'preBanner';
-      preBanner.style.cssText = 'margin:12px;padding:12px 14px;background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.35);border-radius:10px;color:var(--ac);font-size:13px;font-weight:700;text-align:center';
-      preBanner.innerHTML = '⏳ La carrera aún no ha comenzado · Horario de salida';
-      const grid = document.getElementById('catGrid');
-      grid.parentNode.insertBefore(preBanner, grid);
-    }
-    preBanner.style.display = 'block';
-  } else if (preBanner) {
-    preBanner.style.display = 'none';
-  }
+  _pintaEstado(d, activeCats, pilots);
 
   const grid=document.getElementById('catGrid');
   let startTable = document.getElementById('startTable');
 
   // ── MODO PREVIA: tabla única con todas las salidas, sin tarjetas de categoría ──
-  if (!d.raceStarted) {
+  // Ojo con la condicion: al finalizar la carrera el cronometro pone
+  // raceStarted a false y raceFinished a true. Con solo !d.raceStarted, una
+  // prueba terminada volvia a ensenar el horario de salida en vez de la
+  // clasificacion. Tiene que ser previa de verdad: ni empezada ni terminada.
+  if (!d.raceStarted && !d.raceFinished) {   // previa o resto sin arrancar
     grid.style.display = 'none';
     if (!startTable) {
       startTable = document.createElement('div');
@@ -696,7 +853,7 @@ function renderHome(){
       rows +=
         `<div class="strow">`+
           `<div class="stdor">${p.dorsal}</div>`+
-          `<div class="stinfo"><div class="stname">${p.name}</div>`+
+          `<div class="stinfo"><div class="stname">${nombreBonito(p.name)}</div>`+
             `<div class="stsub">${p.club||''}${p.brand?' · '+p.brand:''}</div></div>`+
           `<div class="stcat" style="background:${col}22;color:${col};border:1px solid ${col}55">${p.cat}</div>`+
           `<div class="sttime">${p.schedStart||'--:--'}</div>`+
@@ -744,7 +901,16 @@ function renderHome(){
       `</div>`+
       `<div class="ctcount" style="color:${col}"><div class="ctnum">${cp.length}</div><div class="ctclbl">pilotos</div></div>`+
       `<div class="ctarrow">›</div>`;
-    tile.addEventListener('click',()=>{_selCat=cat;renderCat();navigate('cat');});
+    // Eran div con un click: sin foco ni teclado. Ahora se comportan como
+    // botones, que es lo que son.
+    tile.setAttribute('role','button');
+    tile.setAttribute('tabindex','0');
+    tile.setAttribute('aria-label',`Categoría ${cat}, ${cp.length} pilotos`);
+    const abrir=()=>{_selCat=cat;renderCat();navigate('cat');};
+    tile.addEventListener('click',abrir);
+    tile.addEventListener('keydown',e=>{
+      if(e.key==='Enter'||e.key===' '){ e.preventDefault(); abrir(); }
+    });
     grid.appendChild(tile);
   });
 }
@@ -778,10 +944,15 @@ function renderCat(){
       row.innerHTML=
         `<div class="ppos" style="font-family:monospace;font-size:15px;font-weight:800;color:${col}">${p.schedStart||'--:--'}</div>`+
         `<div class="pdors">${p.dorsal}</div>`+
-        `<div class="pinfo"><div class="pname">${p.name}</div>`+
+        `<div class="pinfo"><div class="pname">${nombreBonito(p.name)}</div>`+
         `<div class="psub">${p.club||''}${p.brand?' · '+p.brand:''}</div></div>`+
         `<div class="pright"></div>`;
-      row.addEventListener('click',()=>{_selPilot=p;renderPilot();navigate('pilot');});
+      row.setAttribute('role','button'); row.setAttribute('tabindex','0');
+      const verPiloto=()=>{_selPilot=p;renderPilot();navigate('pilot');};
+      row.addEventListener('click',verPiloto);
+      row.addEventListener('keydown',e=>{
+        if(e.key==='Enter'||e.key===' '){ e.preventDefault(); verPiloto(); }
+      });
       list.appendChild(row);
     });
     return;
@@ -794,24 +965,35 @@ function renderCat(){
     (_rd?` <span style="color:var(--mu)">· ${_rd}</span>`:'')+
     `<br>${sorted.length} pilotos · ${sorted.filter(p=>!p.dnf&&!p.dsq).length} en competición`;
 
-  const list=document.getElementById('pList'); list.innerHTML='';
+  const list=document.getElementById('pList');
+  // "PUNTOS" se repetia debajo de cada cifra. Va una vez, en la cabecera.
+  list.innerHTML='<div class="plisthd"><span class="a">Pos</span><span class="b">Nº</span>'+
+                 '<span class="c">Piloto</span><span class="d">Puntos</span></div>';
   sorted.forEach((p,i)=>{
     const tp=getTotal(p);
     const pos=p.dsq?'<span style="color:#c2410c;font-size:13px">DQ</span>':
               p.dnf?'<span style="color:var(--dg);font-size:13px">R</span>':
-              i===0?'🥇':i===1?'🥈':i===2?'🥉':i+1+'º';
+              i+1+'<span class="ord">º</span>';
+    // Podio: el 1o destaca de los otros dos, y los otros dos de la lista.
+    // Sin emojis de medalla: se ven distintos en cada telefono.
+    const enPodio = i<3 && !p.dnf && !p.dsq;
     const row=document.createElement('div');
-    row.className='prow';
+    row.className='prow' + (enPodio ? (i===0 ? ' pod1' : ' pod23') : '');
+    if(enPodio) row.style.setProperty('--pod', col);
     row.innerHTML=
-      `<div class="ppos">${pos}</div>`+
+      `<div class="ppos"${enPodio?` style="color:${col}"`:''}>${pos}</div>`+
       `<div class="pdors">${p.dorsal}</div>`+
-      `<div class="pinfo"><div class="pname">${p.name}</div>`+
+      `<div class="pinfo"><div class="pname">${nombreBonito(p.name)}</div>`+
         `<div class="psub">${p.club||'Sin club'}</div></div>`+
       `<div class="pright">`+
         `<div class="ppts" style="color:${p.dnf||p.dsq?'var(--mu)':col}">${tp!==null?tp:'—'}</div>`+
-        `<div class="pplbl">puntos</div>`+
         `<div>${lapBadge(p)}</div></div>`;
-    row.addEventListener('click',()=>{_selPilot=p;renderPilot();navigate('pilot');});
+    row.setAttribute('role','button'); row.setAttribute('tabindex','0');
+    const verPiloto=()=>{_selPilot=p;renderPilot();navigate('pilot');};
+    row.addEventListener('click',verPiloto);
+    row.addEventListener('keydown',e=>{
+      if(e.key==='Enter'||e.key===' '){ e.preventDefault(); verPiloto(); }
+    });
     list.appendChild(row);
   });
 }
@@ -825,7 +1007,7 @@ function renderPilot(){
   const l1max=cfg.lap1MaxMins||150;
   const rdurMins=Math.round((cfg.raceDurationHrs||5)*60);
 
-  document.getElementById('pdNm').textContent=p.name;
+  document.getElementById('pdNm').textContent=nombreBonito(p.name);
   const _pdDate=_data?.raceDate?new Date(_data.raceDate+'T12:00:00').toLocaleDateString('es-ES',{day:'2-digit',month:'2-digit',year:'numeric'}):'';
   document.getElementById('pdMt').innerHTML=
     `#${p.dorsal} · ${p.cat}${p.club?' · '+p.club:''}${p.brand?' · '+p.brand:''}`+
