@@ -111,6 +111,10 @@ html:not([data-archive="1"]) .archive-bar{display:none}
 .intro-btn.live:hover{box-shadow:0 6px 28px rgba(220,38,38,.55)}
 .intro-btn.hist{background:linear-gradient(135deg,#3b82f6,#1e40af);box-shadow:0 4px 20px rgba(59,130,246,.35)}
 .intro-btn.hist:hover{box-shadow:0 6px 28px rgba(59,130,246,.5)}
+/* Cuando no hay nada en directo, el boton deja de gritar en rojo: pasa a
+   gris y el historico se queda como puerta principal. */
+.intro-btn.live.apagado{background:linear-gradient(135deg,#334155,#1e293b);box-shadow:0 4px 20px rgba(15,23,42,.4)}
+.intro-btn.live.apagado:hover{box-shadow:0 6px 28px rgba(15,23,42,.55)}
 .intro-btn .ico{font-size:32px}
 .intro-btn .lbl{display:flex;flex-direction:column;align-items:flex-start;line-height:1.2}
 .intro-btn .lbl small{font-size:11px;font-weight:500;opacity:.85;letter-spacing:1px;margin-top:3px}
@@ -278,9 +282,9 @@ footer{text-align:center;padding:20px 16px 30px;font-size:10px;color:var(--mu);
 <div class="view" id="vIntro">
   <img src="trialrev.png" alt="Trial Revolution" class="intro-img" onerror="this.style.display='none'">
   <div class="intro-btns">
-    <button class="intro-btn live" onclick="goLive()">
-      <span class="ico">🏁</span>
-      <span class="lbl">Carrera actual<small id="introSub">Resultados en directo</small></span>
+    <button class="intro-btn live" id="btnLive" onclick="goLive()">
+      <span class="ico" id="introIco">🏁</span>
+      <span class="lbl"><span id="introTit">Carrera actual</span><small id="introSub">Resultados en directo</small></span>
     </button>
     <a href="historico.html" class="intro-btn hist">
       <span class="ico">📚</span>
@@ -421,6 +425,15 @@ function _estadoCarrera(d) {
   return fresco ? 'previa' : 'antigua';
 }
 
+// Texto pequeno de la cabecera. Prometer "en directo" con la prueba terminada
+// es la misma mentira que decia el boton de la portada.
+function _subtituloCabecera() {
+  const e = _data ? _estadoCarrera(_data) : 'previa';
+  return { directo:'Clasificación en directo', sinsenal:'Sin señal de la mesa',
+           previa:'Horario de salida', finalizada:'Resultados definitivos',
+           antigua:'Sin carrera en directo' }[e] || 'Clasificación en directo';
+}
+
 // Pinta insignia, ticker y aviso segun el estado. Se llama al repintar y cada
 // vez que llega (o deja de llegar) un latido.
 function _pintaEstado(d, activeCats, pilots) {
@@ -485,14 +498,28 @@ function _pintaEstado(d, activeCats, pilots) {
   // El boton de la portada tambien tiene que decir la verdad: prometer
   // "resultados en directo" cuando la ultima prueba fue hace tres semanas es
   // justo lo que hacia que la web pareciera desactualizada.
+  const ht = document.getElementById('hTitle');
+  const hs = ht ? ht.querySelector('small') : null;
+  if (hs) hs.textContent = _subtituloCabecera();
+
   const sub = document.getElementById('introSub');
-  if (sub) {
+  const tit = document.getElementById('introTit');
+  const ico = document.getElementById('introIco');
+  const btn = document.getElementById('btnLive');
+  if (sub && tit) {
     const nom = d.raceName || '';
-    if (estado === 'directo')          sub.textContent = 'Resultados en directo';
-    else if (estado === 'sinsenal')    sub.textContent = 'Sin señal de la mesa';
-    else if (estado === 'previa')      sub.textContent = 'Horario de salida';
-    else if (estado === 'antigua')     sub.textContent = 'Ninguna carrera en directo';
-    else                               sub.textContent = (nom ? nom + ' · ' : '') + 'Finalizada';
+    // rotulo, subtitulo, icono, y si el boton va apagado
+    const R = {
+      directo:    ['Carrera actual',  'Resultados en directo',                    '🏁', false],
+      sinsenal:   ['Carrera actual',  'Sin señal de la mesa',                     '📡', false],
+      previa:     ['Próxima prueba',  'Horario de salida',                        '⏳', false],
+      finalizada: ['Última prueba',   (nom ? nom + ' · ' : '') + 'Finalizada',    '🏁', true],
+      antigua:    ['Sin carrera en directo', 'Ver la última prueba publicada',     '📋', true]
+    }[estado] || ['Carrera actual', 'Resultados en directo', '🏁', false];
+    tit.textContent = R[0];
+    sub.textContent = R[1];
+    if (ico) ico.textContent = R[2];
+    if (btn) btn.classList.toggle('apagado', R[3]);
   }
 }
 
@@ -622,6 +649,7 @@ function _applyData(d){
   d=_normalizaPilotos(d);
   CAT_ORDER = d.pilots.some(p => p && p.cat && /^TR[ABC]$/.test(normCat(p.cat))) ? CAT_ORDER_KIDS : CAT_ORDER_ADULTS;
   _data=d;
+  _pintaEstado(d);   // la portada se pinta aunque no se entre a la clasificacion
   if(_selPilot){
     _selPilot=d.pilots.find(p=>p.dorsal===_selPilot.dorsal&&p.cat===_selPilot.cat)||_selPilot;
   }
@@ -741,11 +769,12 @@ function navigate(view, pushState=true) {
   });
 
   const backBtn=document.getElementById('btnBack');
+  const _sub = () => _subtituloCabecera();
   const homeBtn=document.getElementById('btnHome');
   if(view==='home'){
     document.getElementById('vHome').classList.add('active');
     backBtn.style.display='none'; if(homeBtn) homeBtn.style.display='none';
-    document.getElementById('hTitle').innerHTML='Trial Revolution <small>Clasificación en directo</small>';
+    document.getElementById('hTitle').innerHTML='Trial Revolution <small>'+_sub()+'</small>';
     if(pushState && _histOk) try { history.pushState({view:'home'},'','#home'); } catch(e) {}
   } else if(view==='cat'){
     document.getElementById('vCat').classList.add('active');
