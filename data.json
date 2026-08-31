@@ -3,9 +3,9 @@
   "organizer": "CD PORTILLO",
   "raceDate": "2026-09-05",
   "championship": "Campeonato de Trial de NIÑ@S de CYL",
-  "publishedAt": "2026-08-31T10:13:39.198Z",
-  "raceStarted": true,
-  "raceFinished": false,
+  "publishedAt": "2026-08-31T10:16:40.161Z",
+  "raceStarted": false,
+  "raceFinished": true,
   "cfg": {
     "numZones": 7,
     "lap1MaxMins": 150,
