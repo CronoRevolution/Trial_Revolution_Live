@@ -154,6 +154,12 @@ html:not([data-archive="1"]) .archive-bar{display:none}
 .stcat{font-size:11px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:6px;flex-shrink:0;}
 .sttime{font-size:17px;font-weight:900;font-family:monospace;color:var(--tx);
   min-width:58px;text-align:right;flex-shrink:0;}
+/* Zona de salida. Solo se pinta en las pruebas con salida escalonada. */
+.stzona{font-size:11px;font-weight:900;letter-spacing:.5px;padding:3px 8px;border-radius:6px;
+  flex-shrink:0;background:var(--ac);color:#111;}
+.przona{font-size:11px;font-weight:900;letter-spacing:.5px;padding:3px 8px;border-radius:6px;
+  background:var(--ac);color:#111;display:inline-block;}
+@media (max-width:400px){ .stzona{padding:3px 6px;font-size:10px;} }
 .catgrid{padding:12px;display:flex;flex-direction:column;gap:10px;}
 .ctile{background:var(--sf);border-radius:14px;box-shadow:0 2px 8px var(--sh);
   display:flex;align-items:center;overflow:hidden;cursor:pointer;
@@ -505,13 +511,17 @@ function _pintaEstado(d, activeCats, pilots) {
   if (!av) return;
 
   const fecha = _fechaLarga(d.raceDate);
+  // En las pruebas con salida repartida por zonas se dice aqui, en el banner
+  // que ya existe, en vez de anadir un segundo banner debajo.
+  const _esc = (!d.raceStarted && !d.raceFinished && haySalidaEscalonada(d.pilots))
+    ? ' · ◎ Salida escalonada: cada piloto empieza por la zona indicada' : '';
   const AVISOS = {
-    previa:     { cls:'av-previa', txt:'⏳ La carrera aún no ha comenzado · Horario de salida' },
+    previa:     { cls:'av-previa', txt:'⏳ La carrera aún no ha comenzado · Horario de salida' + _esc },
     // Publicada y con fecha por delante: no es un resto, es la de dentro de
     // unos dias. Decirlo asi evita el "última prueba publicada" de antes, que
     // sonaba a que la web se habia quedado atras.
     futura:     { cls:'av-previa', txt:'⏳ Próxima carrera' +
-                                       (fecha ? ' · ' + fecha : ' · Horario de salida') },
+                                       (fecha ? ' · ' + fecha : ' · Horario de salida') + _esc },
     finalizada: { cls:'av-fin',    txt:'🏁 Prueba finalizada · Resultados definitivos' +
                                        (fecha ? ' · ' + fecha : '') },
     // Ni empezada ni terminada, sin senal y con la fecha ya pasada: una prueba
@@ -570,6 +580,19 @@ function _haceCuanto(ms) {
   if (m < 90) return 'hace ' + m + ' min';
   const h = Math.floor(m / 60);
   return 'hace ' + h + ' h ' + (m % 60) + ' min';
+}
+
+// ── Zona de salida escalonada ─────────────────────────────────────────────
+// En algunas pruebas los pilotos no empiezan todos por la zona 1: se reparten
+// para no hacer cola en la salida. El cronometro lo manda en `startZone`.
+// Ausente o 1 = salida normal, y entonces no se pinta nada: una prueba
+// corriente se ve igual que antes de existir esto.
+function zonaSalida(p) {
+  const z = parseInt(p && p.startZone, 10);
+  return (z >= 1) ? z : 1;
+}
+function haySalidaEscalonada(lista) {
+  return (lista || []).some(p => zonaSalida(p) > 1);
 }
 
 function _fechaLarga(iso) {
@@ -927,6 +950,7 @@ function renderHome(){
       if(sa!==sb) return sa.localeCompare(sb);
       return (a.dorsal||0)-(b.dorsal||0);
     });
+    const escalonada = haySalidaEscalonada(byTime);
     let rows = '';
     byTime.forEach(p=>{
       const col=catColor(p.cat);
@@ -935,10 +959,13 @@ function renderHome(){
           `<div class="stdor">${p.dorsal}</div>`+
           `<div class="stinfo"><div class="stname">${nombreBonito(p.name)}</div>`+
             `<div class="stsub">${p.club||''}${p.brand?' · '+p.brand:''}</div></div>`+
+          (escalonada?`<div class="stzona" title="Zona por la que empieza">Z${zonaSalida(p)}</div>`:'')+
           `<div class="stcat" style="background:${col}22;color:${col};border:1px solid ${col}55">${p.cat}</div>`+
           `<div class="sttime">${p.schedStart||'--:--'}</div>`+
         `</div>`;
     });
+    // El aviso de salida escalonada va dentro del banner de estado, que ya
+    // esta ahi: dos banners seguidos ocupan media pantalla de movil.
     startTable.innerHTML = rows || '<div style="text-align:center;padding:30px;color:var(--mu)">Sin pilotos</div>';
     return;
   }
@@ -1014,10 +1041,15 @@ function renderCat(){
       if(sa!==sb) return sa.localeCompare(sb);
       return (a.dorsal||0)-(b.dorsal||0);
     });
+    // La escalonada se mira sobre TODOS los pilotos, no sólo los de esta
+    // categoría: si la zona 1 sale por la 1 y las demás no, en la vista de la
+    // zona 1 hay que decirlo igual, o parece que a ellos no les aplica.
+    const escalonada = haySalidaEscalonada(_data?.pilots || pilots);
     document.getElementById('catMt').innerHTML=
       `<span style="font-weight:700;color:var(--tx)">${_data?.raceName||''}</span>`+
       (_rd?` <span style="color:var(--mu)">· ${_rd}</span>`:'')+
-      `<br><span style="color:var(--ac)">⏳ Horario de salida</span> · ${byTime.length} pilotos`;
+      `<br><span style="color:var(--ac)">⏳ Horario de salida</span> · ${byTime.length} pilotos`+
+      (escalonada?` · <span style="color:var(--ac)">salida escalonada</span>`:'');
     const list=document.getElementById('pList'); list.innerHTML='';
     byTime.forEach(p=>{
       const row=document.createElement('div');
@@ -1027,7 +1059,7 @@ function renderCat(){
         `<div class="pdors">${p.dorsal}</div>`+
         `<div class="pinfo"><div class="pname">${nombreBonito(p.name)}</div>`+
         `<div class="psub">${p.club||''}${p.brand?' · '+p.brand:''}</div></div>`+
-        `<div class="pright"></div>`;
+        `<div class="pright">${escalonada?`<span class="przona">Z${zonaSalida(p)}</span>`:''}</div>`;
       row.setAttribute('role','button'); row.setAttribute('tabindex','0');
       const verPiloto=()=>{_selPilot=p;renderPilot();navigate('pilot');};
       row.addEventListener('click',verPiloto);
@@ -1090,8 +1122,10 @@ function renderPilot(){
 
   document.getElementById('pdNm').textContent=nombreBonito(p.name);
   const _pdDate=_data?.raceDate?new Date(_data.raceDate+'T12:00:00').toLocaleDateString('es-ES',{day:'2-digit',month:'2-digit',year:'numeric'}):'';
+  const _zonaSal = haySalidaEscalonada(_data?.pilots || [])
+    ? ` · <span class="przona">Z${zonaSalida(p)}</span>` : '';
   document.getElementById('pdMt').innerHTML=
-    `#${p.dorsal} · ${p.cat}${p.club?' · '+p.club:''}${p.brand?' · '+p.brand:''}`+
+    `#${p.dorsal} · ${p.cat}${p.club?' · '+p.club:''}${p.brand?' · '+p.brand:''}${_zonaSal}`+
     `<br><span style="color:#94a3b8;font-size:10px">${_data?.raceName||''}${_pdDate?' · '+_pdDate:''}</span>`;
 
   const tp=getTotal(p);
