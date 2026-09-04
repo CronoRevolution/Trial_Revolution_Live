@@ -419,7 +419,22 @@ const SELLO_VIVO_MS  = 10 * 60 * 1000;  // 10 min: tres publicaciones perdidas
 //   directo     -> empezada y la mesa sigue dando senales de vida.
 //   sinsenal    -> empezada, pero llevamos rato sin saber de la mesa.
 //   previa      -> aun no ha empezado, y la mesa esta al aparato.
-//   antigua     -> ni empezada ni terminada, y sin senal: es un resto.
+//   futura      -> ni empezada ni terminada, sin senal, pero con fecha de hoy
+//                  o posterior: no es un resto, es la proxima carrera.
+//   antigua     -> ni empezada ni terminada, sin senal y con fecha pasada.
+
+// Fecha de la prueba comparada con hoy. Se compara a dia completo: una prueba
+// de hoy sigue siendo "proxima" a las nueve de la manana, con la mesa aun sin
+// encender. raceDate viene como AAAA-MM-DD; el mediodia evita el salto de dia
+// por zona horaria.
+function _esFutura(d) {
+  if (!d || !d.raceDate) return false;
+  const rd = new Date(d.raceDate + 'T12:00:00');
+  if (isNaN(rd.getTime())) return false;
+  const hoy = new Date(); hoy.setHours(0, 0, 0, 0);
+  return rd.getTime() >= hoy.getTime();
+}
+
 function _estadoCarrera(d) {
   if (!d) return 'previa';
   if (d.raceFinished) return 'finalizada';
@@ -434,7 +449,8 @@ function _estadoCarrera(d) {
   if (sello === null) return d.raceStarted ? 'directo' : 'previa';
   const fresco = (Date.now() - sello) < margen;
   if (d.raceStarted) return fresco ? 'directo' : 'sinsenal';
-  return fresco ? 'previa' : 'antigua';
+  if (fresco) return 'previa';
+  return _esFutura(d) ? 'futura' : 'antigua';
 }
 
 // Texto pequeno de la cabecera. Prometer "en directo" con la prueba terminada
@@ -443,6 +459,7 @@ function _subtituloCabecera() {
   const e = _data ? _estadoCarrera(_data) : 'previa';
   return { directo:'Clasificación en directo', sinsenal:'Sin señal de la mesa',
            previa:'Horario de salida', finalizada:'Resultados definitivos',
+           futura:'Horario de salida',
            antigua:'Sin carrera en directo' }[e] || 'Clasificación en directo';
 }
 
@@ -472,6 +489,7 @@ function _pintaEstado(d, activeCats, pilots) {
     if (estado === 'finalizada')      { sb.className = 'bfin'; sb.textContent = '🏁 Finalizada'; }
     else if (estado === 'sinsenal')   { sb.className = 'bold'; sb.textContent = 'Sin señal'; }
     else if (estado === 'antigua')    { sb.className = 'bold'; sb.textContent = 'Sin carrera'; }
+    else if (estado === 'futura')     { sb.className = 'bpre'; sb.textContent = 'Próxima'; }
     else                              { sb.className = 'bpre'; sb.textContent = 'Previa'; }
   }
 
@@ -489,12 +507,18 @@ function _pintaEstado(d, activeCats, pilots) {
   const fecha = _fechaLarga(d.raceDate);
   const AVISOS = {
     previa:     { cls:'av-previa', txt:'⏳ La carrera aún no ha comenzado · Horario de salida' },
+    // Publicada y con fecha por delante: no es un resto, es la de dentro de
+    // unos dias. Decirlo asi evita el "última prueba publicada" de antes, que
+    // sonaba a que la web se habia quedado atras.
+    futura:     { cls:'av-previa', txt:'⏳ Próxima carrera' +
+                                       (fecha ? ' · ' + fecha : ' · Horario de salida') },
     finalizada: { cls:'av-fin',    txt:'🏁 Prueba finalizada · Resultados definitivos' +
                                        (fecha ? ' · ' + fecha : '') },
-    // Ni empezada ni terminada, y sin senal: una prueba preparada que se quedo
-    // ahi. No hay resultados que ensenar, solo el horario previsto.
+    // Ni empezada ni terminada, sin senal y con la fecha ya pasada: una prueba
+    // preparada que se quedo ahi. Decir "prueba prevista" de una fecha pasada
+    // sonaba a error; ahora ese caso lo recoge 'futura'.
     antigua:    { cls:'av-previa', txt:'⏳ No hay ninguna carrera en directo ahora mismo' +
-                                       (fecha ? ' · Prueba prevista: ' + fecha : '') },
+                                       (fecha ? ' · Última prueba preparada: ' + fecha : '') },
     sinsenal:   { cls:'av-alerta', txt:'📡 Sin conexión con la mesa de cronometraje' +
                                        (_latido ? ' desde ' + _haceCuanto(_latido) : '') +
                                        ' · Los resultados pueden no estar al día' }
@@ -520,11 +544,15 @@ function _pintaEstado(d, activeCats, pilots) {
   const btn = document.getElementById('btnLive');
   if (sub && tit) {
     const nom = d.raceName || '';
+    const fcorta = _fechaCorta(d.raceDate);
     // rotulo, subtitulo, icono, y si el boton va apagado
     const R = {
       directo:    ['Carrera actual',  'Resultados en directo',                    '🏁', false],
       sinsenal:   ['Carrera actual',  'Sin señal de la mesa',                     '📡', false],
       previa:     ['Próxima prueba',  'Horario de salida',                        '⏳', false],
+      // Reloj de arena, como 'previa': el emoji de calendario dibuja un dia
+      // concreto (17 de julio en muchas fuentes) y choca con la fecha de al lado.
+      futura:     ['Próxima carrera', fcorta || (nom || 'Horario de salida'),     '⏳', false],
       finalizada: ['Última prueba',   (nom ? nom + ' · ' : '') + 'Finalizada',    '🏁', true],
       antigua:    ['Sin carrera en directo', 'Ver la última prueba publicada',     '📋', true]
     }[estado] || ['Carrera actual', 'Resultados en directo', '🏁', false];
@@ -549,6 +577,17 @@ function _fechaLarga(iso) {
   try {
     return new Date(iso + 'T12:00:00').toLocaleDateString('es-ES',
       { weekday:'long', day:'numeric', month:'long', year:'numeric' });
+  } catch(e) { return iso; }
+}
+
+// Como _fechaLarga pero sin ano y con la inicial en mayuscula: cabe en el
+// subtitulo del boton de portada, donde la larga se corta.
+function _fechaCorta(iso) {
+  if (!iso) return '';
+  try {
+    const t = new Date(iso + 'T12:00:00').toLocaleDateString('es-ES',
+      { weekday:'long', day:'numeric', month:'long' });
+    return t.charAt(0).toUpperCase() + t.slice(1);
   } catch(e) { return iso; }
 }
 
