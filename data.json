@@ -3,7 +3,7 @@
   "organizer": "CD PORTILLO",
   "raceDate": "2026-09-05",
   "championship": "Campeonato de Trial de NIÑ@S de CYL",
-  "publishedAt": "2026-09-04T22:09:06.761Z",
+  "publishedAt": "2026-09-04T22:12:06.750Z",
   "raceStarted": false,
   "raceFinished": false,
   "cfg": {
@@ -25,7 +25,7 @@
       "club": "CD Pobladura R",
       "brand": "",
       "schedStart": "17:36",
-      "startZone": 2,
+      "startZone": null,
       "rank": 1,
       "scores": [
         [
@@ -88,7 +88,7 @@
       "club": "CD Moto Bierzo",
       "brand": "",
       "schedStart": "17:36",
-      "startZone": 2,
+      "startZone": null,
       "rank": 2,
       "scores": [
         [
@@ -151,7 +151,7 @@
       "club": "CD Moto Bierzo",
       "brand": "",
       "schedStart": "17:37",
-      "startZone": 2,
+      "startZone": null,
       "rank": 3,
       "scores": [
         [
