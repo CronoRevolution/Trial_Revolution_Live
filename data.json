@@ -3,7 +3,7 @@
   "organizer": "CD PORTILLO",
   "raceDate": "2026-09-05",
   "championship": "Campeonato de Trial de NIÑ@S de CYL",
-  "publishedAt": "2026-09-04T21:44:40.000Z",
+  "publishedAt": "2026-09-04T22:09:06.761Z",
   "raceStarted": false,
   "raceFinished": false,
   "cfg": {
@@ -25,6 +25,7 @@
       "club": "CD Pobladura R",
       "brand": "",
       "schedStart": "17:36",
+      "startZone": 2,
       "rank": 1,
       "scores": [
         [
@@ -87,6 +88,7 @@
       "club": "CD Moto Bierzo",
       "brand": "",
       "schedStart": "17:36",
+      "startZone": 2,
       "rank": 2,
       "scores": [
         [
@@ -149,6 +151,7 @@
       "club": "CD Moto Bierzo",
       "brand": "",
       "schedStart": "17:37",
+      "startZone": 2,
       "rank": 3,
       "scores": [
         [
@@ -211,6 +214,7 @@
       "club": "CD Pobladura R",
       "brand": "",
       "schedStart": "17:33",
+      "startZone": null,
       "rank": 1,
       "scores": [
         [
@@ -273,6 +277,7 @@
       "club": "CD Portillo",
       "brand": "",
       "schedStart": "17:33",
+      "startZone": null,
       "rank": 2,
       "scores": [
         [
@@ -335,6 +340,7 @@
       "club": "CD Pobladura R",
       "brand": "",
       "schedStart": "17:34",
+      "startZone": null,
       "rank": 3,
       "scores": [
         [
@@ -397,6 +403,7 @@
       "club": "CD Pobladura R",
       "brand": "",
       "schedStart": "17:34",
+      "startZone": null,
       "rank": 4,
       "scores": [
         [
@@ -459,6 +466,7 @@
       "club": "CD Pobladura R",
       "brand": "",
       "schedStart": "17:35",
+      "startZone": null,
       "rank": 5,
       "scores": [
         [
@@ -521,6 +529,7 @@
       "club": "CD Pobladura R",
       "brand": "",
       "schedStart": "17:35",
+      "startZone": null,
       "rank": 6,
       "scores": [
         [
@@ -583,6 +592,7 @@
       "club": "CD Pobladura R",
       "brand": "",
       "schedStart": "17:30",
+      "startZone": null,
       "rank": 1,
       "scores": [
         [
@@ -645,6 +655,7 @@
       "club": "CD Portillo",
       "brand": "",
       "schedStart": "17:30",
+      "startZone": null,
       "rank": 2,
       "scores": [
         [
@@ -707,6 +718,7 @@
       "club": "CD Pobladura R",
       "brand": "",
       "schedStart": "17:31",
+      "startZone": null,
       "rank": 3,
       "scores": [
         [
@@ -769,6 +781,7 @@
       "club": "CD Moto Nava",
       "brand": "",
       "schedStart": "17:31",
+      "startZone": null,
       "rank": 4,
       "scores": [
         [
@@ -831,6 +844,7 @@
       "club": "CD Moto Nava",
       "brand": "",
       "schedStart": "17:32",
+      "startZone": null,
       "rank": 5,
       "scores": [
         [
@@ -893,6 +907,7 @@
       "club": "CD Portillo",
       "brand": "",
       "schedStart": "17:32",
+      "startZone": null,
       "rank": 6,
       "scores": [
         [
