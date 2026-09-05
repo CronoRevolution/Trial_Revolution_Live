@@ -3,7 +3,7 @@
   "organizer": "CD PORTILLO",
   "raceDate": "2026-09-05",
   "championship": "Campeonato de Trial de NIÑ@S de CYL",
-  "publishedAt": "2026-09-05T15:24:00.194Z",
+  "publishedAt": "2026-09-05T15:27:00.223Z",
   "raceStarted": false,
   "raceFinished": false,
   "cfg": {
@@ -25,7 +25,7 @@
       "club": "CD Pobladura R",
       "brand": "",
       "schedStart": "17:37",
-      "startZone": null,
+      "startZone": 5,
       "rank": 1,
       "scores": [
         [
@@ -88,7 +88,7 @@
       "club": "CD Moto Bierzo",
       "brand": "",
       "schedStart": "17:37",
-      "startZone": null,
+      "startZone": 5,
       "rank": 2,
       "scores": [
         [
@@ -151,7 +151,7 @@
       "club": "CD Moto Bierzo",
       "brand": "",
       "schedStart": "17:38",
-      "startZone": null,
+      "startZone": 5,
       "rank": 3,
       "scores": [
         [
@@ -214,7 +214,7 @@
       "club": "CD Pobladura R",
       "brand": "",
       "schedStart": "17:34",
-      "startZone": null,
+      "startZone": 5,
       "rank": 1,
       "scores": [
         [
@@ -277,7 +277,7 @@
       "club": "CD Portillo",
       "brand": "",
       "schedStart": "17:34",
-      "startZone": null,
+      "startZone": 5,
       "rank": 2,
       "scores": [
         [
@@ -340,7 +340,7 @@
       "club": "CD Pobladura R",
       "brand": "",
       "schedStart": "17:35",
-      "startZone": null,
+      "startZone": 5,
       "rank": 3,
       "scores": [
         [
@@ -403,7 +403,7 @@
       "club": "CD Pobladura R",
       "brand": "",
       "schedStart": "17:35",
-      "startZone": null,
+      "startZone": 5,
       "rank": 4,
       "scores": [
         [
@@ -466,7 +466,7 @@
       "club": "CD Pobladura R",
       "brand": "",
       "schedStart": "17:36",
-      "startZone": null,
+      "startZone": 5,
       "rank": 5,
       "scores": [
         [
@@ -529,7 +529,7 @@
       "club": "CD Pobladura R",
       "brand": "",
       "schedStart": "17:36",
-      "startZone": null,
+      "startZone": 5,
       "rank": 6,
       "scores": [
         [
