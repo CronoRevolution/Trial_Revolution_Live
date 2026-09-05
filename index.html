@@ -717,6 +717,17 @@ function _normalizaPilotos(d){
   return d;
 }
 
+// Qué vista está delante del espectador ahora mismo. Se lee del DOM en vez de
+// llevar una variable aparte: así no hay dos verdades que puedan discrepar.
+// Devuelve null si aún no se ha navegado a ninguna.
+function _vistaAbierta(){
+  const el = document.querySelector('.view.active');
+  if(!el) return null;
+  const m = {vHome:'home', vCat:'cat', vPilot:'pilot', vIntro:'intro'};
+  const v = m[el.id] || null;
+  return (v === 'intro') ? null : v;   // en la entrada todavía manda el hash
+}
+
 // Aplica un objeto de datos (venga de Firebase o de GitHub) a la UI
 function _applyData(d){
   if(!d||!d.pilots) return;
@@ -727,14 +738,36 @@ function _applyData(d){
   if(_selPilot){
     _selPilot=d.pilots.find(p=>p.dorsal===_selPilot.dorsal&&p.cat===_selPilot.cat)||_selPilot;
   }
-  const h=location.hash;
-  if(!h||h==='#home'||h===''){
-    renderHome();
-    if(h===''){ history.replaceState({view:'home'},'','#home'); navigate('home',false); }
-  } else if(h.startsWith('#cat-')){
-    _selCat=h.replace('#cat-','');renderCat();navigate('cat',false);
-  } else if(h.startsWith('#pilot-')){
+  // Qué repintar lo decide la vista que está abierta de verdad, NO el hash.
+  //
+  // El hash es una consecuencia de navegar: lo escribe history.pushState, y
+  // hay navegadores donde eso falla o se ignora (webviews de apps, modo
+  // privado, el tope de llamadas de Safari). navigate() se traga el error, así
+  // que la pantalla avanza y la URL se queda atrás. Con el hash mandando, la
+  // siguiente puntuación que llegaba sacaba al espectador de la ficha del
+  // piloto a la clasificación de su categoría — reproducido en
+  // pruebas_vista_piloto.py.
+  //
+  // El hash sigue mandando en un caso: cuando todavía no se ha navegado
+  // (primera carga o pantalla de entrada), que es como funciona un enlace
+  // compartido a una categoría.
+  const _abierta = _vistaAbierta();
+  if(_abierta==='pilot'){
     if(_selPilot) renderPilot();
+  } else if(_abierta==='cat'){
+    renderCat();                      // la vista ya está activa: no hay que navegar
+  } else if(_abierta==='home'){
+    renderHome();
+  } else {
+    const h=location.hash;
+    if(!h||h==='#home'||h===''){
+      renderHome();
+      if(h===''){ history.replaceState({view:'home'},'','#home'); navigate('home',false); }
+    } else if(h.startsWith('#cat-')){
+      _selCat=h.replace('#cat-','');renderCat();navigate('cat',false);
+    } else if(h.startsWith('#pilot-')){
+      if(_selPilot) renderPilot();
+    }
   }
   if(_data&&document.getElementById('vWait').style.display!=='none'){
     document.getElementById('vWait').style.display='none';
