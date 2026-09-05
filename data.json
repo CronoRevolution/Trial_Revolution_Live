@@ -3,7 +3,7 @@
   "organizer": "CD Moto Bierzo",
   "raceDate": "2026-09-06",
   "championship": "Campeonato de Trial de Castilla y León 2026",
-  "publishedAt": "2026-09-05T18:37:09.792Z",
+  "publishedAt": "2026-09-05T18:40:10.396Z",
   "raceStarted": false,
   "raceFinished": false,
   "cfg": {
@@ -1288,7 +1288,7 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "TRRS",
       "schedStart": "10:06",
-      "startZone": null,
+      "startZone": 2,
       "rank": 1,
       "scores": [
         [
@@ -1351,7 +1351,7 @@
       "club": "CD Pobladura R",
       "brand": "SIN MARCA",
       "schedStart": "10:05",
-      "startZone": null,
+      "startZone": 2,
       "rank": 2,
       "scores": [
         [
@@ -1414,7 +1414,7 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "TRRS",
       "schedStart": "10:06",
-      "startZone": null,
+      "startZone": 2,
       "rank": 3,
       "scores": [
         [
@@ -1477,7 +1477,7 @@
       "club": "CD Moto Bierzo",
       "brand": "GASGAS",
       "schedStart": "10:07",
-      "startZone": null,
+      "startZone": 2,
       "rank": 4,
       "scores": [
         [
@@ -1666,7 +1666,7 @@
       "club": "MC Vallisoletano",
       "brand": "GASGAS",
       "schedStart": "10:07",
-      "startZone": null,
+      "startZone": 2,
       "rank": 7,
       "scores": [
         [
@@ -2485,7 +2485,7 @@
       "club": "CD Moto Bierzo",
       "brand": "SIN MARCA",
       "schedStart": "10:04",
-      "startZone": null,
+      "startZone": 2,
       "rank": 5,
       "scores": [
         [
@@ -2548,7 +2548,7 @@
       "club": "CD Moto Bierzo",
       "brand": "SIN MARCA",
       "schedStart": "10:04",
-      "startZone": null,
+      "startZone": 2,
       "rank": 6,
       "scores": [
         [
@@ -2611,7 +2611,7 @@
       "club": "CD Pobladura R",
       "brand": "BETA",
       "schedStart": "10:05",
-      "startZone": null,
+      "startZone": 2,
       "rank": 7,
       "scores": [
         [
