@@ -3,7 +3,7 @@
   "organizer": "CD Moto Bierzo",
   "raceDate": "2026-09-06",
   "championship": "Campeonato de Trial de Castilla y León 2026",
-  "publishedAt": "2026-09-05T18:34:09.933Z",
+  "publishedAt": "2026-09-05T18:37:09.792Z",
   "raceStarted": false,
   "raceFinished": false,
   "cfg": {
@@ -28,7 +28,7 @@
       "club": "CD Pobladura R",
       "brand": "SIN MARCA",
       "schedStart": "10:19",
-      "startZone": null,
+      "startZone": 7,
       "rank": 1,
       "scores": [
         [
@@ -91,7 +91,7 @@
       "club": "CD Pobladura R",
       "brand": "SIN MARCA",
       "schedStart": "10:20",
-      "startZone": null,
+      "startZone": 7,
       "rank": 2,
       "scores": [
         [
@@ -154,7 +154,7 @@
       "club": "Moto Club Villaviciosa",
       "brand": "ELECTRIC-MOTION",
       "schedStart": "10:20",
-      "startZone": null,
+      "startZone": 7,
       "rank": 3,
       "scores": [
         [
@@ -217,7 +217,7 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "BETA TRUEBA",
       "schedStart": "10:21",
-      "startZone": null,
+      "startZone": 7,
       "rank": 4,
       "scores": [
         [
@@ -280,7 +280,7 @@
       "club": "CD Moto Nava",
       "brand": "ELECTRIC-MOTION",
       "schedStart": "10:21",
-      "startZone": null,
+      "startZone": 7,
       "rank": 5,
       "scores": [
         [
@@ -343,7 +343,7 @@
       "club": "CD Moto Bierzo",
       "brand": "SHERCO",
       "schedStart": "10:22",
-      "startZone": null,
+      "startZone": 7,
       "rank": 6,
       "scores": [
         [
@@ -406,7 +406,7 @@
       "club": "CD Pobladura R",
       "brand": "GASGAS",
       "schedStart": "10:17",
-      "startZone": null,
+      "startZone": 6,
       "rank": 1,
       "scores": [
         [
@@ -469,7 +469,7 @@
       "club": "CD Pobladura R",
       "brand": "BETA TRUEBA",
       "schedStart": "10:17",
-      "startZone": null,
+      "startZone": 6,
       "rank": 2,
       "scores": [
         [
@@ -532,7 +532,7 @@
       "club": "CD Moto Nava",
       "brand": "BETA",
       "schedStart": "10:18",
-      "startZone": null,
+      "startZone": 6,
       "rank": 3,
       "scores": [
         [
@@ -595,7 +595,7 @@
       "club": "CD Moto Nava",
       "brand": "ELECTRIC-MOTION",
       "schedStart": "10:18",
-      "startZone": null,
+      "startZone": 6,
       "rank": 4,
       "scores": [
         [
@@ -658,7 +658,7 @@
       "club": "MC Vallisoletano",
       "brand": "TRRS",
       "schedStart": "10:19",
-      "startZone": null,
+      "startZone": 6,
       "rank": 5,
       "scores": [
         [
