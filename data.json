@@ -3,7 +3,7 @@
   "organizer": "CD PORTILLO",
   "raceDate": "2026-09-05",
   "championship": "Campeonato de Trial de NIÑ@S de CYL",
-  "publishedAt": "2026-09-05T14:30:00.222Z",
+  "publishedAt": "2026-09-05T14:33:00.211Z",
   "raceStarted": false,
   "raceFinished": false,
   "cfg": {
@@ -586,69 +586,6 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 63,
-      "name": "GONZALEZ GARCIA, CRISTIAN",
-      "cat": "TRC",
-      "club": "CD Pobladura R",
-      "brand": "",
-      "schedStart": "17:32",
-      "startZone": null,
-      "rank": 1,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          3,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 3,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 3,
-      "lapsCompleted": 1,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 1,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
       "dorsal": 83,
       "name": "AGUADO BARREALES, LUCAS",
       "cat": "TRC",
@@ -656,7 +593,7 @@
       "brand": "",
       "schedStart": "17:30",
       "startZone": null,
-      "rank": 2,
+      "rank": 1,
       "scores": [
         [
           null,
@@ -719,7 +656,7 @@
       "brand": "",
       "schedStart": "17:30",
       "startZone": null,
-      "rank": 3,
+      "rank": 2,
       "scores": [
         [
           null,
@@ -782,7 +719,7 @@
       "brand": "",
       "schedStart": "17:31",
       "startZone": null,
-      "rank": 4,
+      "rank": 3,
       "scores": [
         [
           null,
@@ -844,6 +781,69 @@
       "club": "CD Portillo",
       "brand": "",
       "schedStart": "17:31",
+      "startZone": null,
+      "rank": 4,
+      "scores": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": null,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": null,
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": null,
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": null,
+      "lapsCompleted": 0,
+      "totalTime": "",
+      "n0s": 0,
+      "n1s": 0,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
+      "dorsal": 63,
+      "name": "GONZALEZ GARCIA, CRISTIAN",
+      "cat": "TRC",
+      "club": "CD Pobladura R",
+      "brand": "",
+      "schedStart": "17:32",
       "startZone": null,
       "rank": 5,
       "scores": [
