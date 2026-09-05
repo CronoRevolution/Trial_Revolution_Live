@@ -802,19 +802,17 @@ function lapBadge(p){
   if(p.dsq)return '<span class="pbdg bdq">DQ</span>';
   if(p.dnf)return '<span class="pbdg br">R</span>';
   if(p.finishTime!=null||p.totalTime)return '<span class="pbdg bfin">✓ FIN</span>';
-  if(p.lap1Time!=null){
-    const hasV2=p.scores&&p.scores[1]&&p.scores[1].some(v=>v!==null);
-    return hasV2?'<span class="pbdg bv3">V3</span>':'<span class="pbdg bv2">V2</span>';
-  }
+  // La vuelta la marca la hora de llegada, no las puntuaciones: quien ha
+  // puntuado zonas de la 2ª vuelta sigue EN la 2ª hasta pasar por el control.
+  if(p.lap2Time!=null)return '<span class="pbdg bv3">V3</span>';
+  if(p.lap1Time!=null)return '<span class="pbdg bv2">V2</span>';
   return '<span class="pbdg bv1">V1</span>';
 }
 function lapRankM(p){
   if(p.dsq)return-2; if(p.dnf)return-1;
   if(p.finishTime!=null||p.totalTime)return 4;
-  if(p.lap1Time!=null){
-    const hasV2=p.scores&&p.scores[1]&&p.scores[1].some(v=>v!==null);
-    return hasV2?3:2;
-  }
+  if(p.lap2Time!=null)return 3;
+  if(p.lap1Time!=null)return 2;
   return 1;
 }
 function sortPilots(arr){
