@@ -3,7 +3,7 @@
   "organizer": "CD Moto Bierzo",
   "raceDate": "2026-09-06",
   "championship": "Campeonato de Trial de Castilla y León 2026",
-  "publishedAt": "2026-09-05T18:40:10.396Z",
+  "publishedAt": "2026-09-05T18:44:10.094Z",
   "raceStarted": false,
   "raceFinished": false,
   "cfg": {
@@ -721,7 +721,7 @@
       "club": "CD Moto Bierzo",
       "brand": "TRRS",
       "schedStart": "10:13",
-      "startZone": null,
+      "startZone": 4,
       "rank": 1,
       "scores": [
         [
@@ -784,7 +784,7 @@
       "club": "CD Pobladura R",
       "brand": "GASGAS",
       "schedStart": "10:13",
-      "startZone": null,
+      "startZone": 4,
       "rank": 2,
       "scores": [
         [
@@ -847,7 +847,7 @@
       "club": "CD Pobladura R",
       "brand": "GASGAS",
       "schedStart": "10:14",
-      "startZone": null,
+      "startZone": 4,
       "rank": 3,
       "scores": [
         [
@@ -973,7 +973,7 @@
       "club": "CD Moto Bierzo",
       "brand": "BETA",
       "schedStart": "10:14",
-      "startZone": null,
+      "startZone": 4,
       "rank": 5,
       "scores": [
         [
@@ -1036,7 +1036,7 @@
       "club": "CD Moto Nava",
       "brand": "ELECTRIC-MOTION",
       "schedStart": "10:15",
-      "startZone": null,
+      "startZone": 4,
       "rank": 6,
       "scores": [
         [
@@ -1099,7 +1099,7 @@
       "club": "CD Moto Nava",
       "brand": "TRS",
       "schedStart": "10:15",
-      "startZone": null,
+      "startZone": 4,
       "rank": 7,
       "scores": [
         [
@@ -1162,7 +1162,7 @@
       "club": "CD Moto Nava",
       "brand": "ELECTRIC-MOTION",
       "schedStart": "10:16",
-      "startZone": null,
+      "startZone": 4,
       "rank": 8,
       "scores": [
         [
@@ -1225,7 +1225,7 @@
       "club": "MC Vallisoletano",
       "brand": "BETA",
       "schedStart": "10:16",
-      "startZone": null,
+      "startZone": 4,
       "rank": 9,
       "scores": [
         [
@@ -1540,7 +1540,7 @@
       "club": "CD Pobladura R",
       "brand": "GASGAS",
       "schedStart": "10:08",
-      "startZone": null,
+      "startZone": 3,
       "rank": 5,
       "scores": [
         [
@@ -1603,7 +1603,7 @@
       "club": "CD Pobladura R",
       "brand": "SIN MARCA",
       "schedStart": "10:08",
-      "startZone": null,
+      "startZone": 3,
       "rank": 6,
       "scores": [
         [
@@ -1729,7 +1729,7 @@
       "club": "CD Moto Bierzo",
       "brand": "TRRS",
       "schedStart": "10:09",
-      "startZone": null,
+      "startZone": 3,
       "rank": 8,
       "scores": [
         [
@@ -1792,7 +1792,7 @@
       "club": "CD Pobladura R",
       "brand": "BETA",
       "schedStart": "10:09",
-      "startZone": null,
+      "startZone": 3,
       "rank": 9,
       "scores": [
         [
@@ -1855,7 +1855,7 @@
       "club": "",
       "brand": "ELECTRIC-MOTION",
       "schedStart": "10:10",
-      "startZone": null,
+      "startZone": 3,
       "rank": 10,
       "scores": [
         [
@@ -1918,7 +1918,7 @@
       "club": "CD Pobladura R",
       "brand": "GASGAS",
       "schedStart": "10:10",
-      "startZone": null,
+      "startZone": 3,
       "rank": 11,
       "scores": [
         [
@@ -1981,7 +1981,7 @@
       "club": "CD Moto Bierzo",
       "brand": "SHERCO",
       "schedStart": "10:11",
-      "startZone": null,
+      "startZone": 3,
       "rank": 12,
       "scores": [
         [
@@ -2044,7 +2044,7 @@
       "club": "",
       "brand": "MECATECNO",
       "schedStart": "10:11",
-      "startZone": null,
+      "startZone": 3,
       "rank": 13,
       "scores": [
         [
@@ -2107,7 +2107,7 @@
       "club": "CD Moto Bierzo",
       "brand": "VERTIGO",
       "schedStart": "10:12",
-      "startZone": null,
+      "startZone": 4,
       "rank": 14,
       "scores": [
         [
@@ -2170,7 +2170,7 @@
       "club": "CD Pobladura R",
       "brand": "SIN MARCA",
       "schedStart": "10:12",
-      "startZone": null,
+      "startZone": 3,
       "rank": 15,
       "scores": [
         [
