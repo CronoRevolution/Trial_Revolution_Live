@@ -3,13 +3,13 @@
   "organizer": "CD Moto Bierzo",
   "raceDate": "2026-09-06",
   "championship": "Campeonato de Trial de Castilla y León 2026",
-  "publishedAt": "2026-09-05T18:31:09.831Z",
+  "publishedAt": "2026-09-05T18:34:09.933Z",
   "raceStarted": false,
   "raceFinished": false,
   "cfg": {
     "numZones": 7,
     "lap1MaxMins": 150,
-    "raceDurationHrs": 5,
+    "raceDurationHrs": 4.5,
     "kidsMode": false
   },
   "categories": [
