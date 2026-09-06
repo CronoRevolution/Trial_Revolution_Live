@@ -3,7 +3,7 @@
   "organizer": "CD Moto Bierzo",
   "raceDate": "2026-09-06",
   "championship": "Campeonato de Trial de Castilla y León 2026",
-  "publishedAt": "2026-09-06T08:52:47.579Z",
+  "publishedAt": "2026-09-06T08:55:47.345Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -543,7 +543,7 @@
       "rank": 3,
       "scores": [
         [
-          null,
+          0,
           null,
           null,
           null,
@@ -585,7 +585,7 @@
       "totalPoints": 1,
       "lapsCompleted": 1,
       "totalTime": "",
-      "n0s": 0,
+      "n0s": 1,
       "n1s": 1,
       "n2s": 0,
       "n3s": 0,
@@ -2171,69 +2171,6 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 1,
-      "name": "CASTRO GONZALEZ, NOEL",
-      "cat": "TR5",
-      "club": "CD Moto Bierzo",
-      "brand": "SIN MARCA",
-      "schedStart": "10:04",
-      "startZone": 2,
-      "rank": 2,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
       "dorsal": 5,
       "name": "PEREZ SANCHEZ, MARIN",
       "cat": "TR5",
@@ -2241,7 +2178,7 @@
       "brand": "BETA",
       "schedStart": "10:05",
       "startZone": 2,
-      "rank": 3,
+      "rank": 2,
       "scores": [
         [
           null,
@@ -2304,7 +2241,7 @@
       "brand": "SIN MARCA",
       "schedStart": "10:04",
       "startZone": 2,
-      "rank": 4,
+      "rank": 3,
       "scores": [
         [
           1,
@@ -2367,7 +2304,7 @@
       "brand": "BETA",
       "schedStart": "10:01",
       "startZone": null,
-      "rank": 5,
+      "rank": 4,
       "scores": [
         [
           3,
@@ -2430,7 +2367,7 @@
       "brand": "OSET BIKE",
       "schedStart": "10:02",
       "startZone": null,
-      "rank": 6,
+      "rank": 5,
       "scores": [
         [
           3,
@@ -2493,7 +2430,7 @@
       "brand": "SIN MARCA",
       "schedStart": "10:02",
       "startZone": null,
-      "rank": 7,
+      "rank": 6,
       "scores": [
         [
           3,
@@ -2543,6 +2480,69 @@
       "n2s": 0,
       "n3s": 1,
       "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
+      "dorsal": 1,
+      "name": "CASTRO GONZALEZ, NOEL",
+      "cat": "TR5",
+      "club": "CD Moto Bierzo",
+      "brand": "SIN MARCA",
+      "schedStart": "10:04",
+      "startZone": 2,
+      "rank": 7,
+      "scores": [
+        [
+          5,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 5,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": null,
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": null,
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 5,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 0,
+      "n1s": 0,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 1,
       "finishTime": null,
       "dnf": false,
       "dsq": false,
