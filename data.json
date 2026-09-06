@@ -3,7 +3,7 @@
   "organizer": "CD Moto Bierzo",
   "raceDate": "2026-09-06",
   "championship": "Campeonato de Trial de Castilla y León 2026",
-  "publishedAt": "2026-09-06T08:58:47.369Z",
+  "publishedAt": "2026-09-06T09:01:47.333Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -596,11 +596,11 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 177,
-      "name": "OVIEDO RODRIGUEZ, UNAI",
+      "dorsal": 178,
+      "name": "BALBOA ALVAREZ, SAMUEL",
       "cat": "TR2",
       "club": "CD Pobladura R",
-      "brand": "GASGAS",
+      "brand": "BETA TRUEBA",
       "schedStart": "10:17",
       "startZone": 6,
       "rank": 4,
@@ -659,17 +659,17 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 178,
-      "name": "BALBOA ALVAREZ, SAMUEL",
+      "dorsal": 177,
+      "name": "OVIEDO RODRIGUEZ, UNAI",
       "cat": "TR2",
       "club": "CD Pobladura R",
-      "brand": "BETA TRUEBA",
+      "brand": "GASGAS",
       "schedStart": "10:17",
       "startZone": 6,
       "rank": 5,
       "scores": [
         [
-          null,
+          2,
           null,
           null,
           null,
@@ -696,7 +696,7 @@
           null
         ]
       ],
-      "lap1Points": 2,
+      "lap1Points": 4,
       "lap2Points": null,
       "lap3Points": null,
       "lap1Time": null,
@@ -708,12 +708,12 @@
       "lap1Penalty": 0,
       "finishPenalty": 0,
       "extraPenalties": [],
-      "totalPoints": 2,
+      "totalPoints": 4,
       "lapsCompleted": 1,
       "totalTime": "",
       "n0s": 0,
       "n1s": 0,
-      "n2s": 1,
+      "n2s": 2,
       "n3s": 0,
       "n5s": 0,
       "finishTime": null,
@@ -1304,7 +1304,7 @@
           null,
           null,
           null,
-          null,
+          0,
           null
         ],
         [
@@ -1341,7 +1341,7 @@
       "totalPoints": 0,
       "lapsCompleted": 1,
       "totalTime": "",
-      "n0s": 1,
+      "n0s": 2,
       "n1s": 0,
       "n2s": 0,
       "n3s": 0,
@@ -1730,13 +1730,13 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 65,
-      "name": "FERNANDEZ PEREZ, ANDRES",
+      "dorsal": 78,
+      "name": "GONZALEZ ORDOÑEZ, DANIEL",
       "cat": "TR4",
       "club": "CD Pobladura R",
-      "brand": "SIN MARCA",
-      "schedStart": "10:05",
-      "startZone": 2,
+      "brand": "GASGAS",
+      "schedStart": "10:08",
+      "startZone": 3,
       "rank": 8,
       "scores": [
         [
@@ -1745,7 +1745,7 @@
           null,
           null,
           null,
-          null,
+          0,
           null
         ],
         [
@@ -1782,7 +1782,7 @@
       "totalPoints": 1,
       "lapsCompleted": 1,
       "totalTime": "",
-      "n0s": 0,
+      "n0s": 1,
       "n1s": 1,
       "n2s": 0,
       "n3s": 0,
@@ -1793,13 +1793,13 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 78,
-      "name": "GONZALEZ ORDOÑEZ, DANIEL",
+      "dorsal": 65,
+      "name": "FERNANDEZ PEREZ, ANDRES",
       "cat": "TR4",
       "club": "CD Pobladura R",
-      "brand": "GASGAS",
-      "schedStart": "10:08",
-      "startZone": 3,
+      "brand": "SIN MARCA",
+      "schedStart": "10:05",
+      "startZone": 2,
       "rank": 9,
       "scores": [
         [
@@ -2060,7 +2060,7 @@
           null,
           null,
           null,
-          null,
+          0,
           null
         ],
         [
@@ -2097,7 +2097,7 @@
       "totalPoints": 3,
       "lapsCompleted": 1,
       "totalTime": "",
-      "n0s": 0,
+      "n0s": 1,
       "n1s": 0,
       "n2s": 0,
       "n3s": 1,
