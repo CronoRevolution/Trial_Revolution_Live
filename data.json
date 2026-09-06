@@ -3,7 +3,7 @@
   "organizer": "CD Moto Bierzo",
   "raceDate": "2026-09-06",
   "championship": "Campeonato de Trial de Castilla y León 2026",
-  "publishedAt": "2026-09-06T11:13:47.313Z",
+  "publishedAt": "2026-09-06T11:16:47.424Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -2133,7 +2133,7 @@
           0,
           0,
           0,
-          null
+          0
         ],
         [
           null,
@@ -2160,7 +2160,7 @@
       "totalPoints": 3,
       "lapsCompleted": 2,
       "totalTime": "",
-      "n0s": 10,
+      "n0s": 11,
       "n1s": 3,
       "n2s": 0,
       "n3s": 0,
@@ -2325,7 +2325,7 @@
           1
         ],
         [
-          null,
+          0,
           null,
           null,
           null,
@@ -2336,7 +2336,7 @@
       ],
       "lap1Points": 16,
       "lap2Points": 8,
-      "lap3Points": null,
+      "lap3Points": 0,
       "lap1Time": "01:30:04",
       "lap2Time": "01:22:22",
       "lap3Time": null,
@@ -2347,9 +2347,9 @@
       "finishPenalty": 0,
       "extraPenalties": [],
       "totalPoints": 24,
-      "lapsCompleted": 2,
+      "lapsCompleted": 3,
       "totalTime": "",
-      "n0s": 3,
+      "n0s": 4,
       "n1s": 5,
       "n2s": 1,
       "n3s": 4,
