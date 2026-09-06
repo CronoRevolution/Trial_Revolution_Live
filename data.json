@@ -3,7 +3,7 @@
   "organizer": "CD Moto Bierzo",
   "raceDate": "2026-09-06",
   "championship": "Campeonato de Trial de Castilla y León 2026",
-  "publishedAt": "2026-09-06T10:31:47.325Z",
+  "publishedAt": "2026-09-06T10:34:47.318Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -489,7 +489,7 @@
           0
         ],
         [
-          null,
+          3,
           null,
           null,
           null,
@@ -508,7 +508,7 @@
         ]
       ],
       "lap1Points": 10,
-      "lap2Points": 0,
+      "lap2Points": 3,
       "lap3Points": null,
       "lap1Time": "01:59:58",
       "lap2Time": null,
@@ -519,13 +519,13 @@
       "lap1Penalty": 0,
       "finishPenalty": 0,
       "extraPenalties": [],
-      "totalPoints": 10,
+      "totalPoints": 13,
       "lapsCompleted": 2,
       "totalTime": "",
       "n0s": 3,
       "n1s": 3,
       "n2s": 1,
-      "n3s": 0,
+      "n3s": 1,
       "n5s": 1,
       "finishTime": null,
       "dnf": false,
@@ -809,7 +809,7 @@
           null,
           null,
           null,
-          null,
+          1,
           null
         ],
         [
@@ -823,7 +823,7 @@
         ]
       ],
       "lap1Points": 18,
-      "lap2Points": null,
+      "lap2Points": 1,
       "lap3Points": null,
       "lap1Time": "01:57:05",
       "lap2Time": null,
@@ -834,11 +834,11 @@
       "lap1Penalty": 0,
       "finishPenalty": 0,
       "extraPenalties": [],
-      "totalPoints": 18,
-      "lapsCompleted": 1,
+      "totalPoints": 19,
+      "lapsCompleted": 2,
       "totalTime": "",
       "n0s": 2,
-      "n1s": 0,
+      "n1s": 1,
       "n2s": 0,
       "n3s": 1,
       "n5s": 3,
@@ -1754,7 +1754,7 @@
           null,
           null,
           null,
-          null,
+          0,
           null
         ],
         [
@@ -1782,7 +1782,7 @@
       "totalPoints": 7,
       "lapsCompleted": 2,
       "totalTime": "",
-      "n0s": 4,
+      "n0s": 5,
       "n1s": 2,
       "n2s": 1,
       "n3s": 1,
@@ -2699,7 +2699,7 @@
           null,
           null,
           null,
-          null,
+          0,
           null
         ],
         [
@@ -2727,7 +2727,7 @@
       "totalPoints": 7,
       "lapsCompleted": 2,
       "totalTime": "",
-      "n0s": 4,
+      "n0s": 5,
       "n1s": 2,
       "n2s": 1,
       "n3s": 1,
