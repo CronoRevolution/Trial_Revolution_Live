@@ -313,7 +313,7 @@ footer{text-align:center;padding:20px 16px 30px;font-size:10px;color:var(--mu);
       <span class="ico">📲</span>
       <span class="lbl">Instalar app<small>Tenla siempre a mano</small></span>
     </button>
-  <div class="intro-foot">© 2026 Crono Revolution</div>
+  <div class="intro-foot">© 2026 Crono Revolution · <span id="verTxt"></span></div>
 </div>
 
 <div id="vWait">
@@ -385,6 +385,40 @@ const CAT_COLORS = {
 };
 const DATA_URL = 'data.json';
 const POLL_MS  = 30000;
+
+// Version de la pagina. Hasta ahora no habia ninguna, y por eso no se pudo
+// saber si los espectadores de una carrera estaban ejecutando el fichero
+// corregido o uno viejo que su navegador tenia en memoria desde la prueba
+// anterior. Se ve en la pantalla de entrada y en el pie de la portada: basta
+// preguntarle a quien reporta un fallo "que numero pone abajo".
+const APP_VER = '2026.09.06.1';
+// El hash tal y como llego: el arranque lo reescribe, y #diag se perderia.
+const _HASH0 = location.hash || '';
+
+// ── Traza de cambios de pantalla ─────────────────────────────────────────
+// "Estaba viendo un piloto y me saco a la clasificacion" es un fallo que solo
+// aparece en carrera, en telefonos ajenos, y llega contado de terceros. Aqui
+// se apunta cada cambio de vista con su motivo y se guarda en sessionStorage,
+// asi que sobrevive a una recarga. Se consulta abriendo la pagina con #diag.
+const _TRAZA_MAX = 40;
+function _traza(motivo, extra) {
+  try {
+    const t = new Date();
+    const l = pad(t.getHours()) + ':' + pad(t.getMinutes()) + ':' + pad(t.getSeconds()) +
+              ' · ' + motivo + (extra ? ' · ' + extra : '');
+    const a = JSON.parse(sessionStorage.getItem('tr_traza') || '[]');
+    a.push(l);
+    while (a.length > _TRAZA_MAX) a.shift();
+    sessionStorage.setItem('tr_traza', JSON.stringify(a));
+  } catch (e) {}
+}
+function verTraza() {
+  let a = [];
+  try { a = JSON.parse(sessionStorage.getItem('tr_traza') || '[]'); } catch (e) {}
+  return 'Trial Revolution v' + APP_VER + '\n' + location.href +
+         (_HASH0 && _HASH0 !== location.hash ? '   (entró con ' + _HASH0 + ')' : '') + '\n\n' +
+         (a.length ? a.join('\n') : '(sin movimientos registrados)');
+}
 
 let _data = null;
 let _selCat = null, _selPilot = null;
@@ -762,16 +796,31 @@ function _applyData(d){
     const h=location.hash;
     if(!h||h==='#home'||h===''){
       renderHome();
-      if(h===''){ history.replaceState({view:'home'},'','#home'); navigate('home',false); }
+      if(h===''){ history.replaceState({view:'home'},'','#home'); navigate('home',false,'datos sin hash'); }
     } else if(h.startsWith('#cat-')){
-      _selCat=h.replace('#cat-','');renderCat();navigate('cat',false);
+      _selCat=h.replace('#cat-','');renderCat();navigate('cat',false,'datos con hash #cat-');
     } else if(h.startsWith('#pilot-')){
-      if(_selPilot) renderPilot();
+      // Al recargar (el telefono descarta la pestana, o el espectador tira
+      // hacia abajo) _selPilot se pierde: hay que recuperarlo del dorsal de
+      // la URL. Antes no se hacia y quien recargaba estando en una ficha
+      // acababa en la portada.
+      if(!_selPilot){
+        const _dor = parseInt(h.replace('#pilot-',''),10);
+        const _cand = (d.pilots||[]).find(x=>x && x.dorsal===_dor);
+        if(_cand){ _selPilot=_cand; _selCat=_cand.cat; }
+      }
+      if(_selPilot){ renderPilot(); navigate('pilot',false,'enlace directo a la ficha'); }
     }
   }
   if(_data&&document.getElementById('vWait').style.display!=='none'){
     document.getElementById('vWait').style.display='none';
-    renderHome(); history.replaceState({view:'home'},'','#home'); navigate('home',false);
+    // Solo se cae a la portada si de verdad no se ha abierto ninguna vista:
+    // si el hash traia una categoria o una ficha, ya esta puesta arriba y
+    // pisarla con la portada es justo lo que rompia los enlaces compartidos.
+    if(!document.querySelector('.view.active')){
+      renderHome(); history.replaceState({view:'home'},'','#home');
+      navigate('home',false,'se cierra la espera');
+    }
   }
 }
 
@@ -864,7 +913,10 @@ function sortPilots(arr){
 // ── NAVIGATION WITH HISTORY API ───────────────────────────────
 const _histOk = (() => { try { history.replaceState(null,'',location.href); return true; } catch(e) { return false; } })();
 
-function navigate(view, pushState=true) {
+function navigate(view, pushState=true, motivo='') {
+  const _antes = (document.querySelector('.view.active') || {}).id || '—';
+  if (_antes !== ({home:'vHome',cat:'vCat',pilot:'vPilot'}[view] || ''))
+    _traza(_antes + ' → ' + view, motivo);
   // Hide all
   document.getElementById('vWait').style.display='none';
   ['vIntro','vHome','vCat','vPilot'].forEach(id=>{
@@ -901,7 +953,7 @@ function goBack(){
   history.back();
 }
 function goHome(){
-  renderHome(); navigate('home');
+  renderHome(); navigate('home',true,'toque: botón portada');
 }
 
 // Handle browser back/forward
@@ -918,13 +970,13 @@ window.addEventListener('popstate', e=>{
   if(document.getElementById('vIntro').classList.contains('active')) {
     return;
   }
-  if(!st||st.view==='home') { renderHome(); navigate('home',false); }
-  else if(st.view==='cat')  { _selCat=st.cat; renderCat(); navigate('cat',false); }
+  if(!st||st.view==='home') { renderHome(); navigate('home',false,'atrás del navegador'); }
+  else if(st.view==='cat')  { _selCat=st.cat; renderCat(); navigate('cat',false,'atrás del navegador'); }
   else if(st.view==='pilot'){
     _selCat=st.cat;
     _selPilot=(_data?.pilots||[]).find(p=>p.dorsal===st.dorsal&&p.cat===st.cat)||_selPilot;
-    if(_selPilot){renderPilot();navigate('pilot',false);}
-    else{renderCat();navigate('cat',false);}
+    if(_selPilot){renderPilot();navigate('pilot',false,'atrás del navegador');}
+    else{renderCat();navigate('cat',false,'atrás: piloto no encontrado en los datos');}
   }
 });
 
@@ -951,7 +1003,7 @@ function renderHome(){
   const ftEl=document.getElementById('footerTxt');
   if(ftEl){
     const ftDate=d.raceDate?new Date(d.raceDate+'T12:00:00').toLocaleDateString('es-ES',{day:'2-digit',month:'2-digit',year:'numeric'}):'';
-    ftEl.textContent=(d.raceName||'Trial Revolution')+(ftDate?' · '+ftDate:'')+(d.organizer?' · '+d.organizer:'');
+    ftEl.textContent=(d.raceName||'Trial Revolution')+(ftDate?' · '+ftDate:'')+(d.organizer?' · '+d.organizer:'')+' · v'+APP_VER;
   }
 
   const now=new Date();
@@ -1044,7 +1096,7 @@ function renderHome(){
     tile.setAttribute('role','button');
     tile.setAttribute('tabindex','0');
     tile.setAttribute('aria-label',`Categoría ${cat}, ${cp.length} pilotos`);
-    const abrir=()=>{_selCat=cat;renderCat();navigate('cat');};
+    const abrir=()=>{_selCat=cat;renderCat();navigate('cat',true,'toque: categoría');};
     tile.addEventListener('click',abrir);
     tile.addEventListener('keydown',e=>{
       if(e.key==='Enter'||e.key===' '){ e.preventDefault(); abrir(); }
@@ -1092,7 +1144,7 @@ function renderCat(){
         `<div class="psub">${p.club||''}${p.brand?' · '+p.brand:''}</div></div>`+
         `<div class="pright">${escalonada?`<span class="przona">Z${zonaSalida(p)}</span>`:''}</div>`;
       row.setAttribute('role','button'); row.setAttribute('tabindex','0');
-      const verPiloto=()=>{_selPilot=p;renderPilot();navigate('pilot');};
+      const verPiloto=()=>{_selPilot=p;renderPilot();navigate('pilot',true,'toque: piloto');};
       row.addEventListener('click',verPiloto);
       row.addEventListener('keydown',e=>{
         if(e.key==='Enter'||e.key===' '){ e.preventDefault(); verPiloto(); }
@@ -1133,7 +1185,7 @@ function renderCat(){
         `<div class="ppts" style="color:${p.dnf||p.dsq?'var(--mu)':col}">${tp!==null?tp:'—'}</div>`+
         `<div>${lapBadge(p)}</div></div>`;
     row.setAttribute('role','button'); row.setAttribute('tabindex','0');
-    const verPiloto=()=>{_selPilot=p;renderPilot();navigate('pilot');};
+    const verPiloto=()=>{_selPilot=p;renderPilot();navigate('pilot',true,'toque: piloto');};
     row.addEventListener('click',verPiloto);
     row.addEventListener('keydown',e=>{
       if(e.key==='Enter'||e.key===' '){ e.preventDefault(); verPiloto(); }
@@ -1329,7 +1381,7 @@ function goLive(){
     // Ya hay datos en memoria: entrar directo, sin pantalla de espera
     document.getElementById('vWait').style.display='none';
     renderHome();
-    navigate('home', false);
+    navigate('home', false, 'entrar en directo');
   } else {
     document.getElementById('vWait').style.display='flex';
   }
@@ -1364,10 +1416,54 @@ if (_isArchive) {
 } else {
   document.getElementById('vWait').style.display='flex';
   document.getElementById('btnIntro').style.display='';
-  history.replaceState({view:'home'},'','#home');
+  // Un enlace profundo se respeta. Antes se pisaba SIEMPRE con #home, asi que
+  // recargar estando en una ficha —o abrir el enlace que alguien te pasa por
+  // WhatsApp— te dejaba en la portada.
+  const _h0 = location.hash || '';
+  if(_h0.startsWith('#cat-')){
+    history.replaceState({view:'cat',cat:_h0.replace('#cat-','')},'',_h0);
+  } else if(_h0.startsWith('#pilot-')){
+    history.replaceState({view:'pilot',dorsal:parseInt(_h0.replace('#pilot-',''),10)},'',_h0);
+  } else {
+    history.replaceState({view:'home'},'','#home');
+  }
   fetchData();
   setInterval(fetchData, POLL_MS);
 }
+
+// Version visible y pantalla de diagnostico.
+// Se abre de dos maneras: entrando con #diag, o tocando tres veces el pie de
+// la portada. Lo segundo es lo que se le puede pedir por telefono a un
+// espectador que dice "me ha sacado de la ficha".
+function mostrarDiag(){
+  if (document.getElementById('diagBox')) return;
+  const pre = document.createElement('pre');
+  pre.id = 'diagBox';
+  pre.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;margin:0;padding:16px;'+
+    'background:#0b0f16;color:#cbd5e1;font:12px/1.5 monospace;overflow:auto;white-space:pre-wrap';
+  pre.textContent = verTraza();
+  const x = document.createElement('button');
+  x.textContent = 'Cerrar';
+  x.style.cssText = 'position:fixed;top:12px;right:12px;z-index:10000;padding:8px 14px;'+
+    'border:0;border-radius:8px;background:#1e293b;color:#e2e8f0;font-size:13px';
+  x.onclick = () => { pre.remove(); x.remove(); };
+  document.body.appendChild(pre); document.body.appendChild(x);
+}
+(function(){
+  const v = document.getElementById('verTxt');
+  if (v) v.textContent = 'v' + APP_VER;
+  _traza('arranque', 'v' + APP_VER + ' · ' + (_HASH0 || 'sin hash'));
+  const pie = document.getElementById('footerTxt');
+  if (pie) {
+    let n = 0, t = 0;
+    pie.addEventListener('click', () => {
+      clearTimeout(t); n++;
+      t = setTimeout(() => { n = 0; }, 1200);
+      if (n >= 3) { n = 0; mostrarDiag(); }
+    });
+  }
+  if (_HASH0 === '#diag') mostrarDiag();
+})();
 
 // ── PWA: registrar service worker ─────────────────────────────────
 if ('serviceWorker' in navigator) {
