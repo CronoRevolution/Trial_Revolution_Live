@@ -3,7 +3,7 @@
   "organizer": "CD Moto Bierzo",
   "raceDate": "2026-09-06",
   "championship": "Campeonato de Trial de Castilla y León 2026",
-  "publishedAt": "2026-09-06T10:37:47.362Z",
+  "publishedAt": "2026-09-06T10:40:47.342Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -22,6 +22,76 @@
   ],
   "pilots": [
     {
+      "dorsal": 213,
+      "name": "GONZALEZ PUENTE, ADRIAN",
+      "cat": "TR1",
+      "club": "CD Pobladura R",
+      "brand": "SIN MARCA",
+      "schedStart": "10:19",
+      "startZone": 7,
+      "rank": 1,
+      "scores": [
+        [
+          5,
+          null,
+          null,
+          null,
+          null,
+          5,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 10,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "02:21:14",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "12:40:14",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [
+        {
+          "pts": 1,
+          "reason": "Retraso en salida (10:20 vs. 10:19) — 1 min",
+          "ts": "10:20:00",
+          "skipKey": "LATE_START"
+        }
+      ],
+      "totalPoints": 11,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 0,
+      "n1s": 0,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 2,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 211,
       "name": "GONZALEZ JUAN, SERGIO",
       "cat": "TR1",
@@ -29,7 +99,7 @@
       "brand": "SHERCO",
       "schedStart": "10:22",
       "startZone": 7,
-      "rank": 1,
+      "rank": 2,
       "scores": [
         [
           3,
@@ -92,7 +162,7 @@
       "brand": "ELECTRIC-MOTION",
       "schedStart": "10:20",
       "startZone": 7,
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           5,
@@ -155,7 +225,7 @@
       "brand": "BETA TRUEBA",
       "schedStart": "10:21",
       "startZone": 7,
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           1,
@@ -218,7 +288,7 @@
       "brand": "ELECTRIC-MOTION",
       "schedStart": "10:21",
       "startZone": 7,
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           5,
@@ -281,7 +351,7 @@
       "brand": "SIN MARCA",
       "schedStart": "10:20",
       "startZone": 7,
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           3,
@@ -331,76 +401,6 @@
       "n2s": 0,
       "n3s": 1,
       "n5s": 1,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 213,
-      "name": "GONZALEZ PUENTE, ADRIAN",
-      "cat": "TR1",
-      "club": "CD Pobladura R",
-      "brand": "SIN MARCA",
-      "schedStart": "10:19",
-      "startZone": 7,
-      "rank": 6,
-      "scores": [
-        [
-          5,
-          null,
-          null,
-          null,
-          null,
-          5,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 10,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [
-        {
-          "pts": 1,
-          "reason": "Retraso en salida (10:20 vs. 10:19) — 1 min",
-          "ts": "10:20:00",
-          "skipKey": "LATE_START"
-        }
-      ],
-      "totalPoints": 11,
-      "lapsCompleted": 1,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 2,
       "finishTime": null,
       "dnf": false,
       "dsq": false,
@@ -620,7 +620,7 @@
           null,
           null,
           null,
-          null,
+          0,
           null
         ],
         [
@@ -634,7 +634,7 @@
         ]
       ],
       "lap1Points": 21,
-      "lap2Points": null,
+      "lap2Points": 0,
       "lap3Points": null,
       "lap1Time": "02:10:40",
       "lap2Time": null,
@@ -646,9 +646,9 @@
       "finishPenalty": 0,
       "extraPenalties": [],
       "totalPoints": 21,
-      "lapsCompleted": 1,
+      "lapsCompleted": 2,
       "totalTime": "",
-      "n0s": 1,
+      "n0s": 2,
       "n1s": 0,
       "n2s": 3,
       "n3s": 0,
@@ -785,6 +785,69 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 111,
+      "name": "BARREDO RODRIGUEZ, SAUL",
+      "cat": "TR3",
+      "club": "CD Pobladura R",
+      "brand": "GASGAS",
+      "schedStart": "10:13",
+      "startZone": 4,
+      "rank": 2,
+      "scores": [
+        [
+          0,
+          3,
+          1,
+          3,
+          0,
+          0,
+          2
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 9,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "02:24:35",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "12:37:35",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 9,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 3,
+      "n1s": 1,
+      "n2s": 1,
+      "n3s": 2,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 113,
       "name": "GARCIA RUIZ, ROBERTO",
       "cat": "TR3",
@@ -792,7 +855,7 @@
       "brand": "ELECTRIC-MOTION",
       "schedStart": "10:15",
       "startZone": 4,
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           1,
@@ -855,7 +918,7 @@
       "brand": "BETA",
       "schedStart": "10:16",
       "startZone": 4,
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           0,
@@ -918,7 +981,7 @@
       "brand": "ELECTRIC-MOTION",
       "schedStart": "10:16",
       "startZone": 4,
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           1,
@@ -981,7 +1044,7 @@
       "brand": "GASGAS",
       "schedStart": "10:14",
       "startZone": 4,
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           5,
@@ -1044,7 +1107,7 @@
       "brand": "TRS",
       "schedStart": "10:15",
       "startZone": 4,
-      "rank": 6,
+      "rank": 7,
       "scores": [
         [
           1,
@@ -1107,7 +1170,7 @@
       "brand": "SIN MARCA",
       "schedStart": "10:00",
       "startZone": null,
-      "rank": 7,
+      "rank": 8,
       "scores": [
         [
           5,
@@ -1157,69 +1220,6 @@
       "n2s": 0,
       "n3s": 1,
       "n5s": 4,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 111,
-      "name": "BARREDO RODRIGUEZ, SAUL",
-      "cat": "TR3",
-      "club": "CD Pobladura R",
-      "brand": "GASGAS",
-      "schedStart": "10:13",
-      "startZone": 4,
-      "rank": 8,
-      "scores": [
-        [
-          0,
-          null,
-          null,
-          null,
-          null,
-          0,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 0,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 1,
-      "totalTime": "",
-      "n0s": 2,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
       "finishTime": null,
       "dnf": false,
       "dsq": false,
@@ -1478,6 +1478,69 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 63,
+      "name": "GARCIA RUIZ, SAUL",
+      "cat": "TR4",
+      "club": "CD Pobladura R",
+      "brand": "SIN MARCA",
+      "schedStart": "10:12",
+      "startZone": 3,
+      "rank": 4,
+      "scores": [
+        [
+          0,
+          2,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          3,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 6,
+      "lap2Points": 5,
+      "lap3Points": null,
+      "lap1Time": "01:36:50",
+      "lap2Time": "00:46:27",
+      "lap3Time": null,
+      "arrV1": "11:48:50",
+      "arrV2": "12:34:27",
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 11,
+      "lapsCompleted": 2,
+      "totalTime": "",
+      "n0s": 6,
+      "n1s": 6,
+      "n2s": 1,
+      "n3s": 1,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 78,
       "name": "GONZALEZ ORDOÑEZ, DANIEL",
       "cat": "TR4",
@@ -1485,7 +1548,7 @@
       "brand": "GASGAS",
       "schedStart": "10:08",
       "startZone": 3,
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           1,
@@ -1548,7 +1611,7 @@
       "brand": "SIN MARCA",
       "schedStart": "10:08",
       "startZone": 3,
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           3,
@@ -1611,7 +1674,7 @@
       "brand": "TRRS",
       "schedStart": "10:06",
       "startZone": 2,
-      "rank": 6,
+      "rank": 7,
       "scores": [
         [
           0,
@@ -1674,7 +1737,7 @@
       "brand": "TRRS",
       "schedStart": "10:09",
       "startZone": 3,
-      "rank": 7,
+      "rank": 8,
       "scores": [
         [
           0,
@@ -1737,7 +1800,7 @@
       "brand": "BETA",
       "schedStart": "10:09",
       "startZone": 3,
-      "rank": 8,
+      "rank": 9,
       "scores": [
         [
           2,
@@ -1786,69 +1849,6 @@
       "n1s": 2,
       "n2s": 1,
       "n3s": 1,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 63,
-      "name": "GARCIA RUIZ, SAUL",
-      "cat": "TR4",
-      "club": "CD Pobladura R",
-      "brand": "SIN MARCA",
-      "schedStart": "10:12",
-      "startZone": 3,
-      "rank": 9,
-      "scores": [
-        [
-          0,
-          2,
-          1,
-          1,
-          1,
-          1,
-          0
-        ],
-        [
-          1,
-          null,
-          null,
-          null,
-          null,
-          0,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 6,
-      "lap2Points": 1,
-      "lap3Points": null,
-      "lap1Time": "01:36:50",
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": "11:48:50",
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 7,
-      "lapsCompleted": 2,
-      "totalTime": "",
-      "n0s": 3,
-      "n1s": 5,
-      "n2s": 1,
-      "n3s": 0,
       "n5s": 0,
       "finishTime": null,
       "dnf": false,
@@ -2549,6 +2549,69 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 36,
+      "name": "FERNANDEZ BELLO, DOMINGO",
+      "cat": "TR5A",
+      "club": "CD Moto Bierzo",
+      "brand": "SIN MARCA",
+      "schedStart": "10:01",
+      "startZone": null,
+      "rank": 1,
+      "scores": [
+        [
+          2,
+          0,
+          1,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          null,
+          null,
+          null,
+          null,
+          0,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 5,
+      "lap2Points": 0,
+      "lap3Points": null,
+      "lap1Time": "01:46:35",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "11:47:35",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 5,
+      "lapsCompleted": 2,
+      "totalTime": "",
+      "n0s": 6,
+      "n1s": 1,
+      "n2s": 2,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 41,
       "name": "ELENA SOTO, JOSE CARLOS",
       "cat": "TR5A",
@@ -2556,7 +2619,7 @@
       "brand": "MECATECNO",
       "schedStart": "10:22",
       "startZone": 3,
-      "rank": 1,
+      "rank": 2,
       "scores": [
         [
           2,
@@ -2602,69 +2665,6 @@
       "lapsCompleted": 2,
       "totalTime": "",
       "n0s": 6,
-      "n1s": 1,
-      "n2s": 2,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 36,
-      "name": "FERNANDEZ BELLO, DOMINGO",
-      "cat": "TR5A",
-      "club": "CD Moto Bierzo",
-      "brand": "SIN MARCA",
-      "schedStart": "10:01",
-      "startZone": null,
-      "rank": 2,
-      "scores": [
-        [
-          2,
-          0,
-          1,
-          0,
-          2,
-          0,
-          0
-        ],
-        [
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 5,
-      "lap2Points": 0,
-      "lap3Points": null,
-      "lap1Time": "01:46:35",
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": "11:47:35",
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 5,
-      "lapsCompleted": 2,
-      "totalTime": "",
-      "n0s": 5,
       "n1s": 1,
       "n2s": 2,
       "n3s": 0,
@@ -2820,7 +2820,7 @@
           5
         ],
         [
-          null,
+          3,
           null,
           null,
           null,
@@ -2839,7 +2839,7 @@
         ]
       ],
       "lap1Points": 35,
-      "lap2Points": null,
+      "lap2Points": 3,
       "lap3Points": null,
       "lap1Time": "02:25:08",
       "lap2Time": null,
@@ -2850,13 +2850,13 @@
       "lap1Penalty": 0,
       "finishPenalty": 0,
       "extraPenalties": [],
-      "totalPoints": 35,
-      "lapsCompleted": 1,
+      "totalPoints": 38,
+      "lapsCompleted": 2,
       "totalTime": "",
       "n0s": 0,
       "n1s": 0,
       "n2s": 0,
-      "n3s": 0,
+      "n3s": 1,
       "n5s": 7,
       "finishTime": null,
       "dnf": false,
