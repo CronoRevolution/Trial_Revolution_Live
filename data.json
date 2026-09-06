@@ -3,7 +3,7 @@
   "organizer": "CD Moto Bierzo",
   "raceDate": "2026-09-06",
   "championship": "Campeonato de Trial de Castilla y León 2026",
-  "publishedAt": "2026-09-06T12:43:47.574Z",
+  "publishedAt": "2026-09-06T12:46:47.346Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -625,8 +625,8 @@
         ],
         [
           1,
-          null,
-          null,
+          0,
+          0,
           null,
           null,
           1,
@@ -638,22 +638,22 @@
       "lap3Points": 2,
       "lap1Time": "01:58:00",
       "lap2Time": "01:31:28",
-      "lap3Time": null,
+      "lap3Time": "00:57:07",
       "arrV1": "12:16:00",
       "arrV2": "13:47:28",
-      "arrCHF": null,
+      "arrCHF": "14:44:35",
       "lap1Penalty": 0,
       "finishPenalty": 0,
       "extraPenalties": [],
       "totalPoints": 8,
       "lapsCompleted": 3,
-      "totalTime": "",
-      "n0s": 10,
+      "totalTime": "04:26:35",
+      "n0s": 12,
       "n1s": 4,
       "n2s": 2,
       "n3s": 0,
       "n5s": 0,
-      "finishTime": null,
+      "finishTime": 53075000,
       "dnf": false,
       "dsq": false,
       "dsqReason": ""
@@ -911,6 +911,69 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 111,
+      "name": "BARREDO RODRIGUEZ, SAUL",
+      "cat": "TR3",
+      "club": "CD Pobladura R",
+      "brand": "GASGAS",
+      "schedStart": "10:13",
+      "startZone": 4,
+      "rank": 4,
+      "scores": [
+        [
+          0,
+          3,
+          1,
+          3,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          5,
+          1,
+          0,
+          5,
+          3,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          5,
+          5,
+          2,
+          0
+        ]
+      ],
+      "lap1Points": 9,
+      "lap2Points": 14,
+      "lap3Points": 14,
+      "lap1Time": "02:24:35",
+      "lap2Time": "01:50:28",
+      "lap3Time": "00:17:01",
+      "arrV1": "12:37:35",
+      "arrV2": "14:27:28",
+      "arrCHF": "14:45:04",
+      "lap1Penalty": 0,
+      "finishPenalty": 2,
+      "extraPenalties": [],
+      "totalPoints": 39,
+      "lapsCompleted": 3,
+      "totalTime": "04:32:04",
+      "n0s": 8,
+      "n1s": 4,
+      "n2s": 2,
+      "n3s": 3,
+      "n5s": 4,
+      "finishTime": 53104000,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 121,
       "name": "ESCUDERO SOBRADO, RICARDO",
       "cat": "TR3",
@@ -918,7 +981,7 @@
       "brand": "SIN MARCA",
       "schedStart": "10:00",
       "startZone": null,
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           5,
@@ -981,7 +1044,7 @@
       "brand": "ELECTRIC-MOTION",
       "schedStart": "10:15",
       "startZone": 4,
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           1,
@@ -1044,7 +1107,7 @@
       "brand": "ELECTRIC-MOTION",
       "schedStart": "10:16",
       "startZone": 4,
-      "rank": 6,
+      "rank": 7,
       "scores": [
         [
           1,
@@ -1107,7 +1170,7 @@
       "brand": "TRS",
       "schedStart": "10:15",
       "startZone": 4,
-      "rank": 7,
+      "rank": 8,
       "scores": [
         [
           1,
@@ -1170,7 +1233,7 @@
       "brand": "BETA",
       "schedStart": "10:16",
       "startZone": 4,
-      "rank": 8,
+      "rank": 9,
       "scores": [
         [
           0,
@@ -1221,69 +1284,6 @@
       "n3s": 6,
       "n5s": 7,
       "finishTime": 51358000,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 111,
-      "name": "BARREDO RODRIGUEZ, SAUL",
-      "cat": "TR3",
-      "club": "CD Pobladura R",
-      "brand": "GASGAS",
-      "schedStart": "10:13",
-      "startZone": 4,
-      "rank": 9,
-      "scores": [
-        [
-          0,
-          3,
-          1,
-          3,
-          0,
-          0,
-          2
-        ],
-        [
-          0,
-          5,
-          1,
-          0,
-          5,
-          3,
-          0
-        ],
-        [
-          0,
-          null,
-          null,
-          null,
-          null,
-          2,
-          null
-        ]
-      ],
-      "lap1Points": 9,
-      "lap2Points": 14,
-      "lap3Points": 2,
-      "lap1Time": "02:24:35",
-      "lap2Time": "01:50:28",
-      "lap3Time": null,
-      "arrV1": "12:37:35",
-      "arrV2": "14:27:28",
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 25,
-      "lapsCompleted": 3,
-      "totalTime": "",
-      "n0s": 7,
-      "n1s": 2,
-      "n2s": 2,
-      "n3s": 3,
-      "n5s": 2,
-      "finishTime": null,
       "dnf": false,
       "dsq": false,
       "dsqReason": ""
