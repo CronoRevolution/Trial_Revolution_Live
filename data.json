@@ -3,7 +3,7 @@
   "organizer": "CD Moto Bierzo",
   "raceDate": "2026-09-06",
   "championship": "Campeonato de Trial de Castilla y León 2026",
-  "publishedAt": "2026-09-06T08:28:47.500Z",
+  "publishedAt": "2026-09-06T08:31:47.501Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -407,6 +407,69 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 175,
+      "name": "FERNANDEZ PRIETO, JAVIER",
+      "cat": "TR2",
+      "club": "CD Moto Nava",
+      "brand": "BETA",
+      "schedStart": "10:18",
+      "startZone": 6,
+      "rank": 1,
+      "scores": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          0,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 0,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": null,
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": null,
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 0,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 1,
+      "n1s": 0,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 179,
       "name": "FERNANDEZ GALLARDO, LUIS ADRIAN",
       "cat": "TR2",
@@ -414,7 +477,7 @@
       "brand": "ELECTRIC-MOTION",
       "schedStart": "10:18",
       "startZone": 6,
-      "rank": 1,
+      "rank": 2,
       "scores": [
         [
           null,
@@ -477,7 +540,7 @@
       "brand": "GASGAS",
       "schedStart": "10:17",
       "startZone": 6,
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           null,
@@ -539,69 +602,6 @@
       "club": "CD Pobladura R",
       "brand": "BETA TRUEBA",
       "schedStart": "10:17",
-      "startZone": 6,
-      "rank": 3,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 175,
-      "name": "FERNANDEZ PRIETO, JAVIER",
-      "cat": "TR2",
-      "club": "CD Moto Nava",
-      "brand": "BETA",
-      "schedStart": "10:18",
       "startZone": 6,
       "rank": 4,
       "scores": [
@@ -1478,69 +1478,6 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 79,
-      "name": "GONZALEZ ORDOÑEZ, JOSE PABLO",
-      "cat": "TR4",
-      "club": "CD Pobladura R",
-      "brand": "SIN MARCA",
-      "schedStart": "10:08",
-      "startZone": 3,
-      "rank": 4,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
       "dorsal": 72,
       "name": "GUTIERREZ PEREZ, SAUL",
       "cat": "TR4",
@@ -1548,7 +1485,7 @@
       "brand": "GASGAS",
       "schedStart": "10:07",
       "startZone": 2,
-      "rank": 5,
+      "rank": 4,
       "scores": [
         [
           null,
@@ -1611,7 +1548,7 @@
       "brand": "TRRS",
       "schedStart": "10:09",
       "startZone": 3,
-      "rank": 6,
+      "rank": 5,
       "scores": [
         [
           null,
@@ -1674,7 +1611,7 @@
       "brand": "BETA",
       "schedStart": "10:09",
       "startZone": 3,
-      "rank": 7,
+      "rank": 6,
       "scores": [
         [
           null,
@@ -1737,7 +1674,7 @@
       "brand": "ELECTRIC-MOTION",
       "schedStart": "10:10",
       "startZone": 3,
-      "rank": 8,
+      "rank": 7,
       "scores": [
         [
           null,
@@ -1800,7 +1737,7 @@
       "brand": "GASGAS",
       "schedStart": "10:10",
       "startZone": 3,
-      "rank": 9,
+      "rank": 8,
       "scores": [
         [
           null,
@@ -1863,7 +1800,7 @@
       "brand": "SHERCO",
       "schedStart": "10:11",
       "startZone": 3,
-      "rank": 10,
+      "rank": 9,
       "scores": [
         [
           null,
@@ -1926,7 +1863,7 @@
       "brand": "SIN MARCA",
       "schedStart": "10:12",
       "startZone": 3,
-      "rank": 11,
+      "rank": 10,
       "scores": [
         [
           null,
@@ -1989,7 +1926,7 @@
       "brand": "SIN MARCA",
       "schedStart": "10:05",
       "startZone": 2,
-      "rank": 12,
+      "rank": 11,
       "scores": [
         [
           1,
@@ -2038,6 +1975,69 @@
       "n1s": 1,
       "n2s": 0,
       "n3s": 0,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
+      "dorsal": 79,
+      "name": "GONZALEZ ORDOÑEZ, JOSE PABLO",
+      "cat": "TR4",
+      "club": "CD Pobladura R",
+      "brand": "SIN MARCA",
+      "schedStart": "10:08",
+      "startZone": 3,
+      "rank": 12,
+      "scores": [
+        [
+          3,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 3,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": null,
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": null,
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 3,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 0,
+      "n1s": 0,
+      "n2s": 0,
+      "n3s": 1,
       "n5s": 0,
       "finishTime": null,
       "dnf": false,
