@@ -3,7 +3,7 @@
   "organizer": "CD Moto Bierzo",
   "raceDate": "2026-09-06",
   "championship": "Campeonato de Trial de Castilla y León 2026",
-  "publishedAt": "2026-09-06T08:46:47.488Z",
+  "publishedAt": "2026-09-06T08:49:47.338Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -85,69 +85,6 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 214,
-      "name": "MARCHAL GOMEZ, RODRIGO",
-      "cat": "TR1",
-      "club": "Moto Club Villaviciosa",
-      "brand": "ELECTRIC-MOTION",
-      "schedStart": "10:20",
-      "startZone": 7,
-      "rank": 2,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
       "dorsal": 216,
       "name": "RODRIGUEZ REYERO, LUCAS",
       "cat": "TR1",
@@ -155,7 +92,7 @@
       "brand": "ELECTRIC-MOTION",
       "schedStart": "10:21",
       "startZone": 7,
-      "rank": 3,
+      "rank": 2,
       "scores": [
         [
           null,
@@ -218,7 +155,7 @@
       "brand": "BETA TRUEBA",
       "schedStart": "10:21",
       "startZone": 7,
-      "rank": 4,
+      "rank": 3,
       "scores": [
         [
           1,
@@ -281,7 +218,7 @@
       "brand": "SHERCO",
       "schedStart": "10:22",
       "startZone": 7,
-      "rank": 5,
+      "rank": 4,
       "scores": [
         [
           3,
@@ -331,6 +268,69 @@
       "n2s": 0,
       "n3s": 1,
       "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
+      "dorsal": 214,
+      "name": "MARCHAL GOMEZ, RODRIGO",
+      "cat": "TR1",
+      "club": "Moto Club Villaviciosa",
+      "brand": "ELECTRIC-MOTION",
+      "schedStart": "10:20",
+      "startZone": 7,
+      "rank": 5,
+      "scores": [
+        [
+          5,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 5,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": null,
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": null,
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 5,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 0,
+      "n1s": 0,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 1,
       "finishTime": null,
       "dnf": false,
       "dsq": false,
