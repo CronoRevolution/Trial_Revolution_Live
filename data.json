@@ -3,7 +3,7 @@
   "organizer": "CD Moto Nava",
   "raceDate": "2026-10-04",
   "championship": "Campeonato de Trial de Castilla y León 2026",
-  "publishedAt": "2026-10-04T10:38:20.474Z",
+  "publishedAt": "2026-10-04T10:41:20.534Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -41,7 +41,7 @@
           0
         ],
         [
-          null,
+          2,
           null,
           null,
           null,
@@ -60,7 +60,7 @@
         ]
       ],
       "lap1Points": 7,
-      "lap2Points": null,
+      "lap2Points": 2,
       "lap3Points": null,
       "lap1Time": "01:54:31",
       "lap2Time": null,
@@ -71,12 +71,12 @@
       "lap1Penalty": 0,
       "finishPenalty": 0,
       "extraPenalties": [],
-      "totalPoints": 7,
-      "lapsCompleted": 1,
+      "totalPoints": 9,
+      "lapsCompleted": 2,
       "totalTime": "",
       "n0s": 3,
       "n1s": 2,
-      "n2s": 1,
+      "n2s": 2,
       "n3s": 1,
       "n5s": 0,
       "finishTime": null,
@@ -105,7 +105,7 @@
         ],
         [
           0,
-          null,
+          0,
           null,
           null,
           null,
@@ -137,7 +137,7 @@
       "totalPoints": 11,
       "lapsCompleted": 2,
       "totalTime": "",
-      "n0s": 5,
+      "n0s": 6,
       "n1s": 0,
       "n2s": 0,
       "n3s": 2,
@@ -168,7 +168,7 @@
         ],
         [
           3,
-          null,
+          0,
           null,
           null,
           null,
@@ -200,7 +200,7 @@
       "totalPoints": 15,
       "lapsCompleted": 2,
       "totalTime": "",
-      "n0s": 3,
+      "n0s": 4,
       "n1s": 1,
       "n2s": 0,
       "n3s": 3,
@@ -1184,7 +1184,7 @@
           0
         ],
         [
-          null,
+          1,
           null,
           null,
           null,
@@ -1195,7 +1195,7 @@
       ],
       "lap1Points": 6,
       "lap2Points": 5,
-      "lap3Points": null,
+      "lap3Points": 1,
       "lap1Time": "01:14:00",
       "lap2Time": "00:57:46",
       "lap3Time": null,
@@ -1205,11 +1205,11 @@
       "lap1Penalty": 0,
       "finishPenalty": 0,
       "extraPenalties": [],
-      "totalPoints": 11,
-      "lapsCompleted": 2,
+      "totalPoints": 12,
+      "lapsCompleted": 3,
       "totalTime": "",
       "n0s": 10,
-      "n1s": 0,
+      "n1s": 1,
       "n2s": 1,
       "n3s": 3,
       "n5s": 0,
@@ -1282,6 +1282,69 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 69,
+      "name": "FERNANDEZ LOPEZ, JORGE",
+      "cat": "TR4",
+      "club": "CD Moto Bierzo",
+      "brand": "VERTIGO",
+      "schedStart": "10:05",
+      "startZone": null,
+      "rank": 3,
+      "scores": [
+        [
+          3,
+          5,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          5,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 9,
+      "lap2Points": 6,
+      "lap3Points": null,
+      "lap1Time": "01:16:08",
+      "lap2Time": "01:18:37",
+      "lap3Time": null,
+      "arrV1": "11:21:08",
+      "arrV2": "12:39:37",
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 15,
+      "lapsCompleted": 2,
+      "totalTime": "",
+      "n0s": 9,
+      "n1s": 2,
+      "n2s": 0,
+      "n3s": 1,
+      "n5s": 2,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 76,
       "name": "GARCIA EGEA, PABLO",
       "cat": "TR4",
@@ -1289,7 +1352,7 @@
       "brand": "GASGAS",
       "schedStart": "10:04",
       "startZone": null,
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           3,
@@ -1352,7 +1415,7 @@
       "brand": "BETA",
       "schedStart": "10:08",
       "startZone": null,
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           5,
@@ -1415,7 +1478,7 @@
       "brand": "TRRS",
       "schedStart": "10:06",
       "startZone": null,
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           1,
@@ -1478,7 +1541,7 @@
       "brand": "BETA TRUEBA",
       "schedStart": "10:07",
       "startZone": null,
-      "rank": 6,
+      "rank": 7,
       "scores": [
         [
           3,
@@ -1541,7 +1604,7 @@
       "brand": "TRRS",
       "schedStart": "10:01",
       "startZone": null,
-      "rank": 7,
+      "rank": 8,
       "scores": [
         [
           3,
@@ -1604,7 +1667,7 @@
       "brand": "SHERCO",
       "schedStart": "10:08",
       "startZone": null,
-      "rank": 8,
+      "rank": 9,
       "scores": [
         [
           3,
@@ -1654,69 +1717,6 @@
       "n2s": 1,
       "n3s": 4,
       "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 69,
-      "name": "FERNANDEZ LOPEZ, JORGE",
-      "cat": "TR4",
-      "club": "CD Moto Bierzo",
-      "brand": "VERTIGO",
-      "schedStart": "10:05",
-      "startZone": null,
-      "rank": 9,
-      "scores": [
-        [
-          3,
-          5,
-          0,
-          0,
-          0,
-          0,
-          1
-        ],
-        [
-          1,
-          5,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 9,
-      "lap2Points": 6,
-      "lap3Points": null,
-      "lap1Time": "01:16:08",
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": "11:21:08",
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 15,
-      "lapsCompleted": 2,
-      "totalTime": "",
-      "n0s": 4,
-      "n1s": 2,
-      "n2s": 0,
-      "n3s": 1,
-      "n5s": 2,
       "finishTime": null,
       "dnf": false,
       "dsq": false,
