@@ -2,13 +2,12 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="refresh" content="30">
 <meta name="theme-color" content="#f59e0b">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Trial Revolution">
 <link rel="manifest" href="manifest.json">
-<link rel="apple-touch-icon" href="trialrev.png">
+<link rel="apple-touch-icon" sizes="180x180" href="icon-180.png">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 <meta name="theme-color" id="themeColor" content="#1a1f35">
 <title>Trial Revolution — Clasificación</title>
@@ -130,6 +129,21 @@ html:not([data-archive="1"]) .archive-bar{display:none}
 .intro-btn .ico{font-size:32px}
 .intro-btn .lbl{display:flex;flex-direction:column;align-items:flex-start;line-height:1.2}
 .intro-btn .lbl small{font-size:11px;font-weight:500;opacity:.85;letter-spacing:1px;margin-top:3px}
+/* Aviso de instalacion para iPhone. Va sobre la parte oscura del degradado
+   de la intro, asi que los colores son fijos y claros, no variables de tema:
+   en modo claro var(--tx) seria texto oscuro sobre fondo casi negro. */
+#iosInstall{position:relative;width:100%;max-width:340px;margin:22px auto 0;
+  padding:14px 30px 13px 16px;border-radius:14px;text-align:left;
+  border:1px solid rgba(245,158,11,.38);background:rgba(245,158,11,.11);color:#e2e8f0}
+#iosInstall .ios-tit{font-size:13px;font-weight:800;letter-spacing:.3px;margin-bottom:10px;color:#fbbf24}
+#iosInstall .ios-paso{display:flex;gap:9px;align-items:flex-start;font-size:12.5px;
+  line-height:1.5;margin-bottom:6px}
+#iosInstall .ios-n{flex:0 0 18px;height:18px;border-radius:50%;background:#f59e0b;color:#000;
+  font-size:11px;font-weight:900;display:flex;align-items:center;justify-content:center;margin-top:1px}
+#iosInstall .ios-pie{font-size:11px;color:#94a3b8;margin-top:9px;line-height:1.45}
+#iosInstall .ios-x{position:absolute;top:5px;right:7px;background:none;border:0;color:#94a3b8;
+  font-size:16px;line-height:1;padding:5px 7px;cursor:pointer}
+#iosInstall svg{vertical-align:-3px}
 .intro-foot{margin-top:50px;color:var(--mu);font-size:10px;letter-spacing:2px;text-transform:uppercase;opacity:.6}
 
 /* HOME */
@@ -313,6 +327,17 @@ footer{text-align:center;padding:20px 16px 30px;font-size:10px;color:var(--mu);
       <span class="ico">📲</span>
       <span class="lbl">Instalar app<small>Tenla siempre a mano</small></span>
     </button>
+  <div id="iosInstall" style="display:none">
+    <button class="ios-x" onclick="iosInstallFuera()" aria-label="No volver a mostrar">✕</button>
+    <div class="ios-tit">📲 Tenlo a mano durante la prueba</div>
+    <div class="ios-paso"><span class="ios-n">1</span><span>Toca
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor"
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path
+        d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg>
+      <b>Compartir</b>, en la barra de abajo</span></div>
+    <div class="ios-paso"><span class="ios-n">2</span><span>Elige <b>Añadir a pantalla de inicio</b></span></div>
+    <div class="ios-pie">Se abre a pantalla completa, sin barras del navegador.</div>
+  </div>
   <div class="intro-foot">© 2026 Crono Revolution · <span id="verTxt"></span></div>
 </div>
 
@@ -391,7 +416,7 @@ const POLL_MS  = 30000;
 // corregido o uno viejo que su navegador tenia en memoria desde la prueba
 // anterior. Se ve en la pantalla de entrada y en el pie de la portada: basta
 // preguntarle a quien reporta un fallo "que numero pone abajo".
-const APP_VER = '2026.09.06.1';
+const APP_VER = '2026.10.04.1';
 // El hash tal y como llego: el arranque lo reescribe, y #diag se perderia.
 const _HASH0 = location.hash || '';
 
@@ -1498,6 +1523,39 @@ window.addEventListener('appinstalled', () => {
   if (btn) btn.style.display = 'none';
   _deferredPrompt = null;
 });
+
+// ── Instalar en iPhone ────────────────────────────────────────────
+// En iOS no existe 'beforeinstallprompt': Safari no deja que una web pida
+// instalarse, y el botón de arriba no aparece nunca. El único camino es que
+// el espectador lo haga a mano desde Compartir, así que hay que decírselo —
+// con los dos pasos reales, no con un "instala la app" que no lleva a ningún
+// sitio.
+function _esIOS() {
+  const ua = navigator.userAgent || '';
+  if (/iPad|iPhone|iPod/.test(ua)) return true;
+  // iPadOS 13+ se hace pasar por Mac. Se distingue porque es táctil.
+  return /Macintosh/.test(ua) && (navigator.maxTouchPoints || 0) > 1;
+}
+function _yaInstalada() {
+  if (navigator.standalone === true) return true;            // iOS
+  try { return window.matchMedia('(display-mode: standalone)').matches; } catch (e) { return false; }
+}
+function iosInstallFuera() {
+  const c = document.getElementById('iosInstall');
+  if (c) c.style.display = 'none';
+  // Se recuerda el descarte: un aviso que vuelve cada vez deja de ser un
+  // aviso y pasa a ser una molestia.
+  try { localStorage.setItem('tr_ios_install_visto', '1'); } catch (e) {}
+}
+window.iosInstallFuera = iosInstallFuera;
+(function () {
+  if (!_esIOS() || _yaInstalada()) return;
+  let visto = false;
+  try { visto = localStorage.getItem('tr_ios_install_visto') === '1'; } catch (e) {}
+  if (visto) return;
+  const c = document.getElementById('iosInstall');
+  if (c) c.style.display = 'block';
+})();
 </script>
 </body>
 </html>
