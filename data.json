@@ -3,7 +3,7 @@
   "organizer": "CD Moto Nava",
   "raceDate": "2026-10-04",
   "championship": "Campeonato de Trial de Castilla y León 2026",
-  "publishedAt": "2026-10-04T12:14:20.560Z",
+  "publishedAt": "2026-10-04T12:17:20.869Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -904,6 +904,69 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 121,
+      "name": "TOCA GUTIERREZ, DIEGO",
+      "cat": "TR3",
+      "club": "Moto Club C.S.R. Sport",
+      "brand": "TRRS",
+      "schedStart": "10:10",
+      "startZone": 7,
+      "rank": 4,
+      "scores": [
+        [
+          3,
+          3,
+          0,
+          2,
+          0,
+          3,
+          3
+        ],
+        [
+          3,
+          5,
+          0,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          3,
+          2,
+          0,
+          2,
+          0,
+          3,
+          0
+        ]
+      ],
+      "lap1Points": 14,
+      "lap2Points": 12,
+      "lap3Points": 10,
+      "lap1Time": "01:53:57",
+      "lap2Time": "01:14:47",
+      "lap3Time": "00:57:22",
+      "arrV1": "12:03:57",
+      "arrV2": "13:17:47",
+      "arrCHF": "14:16:06",
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 36,
+      "lapsCompleted": 3,
+      "totalTime": "04:06:06",
+      "n0s": 8,
+      "n1s": 1,
+      "n2s": 3,
+      "n3s": 8,
+      "n5s": 1,
+      "finishTime": 51366000,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 115,
       "name": "MACIAS PARAMO, SAMUEL",
       "cat": "TR3",
@@ -911,7 +974,7 @@
       "brand": "BETA",
       "schedStart": "10:11",
       "startZone": 7,
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           3,
@@ -974,7 +1037,7 @@
       "brand": "GASGAS",
       "schedStart": "10:09",
       "startZone": 7,
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           2,
@@ -1037,7 +1100,7 @@
       "brand": "TRRS",
       "schedStart": "10:11",
       "startZone": 7,
-      "rank": 6,
+      "rank": 7,
       "scores": [
         [
           3,
@@ -1087,69 +1150,6 @@
       "n2s": 1,
       "n3s": 5,
       "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 121,
-      "name": "TOCA GUTIERREZ, DIEGO",
-      "cat": "TR3",
-      "club": "Moto Club C.S.R. Sport",
-      "brand": "TRRS",
-      "schedStart": "10:10",
-      "startZone": 7,
-      "rank": 7,
-      "scores": [
-        [
-          3,
-          3,
-          0,
-          2,
-          0,
-          3,
-          3
-        ],
-        [
-          3,
-          5,
-          0,
-          0,
-          0,
-          1,
-          3
-        ],
-        [
-          3,
-          2,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 14,
-      "lap2Points": 12,
-      "lap3Points": 5,
-      "lap1Time": "01:53:57",
-      "lap2Time": "01:14:47",
-      "lap3Time": null,
-      "arrV1": "12:03:57",
-      "arrV2": "13:17:47",
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 31,
-      "lapsCompleted": 3,
-      "totalTime": "",
-      "n0s": 5,
-      "n1s": 1,
-      "n2s": 2,
-      "n3s": 7,
-      "n5s": 1,
       "finishTime": null,
       "dnf": false,
       "dsq": false,
