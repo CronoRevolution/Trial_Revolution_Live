@@ -3,7 +3,7 @@
   "organizer": "CD Moto Nava",
   "raceDate": "2026-10-04",
   "championship": "Campeonato de Trial de Castilla y León 2026",
-  "publishedAt": "2026-10-04T08:29:43.557Z",
+  "publishedAt": "2026-10-04T08:32:43.524Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -1408,69 +1408,6 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 66,
-      "name": "RUBIO HERNANDEZ, BRUNO",
-      "cat": "TR4",
-      "club": "CD Moto Nava",
-      "brand": "BETA",
-      "schedStart": "10:08",
-      "startZone": null,
-      "rank": 5,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
       "dorsal": 64,
       "name": "PLAZA FERNANDEZ, VICTOR",
       "cat": "TR4",
@@ -1478,7 +1415,7 @@
       "brand": "SHERCO",
       "schedStart": "10:08",
       "startZone": null,
-      "rank": 6,
+      "rank": 5,
       "scores": [
         [
           null,
@@ -1541,7 +1478,7 @@
       "brand": "",
       "schedStart": "10:19",
       "startZone": null,
-      "rank": 7,
+      "rank": 6,
       "scores": [
         [
           null,
@@ -1604,7 +1541,7 @@
       "brand": "BETA TRUEBA",
       "schedStart": "10:07",
       "startZone": null,
-      "rank": 8,
+      "rank": 7,
       "scores": [
         [
           3,
@@ -1667,7 +1604,7 @@
       "brand": "GASGAS",
       "schedStart": "10:06",
       "startZone": null,
-      "rank": 9,
+      "rank": 8,
       "scores": [
         [
           3,
@@ -1730,7 +1667,7 @@
       "brand": "VERTIGO",
       "schedStart": "10:05",
       "startZone": null,
-      "rank": 10,
+      "rank": 9,
       "scores": [
         [
           3,
@@ -1793,7 +1730,7 @@
       "brand": "SIN MARCA",
       "schedStart": "10:09",
       "startZone": null,
-      "rank": 11,
+      "rank": 10,
       "scores": [
         [
           3,
@@ -1843,6 +1780,69 @@
       "n2s": 0,
       "n3s": 1,
       "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
+      "dorsal": 66,
+      "name": "RUBIO HERNANDEZ, BRUNO",
+      "cat": "TR4",
+      "club": "CD Moto Nava",
+      "brand": "BETA",
+      "schedStart": "10:08",
+      "startZone": null,
+      "rank": 11,
+      "scores": [
+        [
+          5,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 5,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": null,
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": null,
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 5,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 0,
+      "n1s": 0,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 1,
       "finishTime": null,
       "dnf": false,
       "dsq": false,
@@ -1912,69 +1912,6 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 11,
-      "name": "RIVERO FERNANDEZ, BORJA",
-      "cat": "TR5",
-      "club": "Moto Club C.S.R. Sport",
-      "brand": "BETA",
-      "schedStart": "10:00",
-      "startZone": null,
-      "rank": 2,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
       "dorsal": 1,
       "name": "CASTRO GONZALEZ, NOEL",
       "cat": "TR5",
@@ -1982,7 +1919,7 @@
       "brand": "SIN MARCA",
       "schedStart": "10:03",
       "startZone": null,
-      "rank": 3,
+      "rank": 2,
       "scores": [
         [
           null,
@@ -2045,7 +1982,7 @@
       "brand": "",
       "schedStart": "10:18",
       "startZone": null,
-      "rank": 4,
+      "rank": 3,
       "scores": [
         [
           null,
@@ -2108,7 +2045,7 @@
       "brand": "",
       "schedStart": "10:19",
       "startZone": null,
-      "rank": 5,
+      "rank": 4,
       "scores": [
         [
           null,
@@ -2171,7 +2108,7 @@
       "brand": "BETA",
       "schedStart": "10:03",
       "startZone": null,
-      "rank": 6,
+      "rank": 5,
       "scores": [
         [
           1,
@@ -2234,7 +2171,7 @@
       "brand": "SIN MARCA",
       "schedStart": "10:02",
       "startZone": null,
-      "rank": 7,
+      "rank": 6,
       "scores": [
         [
           1,
@@ -2282,6 +2219,69 @@
       "n0s": 0,
       "n1s": 2,
       "n2s": 0,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
+      "dorsal": 11,
+      "name": "RIVERO FERNANDEZ, BORJA",
+      "cat": "TR5",
+      "club": "Moto Club C.S.R. Sport",
+      "brand": "BETA",
+      "schedStart": "10:00",
+      "startZone": null,
+      "rank": 7,
+      "scores": [
+        [
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 2,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": null,
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": null,
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 2,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 0,
+      "n1s": 0,
+      "n2s": 1,
       "n3s": 0,
       "n5s": 0,
       "finishTime": null,
