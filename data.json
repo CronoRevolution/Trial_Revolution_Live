@@ -3,7 +3,7 @@
   "organizer": "CD Moto Nava",
   "raceDate": "2026-10-04",
   "championship": "Campeonato de Trial de Castilla y León 2026",
-  "publishedAt": "2026-10-04T09:11:20.803Z",
+  "publishedAt": "2026-10-04T09:14:20.459Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -337,69 +337,6 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 174,
-      "name": "PASTOR NOGUEIRA, ENRIQUE",
-      "cat": "TR2",
-      "club": "MC Vallisoletano",
-      "brand": "TRRS",
-      "schedStart": "10:14",
-      "startZone": 7,
-      "rank": 2,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
       "dorsal": 178,
       "name": "BALBOA ALVAREZ, SAMUEL",
       "cat": "TR2",
@@ -407,7 +344,7 @@
       "brand": "BETA TRUEBA",
       "schedStart": "10:15",
       "startZone": 7,
-      "rank": 3,
+      "rank": 2,
       "scores": [
         [
           null,
@@ -470,11 +407,11 @@
       "brand": "TRRS",
       "schedStart": "10:13",
       "startZone": 7,
-      "rank": 4,
+      "rank": 3,
       "scores": [
         [
           3,
-          null,
+          0,
           null,
           null,
           null,
@@ -515,7 +452,7 @@
       "totalPoints": 3,
       "lapsCompleted": 1,
       "totalTime": "",
-      "n0s": 0,
+      "n0s": 1,
       "n1s": 0,
       "n2s": 0,
       "n3s": 1,
@@ -526,14 +463,14 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 181,
-      "name": "IGLESIAS CORDERO, SAUL",
+      "dorsal": 174,
+      "name": "PASTOR NOGUEIRA, ENRIQUE",
       "cat": "TR2",
-      "club": "Moto Club Cuenca Minera",
-      "brand": "BETA",
-      "schedStart": "10:10",
+      "club": "MC Vallisoletano",
+      "brand": "TRRS",
+      "schedStart": "10:14",
       "startZone": 7,
-      "rank": 5,
+      "rank": 4,
       "scores": [
         [
           3,
@@ -596,7 +533,7 @@
       "brand": "ELECTRIC-MOTION",
       "schedStart": "10:15",
       "startZone": 7,
-      "rank": 6,
+      "rank": 5,
       "scores": [
         [
           3,
@@ -659,7 +596,7 @@
       "brand": "BETA",
       "schedStart": "10:16",
       "startZone": 7,
-      "rank": 7,
+      "rank": 6,
       "scores": [
         [
           3,
@@ -709,6 +646,69 @@
       "n2s": 0,
       "n3s": 1,
       "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
+      "dorsal": 181,
+      "name": "IGLESIAS CORDERO, SAUL",
+      "cat": "TR2",
+      "club": "Moto Club Cuenca Minera",
+      "brand": "BETA",
+      "schedStart": "10:10",
+      "startZone": 7,
+      "rank": 7,
+      "scores": [
+        [
+          3,
+          5,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 8,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": null,
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": null,
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 8,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 0,
+      "n1s": 0,
+      "n2s": 0,
+      "n3s": 1,
+      "n5s": 1,
       "finishTime": null,
       "dnf": false,
       "dsq": false,
