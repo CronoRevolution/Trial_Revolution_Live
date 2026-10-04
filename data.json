@@ -3,7 +3,7 @@
   "organizer": "CD Moto Nava",
   "raceDate": "2026-10-04",
   "championship": "Campeonato de Trial de Castilla y León 2026",
-  "publishedAt": "2026-10-04T12:32:20.607Z",
+  "publishedAt": "2026-10-04T12:35:20.778Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -778,6 +778,69 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 111,
+      "name": "BARREDO RODRIGUEZ, SAUL",
+      "cat": "TR3",
+      "club": "CD Pobladura R",
+      "brand": "GASGAS",
+      "schedStart": "10:09",
+      "startZone": 7,
+      "rank": 2,
+      "scores": [
+        [
+          2,
+          5,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          5,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "lap1Points": 9,
+      "lap2Points": 6,
+      "lap3Points": 2,
+      "lap1Time": "02:16:45",
+      "lap2Time": "01:13:07",
+      "lap3Time": "00:53:46",
+      "arrV1": "12:25:45",
+      "arrV2": "13:38:07",
+      "arrCHF": "14:32:38",
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 17,
+      "lapsCompleted": 3,
+      "totalTime": "04:23:38",
+      "n0s": 14,
+      "n1s": 3,
+      "n2s": 2,
+      "n3s": 0,
+      "n5s": 2,
+      "finishTime": 52358000,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 115,
       "name": "MACIAS PARAMO, SAMUEL",
       "cat": "TR3",
@@ -785,7 +848,7 @@
       "brand": "BETA",
       "schedStart": "10:11",
       "startZone": 7,
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           3,
@@ -848,7 +911,7 @@
       "brand": "TRRS",
       "schedStart": "10:11",
       "startZone": 7,
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           3,
@@ -911,7 +974,7 @@
       "brand": "ELECTRIC-MOTION",
       "schedStart": "10:12",
       "startZone": 7,
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           3,
@@ -974,7 +1037,7 @@
       "brand": "BETA",
       "schedStart": "10:13",
       "startZone": 7,
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           3,
@@ -1037,7 +1100,7 @@
       "brand": "TRRS",
       "schedStart": "10:10",
       "startZone": 7,
-      "rank": 6,
+      "rank": 7,
       "scores": [
         [
           3,
@@ -1088,69 +1151,6 @@
       "n3s": 8,
       "n5s": 1,
       "finishTime": 51366000,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 111,
-      "name": "BARREDO RODRIGUEZ, SAUL",
-      "cat": "TR3",
-      "club": "CD Pobladura R",
-      "brand": "GASGAS",
-      "schedStart": "10:09",
-      "startZone": 7,
-      "rank": 7,
-      "scores": [
-        [
-          2,
-          5,
-          0,
-          0,
-          1,
-          0,
-          1
-        ],
-        [
-          5,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          3,
-          2,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 9,
-      "lap2Points": 6,
-      "lap3Points": 5,
-      "lap1Time": "02:16:45",
-      "lap2Time": "01:13:07",
-      "lap3Time": null,
-      "arrV1": "12:25:45",
-      "arrV2": "13:38:07",
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 20,
-      "lapsCompleted": 3,
-      "totalTime": "",
-      "n0s": 8,
-      "n1s": 3,
-      "n2s": 2,
-      "n3s": 1,
-      "n5s": 2,
-      "finishTime": null,
       "dnf": false,
       "dsq": false,
       "dsqReason": ""
@@ -1849,6 +1849,69 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 11,
+      "name": "RIVERO FERNANDEZ, BORJA",
+      "cat": "TR5",
+      "club": "Moto Club C.S.R. Sport",
+      "brand": "BETA",
+      "schedStart": "10:00",
+      "startZone": null,
+      "rank": 1,
+      "scores": [
+        [
+          2,
+          5,
+          0,
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          3,
+          0,
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          3,
+          0,
+          3,
+          0,
+          1,
+          0
+        ]
+      ],
+      "lap1Points": 10,
+      "lap2Points": 6,
+      "lap3Points": 8,
+      "lap1Time": "02:11:04",
+      "lap2Time": "01:32:36",
+      "lap3Time": "00:48:38",
+      "arrV1": "12:11:04",
+      "arrV2": "13:43:36",
+      "arrCHF": "14:32:18",
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 24,
+      "lapsCompleted": 3,
+      "totalTime": "04:32:18",
+      "n0s": 12,
+      "n1s": 2,
+      "n2s": 1,
+      "n3s": 5,
+      "n5s": 1,
+      "finishTime": 52338000,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 2,
       "name": "GUERRERO CARBALLO, CARMEN",
       "cat": "TR5",
@@ -1856,7 +1919,7 @@
       "brand": "SIN MARCA",
       "schedStart": "10:02",
       "startZone": null,
-      "rank": 1,
+      "rank": 2,
       "scores": [
         [
           1,
@@ -1912,6 +1975,69 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 3,
+      "name": "OSLE VEGA, JOEL",
+      "cat": "TR5",
+      "club": "Moto Club C.S.R. Sport",
+      "brand": "BETA",
+      "schedStart": "10:02",
+      "startZone": null,
+      "rank": 3,
+      "scores": [
+        [
+          2,
+          3,
+          0,
+          5,
+          1,
+          3,
+          1
+        ],
+        [
+          1,
+          5,
+          0,
+          3,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          5,
+          0,
+          1,
+          0,
+          5,
+          0
+        ]
+      ],
+      "lap1Points": 15,
+      "lap2Points": 12,
+      "lap3Points": 11,
+      "lap1Time": "02:10:47",
+      "lap2Time": "01:36:11",
+      "lap3Time": "00:44:17",
+      "arrV1": "12:12:47",
+      "arrV2": "13:48:11",
+      "arrCHF": "14:33:15",
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 38,
+      "lapsCompleted": 3,
+      "totalTime": "04:31:15",
+      "n0s": 6,
+      "n1s": 7,
+      "n2s": 1,
+      "n3s": 3,
+      "n5s": 4,
+      "finishTime": 52395000,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 6,
       "name": "ALVAREZ FERNANDEZ, ENZO",
       "cat": "TR5",
@@ -1919,7 +2045,7 @@
       "brand": "OSET BIKE",
       "schedStart": "10:04",
       "startZone": null,
-      "rank": 2,
+      "rank": 4,
       "scores": [
         [
           5,
@@ -1982,7 +2108,7 @@
       "brand": "",
       "schedStart": "10:18",
       "startZone": null,
-      "rank": 3,
+      "rank": 5,
       "scores": [
         [
           3,
@@ -2045,7 +2171,7 @@
       "brand": "",
       "schedStart": "10:19",
       "startZone": null,
-      "rank": 4,
+      "rank": 6,
       "scores": [
         [
           5,
@@ -2108,7 +2234,7 @@
       "brand": "BETA",
       "schedStart": "10:03",
       "startZone": null,
-      "rank": 5,
+      "rank": 7,
       "scores": [
         [
           1,
@@ -2164,69 +2290,6 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 11,
-      "name": "RIVERO FERNANDEZ, BORJA",
-      "cat": "TR5",
-      "club": "Moto Club C.S.R. Sport",
-      "brand": "BETA",
-      "schedStart": "10:00",
-      "startZone": null,
-      "rank": 6,
-      "scores": [
-        [
-          2,
-          5,
-          0,
-          3,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          3,
-          0,
-          3,
-          0,
-          0,
-          0
-        ],
-        [
-          1,
-          3,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 10,
-      "lap2Points": 6,
-      "lap3Points": 4,
-      "lap1Time": "02:11:04",
-      "lap2Time": "01:32:36",
-      "lap3Time": null,
-      "arrV1": "12:11:04",
-      "arrV2": "13:43:36",
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 20,
-      "lapsCompleted": 3,
-      "totalTime": "",
-      "n0s": 9,
-      "n1s": 1,
-      "n2s": 1,
-      "n3s": 4,
-      "n5s": 1,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
       "dorsal": 1,
       "name": "CASTRO GONZALEZ, NOEL",
       "cat": "TR5",
@@ -2234,7 +2297,7 @@
       "brand": "SIN MARCA",
       "schedStart": "10:03",
       "startZone": null,
-      "rank": 7,
+      "rank": 8,
       "scores": [
         [
           3,
@@ -2297,7 +2360,7 @@
       "brand": "",
       "schedStart": "10:01",
       "startZone": null,
-      "rank": 8,
+      "rank": 9,
       "scores": [
         [
           5,
@@ -2347,69 +2410,6 @@
       "n2s": 2,
       "n3s": 4,
       "n5s": 2,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 3,
-      "name": "OSLE VEGA, JOEL",
-      "cat": "TR5",
-      "club": "Moto Club C.S.R. Sport",
-      "brand": "BETA",
-      "schedStart": "10:02",
-      "startZone": null,
-      "rank": 9,
-      "scores": [
-        [
-          2,
-          3,
-          0,
-          5,
-          1,
-          3,
-          1
-        ],
-        [
-          1,
-          5,
-          0,
-          3,
-          1,
-          1,
-          1
-        ],
-        [
-          0,
-          5,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 15,
-      "lap2Points": 12,
-      "lap3Points": 5,
-      "lap1Time": "02:10:47",
-      "lap2Time": "01:36:11",
-      "lap3Time": null,
-      "arrV1": "12:12:47",
-      "arrV2": "13:48:11",
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 32,
-      "lapsCompleted": 3,
-      "totalTime": "",
-      "n0s": 3,
-      "n1s": 6,
-      "n2s": 1,
-      "n3s": 3,
-      "n5s": 3,
       "finishTime": null,
       "dnf": false,
       "dsq": false,
