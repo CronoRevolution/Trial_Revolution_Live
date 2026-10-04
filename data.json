@@ -3,7 +3,7 @@
   "organizer": "CD Moto Nava",
   "raceDate": "2026-10-04",
   "championship": "Campeonato de Trial de Castilla y León 2026",
-  "publishedAt": "2026-10-04T08:50:20.502Z",
+  "publishedAt": "2026-10-04T08:53:20.586Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -337,69 +337,6 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 181,
-      "name": "IGLESIAS CORDERO, SAUL",
-      "cat": "TR2",
-      "club": "Moto Club Cuenca Minera",
-      "brand": "BETA",
-      "schedStart": "10:10",
-      "startZone": 7,
-      "rank": 2,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
       "dorsal": 177,
       "name": "OVIEDO RODRIGUEZ, UNAI",
       "cat": "TR2",
@@ -407,7 +344,7 @@
       "brand": "GASGAS",
       "schedStart": "10:14",
       "startZone": 7,
-      "rank": 3,
+      "rank": 2,
       "scores": [
         [
           null,
@@ -470,7 +407,7 @@
       "brand": "TRRS",
       "schedStart": "10:14",
       "startZone": 7,
-      "rank": 4,
+      "rank": 3,
       "scores": [
         [
           null,
@@ -533,7 +470,7 @@
       "brand": "BETA TRUEBA",
       "schedStart": "10:15",
       "startZone": 7,
-      "rank": 5,
+      "rank": 4,
       "scores": [
         [
           null,
@@ -596,7 +533,7 @@
       "brand": "ELECTRIC-MOTION",
       "schedStart": "10:15",
       "startZone": 7,
-      "rank": 6,
+      "rank": 5,
       "scores": [
         [
           null,
@@ -659,7 +596,7 @@
       "brand": "BETA",
       "schedStart": "10:16",
       "startZone": 7,
-      "rank": 7,
+      "rank": 6,
       "scores": [
         [
           null,
@@ -708,6 +645,69 @@
       "n1s": 0,
       "n2s": 0,
       "n3s": 0,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
+      "dorsal": 181,
+      "name": "IGLESIAS CORDERO, SAUL",
+      "cat": "TR2",
+      "club": "Moto Club Cuenca Minera",
+      "brand": "BETA",
+      "schedStart": "10:10",
+      "startZone": 7,
+      "rank": 7,
+      "scores": [
+        [
+          3,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 3,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": null,
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": null,
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 3,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 0,
+      "n1s": 0,
+      "n2s": 0,
+      "n3s": 1,
       "n5s": 0,
       "finishTime": null,
       "dnf": false,
@@ -1156,69 +1156,6 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 78,
-      "name": "CASADO FERNANDEZ, NOE",
-      "cat": "TR4",
-      "club": "Moto Club Cuenca Minera",
-      "brand": "TRRS",
-      "schedStart": "10:01",
-      "startZone": null,
-      "rank": 1,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
       "dorsal": 77,
       "name": "CANEDO ENRIQUEZ, ANDREA",
       "cat": "TR4",
@@ -1226,7 +1163,7 @@
       "brand": "SIN MARCA",
       "schedStart": "10:05",
       "startZone": null,
-      "rank": 2,
+      "rank": 1,
       "scores": [
         [
           1,
@@ -1289,7 +1226,7 @@
       "brand": "TRRS",
       "schedStart": "10:06",
       "startZone": null,
-      "rank": 3,
+      "rank": 2,
       "scores": [
         [
           1,
@@ -1352,7 +1289,7 @@
       "brand": "BETA TRUEBA",
       "schedStart": "10:07",
       "startZone": null,
-      "rank": 4,
+      "rank": 3,
       "scores": [
         [
           3,
@@ -1408,14 +1345,14 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 76,
-      "name": "GARCIA EGEA, PABLO",
+      "dorsal": 78,
+      "name": "CASADO FERNANDEZ, NOE",
       "cat": "TR4",
       "club": "Moto Club Cuenca Minera",
-      "brand": "GASGAS",
-      "schedStart": "10:04",
+      "brand": "TRRS",
+      "schedStart": "10:01",
       "startZone": null,
-      "rank": 5,
+      "rank": 4,
       "scores": [
         [
           3,
@@ -1478,7 +1415,7 @@
       "brand": "SHERCO",
       "schedStart": "10:08",
       "startZone": null,
-      "rank": 6,
+      "rank": 5,
       "scores": [
         [
           3,
@@ -1527,6 +1464,69 @@
       "n1s": 0,
       "n2s": 0,
       "n3s": 1,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
+      "dorsal": 76,
+      "name": "GARCIA EGEA, PABLO",
+      "cat": "TR4",
+      "club": "Moto Club Cuenca Minera",
+      "brand": "GASGAS",
+      "schedStart": "10:04",
+      "startZone": null,
+      "rank": 6,
+      "scores": [
+        [
+          3,
+          3,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 6,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": null,
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": null,
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 6,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 0,
+      "n1s": 0,
+      "n2s": 0,
+      "n3s": 2,
       "n5s": 0,
       "finishTime": null,
       "dnf": false,
