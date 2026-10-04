@@ -3,7 +3,7 @@
   "organizer": "CD Moto Nava",
   "raceDate": "2026-10-04",
   "championship": "Campeonato de Trial de Castilla y León 2026",
-  "publishedAt": "2026-10-04T08:05:20.555Z",
+  "publishedAt": "2026-10-04T08:08:20.727Z",
   "raceStarted": false,
   "raceFinished": false,
   "cfg": {
@@ -2489,7 +2489,7 @@
       "rank": 1,
       "scores": [
         [
-          null,
+          1,
           null,
           null,
           null,
@@ -2516,7 +2516,7 @@
           null
         ]
       ],
-      "lap1Points": null,
+      "lap1Points": 1,
       "lap2Points": null,
       "lap3Points": null,
       "lap1Time": null,
@@ -2528,11 +2528,11 @@
       "lap1Penalty": 0,
       "finishPenalty": 0,
       "extraPenalties": [],
-      "totalPoints": null,
-      "lapsCompleted": 0,
+      "totalPoints": 1,
+      "lapsCompleted": 1,
       "totalTime": "",
       "n0s": 0,
-      "n1s": 0,
+      "n1s": 1,
       "n2s": 0,
       "n3s": 0,
       "n5s": 0,
