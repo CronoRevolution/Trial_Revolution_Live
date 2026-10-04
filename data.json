@@ -3,7 +3,7 @@
   "organizer": "CD Moto Nava",
   "raceDate": "2026-10-04",
   "championship": "Campeonato de Trial de Castilla y León 2026",
-  "publishedAt": "2026-10-04T08:38:43.536Z",
+  "publishedAt": "2026-10-04T08:41:43.533Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -1219,69 +1219,6 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 76,
-      "name": "GARCIA EGEA, PABLO",
-      "cat": "TR4",
-      "club": "Moto Club Cuenca Minera",
-      "brand": "GASGAS",
-      "schedStart": "10:04",
-      "startZone": null,
-      "rank": 2,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
       "dorsal": 77,
       "name": "CANEDO ENRIQUEZ, ANDREA",
       "cat": "TR4",
@@ -1289,7 +1226,7 @@
       "brand": "SIN MARCA",
       "schedStart": "10:05",
       "startZone": null,
-      "rank": 3,
+      "rank": 2,
       "scores": [
         [
           null,
@@ -1352,7 +1289,7 @@
       "brand": "TRRS",
       "schedStart": "10:06",
       "startZone": null,
-      "rank": 4,
+      "rank": 3,
       "scores": [
         [
           1,
@@ -1415,7 +1352,7 @@
       "brand": "BETA TRUEBA",
       "schedStart": "10:07",
       "startZone": null,
-      "rank": 5,
+      "rank": 4,
       "scores": [
         [
           3,
@@ -1461,6 +1398,69 @@
       "lapsCompleted": 1,
       "totalTime": "",
       "n0s": 1,
+      "n1s": 0,
+      "n2s": 0,
+      "n3s": 1,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
+      "dorsal": 76,
+      "name": "GARCIA EGEA, PABLO",
+      "cat": "TR4",
+      "club": "Moto Club Cuenca Minera",
+      "brand": "GASGAS",
+      "schedStart": "10:04",
+      "startZone": null,
+      "rank": 5,
+      "scores": [
+        [
+          3,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 3,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": null,
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": null,
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 3,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 0,
       "n1s": 0,
       "n2s": 0,
       "n3s": 1,
@@ -1534,69 +1534,6 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 63,
-      "name": "GARCIA RUIZ, SAUL",
-      "cat": "TR4",
-      "club": "CD Pobladura R",
-      "brand": "SIN MARCA",
-      "schedStart": "10:09",
-      "startZone": null,
-      "rank": 7,
-      "scores": [
-        [
-          3,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 3,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 3,
-      "lapsCompleted": 1,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 1,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
       "dorsal": 65,
       "name": "FERNANDEZ PEREZ, ANDRES",
       "cat": "TR4",
@@ -1604,7 +1541,7 @@
       "brand": "",
       "schedStart": "10:19",
       "startZone": null,
-      "rank": 8,
+      "rank": 7,
       "scores": [
         [
           3,
@@ -1667,7 +1604,7 @@
       "brand": "BETA",
       "schedStart": "10:08",
       "startZone": null,
-      "rank": 9,
+      "rank": 8,
       "scores": [
         [
           5,
@@ -1730,7 +1667,7 @@
       "brand": "GASGAS",
       "schedStart": "10:06",
       "startZone": null,
-      "rank": 10,
+      "rank": 9,
       "scores": [
         [
           3,
@@ -1792,6 +1729,69 @@
       "club": "CD Moto Bierzo",
       "brand": "VERTIGO",
       "schedStart": "10:05",
+      "startZone": null,
+      "rank": 10,
+      "scores": [
+        [
+          3,
+          5,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 8,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": null,
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": null,
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 8,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 0,
+      "n1s": 0,
+      "n2s": 0,
+      "n3s": 1,
+      "n5s": 1,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
+      "dorsal": 63,
+      "name": "GARCIA RUIZ, SAUL",
+      "cat": "TR4",
+      "club": "CD Pobladura R",
+      "brand": "SIN MARCA",
+      "schedStart": "10:09",
       "startZone": null,
       "rank": 11,
       "scores": [
@@ -1912,69 +1912,6 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 13,
-      "name": "SAL GONZALEZ, MARCO",
-      "cat": "TR5",
-      "club": "CD Pobladura R",
-      "brand": "",
-      "schedStart": "10:19",
-      "startZone": null,
-      "rank": 2,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
       "dorsal": 5,
       "name": "PEREZ SANCHEZ, MARIN",
       "cat": "TR5",
@@ -1982,7 +1919,7 @@
       "brand": "BETA",
       "schedStart": "10:03",
       "startZone": null,
-      "rank": 3,
+      "rank": 2,
       "scores": [
         [
           1,
@@ -2045,7 +1982,7 @@
       "brand": "SIN MARCA",
       "schedStart": "10:02",
       "startZone": null,
-      "rank": 4,
+      "rank": 3,
       "scores": [
         [
           1,
@@ -2108,7 +2045,7 @@
       "brand": "BETA",
       "schedStart": "10:00",
       "startZone": null,
-      "rank": 5,
+      "rank": 4,
       "scores": [
         [
           2,
@@ -2171,7 +2108,7 @@
       "brand": "BETA",
       "schedStart": "10:02",
       "startZone": null,
-      "rank": 6,
+      "rank": 5,
       "scores": [
         [
           2,
@@ -2234,7 +2171,7 @@
       "brand": "",
       "schedStart": "10:18",
       "startZone": null,
-      "rank": 7,
+      "rank": 6,
       "scores": [
         [
           3,
@@ -2296,6 +2233,69 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "",
       "schedStart": "10:01",
+      "startZone": null,
+      "rank": 7,
+      "scores": [
+        [
+          5,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 5,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": null,
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": null,
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 5,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 0,
+      "n1s": 0,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 1,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
+      "dorsal": 13,
+      "name": "SAL GONZALEZ, MARCO",
+      "cat": "TR5",
+      "club": "CD Pobladura R",
+      "brand": "",
+      "schedStart": "10:19",
       "startZone": null,
       "rank": 8,
       "scores": [
