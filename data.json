@@ -3,7 +3,7 @@
   "organizer": "CD Moto Nava",
   "raceDate": "2026-10-04",
   "championship": "Campeonato de Trial de Castilla y León 2026",
-  "publishedAt": "2026-10-04T05:34:51.452Z",
+  "publishedAt": "2026-10-04T05:37:50.943Z",
   "raceStarted": false,
   "raceFinished": false,
   "cfg": {
@@ -1161,7 +1161,7 @@
       "cat": "TR4",
       "club": "Moto Club Cuenca Minera",
       "brand": "TRRS",
-      "schedStart": "10:00",
+      "schedStart": "10:04",
       "startZone": null,
       "rank": 1,
       "scores": [
@@ -1980,7 +1980,7 @@
       "cat": "TR5",
       "club": "Moto Club C.S.R. Sport",
       "brand": "BETA",
-      "schedStart": "10:02",
+      "schedStart": "10:01",
       "startZone": null,
       "rank": 3,
       "scores": [
@@ -2106,7 +2106,7 @@
       "cat": "TR5",
       "club": "CD Moto Bierzo",
       "brand": "SIN MARCA",
-      "schedStart": "10:03",
+      "schedStart": "10:02",
       "startZone": null,
       "rank": 5,
       "scores": [
@@ -2232,7 +2232,7 @@
       "cat": "TR5",
       "club": "CD Pobladura R",
       "brand": "OSET BIKE",
-      "schedStart": "10:04",
+      "schedStart": "10:03",
       "startZone": null,
       "rank": 7,
       "scores": [
@@ -2295,7 +2295,7 @@
       "cat": "TR5A",
       "club": "CD Moto Bierzo",
       "brand": "SIN MARCA",
-      "schedStart": "10:01",
+      "schedStart": "10:00",
       "startZone": null,
       "rank": 1,
       "scores": [
