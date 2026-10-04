@@ -3,7 +3,7 @@
   "organizer": "CD Moto Nava",
   "raceDate": "2026-10-04",
   "championship": "Campeonato de Trial de Castilla y León 2026",
-  "publishedAt": "2026-10-04T12:17:20.869Z",
+  "publishedAt": "2026-10-04T12:20:20.752Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -22,6 +22,69 @@
   ],
   "pilots": [
     {
+      "dorsal": 214,
+      "name": "MARCHAL GOMEZ, RODRIGO",
+      "cat": "TR1",
+      "club": "Moto Club Villaviciosa",
+      "brand": "ELECTRIC-MOTION",
+      "schedStart": "10:17",
+      "startZone": 7,
+      "rank": 1,
+      "scores": [
+        [
+          3,
+          0,
+          5,
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "lap1Points": 11,
+      "lap2Points": 0,
+      "lap3Points": 1,
+      "lap1Time": "01:48:38",
+      "lap2Time": "01:16:02",
+      "lap3Time": "00:57:05",
+      "arrV1": "12:05:38",
+      "arrV2": "13:21:02",
+      "arrCHF": "14:18:45",
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 12,
+      "lapsCompleted": 3,
+      "totalTime": "04:01:45",
+      "n0s": 17,
+      "n1s": 1,
+      "n2s": 0,
+      "n3s": 2,
+      "n5s": 1,
+      "finishTime": 51525000,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 207,
       "name": "RODRIGUEZ REYERO, LUCAS",
       "cat": "TR1",
@@ -29,7 +92,7 @@
       "brand": "ELECTRIC-MOTION",
       "schedStart": "10:17",
       "startZone": 7,
-      "rank": 1,
+      "rank": 2,
       "scores": [
         [
           3,
@@ -80,69 +143,6 @@
       "n3s": 4,
       "n5s": 3,
       "finishTime": 51063000,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 214,
-      "name": "MARCHAL GOMEZ, RODRIGO",
-      "cat": "TR1",
-      "club": "Moto Club Villaviciosa",
-      "brand": "ELECTRIC-MOTION",
-      "schedStart": "10:17",
-      "startZone": 7,
-      "rank": 2,
-      "scores": [
-        [
-          3,
-          0,
-          5,
-          3,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          1,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 11,
-      "lap2Points": 0,
-      "lap3Points": 1,
-      "lap1Time": "01:48:38",
-      "lap2Time": "01:16:02",
-      "lap3Time": null,
-      "arrV1": "12:05:38",
-      "arrV2": "13:21:02",
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 12,
-      "lapsCompleted": 3,
-      "totalTime": "",
-      "n0s": 12,
-      "n1s": 1,
-      "n2s": 0,
-      "n3s": 2,
-      "n5s": 1,
-      "finishTime": null,
       "dnf": false,
       "dsq": false,
       "dsqReason": ""
@@ -274,6 +274,69 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 182,
+      "name": "GONZALEZ GARCIA, CESAR",
+      "cat": "TR2",
+      "club": "Moto Club Cuenca Minera",
+      "brand": "TRRS",
+      "schedStart": "10:13",
+      "startZone": 7,
+      "rank": 1,
+      "scores": [
+        [
+          3,
+          0,
+          0,
+          3,
+          2,
+          3,
+          5
+        ],
+        [
+          3,
+          5,
+          0,
+          3,
+          1,
+          0,
+          0
+        ],
+        [
+          3,
+          0,
+          0,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "lap1Points": 16,
+      "lap2Points": 12,
+      "lap3Points": 7,
+      "lap1Time": "01:50:52",
+      "lap2Time": "01:12:30",
+      "lap3Time": "01:01:23",
+      "arrV1": "12:03:52",
+      "arrV2": "13:15:30",
+      "arrCHF": "14:17:45",
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 35,
+      "lapsCompleted": 3,
+      "totalTime": "04:04:45",
+      "n0s": 9,
+      "n1s": 2,
+      "n2s": 1,
+      "n3s": 7,
+      "n5s": 2,
+      "finishTime": 51465000,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 177,
       "name": "OVIEDO RODRIGUEZ, UNAI",
       "cat": "TR2",
@@ -281,7 +344,7 @@
       "brand": "GASGAS",
       "schedStart": "10:14",
       "startZone": 7,
-      "rank": 1,
+      "rank": 2,
       "scores": [
         [
           3,
@@ -344,7 +407,7 @@
       "brand": "BETA",
       "schedStart": "10:16",
       "startZone": 7,
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           3,
@@ -407,7 +470,7 @@
       "brand": "BETA TRUEBA",
       "schedStart": "10:15",
       "startZone": 7,
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           3,
@@ -470,7 +533,7 @@
       "brand": "ELECTRIC-MOTION",
       "schedStart": "10:15",
       "startZone": 7,
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           3,
@@ -520,69 +583,6 @@
       "n2s": 1,
       "n3s": 2,
       "n5s": 4,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 182,
-      "name": "GONZALEZ GARCIA, CESAR",
-      "cat": "TR2",
-      "club": "Moto Club Cuenca Minera",
-      "brand": "TRRS",
-      "schedStart": "10:13",
-      "startZone": 7,
-      "rank": 5,
-      "scores": [
-        [
-          3,
-          0,
-          0,
-          3,
-          2,
-          3,
-          5
-        ],
-        [
-          3,
-          5,
-          0,
-          3,
-          1,
-          0,
-          0
-        ],
-        [
-          3,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 16,
-      "lap2Points": 12,
-      "lap3Points": 3,
-      "lap1Time": "01:50:52",
-      "lap2Time": "01:12:30",
-      "lap3Time": null,
-      "arrV1": "12:03:52",
-      "arrV2": "13:15:30",
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 31,
-      "lapsCompleted": 3,
-      "totalTime": "",
-      "n0s": 6,
-      "n1s": 1,
-      "n2s": 1,
-      "n3s": 6,
-      "n5s": 2,
       "finishTime": null,
       "dnf": false,
       "dsq": false,
@@ -1408,6 +1408,69 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 78,
+      "name": "CASADO FERNANDEZ, NOE",
+      "cat": "TR4",
+      "club": "Moto Club Cuenca Minera",
+      "brand": "TRRS",
+      "schedStart": "10:01",
+      "startZone": null,
+      "rank": 5,
+      "scores": [
+        [
+          3,
+          5,
+          0,
+          0,
+          3,
+          1,
+          1
+        ],
+        [
+          0,
+          3,
+          0,
+          0,
+          1,
+          2,
+          2
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1
+        ]
+      ],
+      "lap1Points": 13,
+      "lap2Points": 8,
+      "lap3Points": 3,
+      "lap1Time": "02:22:06",
+      "lap2Time": "01:06:56",
+      "lap3Time": "00:47:30",
+      "arrV1": "12:23:06",
+      "arrV2": "13:29:56",
+      "arrCHF": "14:17:32",
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 24,
+      "lapsCompleted": 3,
+      "totalTime": "04:16:32",
+      "n0s": 9,
+      "n1s": 6,
+      "n2s": 2,
+      "n3s": 3,
+      "n5s": 1,
+      "finishTime": 51452000,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 76,
       "name": "GARCIA EGEA, PABLO",
       "cat": "TR4",
@@ -1415,7 +1478,7 @@
       "brand": "GASGAS",
       "schedStart": "10:04",
       "startZone": null,
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           3,
@@ -1478,7 +1541,7 @@
       "brand": "BETA",
       "schedStart": "10:08",
       "startZone": null,
-      "rank": 6,
+      "rank": 7,
       "scores": [
         [
           5,
@@ -1541,7 +1604,7 @@
       "brand": "TRRS",
       "schedStart": "10:06",
       "startZone": null,
-      "rank": 7,
+      "rank": 8,
       "scores": [
         [
           1,
@@ -1604,7 +1667,7 @@
       "brand": "SHERCO",
       "schedStart": "10:08",
       "startZone": null,
-      "rank": 8,
+      "rank": 9,
       "scores": [
         [
           3,
@@ -1654,69 +1717,6 @@
       "n2s": 1,
       "n3s": 4,
       "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 78,
-      "name": "CASADO FERNANDEZ, NOE",
-      "cat": "TR4",
-      "club": "Moto Club Cuenca Minera",
-      "brand": "TRRS",
-      "schedStart": "10:01",
-      "startZone": null,
-      "rank": 9,
-      "scores": [
-        [
-          3,
-          5,
-          0,
-          0,
-          3,
-          1,
-          1
-        ],
-        [
-          0,
-          3,
-          0,
-          0,
-          1,
-          2,
-          2
-        ],
-        [
-          0,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 13,
-      "lap2Points": 8,
-      "lap3Points": 1,
-      "lap1Time": "02:22:06",
-      "lap2Time": "01:06:56",
-      "lap3Time": null,
-      "arrV1": "12:23:06",
-      "arrV2": "13:29:56",
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 22,
-      "lapsCompleted": 3,
-      "totalTime": "",
-      "n0s": 6,
-      "n1s": 4,
-      "n2s": 2,
-      "n3s": 3,
-      "n5s": 1,
       "finishTime": null,
       "dnf": false,
       "dsq": false,
