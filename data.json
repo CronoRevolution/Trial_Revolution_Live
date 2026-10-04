@@ -3,7 +3,7 @@
   "organizer": "CD Moto Nava",
   "raceDate": "2026-10-04",
   "championship": "Campeonato de Trial de Castilla y León 2026",
-  "publishedAt": "2026-10-04T09:53:20.472Z",
+  "publishedAt": "2026-10-04T09:56:20.488Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -1617,7 +1617,7 @@
         ],
         [
           3,
-          null,
+          3,
           null,
           null,
           null,
@@ -1635,7 +1635,7 @@
         ]
       ],
       "lap1Points": 17,
-      "lap2Points": 3,
+      "lap2Points": 6,
       "lap3Points": null,
       "lap1Time": "01:31:04",
       "lap2Time": null,
@@ -1646,13 +1646,13 @@
       "lap1Penalty": 0,
       "finishPenalty": 0,
       "extraPenalties": [],
-      "totalPoints": 20,
+      "totalPoints": 23,
       "lapsCompleted": 2,
       "totalTime": "",
       "n0s": 1,
       "n1s": 1,
       "n2s": 1,
-      "n3s": 4,
+      "n3s": 5,
       "n5s": 1,
       "finishTime": null,
       "dnf": false,
@@ -1912,6 +1912,69 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 13,
+      "name": "SAL GONZALEZ, MARCO",
+      "cat": "TR5",
+      "club": "CD Pobladura R",
+      "brand": "",
+      "schedStart": "10:19",
+      "startZone": null,
+      "rank": 2,
+      "scores": [
+        [
+          5,
+          5,
+          0,
+          5,
+          3,
+          5,
+          2
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 25,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "01:36:06",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "11:55:06",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 25,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 1,
+      "n1s": 0,
+      "n2s": 1,
+      "n3s": 1,
+      "n5s": 4,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 6,
       "name": "ALVAREZ FERNANDEZ, ENZO",
       "cat": "TR5",
@@ -1919,7 +1982,7 @@
       "brand": "OSET BIKE",
       "schedStart": "10:04",
       "startZone": null,
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           5,
@@ -1982,7 +2045,7 @@
       "brand": "",
       "schedStart": "10:18",
       "startZone": null,
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           3,
@@ -2045,7 +2108,7 @@
       "brand": "BETA",
       "schedStart": "10:03",
       "startZone": null,
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           1,
@@ -2108,7 +2171,7 @@
       "brand": "BETA",
       "schedStart": "10:02",
       "startZone": null,
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           2,
@@ -2171,7 +2234,7 @@
       "brand": "SIN MARCA",
       "schedStart": "10:03",
       "startZone": null,
-      "rank": 6,
+      "rank": 7,
       "scores": [
         [
           3,
@@ -2234,7 +2297,7 @@
       "brand": "BETA",
       "schedStart": "10:00",
       "startZone": null,
-      "rank": 7,
+      "rank": 8,
       "scores": [
         [
           2,
@@ -2296,69 +2359,6 @@
       "club": "Moto Club Cuenca Minera",
       "brand": "",
       "schedStart": "10:01",
-      "startZone": null,
-      "rank": 8,
-      "scores": [
-        [
-          5,
-          5,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 10,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 10,
-      "lapsCompleted": 1,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 2,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 13,
-      "name": "SAL GONZALEZ, MARCO",
-      "cat": "TR5",
-      "club": "CD Pobladura R",
-      "brand": "",
-      "schedStart": "10:19",
       "startZone": null,
       "rank": 9,
       "scores": [
