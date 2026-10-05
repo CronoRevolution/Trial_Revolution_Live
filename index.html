@@ -221,6 +221,37 @@ html:not([data-archive="1"]) .archive-bar{display:none}
 .pdsit .g b{color:var(--tx)}
 .estrella:active{transform:scale(1.25)}
 
+/* Buscador de la portada. El campo es marcado FIJO del HTML: si se repintara
+   con renderHome() cada 30 s, el teclado se cerraria a media palabra. */
+.buscawrap{padding:12px 12px 0}
+.buscabox{display:flex;align-items:center;gap:8px;background:var(--sf);
+  border:1px solid var(--bd);border-radius:12px;padding:0 10px;
+  box-shadow:0 2px 8px var(--sh)}
+.buscabox svg{flex-shrink:0;opacity:.55}
+#buscaInput{flex:1;min-width:0;border:0;outline:0;background:none;color:var(--tx);
+  font:inherit;font-size:15px;padding:12px 0}
+#buscaInput::placeholder{color:var(--mu)}
+.buscax{background:none;border:0;color:var(--mu);font-size:17px;cursor:pointer;
+  padding:6px 2px;line-height:1;display:none}
+.buscares{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+.bres{display:flex;align-items:center;gap:11px;background:var(--sf);
+  border-radius:12px;box-shadow:0 2px 8px var(--sh);padding:9px 12px;
+  border-left:4px solid var(--bc);cursor:pointer}
+.bres:active{transform:scale(.99)}
+.bresd{font-family:ui-monospace,monospace;font-weight:900;font-size:18px;
+  color:var(--bc);min-width:38px;text-align:center}
+.bresn{flex:1;min-width:0}
+.bresn b{display:block;font-size:14px;font-weight:800;overflow:hidden;
+  text-overflow:ellipsis;white-space:nowrap}
+.bresn span{font-size:11px;color:var(--mu)}
+.bresp{font-size:19px;font-weight:900;font-family:ui-monospace,monospace;
+  color:var(--bc);flex-shrink:0}
+.bresvacio,.bresmas{text-align:center;font-size:12px;color:var(--mu);padding:14px 8px;
+  line-height:1.5}
+/* Mientras se busca, la portada es la busqueda: lo demas estorba. */
+#vHome.buscando #favBlock,#vHome.buscando #catGrid,
+#vHome.buscando #startTable,#vHome.buscando #footerTxt{display:none !important}
+
 .catgrid{padding:12px;display:flex;flex-direction:column;gap:10px;}
 .ctile{background:var(--sf);border-radius:14px;box-shadow:0 2px 8px var(--sh);
   display:flex;align-items:center;overflow:hidden;cursor:pointer;
@@ -409,6 +440,21 @@ footer{text-align:center;padding:20px 16px 30px;font-size:10px;color:var(--mu);
     </div>
   </div>
   <div class="upd" id="hUpd"></div>
+  <div class="buscawrap" id="buscaWrap" style="display:none">
+    <div class="buscabox">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2.4" stroke-linecap="round" aria-hidden="true">
+        <circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+      <input id="buscaInput" type="text" autocomplete="off" autocorrect="off"
+             autocapitalize="off" spellcheck="false" enterkeyhint="search"
+             placeholder="Busca por dorsal o nombre"
+             aria-label="Buscar piloto por dorsal o nombre"
+             oninput="renderBusqueda()">
+      <button class="buscax" id="buscaX" type="button" onclick="limpiaBusca()"
+              aria-label="Borrar la búsqueda">✕</button>
+    </div>
+    <div class="buscares" id="buscaRes"></div>
+  </div>
   <div class="favwrap" id="favBlock" style="display:none"></div>
   <div class="catgrid" id="catGrid"></div>
   <footer id="footerTxt">Trial Revolution · Actualización automática cada 30 s</footer>
@@ -464,7 +510,7 @@ const POLL_MS  = 30000;
 // corregido o uno viejo que su navegador tenia en memoria desde la prueba
 // anterior. Se ve en la pantalla de entrada y en el pie de la portada: basta
 // preguntarle a quien reporta un fallo "que numero pone abajo".
-const APP_VER = '2026.10.05.1';
+const APP_VER = '2026.10.05.2';
 // El hash tal y como llego: el arranque lo reescribe, y #diag se perderia.
 const _HASH0 = location.hash || '';
 
@@ -1053,12 +1099,20 @@ function puestoYDiferencias(p){
 function chipsDif(pd){
   if (!pd) return '';
   const c = [];
+  // \u00abA 0 del 1o\u00bb no se dice: eso es un empate, y en trial los empates se
+  // deshacen por ceros y unos, no por puntos.
   if (pd.difDelante != null)
-    c.push('<span>A <b>' + Math.abs(pd.difDelante) + '</b> del ' + (pd.puesto - 1)
-         + '\u00ba' + (pd.provDelante ? '*' : '') + '</span>');
+    c.push(pd.difDelante === 0
+      ? '<span>Empatado con el ' + (pd.puesto - 1) + '\u00ba'
+        + (pd.provDelante ? '*' : '') + '</span>'
+      : '<span>A <b>' + Math.abs(pd.difDelante) + '</b> del ' + (pd.puesto - 1)
+        + '\u00ba' + (pd.provDelante ? '*' : '') + '</span>');
   if (pd.difDetras != null)
-    c.push('<span><b>' + Math.abs(pd.difDetras) + '</b> sobre el ' + (pd.puesto + 1)
-         + '\u00ba' + (pd.provDetras ? '*' : '') + '</span>');
+    c.push(pd.difDetras === 0
+      ? '<span>Empatado con el ' + (pd.puesto + 1) + '\u00ba'
+        + (pd.provDetras ? '*' : '') + '</span>'
+      : '<span><b>' + Math.abs(pd.difDetras) + '</b> sobre el ' + (pd.puesto + 1)
+        + '\u00ba' + (pd.provDetras ? '*' : '') + '</span>');
   if (!c.length) return '';
   if (pd.provDelante || pd.provDetras)
     c.push('<span class="nota">* con zonas sin puntuar por medio</span>');
@@ -1135,11 +1189,106 @@ function renderFavoritos(){
   });
   el.innerHTML = html;
 }
-function abreFav(dorsal){
+// ══════════════════════════════════════════════════════════════════════
+// Buscador de la portada
+// ══════════════════════════════════════════════════════════════════════
+// Para seguir a alguien no hace falta saber su categoria: con el dorsal o
+// parte del nombre basta. Se busca sin tildes y sin mayusculas, porque nadie
+// escribe "MARTINEZ" con tilde en el movil a mitad de carrera.
+function _norm(t){
+  const s = String(t == null ? '' : t).toLowerCase();
+  try { return s.normalize('NFD').replace(/[\u0300-\u036f]/g, ''); }
+  catch(e){ return s; }
+}
+const BUSCA_TOPE = 25;
+
+function buscaPilotos(q){
+  const trozos = _norm(q).split(/\s+/).filter(Boolean);
+  if (!trozos.length) return [];
+  const exacto = _norm(q).trim();
+  const res = [];
+  ((_data && _data.pilots) || []).forEach(p => {
+    const pajar = _norm(p.dorsal + ' ' + (p.name || '') + ' ' +
+                        (p.club || '') + ' ' + (p.cat || ''));
+    let todas = true;
+    for (let i = 0; i < trozos.length; i++)
+      if (pajar.indexOf(trozos[i]) === -1) { todas = false; break; }
+    if (todas) res.push(p);
+  });
+  // El dorsal clavado manda: quien escribe "12" busca al 12, no al 120.
+  res.sort((a, b) => {
+    const ea = (String(a.dorsal) === exacto) ? 0 : 1;
+    const eb = (String(b.dorsal) === exacto) ? 0 : 1;
+    if (ea !== eb) return ea - eb;
+    return String(a.name || '').localeCompare(String(b.name || ''), 'es');
+  });
+  return res;
+}
+
+function renderBusqueda(){
+  const wrap = document.getElementById('buscaWrap');
+  const inp  = document.getElementById('buscaInput');
+  const caja = document.getElementById('buscaRes');
+  const home = document.getElementById('vHome');
+  if (!wrap || !inp || !caja) return;
+  const hay = ((_data && _data.pilots) || []).length > 0;
+  wrap.style.display = hay ? 'block' : 'none';
+  if (!hay) return;
+  const q = inp.value || '';
+  const x = document.getElementById('buscaX');
+  if (x) x.style.display = q ? 'block' : 'none';
+  if (!q.trim()){
+    caja.innerHTML = '';
+    if (home) home.classList.remove('buscando');
+    return;
+  }
+  if (home) home.classList.add('buscando');
+  const res = buscaPilotos(q);
+  if (!res.length){
+    caja.innerHTML = '<div class="bresvacio">Ning\u00fan piloto con <b>' +
+      _escapa(q) + '</b>.<br>Prueba con el dorsal o con una parte del apellido.</div>';
+    return;
+  }
+  let html = '';
+  res.slice(0, BUSCA_TOPE).forEach(p => {
+    const col = catColor(p.cat);
+    const tp = getTotal(p);
+    html +=
+      '<div class="bres" style="--bc:' + col + '"'
+      + ' role="button" tabindex="0" onclick="abreFav(' + p.dorsal + ', \'buscador\')">'
+      + '<div class="bresd">' + p.dorsal + '</div>'
+      + '<div class="bresn"><b>' + nombreBonito(p.name) + '</b>'
+      +   '<span>' + p.cat + (p.club ? ' \u00b7 ' + p.club : '') + '</span></div>'
+      + '<div class="bresp">' + (tp !== null ? tp : '\u2014') + '</div>'
+      + estrellaHTML(p.dorsal)
+      + '</div>';
+  });
+  if (res.length > BUSCA_TOPE)
+    html += '<div class="bresmas">y ' + (res.length - BUSCA_TOPE) +
+            ' m\u00e1s \u00b7 afina la b\u00fasqueda</div>';
+  caja.innerHTML = html;
+}
+
+function limpiaBusca(){
+  const inp = document.getElementById('buscaInput');
+  if (inp){ inp.value = ''; inp.focus(); }
+  renderBusqueda();
+}
+
+// El texto que escribe el usuario vuelve a la pantalla: no se mete crudo.
+function _escapa(t){
+  return String(t == null ? '' : t)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+// Entrada directa a la ficha desde la portada: desde «Mis pilotos» o desde el
+// buscador. Se deja dicho de donde vino para que la traza lo cuente.
+function abreFav(dorsal, origen){
   const p = (_data && _data.pilots || []).find(x => x.dorsal === dorsal);
   if (!p) return;
   _selCat = p.cat; _selPilot = p;
-  renderPilot(); navigate('pilot', true, 'toque: mis pilotos');
+  renderPilot(); navigate('pilot', true, 'toque: ' + (origen || 'mis pilotos'));
 }
 
 // ── NAVIGATION WITH HISTORY API ───────────────────────────────
@@ -1239,6 +1388,7 @@ function renderHome(){
   }
 
   renderFavoritos();
+  renderBusqueda();
 
   const now=new Date();
   document.getElementById('hUpd').textContent=
