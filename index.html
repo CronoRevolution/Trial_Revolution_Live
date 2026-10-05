@@ -174,6 +174,53 @@ html:not([data-archive="1"]) .archive-bar{display:none}
 .przona{font-size:11px;font-weight:900;letter-spacing:.5px;padding:3px 8px;border-radius:6px;
   background:var(--ac);color:#111;display:inline-block;}
 @media (max-width:400px){ .stzona{padding:3px 6px;font-size:10px;} }
+/* ── Mis pilotos ──────────────────────────────────────────────────────
+   El publico de esta web no es publico general: es la familia de un piloto.
+   Marcarlo como favorito ahorra tener que acordarse de su categoria y navegar
+   hasta el cada vez. Se guarda SOLO en este telefono (localStorage): a quien
+   sigue cada cual no se manda a ningun sitio. */
+.favwrap{padding:12px 12px 0;display:flex;flex-direction:column;gap:10px}
+.favtit{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mu);
+  font-weight:800;display:flex;align-items:center;gap:7px;padding:0 2px}
+.favcard{background:var(--sf);border-radius:14px;box-shadow:0 2px 8px var(--sh);
+  border:2px solid transparent;cursor:pointer;overflow:hidden;transition:transform .1s}
+.favcard:active{transform:scale(.99)}
+.favtop{display:flex;align-items:center;gap:11px;padding:11px 13px 9px}
+.favdor{font-family:ui-monospace,monospace;font-weight:900;font-size:21px;color:#fff;
+  background:var(--fc);border-radius:9px;padding:3px 9px;min-width:46px;text-align:center}
+.favnm{flex:1;min-width:0}
+.favnm b{display:block;font-size:14px;font-weight:800;overflow:hidden;
+  text-overflow:ellipsis;white-space:nowrap}
+.favnm span{font-size:11px;color:var(--mu)}
+.favpts{text-align:right;flex-shrink:0}
+.favpts .n{font-size:22px;font-weight:900;line-height:1}
+.favpts .l{font-size:9px;color:var(--mu);letter-spacing:1px}
+.favdonde{padding:7px 13px;background:var(--sf2);font-size:12px;line-height:1.45;
+  border-top:1px solid var(--bd)}
+.favdif{display:flex;gap:8px;padding:8px 13px 10px;font-size:11px;flex-wrap:wrap}
+.favdif span{background:var(--sf2);border:1px solid var(--bd);border-radius:999px;
+  padding:3px 9px;color:var(--mu)}
+.favdif b{color:var(--tx)}
+.favdif span.nota,.pdsit .g span.nota{background:none;border:0;padding:3px 0;
+  font-size:10px;width:100%}
+.favvacio{background:var(--sf);border:1px dashed var(--bd);border-radius:14px;
+  padding:14px;font-size:12px;color:var(--mu);line-height:1.5;text-align:center}
+.estrella{background:none;border:0;cursor:pointer;font-size:19px;line-height:1;
+  padding:4px 2px;flex-shrink:0;opacity:.3;transition:opacity .15s,transform .1s}
+.estrella.on{opacity:1;color:#f59e0b}
+.pdname{display:flex;align-items:center;gap:10px}
+.pdnmtx{flex:1;min-width:0}
+.pdhero .estrella{font-size:27px;opacity:.5;color:#fff;padding:0}
+.pdhero .estrella.on{opacity:1;color:#fbbf24}
+.pdsit{margin:12px 14px 0;background:var(--sf);border:1px solid var(--bd);
+  border-radius:12px;overflow:hidden}
+.pdsit .d{padding:10px 13px;font-size:13px;line-height:1.45}
+.pdsit .g{display:flex;gap:8px;padding:0 13px 11px;font-size:11px;flex-wrap:wrap}
+.pdsit .g span{background:var(--sf2);border:1px solid var(--bd);border-radius:999px;
+  padding:4px 10px;color:var(--mu)}
+.pdsit .g b{color:var(--tx)}
+.estrella:active{transform:scale(1.25)}
+
 .catgrid{padding:12px;display:flex;flex-direction:column;gap:10px;}
 .ctile{background:var(--sf);border-radius:14px;box-shadow:0 2px 8px var(--sh);
   display:flex;align-items:center;overflow:hidden;cursor:pointer;
@@ -362,6 +409,7 @@ footer{text-align:center;padding:20px 16px 30px;font-size:10px;color:var(--mu);
     </div>
   </div>
   <div class="upd" id="hUpd"></div>
+  <div class="favwrap" id="favBlock" style="display:none"></div>
   <div class="catgrid" id="catGrid"></div>
   <footer id="footerTxt">Trial Revolution · Actualización automática cada 30 s</footer>
 </div>
@@ -416,7 +464,7 @@ const POLL_MS  = 30000;
 // corregido o uno viejo que su navegador tenia en memoria desde la prueba
 // anterior. Se ve en la pantalla de entrada y en el pie de la portada: basta
 // preguntarle a quien reporta un fallo "que numero pone abajo".
-const APP_VER = '2026.10.04.1';
+const APP_VER = '2026.10.05.1';
 // El hash tal y como llego: el arranque lo reescribe, y #diag se perderia.
 const _HASH0 = location.hash || '';
 
@@ -935,6 +983,165 @@ function sortPilots(arr){
   });
 }
 
+// ══════════════════════════════════════════════════════════════════════
+// Mis pilotos
+// ══════════════════════════════════════════════════════════════════════
+// Los favoritos viven SOLO en este telefono. No se publican ni se mandan a
+// Firebase: con menores en las listas, "quien sigue a quien" es un dato nuevo
+// que no hace falta crear. Y asi funciona sin cobertura.
+const FAV_KEY = 'tr_favoritos';
+
+function favs(){
+  try { const a = JSON.parse(localStorage.getItem(FAV_KEY) || '[]');
+        return Array.isArray(a) ? a : []; } catch(e){ return []; }
+}
+function esFav(dorsal){ return favs().indexOf(dorsal) !== -1; }
+function toggleFav(dorsal, ev){
+  if (ev) { ev.stopPropagation(); ev.preventDefault(); }
+  const a = favs(); const i = a.indexOf(dorsal);
+  if (i >= 0) a.splice(i, 1); else a.push(dorsal);
+  try { localStorage.setItem(FAV_KEY, JSON.stringify(a)); } catch(e){}
+  const v = _vistaAbierta();
+  renderHome();
+  if (v === 'cat') renderCat();
+  if (v === 'pilot') renderPilot();
+}
+function estrellaHTML(dorsal){
+  const on = esFav(dorsal);
+  return '<button class="estrella' + (on ? ' on' : '') + '"'
+       + ' onclick="toggleFav(' + dorsal + ', event)"'
+       + ' title="' + (on ? 'Quitar de mis pilotos' : 'Seguir a este piloto') + '"'
+       + ' aria-label="' + (on ? 'Quitar de mis pilotos' : 'Seguir a este piloto') + '">'
+       + (on ? '\u2605' : '\u2606') + '</button>';
+}
+
+// Puesto en su categoria y a cuanto esta del de delante y del de atras. Es la
+// segunda pregunta de cualquiera que mira la clasificacion.
+function puestoYDiferencias(p){
+  const lista = sortPilots((_data && _data.pilots || []).filter(x => x.cat === p.cat));
+  let i = -1;
+  for (let k = 0; k < lista.length; k++) if (lista[k].dorsal === p.dorsal) { i = k; break; }
+  if (i < 0) return null;
+  const mio = getTotal(p);
+  // La clasificacion ordena PRIMERO por vueltas completadas, no por puntos.
+  // Poner "a 3 puntos" de alguien que va por otra vuelta seria mentir, asi que
+  // en ese caso no se pinta numero. Y si van por la misma vuelta con distinto
+  // numero de zonas resueltas, la diferencia es provisional y se avisa.
+  const comparable = (o) => {
+    if (!o || mio == null) return null;
+    if (lapRankM(o) !== lapRankM(p)) return null;
+    const suyo = getTotal(o);
+    return (suyo == null) ? null : suyo;
+  };
+  const prov = (o) => {
+    if (!o) return false;
+    const a = donde(p), b = donde(o);
+    if (a.fin || b.fin) return false;
+    return a.hechas !== b.hechas;
+  };
+  const del = i > 0 ? lista[i-1] : null;
+  const det = i < lista.length - 1 ? lista[i+1] : null;
+  const sd = comparable(del), st = comparable(det);
+  return { puesto: i + 1, total: lista.length, delante: del, detras: det,
+           difDelante: (sd == null) ? null : (mio - sd),
+           difDetras:  (st == null) ? null : (st - mio),
+           provDelante: (sd == null) ? false : prov(del),
+           provDetras:  (st == null) ? false : prov(det) };
+}
+
+// Las dos pastillas de diferencias, iguales en la home y en la ficha.
+function chipsDif(pd){
+  if (!pd) return '';
+  const c = [];
+  if (pd.difDelante != null)
+    c.push('<span>A <b>' + Math.abs(pd.difDelante) + '</b> del ' + (pd.puesto - 1)
+         + '\u00ba' + (pd.provDelante ? '*' : '') + '</span>');
+  if (pd.difDetras != null)
+    c.push('<span><b>' + Math.abs(pd.difDetras) + '</b> sobre el ' + (pd.puesto + 1)
+         + '\u00ba' + (pd.provDetras ? '*' : '') + '</span>');
+  if (!c.length) return '';
+  if (pd.provDelante || pd.provDetras)
+    c.push('<span class="nota">* con zonas sin puntuar por medio</span>');
+  return c.join('');
+}
+
+// Por donde va ahora mismo. La vuelta la marca la hora de paso, no las
+// puntuaciones; dentro de la vuelta se cuentan las zonas resueltas siguiendo
+// el orden REAL de ese piloto, que con salida escalonada no empieza en la 1.
+function donde(p){
+  if (p.dsq) return { fin: 'Descalificado' };
+  if (p.dnf) return { fin: 'Retirado' };
+  if (p.finishTime != null || p.totalTime) return { fin: 'Ha terminado' };
+  const nz = (_data && _data.cfg && _data.cfg.numZones) || 7;
+  const li = p.lap2Time != null ? 2 : (p.lap1Time != null ? 1 : 0);
+  const fila = (p.scores && p.scores[li]) || [];
+  const z0 = zonaSalida(p) - 1;
+  let hechas = 0, ultima = null;
+  for (let k = 0; k < nz; k++){
+    const z = (z0 + k) % nz;
+    if (fila[z] != null) { hechas++; ultima = z + 1; }
+  }
+  return { lap: li + 1, hechas: hechas, nz: nz, ultima: ultima };
+}
+function textoDonde(p){
+  const d = donde(p);
+  if (d.fin) return d.fin;
+  if (!d.hechas) return 'Vuelta ' + d.lap + ' \u00b7 a\u00fan sin zonas puntuadas';
+  return 'Vuelta ' + d.lap + ' \u00b7 <b>zona ' + d.ultima + '</b> \u00b7 '
+       + d.hechas + ' de ' + d.nz + ' zonas de esta vuelta';
+}
+
+function renderFavoritos(){
+  const el = document.getElementById('favBlock');
+  if (!el) return;
+  const lista = favs();
+  const pilots = (_data && _data.pilots) || [];
+  if (!lista.length){
+    // Sin favoritos no se ocupa sitio con una tarjeta vacia... salvo la
+    // primera vez, para que se sepa que esto existe.
+    let visto = false;
+    try { visto = localStorage.getItem('tr_fav_visto') === '1'; } catch(e){}
+    if (visto || !pilots.length) { el.style.display = 'none'; return; }
+    el.style.display = 'flex';
+    el.innerHTML = '<div class="favvacio">\u2606 Toca la estrella de un piloto para seguirlo '
+      + 'desde aqu\u00ed, sin tener que buscarlo por su categor\u00eda.</div>';
+    return;
+  }
+  try { localStorage.setItem('tr_fav_visto', '1'); } catch(e){}
+  const mios = lista.map(d => pilots.find(x => x.dorsal === d)).filter(Boolean);
+  if (!mios.length){ el.style.display = 'none'; return; }
+  el.style.display = 'flex';
+  let html = '<div class="favtit">\u2605 Mis pilotos</div>';
+  mios.forEach(p => {
+    const col = catColor(p.cat);
+    const tp = getTotal(p);
+    const pd = puestoYDiferencias(p);
+    const dif = chipsDif(pd);
+    html +=
+      '<div class="favcard" style="--fc:' + col + ';border-color:' + col + '55"'
+      + ' role="button" tabindex="0" onclick="abreFav(' + p.dorsal + ')">'
+      + '<div class="favtop">'
+      +   '<div class="favdor">' + p.dorsal + '</div>'
+      +   '<div class="favnm"><b>' + nombreBonito(p.name) + '</b>'
+      +     '<span>' + p.cat + (pd ? ' \u00b7 ' + pd.puesto + '\u00ba de ' + pd.total : '')
+      +     '</span></div>'
+      +   '<div class="favpts"><div class="n" style="color:' + col + '">'
+      +     (tp !== null ? tp : '\u2014') + '</div><div class="l">PUNTOS</div></div>'
+      +   estrellaHTML(p.dorsal)
+      + '</div>'
+      + '<div class="favdonde">' + textoDonde(p) + '</div>'
+      + (dif ? '<div class="favdif">' + dif + '</div>' : '')
+      + '</div>';
+  });
+  el.innerHTML = html;
+}
+function abreFav(dorsal){
+  const p = (_data && _data.pilots || []).find(x => x.dorsal === dorsal);
+  if (!p) return;
+  _selCat = p.cat; _selPilot = p;
+  renderPilot(); navigate('pilot', true, 'toque: mis pilotos');
+}
+
 // ── NAVIGATION WITH HISTORY API ───────────────────────────────
 const _histOk = (() => { try { history.replaceState(null,'',location.href); return true; } catch(e) { return false; } })();
 
@@ -1030,6 +1237,8 @@ function renderHome(){
     const ftDate=d.raceDate?new Date(d.raceDate+'T12:00:00').toLocaleDateString('es-ES',{day:'2-digit',month:'2-digit',year:'numeric'}):'';
     ftEl.textContent=(d.raceName||'Trial Revolution')+(ftDate?' · '+ftDate:'')+(d.organizer?' · '+d.organizer:'')+' · v'+APP_VER;
   }
+
+  renderFavoritos();
 
   const now=new Date();
   document.getElementById('hUpd').textContent=
@@ -1208,7 +1417,8 @@ function renderCat(){
         `<div class="psub">${p.club||'Sin club'}</div></div>`+
       `<div class="pright">`+
         `<div class="ppts" style="color:${p.dnf||p.dsq?'var(--mu)':col}">${tp!==null?tp:'—'}</div>`+
-        `<div>${lapBadge(p)}</div></div>`;
+        `<div>${lapBadge(p)}</div></div>`+
+      estrellaHTML(p.dorsal);
     row.setAttribute('role','button'); row.setAttribute('tabindex','0');
     const verPiloto=()=>{_selPilot=p;renderPilot();navigate('pilot',true,'toque: piloto');};
     row.addEventListener('click',verPiloto);
@@ -1228,7 +1438,8 @@ function renderPilot(){
   const l1max=cfg.lap1MaxMins||150;
   const rdurMins=Math.round((cfg.raceDurationHrs||5)*60);
 
-  document.getElementById('pdNm').textContent=nombreBonito(p.name);
+  document.getElementById('pdNm').innerHTML=
+    `<span class="pdnmtx">${nombreBonito(p.name)}</span>`+estrellaHTML(p.dorsal);
   const _pdDate=_data?.raceDate?new Date(_data.raceDate+'T12:00:00').toLocaleDateString('es-ES',{day:'2-digit',month:'2-digit',year:'numeric'}):'';
   const _zonaSal = haySalidaEscalonada(_data?.pilots || [])
     ? ` · <span class="przona">Z${zonaSalida(p)}</span>` : '';
@@ -1308,8 +1519,20 @@ function renderPilot(){
       `<div style="font-size:20px;font-weight:900;font-family:monospace;color:var(--ac)">${sch}</div></div></div>`
     : '';
 
+  // Por donde va y a cuanto esta del de delante y del de atras: las dos cosas
+  // que se miran antes de bajar a las zonas.
+  const _pd = puestoYDiferencias(p);
+  const _gaps = chipsDif(_pd);
+  const sitHtml =
+    `<div class="pdsit"><div class="d">`+
+    (_pd ? `<b>${_pd.puesto}\u00ba de ${_pd.total}</b> en ${p.cat} \u00b7 ` : '')+
+    textoDonde(p)+`</div>`+
+    (_gaps ? `<div class="g">${_gaps}</div>` : '')+
+    `</div>`;
+
   document.getElementById('pdBody').innerHTML=
     statusHtml+
+    sitHtml+
     schedHtml+
     `<div class="pdsec"><div class="pdstitle">Distribución de puntuaciones</div></div>`+
     `<div class="scbar">${scBar}</div>`+
