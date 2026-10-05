@@ -510,7 +510,7 @@ const POLL_MS  = 30000;
 // corregido o uno viejo que su navegador tenia en memoria desde la prueba
 // anterior. Se ve en la pantalla de entrada y en el pie de la portada: basta
 // preguntarle a quien reporta un fallo "que numero pone abajo".
-const APP_VER = '2026.10.05.2';
+const APP_VER = '2026.10.05.3';
 // El hash tal y como llego: el arranque lo reescribe, y #diag se perderia.
 const _HASH0 = location.hash || '';
 
@@ -594,6 +594,30 @@ function _esFutura(d) {
   return rd.getTime() >= hoy.getTime();
 }
 
+// ¿Esta carrera ha arrancado alguna vez?
+//
+// `raceStarted` NO sirve para esto. El cronómetro lo apaga en dos sitios muy
+// distintos: al FINALIZAR (y ahí lo salva raceFinished) y al PARAR EL RELOJ,
+// donde quedan raceStarted=false y raceFinished=false — que es, carácter por
+// carácter, lo mismo que una prueba que no ha empezado. Desde que parar la
+// carrera publica en Firebase (2026.09.06.1), pulsar «Parar» en la mesa
+// devolvía a TODOS los espectadores al horario de salida en el mismo
+// instante. Eso es lo que la gente contaba como «al actualizarse me echa a la
+// pantalla de inicio»: no era la navegación, era la pantalla entera cambiando
+// de contenido.
+//
+// La prueba de que ha arrancado está en los propios datos y no depende de que
+// el cronómetro publique nada nuevo: si alguien tiene una puntuación o una
+// hora de paso, la carrera ha empezado.
+function _haArrancado(d){
+  if (!d) return false;
+  if (d.raceStarted || d.raceFinished) return true;
+  return (d.pilots || []).some(p => p && (
+    p.lap1Time != null || p.lap2Time != null || p.finishTime != null || p.totalTime ||
+    (Array.isArray(p.scores) && p.scores.some(f => Array.isArray(f) && f.some(v => v != null)))
+  ));
+}
+
 function _estadoCarrera(d) {
   if (!d) return 'previa';
   if (d.raceFinished) return 'finalizada';
@@ -605,9 +629,14 @@ function _estadoCarrera(d) {
     const t = Date.parse(d.publishedAt);
     if (!isNaN(t)) { sello = t; margen = SELLO_VIVO_MS; }
   }
-  if (sello === null) return d.raceStarted ? 'directo' : 'previa';
+  const arrancada = _haArrancado(d);
+  // Sin ninguna marca de tiempo tampoco se puede prometer «en directo» de una
+  // carrera con el reloj parado.
+  if (sello === null) return arrancada ? (d.raceStarted ? 'directo' : 'pausada') : 'previa';
   const fresco = (Date.now() - sello) < margen;
-  if (d.raceStarted) return fresco ? 'directo' : 'sinsenal';
+  // Arrancada y con la mesa al aparato: en directo, o detenida si el reloj
+  // está parado. Lo que NO puede pasar es volver al horario de salida.
+  if (arrancada) return fresco ? (d.raceStarted ? 'directo' : 'pausada') : 'sinsenal';
   if (fresco) return 'previa';
   return _esFutura(d) ? 'futura' : 'antigua';
 }
@@ -617,6 +646,7 @@ function _estadoCarrera(d) {
 function _subtituloCabecera() {
   const e = _data ? _estadoCarrera(_data) : 'previa';
   return { directo:'Clasificación en directo', sinsenal:'Sin señal de la mesa',
+           pausada:'Carrera detenida',
            previa:'Horario de salida', finalizada:'Resultados definitivos',
            futura:'Horario de salida',
            antigua:'Sin carrera en directo' }[e] || 'Clasificación en directo';
@@ -646,6 +676,7 @@ function _pintaEstado(d, activeCats, pilots) {
   } else {
     tk.style.display = 'none';
     if (estado === 'finalizada')      { sb.className = 'bfin'; sb.textContent = '🏁 Finalizada'; }
+    else if (estado === 'pausada')    { sb.className = 'bold'; sb.textContent = '⏸ Detenida'; }
     else if (estado === 'sinsenal')   { sb.className = 'bold'; sb.textContent = 'Sin señal'; }
     else if (estado === 'antigua')    { sb.className = 'bold'; sb.textContent = 'Sin carrera'; }
     else if (estado === 'futura')     { sb.className = 'bpre'; sb.textContent = 'Próxima'; }
@@ -682,6 +713,10 @@ function _pintaEstado(d, activeCats, pilots) {
     // sonaba a error; ahora ese caso lo recoge 'futura'.
     antigua:    { cls:'av-previa', txt:'⏳ No hay ninguna carrera en directo ahora mismo' +
                                        (fecha ? ' · Última prueba preparada: ' + fecha : '') },
+    // Parar el reloj en la mesa ya no borra la clasificación de la pantalla
+    // del público: se dice que está detenida y se deja lo que hay.
+    pausada:    { cls:'av-previa', txt:'⏸ Carrera detenida en este momento · ' +
+                                       'La clasificación es la del último paso por la mesa' },
     sinsenal:   { cls:'av-alerta', txt:'📡 Sin conexión con la mesa de cronometraje' +
                                        (_latido ? ' desde ' + _haceCuanto(_latido) : '') +
                                        ' · Los resultados pueden no estar al día' }
@@ -712,6 +747,7 @@ function _pintaEstado(d, activeCats, pilots) {
     const R = {
       directo:    ['Carrera actual',  'Resultados en directo',                    '🏁', false],
       sinsenal:   ['Carrera actual',  'Sin señal de la mesa',                     '📡', false],
+      pausada:    ['Carrera actual',  'Carrera detenida',                         '⏸', false],
       previa:     ['Próxima prueba',  'Horario de salida',                        '⏳', false],
       // Reloj de arena, como 'previa': el emoji de calendario dibuja un dia
       // concreto (17 de julio en muchas fuentes) y choca con la fecha de al lado.
@@ -1293,6 +1329,32 @@ function abreFav(dorsal, origen){
 
 // ── NAVIGATION WITH HISTORY API ───────────────────────────────
 const _histOk = (() => { try { history.replaceState(null,'',location.href); return true; } catch(e) { return false; } })();
+let _histRoto = false;    // pushState existe pero revienta
+let _hashPropio = false;  // el cambio de hash lo hemos hecho nosotros
+
+// Apuntar una entrada en el historial.
+//
+// pushState es lo primero que se intenta, pero falla en más sitios de los que
+// parece: navegadores DENTRO de apps (el enlace abierto desde WhatsApp), modo
+// privado, y la cuota de Safari (100 llamadas por cada 30 s). Antes, cuando
+// fallaba, la pantalla avanzaba y el historial se quedaba quieto: el
+// espectador veía portada → categoría → ficha, pero para el navegador seguía
+// en la portada. Un solo «atrás» —el botón del móvil o el gesto de deslizar—
+// se saltaba las tres pantallas de golpe y lo echaba fuera de la app.
+//
+// Cambiar `location.hash` a mano SÍ crea entrada de historial en todos ellos,
+// y el oyente de 'hashchange' de más abajo se encarga de volver.
+function _marcaHistoria(estado, hash) {
+  if (_histOk && !_histRoto) {
+    try { history.pushState(estado, '', hash); return; }
+    catch(e) { _histRoto = true; _traza('pushState falla', (e && e.name) || 'error'); }
+  }
+  if (location.hash !== hash) {
+    _hashPropio = true;
+    try { location.hash = hash; } catch(e) {}
+    setTimeout(function () { _hashPropio = false; }, 0);
+  }
+}
 
 function navigate(view, pushState=true, motivo='') {
   const _antes = (document.querySelector('.view.active') || {}).id || '—';
@@ -1313,19 +1375,19 @@ function navigate(view, pushState=true, motivo='') {
     document.getElementById('vHome').classList.add('active');
     backBtn.style.display='none'; if(homeBtn) homeBtn.style.display='none';
     document.getElementById('hTitle').innerHTML='Trial Revolution <small>'+_sub()+'</small>';
-    if(pushState && _histOk) try { history.pushState({view:'home'},'','#home'); } catch(e) {}
+    if(pushState) _marcaHistoria({view:'home'}, '#home');
   } else if(view==='cat'){
     document.getElementById('vCat').classList.add('active');
     backBtn.style.display=''; if(homeBtn) homeBtn.style.display='';
     const col=catColor(_selCat);
     document.getElementById('hTitle').innerHTML=`<span style="color:${col};font-size:20px;letter-spacing:3px">${_selCat}</span>`;
-    if(pushState && _histOk) try { history.pushState({view:'cat',cat:_selCat},'','#cat-'+_selCat); } catch(e) {}
+    if(pushState) _marcaHistoria({view:'cat',cat:_selCat}, '#cat-'+_selCat);
   } else if(view==='pilot'){
     document.getElementById('vPilot').classList.add('active');
     backBtn.style.display=''; if(homeBtn) homeBtn.style.display='';
     document.getElementById('hTitle').innerHTML=
       `<span style="font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${nombreBonito(_selPilot.name)}</span>`;
-    if(pushState && _histOk) try { history.pushState({view:'pilot',cat:_selCat,dorsal:_selPilot.dorsal},'','#pilot-'+_selPilot.dorsal); } catch(e) {}
+    if(pushState) _marcaHistoria({view:'pilot',cat:_selCat,dorsal:_selPilot.dorsal}, '#pilot-'+_selPilot.dorsal);
   }
   window.scrollTo(0,0);
 }
@@ -1344,14 +1406,20 @@ window.addEventListener('popstate', e=>{
     document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
     document.getElementById('vWait').style.display='none';
       document.getElementById('vIntro').classList.add('active');
-    sessionStorage.removeItem('tr_chose_live');
+    _marcaEntrada(false);
     return;
   }
   // Si la vista intro está activa y se pulsa atrás, dejar al navegador salir naturalmente
   if(document.getElementById('vIntro').classList.contains('active')) {
     return;
   }
-  if(!st||st.view==='home') { renderHome(); navigate('home',false,'atrás del navegador'); }
+  // Sin estado no se puede deducir a dónde se vuelve. Antes se daba por hecho
+  // que a la portada, y eso sacaba de la ficha a quien volvía de la caché
+  // atrás/adelante — iOS dispara popstate con state null al restaurar una
+  // página. Ahora manda el hash, y si el hash tampoco dice nada, no se toca
+  // lo que hay en pantalla.
+  if(!st) { _vuelveSegunHash('atrás del navegador (sin estado)'); return; }
+  if(st.view==='home') { renderHome(); navigate('home',false,'atrás del navegador'); }
   else if(st.view==='cat')  { _selCat=st.cat; renderCat(); navigate('cat',false,'atrás del navegador'); }
   else if(st.view==='pilot'){
     _selCat=st.cat;
@@ -1359,6 +1427,36 @@ window.addEventListener('popstate', e=>{
     if(_selPilot){renderPilot();navigate('pilot',false,'atrás del navegador');}
     else{renderCat();navigate('cat',false,'atrás: piloto no encontrado en los datos');}
   }
+});
+
+// Llevar la pantalla a donde diga el hash. Lo usan el «atrás» sin estado y el
+// oyente de hashchange, que es el camino del botón atrás cuando pushState no
+// funciona.
+function _vuelveSegunHash(motivo){
+  const h = location.hash || '';
+  if (h.startsWith('#cat-')) {
+    _selCat = h.replace('#cat-',''); renderCat(); navigate('cat',false,motivo); return true;
+  }
+  if (h.startsWith('#pilot-')) {
+    const dor = parseInt(h.replace('#pilot-',''),10);
+    const c = ((_data && _data.pilots) || []).find(x => x && x.dorsal === dor);
+    if (c) { _selPilot = c; _selCat = c.cat; renderPilot(); navigate('pilot',false,motivo); return true; }
+    return false;   // ese dorsal ya no está: mejor quedarse donde se está
+  }
+  if (h === '' || h === '#home') { renderHome(); navigate('home',false,motivo); return true; }
+  return false;
+}
+
+// El botón atrás cuando el historial se mueve por hash y no por pushState.
+window.addEventListener('hashchange', function () {
+  if (_hashPropio) return;                 // lo acabamos de escribir nosotros
+  if (document.getElementById('vIntro').classList.contains('active')) return;
+  const h = location.hash || '';
+  const quiere = h.startsWith('#cat-') ? 'cat'
+               : h.startsWith('#pilot-') ? 'pilot'
+               : (h === '' || h === '#home') ? 'home' : null;
+  if (!quiere || quiere === _vistaAbierta()) return;
+  _vuelveSegunHash('atrás (por el hash)');
 });
 
 // ── RENDER HOME ───────────────────────────────────────────────
@@ -1404,7 +1502,9 @@ function renderHome(){
   // raceStarted a false y raceFinished a true. Con solo !d.raceStarted, una
   // prueba terminada volvia a ensenar el horario de salida en vez de la
   // clasificacion. Tiene que ser previa de verdad: ni empezada ni terminada.
-  if (!d.raceStarted && !d.raceFinished) {   // previa o resto sin arrancar
+  // Antes: !d.raceStarted && !d.raceFinished. Con eso, PARAR el reloj hacía
+  // desaparecer la clasificación y volvía la tabla de horarios de salida.
+  if (!_haArrancado(d)) {   // previa de verdad: nadie ha puntuado todavía
     grid.style.display = 'none';
     if (!startTable) {
       startTable = document.createElement('div');
@@ -1493,7 +1593,7 @@ function renderHome(){
 function renderCat(){
   const pilots=(_data?.pilots||[]).filter(p=>p.cat===_selCat);
   // Previa de verdad: ni empezada ni terminada. Ver renderHome.
-  const enPrevia = !_data?.raceStarted && !_data?.raceFinished;
+  const enPrevia = !_haArrancado(_data);
   const col=catColor(_selCat);
   const strip=document.getElementById('catStrip');
   strip.style.borderBottomColor=col; strip.style.background=`${col}14`;
@@ -1751,17 +1851,44 @@ async function fetchData(){
 }
 
 // ── INTRO / LIVE selector ─────────────────────────────────────
+//
+// «Ya he entrado» vivía en sessionStorage, que se borra en cuanto el sistema
+// descarta la pestaña o cierra la app instalada — cosa que iOS hace en cuanto
+// el móvil se queda un rato en el bolsillo. Y el manifiesto arranca en
+// ./index.html, sin hash. Resultado: el espectador que vuelve a abrir la app
+// entre zona y zona se encuentra la pantalla de entrada. Eso también es «me
+// ha devuelto a la pantalla de inicio».
+//
+// Ahora se recuerda en localStorage, que sí sobrevive, y además se guarda la
+// última ficha que se estaba mirando para volver a ella si se reabre dentro
+// de la misma prueba.
+function _yaEntro(){
+  try { if (localStorage.getItem('tr_chose_live') === '1') return true; } catch(e){}
+  try { return sessionStorage.getItem('tr_chose_live') === '1'; } catch(e){ return false; }
+}
+function _marcaEntrada(si){
+  try {
+    if (si) { localStorage.setItem('tr_chose_live','1'); sessionStorage.setItem('tr_chose_live','1'); }
+    else    { localStorage.removeItem('tr_chose_live'); sessionStorage.removeItem('tr_chose_live'); }
+  } catch(e){}
+}
+// NO se restaura la última ficha al reabrir. Se probó y se quitó a propósito:
+// es una funcionalidad, no un arreglo, y volver solo a una ficha es otro salto
+// de vista metido justo en el camino que estamos endureciendo. Además, con dos
+// carreras el mismo día el dorsal 12 de la mañana es otro piloto por la tarde.
+// Lo que sí se arregla es no empezar por la pantalla de entrada.
+
 function showIntroIfNeeded(){
   // En modo archivo, saltar intro y cargar directamente
   if (_isArchive) return false;
   // Si el hash es '#intro' SIEMPRE mostrar intro (incluso si había elegido live antes)
   if (location.hash === '#intro') {
-    sessionStorage.removeItem('tr_chose_live');
+    _marcaEntrada(false);
     document.getElementById('vIntro')?.classList.add('active');
     document.getElementById('vWait').style.display='none';
     return true;
   }
-  const goneToLive = sessionStorage.getItem('tr_chose_live') === '1';
+  const goneToLive = _yaEntro();
   const hasHash = location.hash && location.hash.length > 1 && location.hash !== '#home';
   if (!goneToLive && !hasHash) {
     document.getElementById('vIntro')?.classList.add('active');
@@ -1771,7 +1898,7 @@ function showIntroIfNeeded(){
   return false;
 }
 function goLive(){
-  sessionStorage.setItem('tr_chose_live', '1');
+  _marcaEntrada(true);
   document.getElementById('vIntro')?.classList.remove('active');
   document.getElementById('btnIntro').style.display='';
   history.pushState({view:'home'},'','#home');
@@ -1787,7 +1914,7 @@ function goLive(){
 }
 
 function goBackToIntro(){
-  sessionStorage.removeItem('tr_chose_live');
+  _marcaEntrada(false);
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
   document.getElementById('vWait').style.display='none';
   document.getElementById('btnIntro').style.display='none';
