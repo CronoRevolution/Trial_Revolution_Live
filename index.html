@@ -510,7 +510,7 @@ const POLL_MS  = 30000;
 // corregido o uno viejo que su navegador tenia en memoria desde la prueba
 // anterior. Se ve en la pantalla de entrada y en el pie de la portada: basta
 // preguntarle a quien reporta un fallo "que numero pone abajo".
-const APP_VER = '2026.10.05.3';
+const APP_VER = '2026.10.05.5';
 // El hash tal y como llego: el arranque lo reescribe, y #diag se perderia.
 const _HASH0 = location.hash || '';
 
@@ -525,15 +525,29 @@ function _traza(motivo, extra) {
     const t = new Date();
     const l = pad(t.getHours()) + ':' + pad(t.getMinutes()) + ':' + pad(t.getSeconds()) +
               ' · ' + motivo + (extra ? ' · ' + extra : '');
-    const a = JSON.parse(sessionStorage.getItem('tr_traza') || '[]');
+    const a = _leeTraza();
     a.push(l);
     while (a.length > _TRAZA_MAX) a.shift();
-    sessionStorage.setItem('tr_traza', JSON.stringify(a));
+    try { localStorage.setItem('tr_traza', JSON.stringify(a)); } catch (e) {
+      try { sessionStorage.setItem('tr_traza', JSON.stringify(a)); } catch (e2) {}
+    }
   } catch (e) {}
 }
+// La traza vive en localStorage a propósito: si lo que saca al espectador de
+// la ficha es una RECARGA de la página, una traza de sesión se borraría con el
+// suceso que hay que diagnosticar. Así se ve lo que pasó ANTES de la recarga.
+function _leeTraza() {
+  try {
+    const a = JSON.parse(localStorage.getItem('tr_traza') || 'null');
+    if (Array.isArray(a)) return a;
+  } catch (e) {}
+  try {
+    const b = JSON.parse(sessionStorage.getItem('tr_traza') || '[]');
+    return Array.isArray(b) ? b : [];
+  } catch (e) { return []; }
+}
 function verTraza() {
-  let a = [];
-  try { a = JSON.parse(sessionStorage.getItem('tr_traza') || '[]'); } catch (e) {}
+  const a = _leeTraza();
   return 'Trial Revolution v' + APP_VER + '\n' + location.href +
          (_HASH0 && _HASH0 !== location.hash ? '   (entró con ' + _HASH0 + ')' : '') + '\n\n' +
          (a.length ? a.join('\n') : '(sin movimientos registrados)');
@@ -621,6 +635,9 @@ function _haArrancado(d){
 function _estadoCarrera(d) {
   if (!d) return 'previa';
   if (d.raceFinished) return 'finalizada';
+  // Pintado con lo guardado en este teléfono y todavía sin noticias de la
+  // mesa. Decir «en directo» aquí sería mentir con buena letra.
+  if (_deCache) return _haArrancado(d) ? 'sinsenal' : (_esFutura(d) ? 'futura' : 'antigua');
   // Cuando los datos vienen de data.json (GitHub Pages) no hay latido. Ahi se
   // usa publishedAt, que el cronometro sella en cada publicacion: peor senal
   // que el latido, pero mejor que dar por vivo un fichero de hace tres semanas.
@@ -917,9 +934,61 @@ function _vistaAbierta(){
   return (v === 'intro') ? null : v;   // en la entrada todavía manda el hash
 }
 
+// ── La última clasificación, guardada en el teléfono ──────────────────────
+//
+// La app no recordaba nada. Cualquier recarga —el espectador tira hacia abajo,
+// el sistema descarta la pestaña, se reabre la app instalada— dejaba la
+// pantalla de espera girando hasta que la red contestara. En un trial, con un
+// móvil a media barra entre zona y zona, eso puede ser un minuto largo, y para
+// quien lo vive es «he refrescado y me ha devuelto al principio».
+//
+// Guardar la última clasificación arregla dos cosas a la vez: se ve algo al
+// instante, y —más importante— con datos en memoria el enlace de la ficha
+// (#pilot-N) se puede resolver YA, en vez de dejar la pantalla sin vista
+// abierta esperando a la red.
+//
+// Se guarda con la hora en la que llegó, así que el estado de la carrera la
+// trata por lo que es: datos de hace un rato, no datos en directo.
+// Cuánto se espera a que llegue el piloto de un enlace antes de rendirse y
+// enseñar la portada. Veinte segundos: lo que tarda una conexión mala, sin
+// dejar a nadie mirando la pantalla de espera para siempre.
+const ESPERA_ENLACE_MS = 20000;
+const _T0_ESPERA = Date.now();
+const CACHE_MAX_MS = 6 * 60 * 60 * 1000;
+let _ultimoGuardado = 0;
+// Mientras lo que se ve salió del teléfono y no de la mesa, no se promete
+// «en directo»: no lo es, por reciente que sea lo guardado.
+let _deCache = false;
+
+function _guardaCache(d){
+  try {
+    if (_isArchive) return;                    // un archivo no es la carrera de hoy
+    if (_deCache) return;                      // esto ya salió de aquí
+    if (!d || !(d.pilots || []).length) return;   // una carrera vacía no se guarda
+    if (Date.now() - _ultimoGuardado < 10000) return;   // como mucho cada 10 s
+    const txt = JSON.stringify({ t: Date.now(), d: d });
+    if (txt.length > 2000000) return;          // no llenar el almacén del teléfono
+    localStorage.setItem('tr_cache', txt);
+    _ultimoGuardado = Date.now();
+  } catch (e) {}
+}
+
+function _leeCache(){
+  try {
+    const v = JSON.parse(localStorage.getItem('tr_cache') || 'null');
+    if (!v || !v.d || !v.t) return null;
+    if (Date.now() - v.t > CACHE_MAX_MS) return null;
+    // publishedAt = cuándo se recibió. Sin esto, el estado de la carrera daría
+    // por viva una clasificación de hace horas.
+    if (!v.d.publishedAt) v.d.publishedAt = new Date(v.t).toISOString();
+    return v.d;
+  } catch (e) { return null; }
+}
+
 // Aplica un objeto de datos (venga de Firebase o de GitHub) a la UI
-function _applyData(d){
+function _applyData(d, deCache){
   if(!d||!d.pilots) return;
+  _deCache = !!deCache;
   d=_normalizaPilotos(d);
   CAT_ORDER = d.pilots.some(p => p && p.cat && /^TR[ABC]$/.test(normCat(p.cat))) ? CAT_ORDER_KIDS : CAT_ORDER_ADULTS;
   _data=d;
@@ -967,14 +1036,26 @@ function _applyData(d){
       if(_selPilot){ renderPilot(); navigate('pilot',false,'enlace directo a la ficha'); }
     }
   }
+  _guardaCache(d);
   if(_data&&document.getElementById('vWait').style.display!=='none'){
+    const _h = location.hash || '';
+    const _pedia = _h.indexOf('#pilot-') === 0 || _h.indexOf('#cat-') === 0;
+    const _abiertaYa = !!document.querySelector('.view.active');
+    // Si el hash pide una ficha o una categoría que todavía no está en los
+    // datos, NO se cae a la portada: se espera un poco más. Caerse aquí es el
+    // «he refrescado y me ha devuelto al principio», y pasaba cada vez que los
+    // primeros datos en llegar eran de otra carrera.
+    if (!_abiertaYa && _pedia && (Date.now() - _T0_ESPERA) < ESPERA_ENLACE_MS) {
+      _traza('sigo esperando', 'el enlace ' + _h + ' aún no está en los datos');
+      return;
+    }
     document.getElementById('vWait').style.display='none';
     // Solo se cae a la portada si de verdad no se ha abierto ninguna vista:
     // si el hash traia una categoria o una ficha, ya esta puesta arriba y
     // pisarla con la portada es justo lo que rompia los enlaces compartidos.
-    if(!document.querySelector('.view.active')){
+    if(!_abiertaYa){
       renderHome(); history.replaceState({view:'home'},'','#home');
-      navigate('home',false,'se cierra la espera');
+      navigate('home',false,_pedia ? 'el enlace no aparece en los datos' : 'se cierra la espera');
     }
   }
 }
@@ -1831,6 +1912,26 @@ async function _fetchFromFirebase() {
 }
 
 // ── FETCH ─────────────────────────────────────────────────────
+// El respaldo de GitHub (`data.json`) sólo se reescribe cuando alguien pulsa
+// Publicar. Puede llevar semanas ahí, y puede ser de OTRA carrera. Hasta ahora
+// se aplicaba sin más en cuanto el canal en vivo todavía no había dado señales
+// —que es exactamente lo que pasa los primeros segundos de cada arranque—, así
+// que al recargar la página el espectador veía primero una carrera que no era
+// la suya. Y si su dorsal no estaba en ella, el enlace de la ficha no se podía
+// resolver y acababa en la portada: el «he refrescado y me ha devuelto al
+// principio».
+function _aceptaRespaldo(d){
+  if (!d || !d.pilots) return false;
+  const cuantos = Array.isArray(d.pilots) ? d.pilots.length : Object.keys(d.pilots).length;
+  if (!cuantos) return false;                       // sin pilotos no es nada
+  if (!_data) return true;
+  const tengo = (_data.pilots || []).length;
+  const tNuevo = Date.parse(d.publishedAt || '') || 0;
+  const tViejo = Date.parse(_data.publishedAt || '') || 0;
+  if (tengo && tViejo && tNuevo && tNuevo < tViejo) return false;   // más viejo
+  return true;
+}
+
 async function fetchData(){
   try{
     let d;
@@ -1846,6 +1947,7 @@ async function fetchData(){
     const res = await fetch(DATA_URL+'?t='+Date.now());
     if(!res.ok) return;
     d = await res.json();
+    if (!_aceptaRespaldo(d)) return;
     _applyData(d);
   }catch(e){}
 }
@@ -1934,6 +2036,11 @@ if (_isArchive) {
 } else if (showIntroIfNeeded()) {
   // Establecer estado inicial para que back vuelva aquí
   history.replaceState({view:'intro'}, '', '#intro');
+  // Lo guardado se aplica DESPUÉS del replaceState: con el hash todavía vacío,
+  // _applyData se iría a la portada y echaría al espectador de la pantalla de
+  // entrada. Con '#intro' puesto, sólo repinta los rótulos de la entrada.
+  const _cacheIntro = _leeCache();
+  if (_cacheIntro) _applyData(_cacheIntro, true);
   // Polling pausado mientras se ve la pantalla intro
   setInterval(() => {
     if (!document.getElementById('vIntro').classList.contains('active')) fetchData();
@@ -1952,6 +2059,12 @@ if (_isArchive) {
   } else {
     history.replaceState({view:'home'},'','#home');
   }
+  // Lo último que se recibió, pintado YA. Sin esto, una recarga sin cobertura
+  // —o con media barra— deja la pantalla de espera girando y, cuando por fin
+  // llega algo, el espectador ya ha perdido de vista dónde estaba. Con datos
+  // en memoria, el enlace de la ficha (#pilot-N) se resuelve al instante.
+  const _cacheIni = _leeCache();
+  if (_cacheIni) _applyData(_cacheIni, true);
   fetchData();
   setInterval(fetchData, POLL_MS);
 }
