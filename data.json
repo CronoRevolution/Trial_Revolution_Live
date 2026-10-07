@@ -3,7 +3,7 @@
   "organizer": "CD Moto Nava",
   "raceDate": "2026-10-04",
   "championship": "Campeonato de Trial de Castilla y León 2026",
-  "publishedAt": "2026-10-05T10:29:35.231Z",
+  "publishedAt": "2026-10-07T09:34:05.067Z",
   "raceStarted": false,
   "raceFinished": true,
   "cfg": {
@@ -1597,6 +1597,69 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 63,
+      "name": "GARCIA RUIZ, SAUL",
+      "cat": "TR4",
+      "club": "CD Pobladura R",
+      "brand": "SIN MARCA",
+      "schedStart": "10:09",
+      "startZone": null,
+      "rank": 8,
+      "scores": [
+        [
+          3,
+          5,
+          0,
+          0,
+          1,
+          1,
+          3
+        ],
+        [
+          1,
+          3,
+          0,
+          0,
+          1,
+          3,
+          1
+        ],
+        [
+          2,
+          3,
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "lap1Points": 13,
+      "lap2Points": 9,
+      "lap3Points": 6,
+      "lap1Time": "01:16:21",
+      "lap2Time": "01:19:41",
+      "lap3Time": "01:12:00",
+      "arrV1": "11:25:21",
+      "arrV2": "12:44:41",
+      "arrCHF": "13:57:02",
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 28,
+      "lapsCompleted": 3,
+      "totalTime": "03:48:02",
+      "n0s": 8,
+      "n1s": 6,
+      "n2s": 1,
+      "n3s": 5,
+      "n5s": 1,
+      "finishTime": 50222000,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 77,
       "name": "CANEDO ENRIQUEZ, ANDREA",
       "cat": "TR4",
@@ -1604,7 +1667,7 @@
       "brand": "SIN MARCA",
       "schedStart": "10:05",
       "startZone": null,
-      "rank": 8,
+      "rank": 9,
       "scores": [
         [
           1,
@@ -1667,7 +1730,7 @@
       "brand": "GASGAS",
       "schedStart": "10:04",
       "startZone": null,
-      "rank": 9,
+      "rank": 10,
       "scores": [
         [
           3,
@@ -1730,7 +1793,7 @@
       "brand": "BETA",
       "schedStart": "10:08",
       "startZone": null,
-      "rank": 10,
+      "rank": 11,
       "scores": [
         [
           5,
@@ -1781,69 +1844,6 @@
       "n3s": 11,
       "n5s": 4,
       "finishTime": 49450000,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 63,
-      "name": "GARCIA RUIZ, SAUL",
-      "cat": "TR4",
-      "club": "CD Pobladura R",
-      "brand": "SIN MARCA",
-      "schedStart": "10:09",
-      "startZone": null,
-      "rank": 11,
-      "scores": [
-        [
-          3,
-          5,
-          0,
-          0,
-          1,
-          1,
-          3
-        ],
-        [
-          1,
-          3,
-          0,
-          0,
-          1,
-          3,
-          null
-        ],
-        [
-          2,
-          3,
-          0,
-          0,
-          1,
-          0,
-          0
-        ]
-      ],
-      "lap1Points": 13,
-      "lap2Points": 8,
-      "lap3Points": 6,
-      "lap1Time": "01:16:21",
-      "lap2Time": "01:19:41",
-      "lap3Time": "01:12:00",
-      "arrV1": "11:25:21",
-      "arrV2": "12:44:41",
-      "arrCHF": "13:57:02",
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 27,
-      "lapsCompleted": 3,
-      "totalTime": "03:48:02",
-      "n0s": 8,
-      "n1s": 5,
-      "n2s": 1,
-      "n3s": 5,
-      "n5s": 1,
-      "finishTime": 50222000,
       "dnf": false,
       "dsq": false,
       "dsqReason": ""
