@@ -16,11 +16,20 @@
 //     refresca por detrás.
 //   · data.json, Firebase y gstatic → NUNCA de la caché. Son datos, y un dato
 //     viejo servido como nuevo es peor que no tener dato.
-const CACHE = 'tr-armazon-3';
+const CACHE = 'tr-armazon-4';
+// El SDK de Firebase se guarda también. La web pública lo importa en caliente
+// (no al arrancar), así que sin él degrada en vez de morir — pero sin él no
+// hay canal en vivo, y con lo guardado en el teléfono más el SDK la app
+// arranca entera sin cobertura. Es código, no datos, y está clavado en 10.12.0.
+const SDK = [
+  'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js',
+  'https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js',
+  'https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js'
+];
 const ARMAZON = [
   './', './index.html', './manifest.json',
   './icon-180.png', './icon-192.png', './icon-512.png'
-];
+].concat(SDK);
 const ESPERA_RED_MS = 3500;
 
 self.addEventListener('install', e => {
@@ -52,7 +61,9 @@ self.addEventListener('fetch', e => {
   if (req.method !== 'GET') return;                      // a la red, sin tocar
   let url;
   try { url = new URL(req.url); } catch (err) { return; }
-  if (url.origin !== self.location.origin) return;       // Firebase, gstatic…
+  // De fuera sólo se guarda el SDK: los datos de Firebase van siempre a la red.
+  if (url.origin !== self.location.origin &&
+      url.pathname.indexOf('/firebasejs/') === -1) return;
   if (url.pathname.indexOf('data.json') !== -1) return;  // datos, no armazón
 
   const esNavegacion = req.mode === 'navigate' ||
