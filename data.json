@@ -3,7 +3,7 @@
   "organizer": "FMCL",
   "raceDate": "2026-11-15",
   "championship": "Campeonato de Trial de Castilla y León 2026",
-  "publishedAt": "2026-11-15T12:25:31.833Z",
+  "publishedAt": "2026-11-15T12:28:31.755Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -182,7 +182,7 @@
           null,
           0,
           5,
-          null
+          0
         ]
       ],
       "lap1Points": 23,
@@ -200,7 +200,7 @@
       "totalPoints": 46,
       "lapsCompleted": 3,
       "totalTime": "",
-      "n0s": 5,
+      "n0s": 6,
       "n1s": 5,
       "n2s": 0,
       "n3s": 2,
@@ -818,12 +818,12 @@
           0,
           2,
           0,
-          null
+          1
         ]
       ],
       "lap1Points": 0,
       "lap2Points": 3,
-      "lap3Points": 2,
+      "lap3Points": 3,
       "lap1Time": "01:35:08",
       "lap2Time": "00:50:13",
       "lap3Time": null,
@@ -833,11 +833,11 @@
       "lap1Penalty": 0,
       "finishPenalty": 0,
       "extraPenalties": [],
-      "totalPoints": 5,
+      "totalPoints": 6,
       "lapsCompleted": 3,
       "totalTime": "",
       "n0s": 17,
-      "n1s": 1,
+      "n1s": 2,
       "n2s": 2,
       "n3s": 0,
       "n5s": 0,
@@ -879,7 +879,7 @@
           0,
           0,
           1,
-          null,
+          0,
           null,
           null
         ]
@@ -899,7 +899,7 @@
       "totalPoints": 7,
       "lapsCompleted": 3,
       "totalTime": "",
-      "n0s": 11,
+      "n0s": 12,
       "n1s": 7,
       "n2s": 0,
       "n3s": 0,
@@ -1448,7 +1448,7 @@
           0,
           3,
           0,
-          null
+          0
         ]
       ],
       "lap1Points": 3,
@@ -1466,7 +1466,7 @@
       "totalPoints": 7,
       "lapsCompleted": 3,
       "totalTime": "",
-      "n0s": 15,
+      "n0s": 16,
       "n1s": 4,
       "n2s": 0,
       "n3s": 1,
