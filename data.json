@@ -3,7 +3,7 @@
   "organizer": "FMCL",
   "raceDate": "2026-11-15",
   "championship": "Campeonato de Trial de Castilla y León 2026",
-  "publishedAt": "2026-11-15T12:22:31.606Z",
+  "publishedAt": "2026-11-15T12:25:31.833Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -752,7 +752,7 @@
           0,
           0,
           0,
-          null,
+          0,
           0,
           0,
           0
@@ -773,7 +773,7 @@
       "totalPoints": 1,
       "lapsCompleted": 3,
       "totalTime": "",
-      "n0s": 19,
+      "n0s": 20,
       "n1s": 1,
       "n2s": 0,
       "n3s": 0,
