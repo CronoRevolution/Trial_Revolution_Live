@@ -3,7 +3,7 @@
   "organizer": "FMCL",
   "raceDate": "2026-11-15",
   "championship": "Campeonato de Trial de Castilla y León 2026",
-  "publishedAt": "2026-11-15T08:58:31.506Z",
+  "publishedAt": "2026-11-15T09:01:31.558Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -1471,69 +1471,6 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 3,
-      "name": "GONZALEZ GARCIA, CRISTIAN",
-      "cat": "TR5",
-      "club": "CD Pobladura R",
-      "brand": "GASGAS",
-      "schedStart": "10:00",
-      "startZone": null,
-      "rank": 1,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
       "dorsal": 5,
       "name": "PEREZ SANCHEZ, MARIN",
       "cat": "TR5",
@@ -1541,7 +1478,7 @@
       "brand": "BETA",
       "schedStart": "10:01",
       "startZone": null,
-      "rank": 2,
+      "rank": 1,
       "scores": [
         [
           null,
@@ -1604,7 +1541,7 @@
       "brand": "SIN MARCA",
       "schedStart": "10:01",
       "startZone": null,
-      "rank": 3,
+      "rank": 2,
       "scores": [
         [
           null,
@@ -1667,7 +1604,7 @@
       "brand": "SIN MARCA",
       "schedStart": "10:02",
       "startZone": null,
-      "rank": 4,
+      "rank": 3,
       "scores": [
         [
           null,
@@ -1730,7 +1667,7 @@
       "brand": "",
       "schedStart": "10:14",
       "startZone": null,
-      "rank": 5,
+      "rank": 4,
       "scores": [
         [
           null,
