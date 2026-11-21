@@ -181,12 +181,48 @@ html:not([data-archive="1"]) .archive-bar{display:none}
 .stcat{font-size:11px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:6px;flex-shrink:0;}
 .sttime{font-size:17px;font-weight:900;font-family:monospace;color:var(--tx);
   min-width:58px;text-align:right;flex-shrink:0;}
-/* Zona de salida. Solo se pinta en las pruebas con salida escalonada. */
-.stzona{font-size:11px;font-weight:900;letter-spacing:.5px;padding:3px 8px;border-radius:6px;
-  flex-shrink:0;background:var(--ac);color:#111;}
+/* Zona de salida. Solo se pinta en las pruebas con salida escalonada.
+   Un color por zona: con todas del mismo ambar habia que leer el numero de
+   cada fila para ver donde cambiaba el grupo. Asi el cambio se ve de un
+   vistazo bajando con el dedo.
+   Los colores son fijos, no del tema: la pastilla lleva su propio fondo y el
+   texto es #111 en los dos temas. Y son SOLIDAS, mientras que la pastilla de
+   categoria de al lado va perfilada: aunque algun tono se parezca, las dos
+   columnas no se confunden. */
+.stzona{font-size:11px;font-weight:900;letter-spacing:.5px;padding:3px 6px;border-radius:6px;
+  flex-shrink:0;background:var(--ac);color:#111;min-width:42px;text-align:center;}
+/* OJO con el nombre: .z1 .. .z5 YA EXISTEN en este fichero, son los colores
+   de las puntuaciones (0,1,2,3,5) de la ficha del piloto. Llamar 'z1' a la
+   zona de salida pisaba el color del texto —.z1 va despues en el fichero y
+   gana— y las pastillas salian con numeros azules, marrones o rojos en vez
+   de negros. Lo caza el banco midiendo el color pintado. */
+.stzona.sz1{background:#f59e0b;}
+.stzona.sz2{background:#38bdf8;}
+.stzona.sz3{background:#a3e635;}
+.stzona.sz4{background:#f472b6;}
+.stzona.sz5{background:#c084fc;}
+.stzona.sz6{background:#fb7185;}
+.stzona.sz7{background:#2dd4bf;}
+.stzona.sz8{background:#fcd34d;}
+.stzona.sz9{background:#cbd5e1;}
+.stcat{min-width:46px;text-align:center;}
 .przona{font-size:11px;font-weight:900;letter-spacing:.5px;padding:3px 8px;border-radius:6px;
   background:var(--ac);color:#111;display:inline-block;}
-@media (max-width:400px){ .stzona{padding:3px 6px;font-size:10px;} }
+/* Encabezado de la tabla de salidas. Sin el, la columna de la zona era una
+   pastilla de color sin explicacion: el aviso que lo cuenta esta arriba del
+   todo y en cuanto se baja un poco desaparece de la pantalla. */
+.sthead{display:flex;align-items:flex-end;gap:10px;padding:2px 12px 6px;
+  font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--mu);}
+.sthead .stdor,.sthead .sttime{font-size:9px;font-weight:800;font-family:inherit;color:var(--mu);}
+.sthead .sthz{min-width:42px;text-align:center;flex-shrink:0;color:var(--ac);}
+.sthead .sthc{min-width:46px;text-align:center;flex-shrink:0;}
+@media (max-width:400px){
+  .stzona{padding:3px 4px;font-size:10px;min-width:38px;}
+  .stcat{min-width:42px;}
+  .sthead{font-size:8px;letter-spacing:.5px;}
+  .sthead .sthz{min-width:38px;}
+  .sthead .sthc{min-width:42px;}
+}
 /* ── Mis pilotos ──────────────────────────────────────────────────────
    El publico de esta web no es publico general: es la familia de un piloto.
    Marcarlo como favorito ahorra tener que acordarse de su categoria y navegar
@@ -530,7 +566,7 @@ const POLL_MS  = 30000;
 // corregido o uno viejo que su navegador tenia en memoria desde la prueba
 // anterior. Se ve en la pantalla de entrada y en el pie de la portada: basta
 // preguntarle a quien reporta un fallo "que numero pone abajo".
-const APP_VER = '2026.11.21.2';
+const APP_VER = '2026.11.21.3';
 // El hash tal y como llego: el arranque lo reescribe, y #diag se perderia.
 const _HASH0 = location.hash || '';
 
@@ -1681,14 +1717,23 @@ function renderHome(){
           `<div class="stdor">${p.dorsal}</div>`+
           `<div class="stinfo"><div class="stname">${nombreBonito(p.name)}</div>`+
             `<div class="stsub">${p.club||''}${p.brand?' · '+p.brand:''}</div></div>`+
-          (escalonada?`<div class="stzona" title="Zona por la que empieza">Z${zonaSalida(p)}</div>`:'')+
+          (escalonada?`<div class="stzona sz${Math.min(zonaSalida(p),9)}" title="Sale por la zona ${zonaSalida(p)}">Z${zonaSalida(p)}</div>`:'')+
           `<div class="stcat" style="background:${col}22;color:${col};border:1px solid ${col}55">${p.cat}</div>`+
           `<div class="sttime">${p.schedStart||'--:--'}</div>`+
         `</div>`;
     });
     // El aviso de salida escalonada va dentro del banner de estado, que ya
     // esta ahi: dos banners seguidos ocupan media pantalla de movil.
-    startTable.innerHTML = rows || '<div style="text-align:center;padding:30px;color:var(--mu)">Sin pilotos</div>';
+    const cab = rows
+      ? `<div class="sthead">`
+        + `<div class="stdor">N.º</div>`
+        + `<div class="stinfo">Piloto</div>`
+        + (escalonada ? `<div class="sthz" title="Zona por la que empieza cada piloto">Sale en</div>` : '')
+        + `<div class="sthc">Cat.</div>`
+        + `<div class="sttime">Hora</div>`
+        + `</div>`
+      : '';
+    startTable.innerHTML = cab + (rows || '<div style="text-align:center;padding:30px;color:var(--mu)">Sin pilotos</div>');
     return;
   }
 
