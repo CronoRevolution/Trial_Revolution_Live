@@ -159,6 +159,12 @@ html:not([data-archive="1"]) .archive-bar{display:none}
 .hstat .v{font-size:28px;font-weight:900;color:#f59e0b;}
 .hstat .l{font-size:9px;color:#94a3b8;text-transform:uppercase;letter-spacing:1.5px;}
 .upd{text-align:center;font-size:10px;color:var(--mu);padding:6px 0;letter-spacing:.5px;}
+.vistasel{display:flex;gap:7px;justify-content:center;padding:2px 12px 10px;}
+.vistasel button{flex:1;max-width:200px;padding:9px 8px;border-radius:10px;cursor:pointer;
+  font:inherit;font-size:12px;font-weight:700;letter-spacing:.2px;line-height:1.2;
+  background:var(--sf);color:var(--mu);border:1px solid var(--bd);
+  -webkit-tap-highlight-color:transparent;}
+.vistasel button.on{background:var(--ac);color:#111;border-color:var(--ac);}
 /* Tabla de salida (modo previa) */
 #startTable{padding:8px 12px 12px;display:flex;flex-direction:column;gap:5px;}
 .strow{background:var(--sf);border-radius:10px;box-shadow:0 1px 4px var(--sh);
@@ -443,6 +449,13 @@ footer{text-align:center;padding:20px 16px 30px;font-size:10px;color:var(--mu);
     </div>
   </div>
   <div class="upd" id="hUpd"></div>
+  <!-- Cambiar entre el horario de salida y la clasificacion con la carrera ya
+       empezada. Antes de empezar no se ensena: no hay dos vistas que elegir,
+       el horario sale solo. -->
+  <div class="vistasel" id="vistaSel" style="display:none">
+    <button type="button" id="btnVerClasif"  onclick="cambiaVistaPublica('clasif')">&#127937; Clasificaci&oacute;n</button>
+    <button type="button" id="btnVerSalidas" onclick="cambiaVistaPublica('salidas')">&#9201; Horario de salida</button>
+  </div>
   <div class="buscawrap" id="buscaWrap" style="display:none">
     <div class="buscabox">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -513,7 +526,7 @@ const POLL_MS  = 30000;
 // corregido o uno viejo que su navegador tenia en memoria desde la prueba
 // anterior. Se ve en la pantalla de entrada y en el pie de la portada: basta
 // preguntarle a quien reporta un fallo "que numero pone abajo".
-const APP_VER = '2026.11.14.1';
+const APP_VER = '2026.11.21.1';
 // El hash tal y como llego: el arranque lo reescribe, y #diag se perderia.
 const _HASH0 = location.hash || '';
 
@@ -633,6 +646,39 @@ function _haArrancado(d){
     p.lap1Time != null || p.lap2Time != null || p.finishTime != null || p.totalTime ||
     (Array.isArray(p.scores) && p.scores.some(f => Array.isArray(f) && f.some(v => v != null)))
   ));
+}
+
+// ── Que se ensena en la pantalla principal ───────────────────────────────
+// Por defecto manda la carrera: horario de salida antes de empezar,
+// clasificacion en cuanto alguien tiene una puntuacion. Pero con la carrera ya
+// rodando sigue habiendo motivos para mirar el horario —a que hora le toca a
+// uno, quien sale ahora—, asi que la pestana permite volver.
+//
+// Es una preferencia de ESTE telefono y de este rato: no se guarda en ningun
+// sitio. Al recargar vuelve al automatico, que es lo que la mayoria espera.
+let _vistaPublica = 'auto';          // 'auto' | 'clasif' | 'salidas'
+
+function _vistaHome(d) {
+  // Sin arrancar no hay eleccion posible: no existe clasificacion que ensenar.
+  if (!_haArrancado(d)) return 'salidas';
+  return _vistaPublica === 'salidas' ? 'salidas' : 'clasif';
+}
+
+function cambiaVistaPublica(v) {
+  _vistaPublica = (v === 'salidas') ? 'salidas' : 'clasif';
+  renderHome();
+}
+
+function _pintaSelectorVista(d) {
+  const sel = document.getElementById('vistaSel');
+  if (!sel) return;
+  if (!_haArrancado(d)) { sel.style.display = 'none'; return; }
+  sel.style.display = 'flex';
+  const modo = _vistaHome(d);
+  const c = document.getElementById('btnVerClasif');
+  const t = document.getElementById('btnVerSalidas');
+  if (c) c.className = (modo === 'clasif')  ? 'on' : '';
+  if (t) t.className = (modo === 'salidas') ? 'on' : '';
 }
 
 function _estadoCarrera(d) {
@@ -1599,8 +1645,18 @@ function renderHome(){
   // clasificacion. Tiene que ser previa de verdad: ni empezada ni terminada.
   // Antes: !d.raceStarted && !d.raceFinished. Con eso, PARAR el reloj hacía
   // desaparecer la clasificación y volvía la tabla de horarios de salida.
-  if (!_haArrancado(d)) {   // previa de verdad: nadie ha puntuado todavía
+  _pintaSelectorVista(d);
+
+  // Antes: if (!_haArrancado(d)). Ahora la vista puede forzarse a mano con la
+  // pestana, asi que la condicion pregunta por la vista y no por el estado.
+  if (_vistaHome(d) === 'salidas') {
     grid.style.display = 'none';
+    // Con la carrera ya rodando, «Mis pilotos» ensena posiciones en directo:
+    // encima de la tabla de salidas no pinta nada y confunde la vista.
+    if (_haArrancado(d)) {
+      const fav = document.getElementById('favBlock');
+      if (fav) fav.style.display = 'none';
+    }
     if (!startTable) {
       startTable = document.createElement('div');
       startTable.id = 'startTable';
