@@ -2,7 +2,11 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="theme-color" content="#f59e0b">
+<!-- OJO: aqui habia un segundo <meta name="theme-color" content="#f59e0b">.
+     Cuando hay dos sin media query manda el PRIMERO, asi que ese ambar tapaba
+     al de abajo (el que lleva id y actualiza applyTheme) y Android pintaba las
+     barras de arriba y de abajo de naranja con la app en oscuro. El bueno es
+     el de id="themeColor", unas lineas mas abajo. -->
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Trial Revolution">
@@ -526,7 +530,7 @@ const POLL_MS  = 30000;
 // corregido o uno viejo que su navegador tenia en memoria desde la prueba
 // anterior. Se ve en la pantalla de entrada y en el pie de la portada: basta
 // preguntarle a quien reporta un fallo "que numero pone abajo".
-const APP_VER = '2026.11.21.1';
+const APP_VER = '2026.11.21.2';
 // El hash tal y como llego: el arranque lo reescribe, y #diag se perderia.
 const _HASH0 = location.hash || '';
 
