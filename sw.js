@@ -16,7 +16,7 @@
 //     refresca por detrás.
 //   · data.json, Firebase y gstatic → NUNCA de la caché. Son datos, y un dato
 //     viejo servido como nuevo es peor que no tener dato.
-const CACHE = 'tr-armazon-4';
+const CACHE = 'tr-armazon-5';
 // El SDK de Firebase se guarda también. La web pública lo importa en caliente
 // (no al arrancar), así que sin él degrada en vez de morir — pero sin él no
 // hay canal en vivo, y con lo guardado en el teléfono más el SDK la app
@@ -99,7 +99,36 @@ self.addEventListener('fetch', e => {
     return;
   }
 
-  // Iconos, manifiesto: lo guardado primero, y se refresca por detrás.
+  // El manifiesto, a la RED primero.
+  //
+  // 21 nov: cambiar 'theme_color' no llegaba a los telefonos. Una PWA instalada
+  // en Android es un WebAPK, y Chrome solo se entera de que el manifiesto ha
+  // cambiado cuando lo vuelve a descargar — como mucho una vez al dia, y al
+  // abrir la app. Servirle una copia guardada de hace semanas es, como poco,
+  // meter un retraso mas encima de ese; y como el manifiesto son cuatro lineas,
+  // no se gana nada guardandolo primero.
+  //
+  // Se mantiene en el armazon para que exista sin cobertura, pero la copia solo
+  // se usa si la red falla.
+  //
+  // OJO: la URL del manifiesto NO se puede cambiar ni mover. Chrome vuelve a
+  // pedir exactamente la que tenia al instalar; si responde 404, esa app no se
+  // actualiza nunca mas. Nada de 'manifest.json?v=2'.
+  if (url.pathname.indexOf('manifest.json') !== -1) {
+    e.respondWith((async () => {
+      try {
+        const r = await fetch(req);
+        _guarda(req, r);
+        return r;
+      } catch (err) {
+        const guardado = await caches.match(req, { ignoreSearch: true });
+        return guardado || new Response('', { status: 503 });
+      }
+    })());
+    return;
+  }
+
+  // Iconos: lo guardado primero, y se refresca por detrás.
   e.respondWith((async () => {
     const guardado = await caches.match(req, { ignoreSearch: true });
     if (guardado) {
