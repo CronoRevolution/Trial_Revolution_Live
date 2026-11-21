@@ -3,7 +3,7 @@
   "organizer": "MC Candeleda Gredos",
   "raceDate": "2026-11-22",
   "championship": "Campeonato de Trial de Castilla y León 2026 · Campeonato de Trial de Extremadura 2026",
-  "publishedAt": "2026-11-21T16:48:13.906Z",
+  "publishedAt": "2026-11-21T17:36:45.334Z",
   "raceStarted": false,
   "raceFinished": false,
   "cfg": {
@@ -28,7 +28,7 @@
       "club": "CD Moto Bierzo",
       "brand": "SHERCO",
       "schedStart": "10:13",
-      "startZone": null,
+      "startZone": 7,
       "rank": 1,
       "scores": [
         [
@@ -91,7 +91,7 @@
       "club": "CD Moto Nava",
       "brand": "ELECTRIC-MOTION",
       "schedStart": "10:14",
-      "startZone": null,
+      "startZone": 7,
       "rank": 2,
       "scores": [
         [
@@ -154,7 +154,7 @@
       "club": "CD Pobladura R",
       "brand": "TRRS",
       "schedStart": "10:14",
-      "startZone": null,
+      "startZone": 7,
       "rank": 3,
       "scores": [
         [
@@ -217,7 +217,7 @@
       "club": "Trial Extremadura",
       "brand": "SIN MARCA",
       "schedStart": "10:15",
-      "startZone": null,
+      "startZone": 7,
       "rank": 4,
       "scores": [
         [
@@ -280,7 +280,7 @@
       "club": "MC Candeleda Gredos",
       "brand": "TRRS",
       "schedStart": "10:11",
-      "startZone": null,
+      "startZone": 7,
       "rank": 1,
       "scores": [
         [
@@ -343,7 +343,7 @@
       "club": "CD Moto Nava",
       "brand": "BETA",
       "schedStart": "10:12",
-      "startZone": null,
+      "startZone": 7,
       "rank": 2,
       "scores": [
         [
@@ -406,7 +406,7 @@
       "club": "CD Pobladura R",
       "brand": "GASGAS",
       "schedStart": "10:12",
-      "startZone": null,
+      "startZone": 7,
       "rank": 3,
       "scores": [
         [
@@ -469,7 +469,7 @@
       "club": "CD Pobladura R",
       "brand": "BETA TRUEBA",
       "schedStart": "10:13",
-      "startZone": null,
+      "startZone": 7,
       "rank": 4,
       "scores": [
         [
