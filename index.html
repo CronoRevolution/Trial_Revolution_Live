@@ -170,17 +170,25 @@ html:not([data-archive="1"]) .archive-bar{display:none}
   -webkit-tap-highlight-color:transparent;}
 .vistasel button.on{background:var(--ac);color:#111;border-color:var(--ac);}
 /* Tabla de salida (modo previa) */
-#startTable{padding:8px 12px 12px;display:flex;flex-direction:column;gap:5px;}
+#startTable{padding:8px 10px 12px;display:flex;flex-direction:column;gap:5px;}
+/* Los anchos de esta fila estan medidos, no elegidos a ojo. Pablo, 21 nov:
+   «el nombre ahora apenas se ve, igual podemos hacer mas pequena la columna de
+   la hora». Con los 31 pilotos de Candeleda en un movil de 390 px se cortaban
+   28 de 31 nombres. Recortando la hora, los huecos, los margenes y el dorsal
+   —y bajando el nombre de 14 a 13.5— se quedan en 6, que son los cuatro
+   nombres de 24 caracteres o mas, los que no caben de ninguna manera.
+   Si se vuelve a tocar algo de aqui, medir otra vez: el nombre es lo ultimo
+   que queda y cada pixel que se le quite a esta fila sale de el. */
 .strow{background:var(--sf);border-radius:10px;box-shadow:0 1px 4px var(--sh);
-  display:flex;align-items:center;gap:10px;padding:9px 12px;}
-.stdor{font-size:18px;font-weight:900;font-family:monospace;color:var(--ac);
-  min-width:34px;text-align:center;flex-shrink:0;}
+  display:flex;align-items:center;gap:8px;padding:9px 10px;}
+.stdor{font-size:16px;font-weight:900;font-family:monospace;color:var(--ac);
+  min-width:30px;text-align:center;flex-shrink:0;}
 .stinfo{flex:1;min-width:0;}
-.stname{font-size:14px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.stname{font-size:13.5px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .stsub{font-size:11px;color:var(--mu);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .stcat{font-size:11px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:6px;flex-shrink:0;}
-.sttime{font-size:17px;font-weight:900;font-family:monospace;color:var(--tx);
-  min-width:58px;text-align:right;flex-shrink:0;}
+.sttime{font-size:15px;font-weight:900;font-family:monospace;color:var(--tx);
+  min-width:46px;text-align:right;flex-shrink:0;}
 /* Zona de salida. Solo se pinta en las pruebas con salida escalonada.
    Un color por zona: con todas del mismo ambar habia que leer el numero de
    cada fila para ver donde cambiaba el grupo. Asi el cambio se ve de un
@@ -211,7 +219,7 @@ html:not([data-archive="1"]) .archive-bar{display:none}
 /* Encabezado de la tabla de salidas. Sin el, la columna de la zona era una
    pastilla de color sin explicacion: el aviso que lo cuenta esta arriba del
    todo y en cuanto se baja un poco desaparece de la pantalla. */
-.sthead{display:flex;align-items:flex-end;gap:10px;padding:2px 12px 6px;
+.sthead{display:flex;align-items:flex-end;gap:8px;padding:2px 10px 6px;
   font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--mu);}
 .sthead .stdor,.sthead .sttime{font-size:9px;font-weight:800;font-family:inherit;color:var(--mu);}
 .sthead .sthz{min-width:42px;text-align:center;flex-shrink:0;color:var(--ac);}
@@ -566,7 +574,7 @@ const POLL_MS  = 30000;
 // corregido o uno viejo que su navegador tenia en memoria desde la prueba
 // anterior. Se ve en la pantalla de entrada y en el pie de la portada: basta
 // preguntarle a quien reporta un fallo "que numero pone abajo".
-const APP_VER = '2026.11.21.3';
+const APP_VER = '2026.11.21.4';
 // El hash tal y como llego: el arranque lo reescribe, y #diag se perderia.
 const _HASH0 = location.hash || '';
 
