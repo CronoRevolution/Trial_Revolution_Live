@@ -3,7 +3,7 @@
   "organizer": "MC Candeleda Gredos",
   "raceDate": "2026-11-22",
   "championship": "Campeonato de Trial de Castilla y León 2026 · Campeonato de Trial de Extremadura 2026",
-  "publishedAt": "2026-11-22T10:19:11.187Z",
+  "publishedAt": "2026-11-22T10:22:11.194Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -910,6 +910,132 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 84,
+      "name": "RUBIALES SANCHEZ, PABLO",
+      "cat": "TR4",
+      "club": "",
+      "brand": "GASGAS",
+      "schedStart": "10:10",
+      "startZone": null,
+      "rank": 2,
+      "scores": [
+        [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 2,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "01:11:18",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "11:21:18",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 2,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 5,
+      "n1s": 2,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
+      "dorsal": 61,
+      "name": "ARCE SANCHEZ, JOSE MARIA",
+      "cat": "TR4",
+      "club": "CD Pobladura R",
+      "brand": "BETA TRUEBA",
+      "schedStart": "10:05",
+      "startZone": null,
+      "rank": 3,
+      "scores": [
+        [
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 3,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "01:14:56",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "11:19:56",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 3,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 4,
+      "n1s": 3,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 86,
       "name": "MUÑOZ MENENDEZ, ESTEBAN",
       "cat": "TR4",
@@ -917,7 +1043,7 @@
       "brand": "SIN MARCA",
       "schedStart": "10:01",
       "startZone": null,
-      "rank": 2,
+      "rank": 4,
       "scores": [
         [
           2,
@@ -980,7 +1106,7 @@
       "brand": "GASGAS",
       "schedStart": "10:03",
       "startZone": null,
-      "rank": 3,
+      "rank": 5,
       "scores": [
         [
           5,
@@ -1043,7 +1169,7 @@
       "brand": "TRRS",
       "schedStart": "10:03",
       "startZone": null,
-      "rank": 4,
+      "rank": 6,
       "scores": [
         [
           0,
@@ -1106,70 +1232,7 @@
       "brand": "BETA",
       "schedStart": "10:02",
       "startZone": null,
-      "rank": 5,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 61,
-      "name": "ARCE SANCHEZ, JOSE MARIA",
-      "cat": "TR4",
-      "club": "CD Pobladura R",
-      "brand": "BETA TRUEBA",
-      "schedStart": "10:05",
-      "startZone": null,
-      "rank": 6,
+      "rank": 7,
       "scores": [
         [
           null,
@@ -1232,7 +1295,7 @@
       "brand": "SIN MARCA",
       "schedStart": "10:05",
       "startZone": null,
-      "rank": 7,
+      "rank": 8,
       "scores": [
         [
           null,
@@ -1295,7 +1358,7 @@
       "brand": "SHERCO",
       "schedStart": "10:06",
       "startZone": null,
-      "rank": 8,
+      "rank": 9,
       "scores": [
         [
           null,
@@ -1358,7 +1421,7 @@
       "brand": "MECATECNO",
       "schedStart": "10:06",
       "startZone": null,
-      "rank": 9,
+      "rank": 10,
       "scores": [
         [
           null,
@@ -1421,7 +1484,7 @@
       "brand": "TRRS",
       "schedStart": "10:07",
       "startZone": null,
-      "rank": 10,
+      "rank": 11,
       "scores": [
         [
           null,
@@ -1483,69 +1546,6 @@
       "club": "CD Pobladura R",
       "brand": "SIN MARCA",
       "schedStart": "10:07",
-      "startZone": null,
-      "rank": 11,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 84,
-      "name": "RUBIALES SANCHEZ, PABLO",
-      "cat": "TR4",
-      "club": "",
-      "brand": "GASGAS",
-      "schedStart": "10:10",
       "startZone": null,
       "rank": 12,
       "scores": [
@@ -1988,7 +1988,7 @@
       "n3s": 0,
       "n5s": 0,
       "finishTime": null,
-      "dnf": false,
+      "dnf": true,
       "dsq": false,
       "dsqReason": ""
     }
