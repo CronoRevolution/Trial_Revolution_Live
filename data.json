@@ -3,7 +3,7 @@
   "organizer": "MC Candeleda Gredos",
   "raceDate": "2026-11-22",
   "championship": "Campeonato de Trial de Castilla y León 2026 · Campeonato de Trial de Extremadura 2026",
-  "publishedAt": "2026-11-22T10:46:11.195Z",
+  "publishedAt": "2026-11-22T10:49:11.229Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -847,69 +847,6 @@
       "dsqReason": ""
     },
     {
-      "dorsal": 85,
-      "name": "PEREZ SANCHEZ, MARIN",
-      "cat": "TR4",
-      "club": "CD Pobladura R",
-      "brand": "BETA",
-      "schedStart": "10:02",
-      "startZone": null,
-      "rank": 1,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": "01:44:10",
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": "11:46:10",
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
       "dorsal": 64,
       "name": "PLAZA FERNANDEZ, VICTOR",
       "cat": "TR4",
@@ -917,7 +854,7 @@
       "brand": "SHERCO",
       "schedStart": "10:04",
       "startZone": null,
-      "rank": 2,
+      "rank": 1,
       "scores": [
         [
           0,
@@ -980,7 +917,7 @@
       "brand": "GASGAS",
       "schedStart": "10:10",
       "startZone": null,
-      "rank": 3,
+      "rank": 2,
       "scores": [
         [
           1,
@@ -1043,7 +980,7 @@
       "brand": "SIN MARCA",
       "schedStart": "10:07",
       "startZone": null,
-      "rank": 4,
+      "rank": 3,
       "scores": [
         [
           0,
@@ -1106,7 +1043,7 @@
       "brand": "BETA TRUEBA",
       "schedStart": "10:05",
       "startZone": null,
-      "rank": 5,
+      "rank": 4,
       "scores": [
         [
           1,
@@ -1155,6 +1092,69 @@
       "n1s": 3,
       "n2s": 0,
       "n3s": 0,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
+      "dorsal": 85,
+      "name": "PEREZ SANCHEZ, MARIN",
+      "cat": "TR4",
+      "club": "CD Pobladura R",
+      "brand": "BETA",
+      "schedStart": "10:02",
+      "startZone": null,
+      "rank": 5,
+      "scores": [
+        [
+          3,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 4,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "01:44:10",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "11:46:10",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 4,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 5,
+      "n1s": 1,
+      "n2s": 0,
+      "n3s": 1,
       "n5s": 0,
       "finishTime": null,
       "dnf": false,
