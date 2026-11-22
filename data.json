@@ -3,7 +3,7 @@
   "organizer": "MC Candeleda Gredos",
   "raceDate": "2026-11-22",
   "championship": "Campeonato de Trial de Castilla y León 2026 · Campeonato de Trial de Extremadura 2026",
-  "publishedAt": "2026-11-22T10:25:11.201Z",
+  "publishedAt": "2026-11-22T10:28:11.300Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -1036,6 +1036,69 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 83,
+      "name": "PAREJO CORTES, ISABEL",
+      "cat": "TR4",
+      "club": "Motoclub Vía de la Plata",
+      "brand": "GASGAS",
+      "schedStart": "10:10",
+      "startZone": null,
+      "rank": 4,
+      "scores": [
+        [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          2
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 6,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "01:16:37",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "11:26:37",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 6,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 2,
+      "n1s": 4,
+      "n2s": 1,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 86,
       "name": "MUÑOZ MENENDEZ, ESTEBAN",
       "cat": "TR4",
@@ -1043,7 +1106,7 @@
       "brand": "SIN MARCA",
       "schedStart": "10:01",
       "startZone": null,
-      "rank": 4,
+      "rank": 5,
       "scores": [
         [
           2,
@@ -1106,7 +1169,7 @@
       "brand": "GASGAS",
       "schedStart": "10:03",
       "startZone": null,
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           5,
@@ -1169,7 +1232,7 @@
       "brand": "TRRS",
       "schedStart": "10:03",
       "startZone": null,
-      "rank": 6,
+      "rank": 7,
       "scores": [
         [
           0,
@@ -1232,7 +1295,7 @@
       "brand": "BETA",
       "schedStart": "10:02",
       "startZone": null,
-      "rank": 7,
+      "rank": 8,
       "scores": [
         [
           null,
@@ -1295,7 +1358,7 @@
       "brand": "SIN MARCA",
       "schedStart": "10:05",
       "startZone": null,
-      "rank": 8,
+      "rank": 9,
       "scores": [
         [
           null,
@@ -1358,7 +1421,7 @@
       "brand": "SHERCO",
       "schedStart": "10:06",
       "startZone": null,
-      "rank": 9,
+      "rank": 10,
       "scores": [
         [
           null,
@@ -1421,7 +1484,7 @@
       "brand": "MECATECNO",
       "schedStart": "10:06",
       "startZone": null,
-      "rank": 10,
+      "rank": 11,
       "scores": [
         [
           null,
@@ -1484,7 +1547,7 @@
       "brand": "TRRS",
       "schedStart": "10:07",
       "startZone": null,
-      "rank": 11,
+      "rank": 12,
       "scores": [
         [
           null,
@@ -1546,69 +1609,6 @@
       "club": "CD Pobladura R",
       "brand": "SIN MARCA",
       "schedStart": "10:07",
-      "startZone": null,
-      "rank": 12,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 83,
-      "name": "PAREJO CORTES, ISABEL",
-      "cat": "TR4",
-      "club": "Motoclub Vía de la Plata",
-      "brand": "GASGAS",
-      "schedStart": "10:10",
       "startZone": null,
       "rank": 13,
       "scores": [
@@ -1745,13 +1745,13 @@
       "rank": 1,
       "scores": [
         [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
+          3,
+          5,
+          3,
+          3,
+          0,
+          1,
+          5
         ],
         [
           null,
@@ -1772,26 +1772,26 @@
           null
         ]
       ],
-      "lap1Points": null,
+      "lap1Points": 20,
       "lap2Points": null,
       "lap3Points": null,
-      "lap1Time": null,
+      "lap1Time": "01:23:47",
       "lap2Time": null,
       "lap3Time": null,
-      "arrV1": null,
+      "arrV1": "11:24:47",
       "arrV2": null,
       "arrCHF": null,
       "lap1Penalty": 0,
       "finishPenalty": 0,
       "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
+      "totalPoints": 20,
+      "lapsCompleted": 1,
       "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
+      "n0s": 1,
+      "n1s": 1,
       "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
+      "n3s": 3,
+      "n5s": 2,
       "finishTime": null,
       "dnf": false,
       "dsq": false,
@@ -1871,13 +1871,13 @@
       "rank": 1,
       "scores": [
         [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
+          2,
+          1,
+          2,
+          1,
+          0,
+          1,
+          1
         ],
         [
           null,
@@ -1898,24 +1898,24 @@
           null
         ]
       ],
-      "lap1Points": null,
+      "lap1Points": 8,
       "lap2Points": null,
       "lap3Points": null,
-      "lap1Time": null,
+      "lap1Time": "01:26:42",
       "lap2Time": null,
       "lap3Time": null,
-      "arrV1": null,
+      "arrV1": "11:26:42",
       "arrV2": null,
       "arrCHF": null,
       "lap1Penalty": 0,
       "finishPenalty": 0,
       "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
+      "totalPoints": 8,
+      "lapsCompleted": 1,
       "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
+      "n0s": 1,
+      "n1s": 4,
+      "n2s": 2,
       "n3s": 0,
       "n5s": 0,
       "finishTime": null,
