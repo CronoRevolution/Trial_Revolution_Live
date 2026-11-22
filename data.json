@@ -3,7 +3,7 @@
   "organizer": "MC Candeleda Gredos",
   "raceDate": "2026-11-22",
   "championship": "Campeonato de Trial de Castilla y León 2026 · Campeonato de Trial de Extremadura 2026",
-  "publishedAt": "2026-11-22T12:49:42.057Z",
+  "publishedAt": "2026-11-22T12:52:42.026Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -540,6 +540,70 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 114,
+      "name": "GOMEZ SANCHEZ, MAIKEL",
+      "cat": "TR3",
+      "club": "CD Moto Bierzo",
+      "brand": "TRRS",
+      "schedStart": "10:08",
+      "startZone": null,
+      "rank": 1,
+      "scores": [
+        [
+          2,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          0,
+          3,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          1,
+          2
+        ]
+      ],
+      "lap1Points": 3,
+      "lap2Points": 5,
+      "lap3Points": 5,
+      "lap1Time": "01:36:54",
+      "lap2Time": "01:07:15",
+      "lap3Time": "00:57:17",
+      "arrV1": "11:44:54",
+      "arrV2": "12:51:15",
+      "arrCHF": "13:49:26",
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 13,
+      "lapsCompleted": 3,
+      "totalTime": "03:41:26",
+      "n0s": 13,
+      "n1s": 4,
+      "n2s": 3,
+      "n3s": 1,
+      "n5s": 0,
+      "finishTime": 49766000,
+      "dnf": false,
+      "dns": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 115,
       "name": "MACIAS PARAMO, SAMUEL",
       "cat": "TR3",
@@ -547,7 +611,7 @@
       "brand": "BETA",
       "schedStart": "10:09",
       "startZone": null,
-      "rank": 1,
+      "rank": 2,
       "scores": [
         [
           1,
@@ -611,7 +675,7 @@
       "brand": "ELECTRIC-MOTION",
       "schedStart": "10:08",
       "startZone": null,
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           2,
@@ -675,7 +739,7 @@
       "brand": "GASGAS",
       "schedStart": "10:09",
       "startZone": null,
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           1,
@@ -726,70 +790,6 @@
       "n3s": 1,
       "n5s": 0,
       "finishTime": null,
-      "dnf": false,
-      "dns": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 114,
-      "name": "GOMEZ SANCHEZ, MAIKEL",
-      "cat": "TR3",
-      "club": "CD Moto Bierzo",
-      "brand": "TRRS",
-      "schedStart": "10:08",
-      "startZone": null,
-      "rank": 4,
-      "scores": [
-        [
-          2,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          1,
-          1,
-          0,
-          0,
-          0,
-          3,
-          0
-        ],
-        [
-          2,
-          0,
-          0,
-          0,
-          0,
-          1,
-          null
-        ]
-      ],
-      "lap1Points": 3,
-      "lap2Points": 5,
-      "lap3Points": 3,
-      "lap1Time": "01:36:54",
-      "lap2Time": "01:07:15",
-      "lap3Time": "00:57:17",
-      "arrV1": "11:44:54",
-      "arrV2": "12:51:15",
-      "arrCHF": "13:49:26",
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 11,
-      "lapsCompleted": 3,
-      "totalTime": "03:41:26",
-      "n0s": 13,
-      "n1s": 4,
-      "n2s": 2,
-      "n3s": 1,
-      "n5s": 0,
-      "finishTime": 49766000,
       "dnf": false,
       "dns": false,
       "dsq": false,
