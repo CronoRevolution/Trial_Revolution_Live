@@ -3,7 +3,7 @@
   "organizer": "MC Candeleda Gredos",
   "raceDate": "2026-11-22",
   "championship": "Campeonato de Trial de Castilla y León 2026 · Campeonato de Trial de Extremadura 2026",
-  "publishedAt": "2026-11-22T11:37:12.176Z",
+  "publishedAt": "2026-11-22T11:37:41.991Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -81,6 +81,7 @@
       "n5s": 1,
       "finishTime": null,
       "dnf": false,
+      "dns": false,
       "dsq": false,
       "dsqReason": ""
     },
@@ -144,6 +145,7 @@
       "n5s": 0,
       "finishTime": null,
       "dnf": false,
+      "dns": false,
       "dsq": false,
       "dsqReason": ""
     },
@@ -207,6 +209,7 @@
       "n5s": 1,
       "finishTime": null,
       "dnf": false,
+      "dns": false,
       "dsq": false,
       "dsqReason": ""
     },
@@ -270,6 +273,7 @@
       "n5s": 4,
       "finishTime": null,
       "dnf": false,
+      "dns": false,
       "dsq": false,
       "dsqReason": ""
     },
@@ -339,6 +343,7 @@
       "n5s": 0,
       "finishTime": null,
       "dnf": false,
+      "dns": false,
       "dsq": false,
       "dsqReason": ""
     },
@@ -402,6 +407,7 @@
       "n5s": 1,
       "finishTime": null,
       "dnf": false,
+      "dns": false,
       "dsq": false,
       "dsqReason": ""
     },
@@ -465,6 +471,7 @@
       "n5s": 2,
       "finishTime": null,
       "dnf": false,
+      "dns": false,
       "dsq": false,
       "dsqReason": ""
     },
@@ -528,6 +535,7 @@
       "n5s": 1,
       "finishTime": null,
       "dnf": false,
+      "dns": false,
       "dsq": false,
       "dsqReason": ""
     },
@@ -591,6 +599,7 @@
       "n5s": 0,
       "finishTime": null,
       "dnf": false,
+      "dns": false,
       "dsq": false,
       "dsqReason": ""
     },
@@ -654,6 +663,7 @@
       "n5s": 0,
       "finishTime": null,
       "dnf": false,
+      "dns": false,
       "dsq": false,
       "dsqReason": ""
     },
@@ -717,6 +727,7 @@
       "n5s": 0,
       "finishTime": null,
       "dnf": false,
+      "dns": false,
       "dsq": false,
       "dsqReason": ""
     },
@@ -780,6 +791,7 @@
       "n5s": 0,
       "finishTime": null,
       "dnf": false,
+      "dns": false,
       "dsq": false,
       "dsqReason": ""
     },
@@ -843,6 +855,7 @@
       "n5s": 1,
       "finishTime": null,
       "dnf": false,
+      "dns": false,
       "dsq": false,
       "dsqReason": ""
     },
@@ -906,6 +919,7 @@
       "n5s": 0,
       "finishTime": null,
       "dnf": false,
+      "dns": false,
       "dsq": false,
       "dsqReason": ""
     },
@@ -969,6 +983,7 @@
       "n5s": 0,
       "finishTime": null,
       "dnf": false,
+      "dns": false,
       "dsq": false,
       "dsqReason": ""
     },
@@ -1032,6 +1047,7 @@
       "n5s": 0,
       "finishTime": null,
       "dnf": false,
+      "dns": false,
       "dsq": false,
       "dsqReason": ""
     },
@@ -1095,6 +1111,7 @@
       "n5s": 0,
       "finishTime": null,
       "dnf": false,
+      "dns": false,
       "dsq": false,
       "dsqReason": ""
     },
@@ -1158,6 +1175,7 @@
       "n5s": 1,
       "finishTime": null,
       "dnf": false,
+      "dns": false,
       "dsq": false,
       "dsqReason": ""
     },
@@ -1221,6 +1239,7 @@
       "n5s": 0,
       "finishTime": null,
       "dnf": false,
+      "dns": false,
       "dsq": false,
       "dsqReason": ""
     },
@@ -1284,6 +1303,7 @@
       "n5s": 2,
       "finishTime": null,
       "dnf": false,
+      "dns": false,
       "dsq": false,
       "dsqReason": ""
     },
@@ -1347,6 +1367,7 @@
       "n5s": 0,
       "finishTime": null,
       "dnf": false,
+      "dns": false,
       "dsq": false,
       "dsqReason": ""
     },
@@ -1410,6 +1431,7 @@
       "n5s": 0,
       "finishTime": null,
       "dnf": false,
+      "dns": false,
       "dsq": false,
       "dsqReason": ""
     },
@@ -1473,6 +1495,7 @@
       "n5s": 0,
       "finishTime": null,
       "dnf": false,
+      "dns": false,
       "dsq": false,
       "dsqReason": ""
     },
@@ -1536,6 +1559,7 @@
       "n5s": 2,
       "finishTime": null,
       "dnf": false,
+      "dns": false,
       "dsq": false,
       "dsqReason": ""
     },
@@ -1599,6 +1623,7 @@
       "n5s": 2,
       "finishTime": null,
       "dnf": false,
+      "dns": false,
       "dsq": false,
       "dsqReason": ""
     },
@@ -1662,6 +1687,7 @@
       "n5s": 1,
       "finishTime": null,
       "dnf": false,
+      "dns": false,
       "dsq": false,
       "dsqReason": ""
     },
@@ -1731,6 +1757,7 @@
       "n5s": 0,
       "finishTime": null,
       "dnf": false,
+      "dns": false,
       "dsq": false,
       "dsqReason": ""
     },
@@ -1794,6 +1821,7 @@
       "n5s": 2,
       "finishTime": null,
       "dnf": false,
+      "dns": false,
       "dsq": false,
       "dsqReason": ""
     },
@@ -1857,6 +1885,7 @@
       "n5s": 3,
       "finishTime": null,
       "dnf": false,
+      "dns": false,
       "dsq": false,
       "dsqReason": ""
     },
@@ -1920,6 +1949,7 @@
       "n5s": 0,
       "finishTime": null,
       "dnf": false,
+      "dns": false,
       "dsq": false,
       "dsqReason": ""
     },
@@ -1989,6 +2019,7 @@
       "n5s": 0,
       "finishTime": null,
       "dnf": true,
+      "dns": false,
       "dsq": false,
       "dsqReason": ""
     }
