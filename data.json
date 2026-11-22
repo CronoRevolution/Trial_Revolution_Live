@@ -3,7 +3,7 @@
   "organizer": "MC Candeleda Gredos",
   "raceDate": "2026-11-22",
   "championship": "Campeonato de Trial de Castilla y León 2026 · Campeonato de Trial de Extremadura 2026",
-  "publishedAt": "2026-11-22T11:01:11.221Z",
+  "publishedAt": "2026-11-22T11:04:11.214Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -22,6 +22,69 @@
   ],
   "pilots": [
     {
+      "dorsal": 214,
+      "name": "PANIAGUA SANCHEZ, LUCAS",
+      "cat": "TR1",
+      "club": "Trial Extremadura",
+      "brand": "SIN MARCA",
+      "schedStart": "10:15",
+      "startZone": 7,
+      "rank": 1,
+      "scores": [
+        [
+          0,
+          3,
+          5,
+          5,
+          5,
+          5,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 23,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "01:48:50",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "12:03:50",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 23,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 1,
+      "n1s": 0,
+      "n2s": 0,
+      "n3s": 1,
+      "n5s": 4,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 211,
       "name": "GONZALEZ JUAN, SERGIO",
       "cat": "TR1",
@@ -29,7 +92,7 @@
       "brand": "SHERCO",
       "schedStart": "10:13",
       "startZone": 7,
-      "rank": 1,
+      "rank": 2,
       "scores": [
         [
           null,
@@ -92,7 +155,7 @@
       "brand": "ELECTRIC-MOTION",
       "schedStart": "10:14",
       "startZone": 7,
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           null,
@@ -154,69 +217,6 @@
       "club": "CD Pobladura R",
       "brand": "TRRS",
       "schedStart": "10:14",
-      "startZone": 7,
-      "rank": 3,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 214,
-      "name": "PANIAGUA SANCHEZ, LUCAS",
-      "cat": "TR1",
-      "club": "Trial Extremadura",
-      "brand": "SIN MARCA",
-      "schedStart": "10:15",
       "startZone": 7,
       "rank": 4,
       "scores": [
