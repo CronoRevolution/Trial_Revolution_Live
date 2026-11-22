@@ -3,7 +3,7 @@
   "organizer": "MC Candeleda Gredos",
   "raceDate": "2026-11-22",
   "championship": "Campeonato de Trial de Castilla y León 2026 · Campeonato de Trial de Extremadura 2026",
-  "publishedAt": "2026-11-22T13:34:42.233Z",
+  "publishedAt": "2026-11-22T13:37:42.071Z",
   "raceStarted": false,
   "raceFinished": true,
   "cfg": {
@@ -1387,7 +1387,7 @@
           3,
           2,
           0,
-          0,
+          5,
           1
         ],
         [
@@ -1409,7 +1409,7 @@
           2
         ]
       ],
-      "lap1Points": 11,
+      "lap1Points": 16,
       "lap2Points": 6,
       "lap3Points": 9,
       "lap1Time": "01:08:43",
@@ -1421,14 +1421,14 @@
       "lap1Penalty": 0,
       "finishPenalty": 0,
       "extraPenalties": [],
-      "totalPoints": 26,
+      "totalPoints": 31,
       "lapsCompleted": 3,
       "totalTime": "03:54:04",
-      "n0s": 9,
+      "n0s": 8,
       "n1s": 4,
       "n2s": 4,
       "n3s": 3,
-      "n5s": 1,
+      "n5s": 2,
       "finishTime": 50104000,
       "dnf": false,
       "dns": false,
