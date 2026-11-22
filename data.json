@@ -3,7 +3,7 @@
   "organizer": "MC Candeleda Gredos",
   "raceDate": "2026-11-22",
   "championship": "Campeonato de Trial de Castilla y León 2026 · Campeonato de Trial de Extremadura 2026",
-  "publishedAt": "2026-11-22T08:07:13.259Z",
+  "publishedAt": "2026-11-22T08:10:10.627Z",
   "raceStarted": false,
   "raceFinished": false,
   "cfg": {
@@ -841,6 +841,132 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 86,
+      "name": "MUÑOZ MENENDEZ, ESTEBAN",
+      "cat": "TR4",
+      "club": "CD Portillo",
+      "brand": "SIN MARCA",
+      "schedStart": "10:01",
+      "startZone": null,
+      "rank": 1,
+      "scores": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": null,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": null,
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": null,
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": null,
+      "lapsCompleted": 0,
+      "totalTime": "",
+      "n0s": 0,
+      "n1s": 0,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
+      "dorsal": 85,
+      "name": "PEREZ SANCHEZ, MARIN",
+      "cat": "TR4",
+      "club": "CD Pobladura R",
+      "brand": "BETA",
+      "schedStart": "10:02",
+      "startZone": null,
+      "rank": 2,
+      "scores": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": null,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": null,
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": null,
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": null,
+      "lapsCompleted": 0,
+      "totalTime": "",
+      "n0s": 0,
+      "n1s": 0,
+      "n2s": 0,
+      "n3s": 0,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 82,
       "name": "MERLO VINUESA, FRANCISCO RAFAEL",
       "cat": "TR4",
@@ -848,7 +974,7 @@
       "brand": "TRRS",
       "schedStart": "10:04",
       "startZone": null,
-      "rank": 1,
+      "rank": 3,
       "scores": [
         [
           null,
@@ -911,7 +1037,7 @@
       "brand": "GASGAS",
       "schedStart": "10:03",
       "startZone": null,
-      "rank": 2,
+      "rank": 4,
       "scores": [
         [
           null,
@@ -974,7 +1100,7 @@
       "brand": "TRRS",
       "schedStart": "10:03",
       "startZone": null,
-      "rank": 3,
+      "rank": 5,
       "scores": [
         [
           null,
@@ -1037,7 +1163,7 @@
       "brand": "SHERCO",
       "schedStart": "10:04",
       "startZone": null,
-      "rank": 4,
+      "rank": 6,
       "scores": [
         [
           null,
@@ -1100,7 +1226,7 @@
       "brand": "BETA TRUEBA",
       "schedStart": "10:05",
       "startZone": null,
-      "rank": 5,
+      "rank": 7,
       "scores": [
         [
           null,
@@ -1163,7 +1289,7 @@
       "brand": "SIN MARCA",
       "schedStart": "10:05",
       "startZone": null,
-      "rank": 6,
+      "rank": 8,
       "scores": [
         [
           null,
@@ -1226,7 +1352,7 @@
       "brand": "SHERCO",
       "schedStart": "10:06",
       "startZone": null,
-      "rank": 7,
+      "rank": 9,
       "scores": [
         [
           null,
@@ -1289,7 +1415,7 @@
       "brand": "MECATECNO",
       "schedStart": "10:06",
       "startZone": null,
-      "rank": 8,
+      "rank": 10,
       "scores": [
         [
           null,
@@ -1352,7 +1478,7 @@
       "brand": "TRRS",
       "schedStart": "10:07",
       "startZone": null,
-      "rank": 9,
+      "rank": 11,
       "scores": [
         [
           null,
@@ -1415,7 +1541,7 @@
       "brand": "SIN MARCA",
       "schedStart": "10:07",
       "startZone": null,
-      "rank": 10,
+      "rank": 12,
       "scores": [
         [
           null,
@@ -1478,7 +1604,7 @@
       "brand": "GASGAS",
       "schedStart": "10:10",
       "startZone": null,
-      "rank": 11,
+      "rank": 13,
       "scores": [
         [
           null,
@@ -1541,70 +1667,7 @@
       "brand": "GASGAS",
       "schedStart": "10:10",
       "startZone": null,
-      "rank": 12,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": null,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 4,
-      "name": "MUÑOZ MENENDEZ, ESTEBAN",
-      "cat": "TR5",
-      "club": "CD Portillo",
-      "brand": "SIN MARCA",
-      "schedStart": "10:01",
-      "startZone": null,
-      "rank": 1,
+      "rank": 14,
       "scores": [
         [
           null,
@@ -1667,70 +1730,7 @@
       "brand": "SIN MARCA",
       "schedStart": "10:01",
       "startZone": null,
-      "rank": 2,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": null,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 5,
-      "name": "PEREZ SANCHEZ, MARIN",
-      "cat": "TR5",
-      "club": "CD Pobladura R",
-      "brand": "BETA",
-      "schedStart": "10:02",
-      "startZone": null,
-      "rank": 3,
+      "rank": 1,
       "scores": [
         [
           null,
@@ -1793,7 +1793,7 @@
       "brand": "BETA",
       "schedStart": "10:02",
       "startZone": null,
-      "rank": 4,
+      "rank": 2,
       "scores": [
         [
           null,
