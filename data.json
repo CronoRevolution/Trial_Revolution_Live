@@ -3,7 +3,7 @@
   "organizer": "MC Candeleda Gredos",
   "raceDate": "2026-11-22",
   "championship": "Campeonato de Trial de Castilla y León 2026 · Campeonato de Trial de Extremadura 2026",
-  "publishedAt": "2026-11-22T11:10:11.176Z",
+  "publishedAt": "2026-11-22T11:13:11.244Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -274,6 +274,75 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 178,
+      "name": "BALBOA ALVAREZ, SAMUEL",
+      "cat": "TR2",
+      "club": "CD Pobladura R",
+      "brand": "BETA TRUEBA",
+      "schedStart": "10:13",
+      "startZone": 7,
+      "rank": 1,
+      "scores": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          3,
+          0
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 3,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "01:57:01",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "12:10:01",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [
+        {
+          "pts": 5,
+          "reason": "Tarjeta briefing",
+          "ts": "10:17:17"
+        }
+      ],
+      "totalPoints": 8,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 6,
+      "n1s": 0,
+      "n2s": 0,
+      "n3s": 1,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 181,
       "name": "MARTIN GOMEZ, JESUS",
       "cat": "TR2",
@@ -281,7 +350,7 @@
       "brand": "TRRS",
       "schedStart": "10:11",
       "startZone": 7,
-      "rank": 1,
+      "rank": 2,
       "scores": [
         [
           5,
@@ -344,7 +413,7 @@
       "brand": "BETA",
       "schedStart": "10:12",
       "startZone": 7,
-      "rank": 2,
+      "rank": 3,
       "scores": [
         [
           1,
@@ -407,7 +476,7 @@
       "brand": "GASGAS",
       "schedStart": "10:12",
       "startZone": 7,
-      "rank": 3,
+      "rank": 4,
       "scores": [
         [
           null,
@@ -450,75 +519,6 @@
       "finishPenalty": 0,
       "extraPenalties": [],
       "totalPoints": 0,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 178,
-      "name": "BALBOA ALVAREZ, SAMUEL",
-      "cat": "TR2",
-      "club": "CD Pobladura R",
-      "brand": "BETA TRUEBA",
-      "schedStart": "10:13",
-      "startZone": 7,
-      "rank": 4,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [
-        {
-          "pts": 5,
-          "reason": "Tarjeta briefing",
-          "ts": "10:17:17"
-        }
-      ],
-      "totalPoints": 5,
       "lapsCompleted": 0,
       "totalTime": "",
       "n0s": 0,
@@ -731,13 +731,13 @@
       "rank": 4,
       "scores": [
         [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
+          1,
+          0,
+          0,
+          1,
+          2,
+          0,
+          1
         ],
         [
           null,
@@ -758,24 +758,24 @@
           null
         ]
       ],
-      "lap1Points": null,
+      "lap1Points": 5,
       "lap2Points": null,
       "lap3Points": null,
-      "lap1Time": null,
+      "lap1Time": "02:03:07",
       "lap2Time": null,
       "lap3Time": null,
-      "arrV1": null,
+      "arrV1": "12:12:07",
       "arrV2": null,
       "arrCHF": null,
       "lap1Penalty": 0,
       "finishPenalty": 0,
       "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
+      "totalPoints": 5,
+      "lapsCompleted": 1,
       "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
+      "n0s": 3,
+      "n1s": 3,
+      "n2s": 1,
       "n3s": 0,
       "n5s": 0,
       "finishTime": null,
@@ -794,13 +794,13 @@
       "rank": 5,
       "scores": [
         [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
+          5,
+          2,
+          2,
+          2,
+          1,
+          1,
+          1
         ],
         [
           null,
@@ -821,26 +821,26 @@
           null
         ]
       ],
-      "lap1Points": null,
+      "lap1Points": 14,
       "lap2Points": null,
       "lap3Points": null,
-      "lap1Time": null,
+      "lap1Time": "02:00:37",
       "lap2Time": null,
       "lap3Time": null,
-      "arrV1": null,
+      "arrV1": "12:11:37",
       "arrV2": null,
       "arrCHF": null,
       "lap1Penalty": 0,
       "finishPenalty": 0,
       "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
+      "totalPoints": 14,
+      "lapsCompleted": 1,
       "totalTime": "",
       "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
+      "n1s": 3,
+      "n2s": 3,
       "n3s": 0,
-      "n5s": 0,
+      "n5s": 1,
       "finishTime": null,
       "dnf": false,
       "dsq": false,
