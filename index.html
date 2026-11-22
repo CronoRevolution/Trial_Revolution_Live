@@ -574,7 +574,7 @@ const POLL_MS  = 30000;
 // corregido o uno viejo que su navegador tenia en memoria desde la prueba
 // anterior. Se ve en la pantalla de entrada y en el pie de la portada: basta
 // preguntarle a quien reporta un fallo "que numero pone abajo".
-const APP_VER = '2026.11.21.4';
+const APP_VER = '2026.11.22.1';
 // El hash tal y como llego: el arranque lo reescribe, y #diag se perderia.
 const _HASH0 = location.hash || '';
 
@@ -1028,6 +1028,12 @@ function _normalizaPilotos(d){
     if(!Array.isArray(p.extraPenalties))
       p.extraPenalties = p.extraPenalties ? Object.values(p.extraPenalties) : [];
   });
+  // Los que no tomaron la salida se quitan aqui, en un solo sitio, antes de
+  // que los vea cualquier pantalla. Pablo, 22 nov: «que directamente no
+  // aparezca en la clasificacion». Filtrarlo en cada contador y cada tabla
+  // era garantizar que uno se quedaria sin filtrar. El rastro de que estaba
+  // inscrito queda en los documentos oficiales, no aqui.
+  if(Array.isArray(d.pilots)) d.pilots = d.pilots.filter(p => p && p.dns !== true);
   return d;
 }
 
