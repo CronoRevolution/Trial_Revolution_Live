@@ -3,7 +3,7 @@
   "organizer": "MC Candeleda Gredos",
   "raceDate": "2026-11-22",
   "championship": "Campeonato de Trial de Castilla y León 2026 · Campeonato de Trial de Extremadura 2026",
-  "publishedAt": "2026-11-22T10:49:11.229Z",
+  "publishedAt": "2026-11-22T10:52:11.209Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -1351,6 +1351,69 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 79,
+      "name": "PUA SANCHEZ, RODRIGO",
+      "cat": "TR4",
+      "club": "Moto Club Enduro Villuercas",
+      "brand": "SHERCO",
+      "schedStart": "10:06",
+      "startZone": null,
+      "rank": 9,
+      "scores": [
+        [
+          3,
+          3,
+          1,
+          2,
+          0,
+          2,
+          2
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 13,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "01:45:12",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "11:51:12",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 13,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 1,
+      "n1s": 1,
+      "n2s": 3,
+      "n3s": 2,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 72,
       "name": "GUTIERREZ PEREZ, SAUL",
       "cat": "TR4",
@@ -1358,7 +1421,7 @@
       "brand": "GASGAS",
       "schedStart": "10:03",
       "startZone": null,
-      "rank": 9,
+      "rank": 10,
       "scores": [
         [
           5,
@@ -1421,7 +1484,7 @@
       "brand": "TRRS",
       "schedStart": "10:03",
       "startZone": null,
-      "rank": 10,
+      "rank": 11,
       "scores": [
         [
           0,
@@ -1484,7 +1547,7 @@
       "brand": "SIN MARCA",
       "schedStart": "10:05",
       "startZone": null,
-      "rank": 11,
+      "rank": 12,
       "scores": [
         [
           5,
@@ -1534,69 +1597,6 @@
       "n2s": 1,
       "n3s": 0,
       "n5s": 2,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 79,
-      "name": "PUA SANCHEZ, RODRIGO",
-      "cat": "TR4",
-      "club": "Moto Club Enduro Villuercas",
-      "brand": "SHERCO",
-      "schedStart": "10:06",
-      "startZone": null,
-      "rank": 12,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
       "finishTime": null,
       "dnf": false,
       "dsq": false,
