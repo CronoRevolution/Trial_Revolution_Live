@@ -3,7 +3,7 @@
   "organizer": "MC Candeleda Gredos",
   "raceDate": "2026-11-22",
   "championship": "Campeonato de Trial de Castilla y León 2026 · Campeonato de Trial de Extremadura 2026",
-  "publishedAt": "2026-11-22T12:52:42.026Z",
+  "publishedAt": "2026-11-22T12:55:42.103Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -1372,6 +1372,70 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 86,
+      "name": "MUÑOZ MENENDEZ, ESTEBAN",
+      "cat": "TR4",
+      "club": "CD Portillo",
+      "brand": "SIN MARCA",
+      "schedStart": "10:01",
+      "startZone": null,
+      "rank": 9,
+      "scores": [
+        [
+          2,
+          3,
+          3,
+          2,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          3,
+          2,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          5,
+          0,
+          0,
+          1,
+          0,
+          2
+        ]
+      ],
+      "lap1Points": 11,
+      "lap2Points": 6,
+      "lap3Points": 9,
+      "lap1Time": "01:08:43",
+      "lap2Time": "01:22:03",
+      "lap3Time": "01:23:18",
+      "arrV1": "11:09:43",
+      "arrV2": "12:31:03",
+      "arrCHF": "13:55:04",
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 26,
+      "lapsCompleted": 3,
+      "totalTime": "03:54:04",
+      "n0s": 9,
+      "n1s": 4,
+      "n2s": 4,
+      "n3s": 3,
+      "n5s": 1,
+      "finishTime": 50104000,
+      "dnf": false,
+      "dns": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 81,
       "name": "NIEVES BERROCAL, JESUS",
       "cat": "TR4",
@@ -1379,7 +1443,7 @@
       "brand": "TRRS",
       "schedStart": "10:03",
       "startZone": null,
-      "rank": 9,
+      "rank": 10,
       "scores": [
         [
           0,
@@ -1443,7 +1507,7 @@
       "brand": "SHERCO",
       "schedStart": "10:06",
       "startZone": null,
-      "rank": 10,
+      "rank": 11,
       "scores": [
         [
           3,
@@ -1507,7 +1571,7 @@
       "brand": "SIN MARCA",
       "schedStart": "10:05",
       "startZone": null,
-      "rank": 11,
+      "rank": 12,
       "scores": [
         [
           5,
@@ -1558,70 +1622,6 @@
       "n3s": 7,
       "n5s": 2,
       "finishTime": 46538000,
-      "dnf": false,
-      "dns": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 86,
-      "name": "MUÑOZ MENENDEZ, ESTEBAN",
-      "cat": "TR4",
-      "club": "CD Portillo",
-      "brand": "SIN MARCA",
-      "schedStart": "10:01",
-      "startZone": null,
-      "rank": 12,
-      "scores": [
-        [
-          2,
-          3,
-          3,
-          2,
-          0,
-          0,
-          1
-        ],
-        [
-          0,
-          3,
-          2,
-          0,
-          1,
-          0,
-          0
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": 11,
-      "lap2Points": 6,
-      "lap3Points": null,
-      "lap1Time": "01:08:43",
-      "lap2Time": "01:22:03",
-      "lap3Time": null,
-      "arrV1": "11:09:43",
-      "arrV2": "12:31:03",
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 17,
-      "lapsCompleted": 2,
-      "totalTime": "",
-      "n0s": 6,
-      "n1s": 2,
-      "n2s": 3,
-      "n3s": 3,
-      "n5s": 0,
-      "finishTime": null,
       "dnf": false,
       "dns": false,
       "dsq": false,
