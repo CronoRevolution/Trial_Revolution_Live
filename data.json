@@ -3,7 +3,7 @@
   "organizer": "MC Candeleda Gredos",
   "raceDate": "2026-11-22",
   "championship": "Campeonato de Trial de Castilla y León 2026 · Campeonato de Trial de Extremadura 2026",
-  "publishedAt": "2026-11-22T10:34:11.191Z",
+  "publishedAt": "2026-11-22T10:37:11.235Z",
   "raceStarted": true,
   "raceFinished": false,
   "cfg": {
@@ -1099,6 +1099,69 @@
       "dsqReason": ""
     },
     {
+      "dorsal": 78,
+      "name": "ELENA SOTO, JOSE CARLOS",
+      "cat": "TR4",
+      "club": "",
+      "brand": "MECATECNO",
+      "schedStart": "10:06",
+      "startZone": null,
+      "rank": 5,
+      "scores": [
+        [
+          3,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "lap1Points": 4,
+      "lap2Points": null,
+      "lap3Points": null,
+      "lap1Time": "01:28:12",
+      "lap2Time": null,
+      "lap3Time": null,
+      "arrV1": "11:34:12",
+      "arrV2": null,
+      "arrCHF": null,
+      "lap1Penalty": 0,
+      "finishPenalty": 0,
+      "extraPenalties": [],
+      "totalPoints": 4,
+      "lapsCompleted": 1,
+      "totalTime": "",
+      "n0s": 5,
+      "n1s": 1,
+      "n2s": 0,
+      "n3s": 1,
+      "n5s": 0,
+      "finishTime": null,
+      "dnf": false,
+      "dsq": false,
+      "dsqReason": ""
+    },
+    {
       "dorsal": 83,
       "name": "PAREJO CORTES, ISABEL",
       "cat": "TR4",
@@ -1106,7 +1169,7 @@
       "brand": "GASGAS",
       "schedStart": "10:10",
       "startZone": null,
-      "rank": 5,
+      "rank": 6,
       "scores": [
         [
           0,
@@ -1169,7 +1232,7 @@
       "brand": "SIN MARCA",
       "schedStart": "10:01",
       "startZone": null,
-      "rank": 6,
+      "rank": 7,
       "scores": [
         [
           2,
@@ -1232,7 +1295,7 @@
       "brand": "GASGAS",
       "schedStart": "10:03",
       "startZone": null,
-      "rank": 7,
+      "rank": 8,
       "scores": [
         [
           5,
@@ -1295,7 +1358,7 @@
       "brand": "TRRS",
       "schedStart": "10:03",
       "startZone": null,
-      "rank": 8,
+      "rank": 9,
       "scores": [
         [
           0,
@@ -1358,7 +1421,7 @@
       "brand": "SIN MARCA",
       "schedStart": "10:05",
       "startZone": null,
-      "rank": 9,
+      "rank": 10,
       "scores": [
         [
           5,
@@ -1421,7 +1484,7 @@
       "brand": "BETA",
       "schedStart": "10:02",
       "startZone": null,
-      "rank": 10,
+      "rank": 11,
       "scores": [
         [
           null,
@@ -1482,69 +1545,6 @@
       "cat": "TR4",
       "club": "Moto Club Enduro Villuercas",
       "brand": "SHERCO",
-      "schedStart": "10:06",
-      "startZone": null,
-      "rank": 11,
-      "scores": [
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      ],
-      "lap1Points": null,
-      "lap2Points": null,
-      "lap3Points": null,
-      "lap1Time": null,
-      "lap2Time": null,
-      "lap3Time": null,
-      "arrV1": null,
-      "arrV2": null,
-      "arrCHF": null,
-      "lap1Penalty": 0,
-      "finishPenalty": 0,
-      "extraPenalties": [],
-      "totalPoints": 0,
-      "lapsCompleted": 0,
-      "totalTime": "",
-      "n0s": 0,
-      "n1s": 0,
-      "n2s": 0,
-      "n3s": 0,
-      "n5s": 0,
-      "finishTime": null,
-      "dnf": false,
-      "dsq": false,
-      "dsqReason": ""
-    },
-    {
-      "dorsal": 78,
-      "name": "ELENA SOTO, JOSE CARLOS",
-      "cat": "TR4",
-      "club": "",
-      "brand": "MECATECNO",
       "schedStart": "10:06",
       "startZone": null,
       "rank": 12,
